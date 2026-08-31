@@ -1,0 +1,2008 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Matterialis — an AI that understands industrial materials</title>
+<meta name="description" content="A foundation model for industrial materials. Predict unreported properties, navigate chemical space, find substitutes under real constraints, and reformulate — across more than 200,000 material grades.">
+<link rel="icon" href="data:image/x-icon;base64,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">
+<!-- iOS home screen / Android. The favicon above is the same approved .ico
+     from the logo kit, inlined so the page still works from disk. -->
+<link rel="apple-touch-icon" href="img/brand/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;450;500;550;600;700&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<!-- ============================================================
+     ANALYTICS — PostHog (EU), project "Matterialis" · id 105300
+     https://eu.posthog.com/project/105300
+
+     See ANALYTICS.md. Two things to know before changing any of
+     it:
+
+     · Email security scanners (Defender Safe Links, Mimecast,
+       Proofpoint) prefetch every URL in every message they scan.
+       They render headlessly and leave, and at this volume they
+       outnumber real visitors, so no replay starts until a human
+       signal arrives — see the gate at the foot of this block.
+       $pageview still fires on every arrival, so the scanner
+       share stays measurable as $pageview minus visit_engaged
+       instead of being silently mixed into the real numbers.
+     · host must become the first-party proxy before any real
+       campaign. Corporate proxies blocklist *.posthog.com, and
+       that loss is biased toward the enterprise visitors this
+       page exists for. DNS only, no build step.
+
+     Replay masks every input, and #do-not-track opts a visitor
+     out permanently.
+     ============================================================ -->
+<script>
+window.MTL_ANALYTICS = {
+  token:  'phc_GnUG6LSAkfO92r5vN5asriOtooGLbGPx3V40gANPcBi',
+  /* TODO: once CNAME e.matterialis.com -> PostHog is verified, swap these two
+     lines. Nothing else changes — the loader reads its static assets from
+     whatever host is set here. */
+  host:   'https://eu.i.posthog.com',
+  /* host: 'https://e.matterialis.com', */
+  uiHost: 'https://eu.posthog.com',
+  /* the engaged-time clock stops after this long with no scroll, pointer or
+     key — otherwise an abandoned tab reads as a long, careful read */
+  idleMs: 30000
+};
+</script>
+<!-- posthog-js loader, verbatim from the vendor snippet. It queues every call
+     made before the library lands, so nothing below has to wait on it. -->
+<script>
+!function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init capture register register_once register_for_session unregister unregister_for_session getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on reset onFeatureFlags onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey getNextSurveyStep identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty createPersonProfile opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing debug".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+</script>
+<script>
+(function(){
+  var C = window.MTL_ANALYTICS;
+
+  /* Everything on this page reports through mtl.track, which no-ops if
+     posthog is absent, blocked by a corporate proxy, or opted out. The page
+     must never break because analytics did. */
+  window.mtl = {
+    track: function(name, props, beacon){
+      try{
+        if(window.posthog && posthog.capture){
+          posthog.capture(name, props || {}, beacon ? {transport:'sendBeacon'} : undefined);
+        }
+      }catch(e){}
+    }
+  };
+
+  try{
+    posthog.init(C.token, {
+      api_host: C.host,
+      ui_host: C.uiHost,
+      person_profiles: 'always',
+      /* fired by hand below, once the outreach token and visit count are
+         registered — otherwise the first and most useful event of the visit
+         is the one event missing them */
+      capture_pageview: false,
+      capture_pageleave: true,
+      autocapture: true,
+      /* replay starts at the human gate, not here — see the scanner note */
+      disable_session_recording: true,
+      session_recording: { maskAllInputs: true },
+      persistence: 'localStorage+cookie'
+    });
+
+    /* --- opt-outs, in place of a banner ---
+       #internal is for us: at outreach volume the team browsing its own site
+       would outnumber the prospects. Both choices stick. */
+    var h = location.hash;
+    if(h === '#internal' || h === '#do-not-track'){ posthog.opt_out_capturing(); return; }
+    if(h === '#track-me') posthog.opt_in_capturing();
+
+    /* --- who, and how many times ---
+       Returning visitors matter more here than on most sites: a prospect who
+       comes back and goes straight to Compare is a different lead. */
+    function ls(k, v){
+      try{
+        if(v === undefined) return localStorage.getItem(k);
+        localStorage.setItem(k, v);
+      }catch(e){}
+      return null;
+    }
+    var visits = (parseInt(ls('mtl_visits') || '0', 10) || 0) + 1;
+    ls('mtl_visits', String(visits));
+    var first = ls('mtl_first');
+    if(!first){ first = String(Date.now()); ls('mtl_first', first); }
+    var firstMs = parseInt(first, 10) || Date.now();
+
+    var token = null;
+    try{ token = new URLSearchParams(location.search).get('c'); }catch(e){}
+
+    posthog.register({
+      visit_number: visits,
+      is_returning: visits > 1,
+      days_since_first_visit: Math.floor((Date.now() - firstMs) / 864e5)
+    });
+    if(token) posthog.register({ outreach_token: token });
+
+    posthog.capture('$pageview');
+
+    /* Drop the token from the address bar now the pageview has recorded it:
+       the URL stays clean if the page is screen-shared, and the token stops
+       riding along in the referrer on outbound clicks. */
+    if(token && history.replaceState){
+      try{
+        var u = new URL(location.href);
+        u.searchParams.delete('c');
+        history.replaceState(null, '', u.pathname + (u.search || '') + u.hash);
+      }catch(e){}
+    }
+
+    /* --- the human gate ---
+       A scanner fetches, renders and leaves without touching anything. Until
+       one of these fires this visit is an arrival, not a read: no identify,
+       no replay, nothing pinned to a named prospect. */
+    var engaged = false, visibleMs = 0, poll = null;
+    var SIGNALS = ['pointermove','pointerdown','keydown','touchstart','wheel','scroll'];
+    function engage(){
+      if(engaged) return;
+      engaged = true;
+      if(poll) clearInterval(poll);
+      SIGNALS.forEach(function(s){ removeEventListener(s, engage, true); });
+      try{
+        if(token){
+          posthog.identify(token,
+            { outreach_token: token, last_visit_at: new Date().toISOString() },
+            { first_visit_at: new Date(firstMs).toISOString() });
+        }
+        posthog.startSessionRecording();
+        window.mtl.track('visit_engaged', { visit_number: visits, from_outreach: !!token });
+      }catch(e){}
+    }
+    SIGNALS.forEach(function(s){ addEventListener(s, engage, true); });
+    /* fallback for someone who reads the hero without moving anything */
+    poll = setInterval(function(){
+      if(!document.hidden) visibleMs += 500;
+      if(visibleMs >= 3000) engage();
+    }, 500);
+  }catch(e){}
+})();
+</script>
+<style>
+/* ============================================================
+   MATTERIALIS — marketing site   (one 't' — matches the logo)
+   Built on the Matterialis Design System (tokens verbatim).
+   Rules observed:
+     · Chrome graphite #141618; paper #FDFDFC; rules do the work.
+     · Teal #0E6B72 is RESERVED — active nav marker, focus ring,
+       AI provenance only. Never on data, never a large fill,
+       never a gradient.
+     · Evidence hues report evidence strength only.
+     · Radius: 2 indicator / 3 control / 6 panel / 10 frame.
+     · Geist for UI, Geist Mono for every measured value.
+     · 9.5px mono uppercase micro-labels at 0.09em.
+     · Sentence case. No emoji. No gradients outside the logo.
+     · Motion 130/180/260ms, nothing bounces or loops.
+   ============================================================ */
+
+:root{
+  /* chrome */
+  --chrome:#141618; --chrome-raised:#1E2022; --chrome-line:#2A2C2E;
+  --chrome-fg:#FFFFFF; --chrome-fg-muted:#AEB5BA; --chrome-fg-dim:#8A9297; --chrome-fg-strong:#D5D9DC;
+  /* evidence */
+  --evidence-strong:#186B4F; --evidence-limited:#8F6209; --evidence-weak:#A63A29; --evidence-neutral:#6C7276;
+  /* accent — reserved */
+  --brand-signal:#0E6B72; --brand-signal-tint:#F2F7F7; --brand-signal-line:#CFE2E3;
+  /* paper */
+  --paper:#FDFDFC; --paper-raised:#FFFFFF; --paper-sunken:#F5F6F6; --paper-strip:#FBFBFA;
+  --rule:#E8EAEC; --rule-soft:#F2F3F4;
+  /* ink */
+  --ink:#17191B; --ink-muted:#6C7276; --ink-faint:#9CA1A5;
+  /* neutral data ramp — data never borrows the accent */
+  --chart-1:#141618; --chart-2:#4A5054; --chart-3:#7C8287; --chart-4:#AFB4B8; --chart-5:#D8DBDD;
+  /* type */
+  --font-sans:Geist,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
+  --font-mono:"Geist Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+  --text-micro:9.5px; --text-2xs:10.5px; --text-xs:11.5px; --text-sm:12px;
+  --text-base:12.5px; --text-md:13px; --text-lg:14px; --text-xl:15px;
+  --tracking-micro:.09em; --tracking-title:-.022em; --tracking-name:-.015em; --tracking-figure:-.03em;
+  /* shape */
+  --radius-indicator:2px; --radius-control:3px; --radius-surface:6px; --radius-frame:10px;
+  /* motion */
+  --dur-instant:75ms; --dur-fast:130ms; --dur-medium:180ms; --dur-slow:260ms;
+  --ease:cubic-bezier(.4,0,.2,1); --ease-out:cubic-bezier(0,0,.2,1);
+  /* elevation */
+  --shadow-menu:0 4px 10px -2px rgb(20 22 24 / .10),0 1px 3px rgb(20 22 24 / .06);
+  --shadow-overlay:0 20px 44px -14px rgb(20 22 24 / .20);
+  --shadow-frame:0 1px 2px rgb(20 22 24 / .04),0 12px 32px -16px rgb(20 22 24 / .15);
+  --wrap:1240px; --gutter:32px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:var(--font-sans);font-size:16px;line-height:1.5;font-weight:400;
+  -webkit-font-smoothing:antialiased;font-variant-numeric:tabular-nums;
+}
+svg{display:block}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:none;box-shadow:0 0 0 1px var(--brand-signal);border-radius:var(--radius-control)}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 var(--gutter)}
+hr.rule{height:1px;background:var(--rule);border:0;margin:0}
+
+/* ---- type ---- */
+h1,h2,h3,h4{margin:0;font-weight:600;letter-spacing:var(--tracking-title);line-height:1.12}
+h1{font-size:clamp(34px,4.4vw,58px);letter-spacing:-.032em;font-weight:600;line-height:1.06}
+h2{font-size:clamp(29px,3.5vw,47px);letter-spacing:-.028em}
+h3{font-size:21px}
+h4{font-size:var(--text-lg)}
+p{margin:0}
+.lede{font-size:clamp(16px,1.25vw,19px);line-height:1.55;color:#3B3E41;letter-spacing:-.008em}
+.body{font-size:14px;line-height:1.6;color:#43464A}
+.micro{
+  font-family:var(--font-mono);font-size:var(--text-micro);text-transform:uppercase;
+  letter-spacing:var(--tracking-micro);color:var(--ink-faint);font-weight:400;display:block;
+}
+.micro.on-chrome{color:var(--chrome-fg-dim)}
+.mono{font-family:var(--font-mono);font-variant-numeric:tabular-nums}
+
+/* ---- buttons ---- */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:7px;
+  height:30px;padding:0 12px;border:1px solid transparent;border-radius:var(--radius-control);
+  font-family:var(--font-sans);font-size:var(--text-sm);font-weight:500;letter-spacing:-.005em;
+  cursor:pointer;transition:background var(--dur-fast) var(--ease),border-color var(--dur-fast) var(--ease),color var(--dur-fast) var(--ease);
+  white-space:nowrap;
+}
+.btn-lg{height:34px;padding:0 15px;font-size:var(--text-md)}
+.btn-primary{background:var(--chrome);color:#fff}
+.btn-primary:hover{background:var(--chrome-raised)}
+.btn-secondary{background:var(--paper-raised);color:var(--ink);border-color:var(--rule)}
+.btn-secondary:hover{background:var(--paper-sunken);border-color:#DCDFE1}
+.btn-on-chrome{background:#fff;color:var(--chrome)}
+.btn-on-chrome:hover{background:var(--chrome-fg-strong)}
+.btn-ghost-chrome{background:transparent;color:var(--chrome-fg-strong);border-color:var(--chrome-line)}
+.btn-ghost-chrome:hover{background:var(--chrome-raised);border-color:#3A3D40}
+.ic{width:14px;height:14px;flex:none;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.ic-16{width:16px;height:16px}
+.ic-20{width:20px;height:20px}
+.ic-fill{fill:currentColor;stroke:none}
+
+/* ---- badges / dots ---- */
+.badge{
+  display:inline-flex;align-items:center;gap:5px;font-family:var(--font-mono);
+  font-size:var(--text-2xs);border:1px solid var(--rule);border-radius:var(--radius-indicator);
+  padding:2px 6px;color:var(--ink-muted);background:var(--paper-raised);white-space:nowrap;
+}
+.badge-strong{color:var(--evidence-strong);border-color:#CFE2D9;background:#F4F9F6}
+.badge-limited{color:var(--evidence-limited);border-color:#E7DCC0;background:#FBF8F0}
+.badge-weak{color:var(--evidence-weak);border-color:#E8CFCA;background:#FBF4F2}
+.badge-ai{color:var(--brand-signal);border-color:var(--brand-signal-line);background:var(--brand-signal-tint)}
+.dot{width:5px;height:5px;border-radius:var(--radius-indicator);flex:none;display:block}
+.dot-strong{background:var(--evidence-strong)}.dot-limited{background:var(--evidence-limited)}
+/* the accent, for the one dot in the hero pill. Kept apart from the evidence
+   ramp above on purpose: that ramp reports evidence strength about a material
+   and must never be spent on decoration. */
+.dot-signal{background:var(--brand-signal)}
+.dot-weak{background:var(--evidence-weak)}.dot-neutral{background:var(--evidence-neutral)}
+
+/* ---- top nav ---- */
+.nav{position:sticky;top:0;z-index:80;background:var(--chrome);border-bottom:1px solid var(--chrome-line)}
+.nav-in{max-width:var(--wrap);margin:0 auto;padding:0 var(--gutter);display:flex;align-items:center;height:56px;gap:30px}
+.brand{display:flex;align-items:center;height:100%}
+.brand svg{height:19px;width:auto}
+.nav-links{display:flex;align-items:center;gap:24px;height:100%;margin-left:6px}
+.nav-links a{
+  display:flex;align-items:center;height:100%;font-size:var(--text-base);font-weight:450;
+  color:var(--chrome-fg-muted);border-bottom:2px solid transparent;
+  transition:color var(--dur-fast) var(--ease),border-color var(--dur-fast) var(--ease);
+}
+.nav-links a:hover,.nav-links a.on{color:var(--chrome-fg);border-bottom-color:var(--brand-signal)}
+.nav-actions{margin-left:auto;display:flex;align-items:center;gap:8px}
+.navtoggle{display:none;background:none;border:1px solid var(--chrome-line);border-radius:var(--radius-control);color:var(--chrome-fg-muted);height:30px;width:32px;align-items:center;justify-content:center;cursor:pointer}
+
+/* ---- hero ---- */
+.hero{padding:82px 0 0}
+.hero-in{max-width:900px}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:8px;border:1px solid var(--rule);
+  background:var(--paper-raised);border-radius:var(--radius-control);padding:4px 9px;
+  font-family:var(--font-mono);font-size:var(--text-2xs);letter-spacing:.04em;color:var(--ink-muted);
+  margin-bottom:24px;
+}
+h1 .soft{color:var(--ink-muted)}
+.hero p.lede{margin-top:22px;max-width:680px}
+.hero-cta{display:flex;flex-wrap:wrap;gap:9px;align-items:center;margin-top:28px}
+.hero-limit{font-family:var(--font-mono);font-size:var(--text-xs);color:var(--ink-faint);letter-spacing:.01em}
+
+/* ---- product surface (shared app chrome) ---- */
+.surface{background:var(--paper-raised);border:1px solid var(--rule);border-radius:var(--radius-frame);overflow:hidden}
+.surface-float{box-shadow:var(--shadow-frame)}
+.appbar{background:var(--chrome);display:flex;align-items:center;gap:22px;padding:0 14px;height:46px;flex:none}
+.appbar .lg svg{height:15px;width:auto}
+.tabs{display:flex;height:100%;gap:18px;align-items:stretch}
+.tab{
+  display:flex;align-items:center;gap:6px;font-family:var(--font-mono);font-size:var(--text-xs);
+  color:var(--chrome-fg-dim);border-bottom:2px solid transparent;
+}
+.tab b{font-weight:400;color:var(--chrome-fg-muted)}
+.tab.on{color:var(--chrome-fg);border-bottom-color:var(--brand-signal)}
+.tab.on b{color:#fff}
+.appbar-right{margin-left:auto;display:flex;gap:7px;align-items:center}
+.chip-chrome{
+  font-family:var(--font-mono);font-size:var(--text-2xs);color:var(--chrome-fg-muted);
+  border:1px solid var(--chrome-line);border-radius:var(--radius-indicator);padding:2px 6px;
+}
+/* console */
+.console{padding:36px 34px 32px;background:var(--paper-raised)}
+.console h3{font-size:clamp(20px,2.1vw,28px);letter-spacing:-.028em;margin-bottom:18px}
+.caret{display:inline-block;width:2px;height:.95em;background:var(--brand-signal);vertical-align:-.1em;margin-left:2px;animation:blink 1.1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+.field{border:1px solid var(--rule);border-radius:var(--radius-surface);background:var(--paper-raised)}
+.field .area{padding:14px 15px;color:var(--ink-faint);font-size:var(--text-md);min-height:66px}
+.field .bar{display:flex;align-items:center;gap:8px;padding:9px 11px;border-top:1px solid var(--rule-soft);flex-wrap:wrap}
+.filetag{font-family:var(--font-mono);font-size:var(--text-2xs);color:var(--ink-muted);background:var(--paper-sunken);border:1px solid var(--rule-soft);border-radius:var(--radius-indicator);padding:4px 7px}
+.field .bar .push{margin-left:auto;display:flex;align-items:center;gap:10px}
+
+/* ---- proof strip ---- */
+.proof{border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);background:var(--paper-raised);margin-top:84px}
+.proof-grid{display:grid;grid-template-columns:repeat(4,1fr)}
+.stat{padding:28px 26px;border-right:1px solid var(--rule-soft)}
+.stat:last-child{border-right:0}
+.stat .v{font-family:var(--font-mono);font-size:clamp(24px,2.4vw,32px);font-weight:500;letter-spacing:var(--tracking-figure);line-height:1;display:block}
+.stat .v .u{font-size:.5em;color:var(--ink-muted);font-weight:400;letter-spacing:0}
+.stat .l{margin-top:10px;font-size:var(--text-md);color:var(--ink-muted);line-height:1.45;max-width:220px}
+.stat .micro{margin-bottom:12px}
+
+/* ---- sections ---- */
+.sec{padding:92px 0}
+.sec-head{max-width:800px}
+.sec-head .micro,.datapanel>.micro,.cta>.wrap>.micro{font-size:var(--text-sm);color:var(--ink-muted);font-weight:500;letter-spacing:.1em}
+.cta>.wrap>.micro{color:var(--chrome-fg-dim)}
+.datapanel>.micro{color:var(--chrome-fg-dim)}
+.cmp-head .micro,.opt .micro{font-size:var(--text-2xs)}
+.sec-head h2{margin-top:16px}
+.sec-head .lede{margin-top:18px}
+
+/* ---- product: four alternating feature rows ----
+   Was a pinned mock driven by a scroll handler. The mock is now beside its own
+   copy and the row order alternates, so nothing has to be measured against the
+   viewport and there is no dead band to tune. All that survives is fit(),
+   which scales each mock to its own column. */
+.feats{margin-top:52px}
+.feat{display:grid;grid-template-columns:minmax(0,1.32fr) minmax(300px,.85fr);gap:52px;
+      align-items:center;padding:60px 0;border-top:1px solid var(--rule)}
+.feat>*{min-width:0}
+.feat:first-child{border-top:0;padding-top:8px}
+.feat:last-child{padding-bottom:8px}
+/* Odd rows put the mock on the right. Placing it explicitly, and mirroring the
+   column widths, because `order` alone moves the mock into the NARROW column and
+   quietly shrinks every other screenshot to 440px. The DOM order never changes. */
+.feat-flip{grid-template-columns:minmax(300px,.85fr) minmax(0,1.32fr)}
+.feat-flip .feat-shot{grid-column:2;grid-row:1}
+.feat-flip .feat-txt{grid-column:1;grid-row:1}
+.feat-shot{position:relative;width:100%;aspect-ratio:1180/664}
+.scaler{position:absolute;top:0;left:0;width:1180px;height:664px;transform-origin:top left;will-change:transform}
+.feat-shot .surface{height:100%;display:flex;flex-direction:column;box-shadow:var(--shadow-frame)}
+.screen-body{flex:1;min-height:0;overflow:hidden;background:var(--paper-raised);display:flex;flex-direction:column}
+.feat-txt .micro{color:var(--ink-faint)}
+.feat-txt h3{font-size:clamp(21px,1.9vw,27px);letter-spacing:-.026em;margin-top:10px}
+.feat-txt p{margin-top:13px;font-size:14.5px;line-height:1.62;color:#43464A}
+.feat-txt .out{margin-top:16px;border-left:1px solid var(--rule);padding-left:13px;
+               font-size:14px;font-weight:500;letter-spacing:-.008em}
+
+/* ---- app mock internals ---- */
+.mk-head{padding:14px 16px;border-bottom:1px solid var(--rule-soft);flex:none}
+.crumb{font-family:var(--font-mono);font-size:var(--text-2xs);color:var(--ink-faint);margin-bottom:10px}
+.mk-title{display:flex;align-items:flex-start;gap:16px}
+.mk-title h4{font-size:17px;letter-spacing:-.026em;line-height:1.18;font-weight:600}
+.mk-sub{font-family:var(--font-mono);font-size:var(--text-2xs);color:var(--ink-muted);margin-top:6px}
+.figure{margin-left:auto;text-align:right;flex:none}
+.figure .v{font-family:var(--font-mono);font-size:28px;font-weight:500;letter-spacing:var(--tracking-figure);line-height:1}
+.figure .v small{font-size:.42em;color:var(--ink-muted);font-weight:400;letter-spacing:0}
+.figure .micro{margin-top:4px}
+.badges{display:flex;gap:5px;margin-top:11px;flex-wrap:wrap}
+.strip{padding:9px 16px 7px;background:var(--paper-strip);border-bottom:1px solid var(--rule-soft);display:flex;gap:8px;align-items:baseline}
+.strip .micro{display:inline}
+.strip .micro b{color:var(--ink);font-weight:500}
+.split{display:grid;grid-template-columns:minmax(0,1fr) 300px;flex:1;min-height:0}
+.split-main{min-width:0;overflow:hidden}
+/* the map has to absorb the leftover height, and `flex:1` on a child of a
+   block parent does nothing — so this one column becomes a flex column */
+.split-main.col{display:flex;flex-direction:column}
+.split-rail{border-left:1px solid var(--rule-soft);background:var(--paper-strip);padding:13px 15px;overflow:hidden}
+.split-rail .micro{margin-bottom:9px}
+.kv{display:flex;justify-content:space-between;gap:12px;padding:5px 0;border-bottom:1px solid var(--rule-soft);font-size:var(--text-xs)}
+.kv:last-of-type{border-bottom:0}
+.kv dt{color:var(--ink-muted)}
+.kv dd{margin:0;font-family:var(--font-mono);font-size:var(--text-2xs);text-align:right}
+.split-rail dl{margin:0 0 16px}
+.src{font-size:var(--text-xs);color:var(--ink-muted);line-height:1.4;border-left:1px solid var(--rule);padding-left:9px;margin-bottom:8px}
+.src b{display:block;font-family:var(--font-mono);font-size:var(--text-2xs);font-weight:400;color:var(--ink);margin-bottom:2px}
+.ptab{width:100%;border-collapse:collapse}
+.ptab td{padding:8px 16px;border-bottom:1px solid var(--rule-soft);font-size:var(--text-base)}
+.ptab tr:last-child td{border-bottom:0}
+.ptab td.v{text-align:right;font-family:var(--font-mono);white-space:nowrap}
+.ptab td.b{width:1%;text-align:right;white-space:nowrap}
+.ptab td.s{width:1%;text-align:right;white-space:nowrap;font-family:var(--font-mono);font-size:var(--text-micro);color:var(--ink-faint);letter-spacing:var(--tracking-micro)}
+/* reasoning — subordinate to the measurement, per the provenance rule */
+.reason{margin:11px 16px 6px;border-left:1px solid var(--brand-signal);padding:2px 0 2px 11px;display:flex;gap:8px;align-items:flex-start}
+.reason svg{width:12px;height:12px;flex:none;margin-top:2px;color:var(--brand-signal);fill:currentColor;stroke:none}
+.reason p{font-size:var(--text-xs);color:var(--ink-muted);line-height:1.45}
+/* results */
+.res{display:grid;grid-template-columns:196px minmax(0,1fr);flex:1;min-height:0}
+.res-filter{border-right:1px solid var(--rule-soft);background:var(--paper-strip);padding:12px;overflow:hidden}
+.fh{display:flex;justify-content:space-between;align-items:center;margin-bottom:11px}
+.fh a{font-family:var(--font-mono);font-size:var(--text-2xs);color:var(--brand-signal)}
+.finput{border:1px solid var(--rule);border-radius:var(--radius-control);background:var(--paper-raised);padding:6px 8px;display:flex;gap:6px;align-items:center;font-size:var(--text-xs);color:var(--ink-faint);margin-bottom:13px}
+.crit{margin-bottom:11px}
+.crit-t{display:flex;align-items:center;justify-content:space-between;font-size:var(--text-xs);margin-bottom:5px}
+.crit-t svg{width:12px;height:12px;color:var(--ink-faint)}
+.crit-r{display:flex;gap:4px}
+.crit-r .op,.crit-r .val{border:1px solid var(--rule);border-radius:var(--radius-control);background:var(--paper-raised);font-family:var(--font-mono);font-size:var(--text-2xs);padding:4px 6px}
+.crit-r .val{flex:1;display:flex;justify-content:space-between;gap:6px}
+.crit-r .val i{font-style:normal;color:var(--ink-faint);font-size:var(--text-micro)}
+.res-main{display:flex;flex-direction:column;min-width:0}
+.res-top{padding:9px 14px;border-bottom:1px solid var(--rule-soft);display:flex;align-items:center;justify-content:space-between;background:var(--paper-strip)}
+.res-top .note{font-size:var(--text-xs);color:var(--ink-faint)}
+.grid{width:100%;border-collapse:collapse}
+.grid th{
+  font-family:var(--font-mono);font-size:var(--text-micro);letter-spacing:var(--tracking-micro);
+  text-transform:uppercase;color:var(--ink-faint);font-weight:400;text-align:left;
+  padding:8px 7px;border-bottom:1px solid var(--rule);background:var(--paper-strip);height:29px;
+}
+.grid th.r,.grid td.r{text-align:right}
+.grid td{padding:7px;border-bottom:1px solid var(--rule-soft);font-size:var(--text-base);vertical-align:middle}
+.grid tr:last-child td{border-bottom:0}
+.grid td:first-child,.grid th:first-child{padding-left:14px}
+.grid td:last-child,.grid th:last-child{padding-right:14px}
+.rk{font-family:var(--font-mono);font-size:var(--text-2xs);color:var(--ink-faint)}
+.matname{font-weight:550;letter-spacing:var(--tracking-name);font-size:var(--text-base);line-height:1.2;display:block}
+.matname span{display:block;font-family:var(--font-mono);font-weight:400;font-size:var(--text-micro);color:var(--ink-faint);margin-top:3px;letter-spacing:0}
+.ev{display:flex;align-items:center;gap:6px;font-size:var(--text-xs);white-space:nowrap}
+.met{display:flex;align-items:center;gap:7px;white-space:nowrap}
+.seg{display:flex;gap:2px}
+.seg i{width:8px;height:3px;border-radius:var(--radius-indicator);background:var(--rule);display:block}
+.seg i.s{background:var(--evidence-strong)}.seg i.l{background:var(--evidence-limited)}.seg i.w{background:var(--evidence-weak)}
+.met span{font-family:var(--font-mono);font-size:var(--text-2xs);color:var(--ink-muted)}
+.n-ok{font-family:var(--font-mono);color:var(--evidence-strong)}
+.n-no{font-family:var(--font-mono);color:var(--evidence-weak)}
+.n{font-family:var(--font-mono);color:var(--ink)}
+sup.ai{font-family:var(--font-mono);font-size:7.5px;color:var(--brand-signal);margin-left:2px;letter-spacing:.04em}
+.res-foot{padding:8px 14px;border-top:1px solid var(--rule-soft);background:var(--paper-strip);font-size:var(--text-micro);font-family:var(--font-mono);letter-spacing:.04em;color:var(--ink-faint)}
+.res-foot em{font-style:normal;color:var(--evidence-strong)}
+
+/* ---- mock 02: the neighbourhood map ----
+   The one screen that is not a table. Distance from the centre IS similarity —
+   the rings are the scale — so a cross-sector grade sitting close in is
+   readable at a glance, which is the whole claim of this step. Dots use the
+   neutral ramp; the ONLY accent is the query grade itself, which is the active
+   selection and therefore allowed it. */
+.mapwrap{flex:1;min-height:0;padding:4px 14px 0;display:flex;align-items:center;justify-content:center}
+.map{width:100%;height:100%;overflow:visible}
+.map .mring{font-family:var(--font-mono);font-size:9px;fill:var(--ink-faint);letter-spacing:.05em}
+.map .mlab{font-family:var(--font-mono);font-size:10px;fill:var(--ink-muted)}
+.map .mq{font-family:var(--font-mono);font-size:9.5px;fill:var(--brand-signal);letter-spacing:.07em}
+.maplegend{display:flex;align-items:center;gap:16px;padding:8px 14px;border-top:1px solid var(--rule-soft);background:var(--paper-strip)}
+.mkey{display:flex;align-items:center;gap:6px;font-family:var(--font-mono);font-size:var(--text-micro);
+      text-transform:uppercase;letter-spacing:var(--tracking-micro);color:var(--ink-faint)}
+.mkey i{width:8px;height:8px;border-radius:50%;display:block;flex:none}
+.mkey .k-same{background:var(--chart-1)}
+.mkey .k-other{background:var(--paper-raised);box-shadow:inset 0 0 0 1.5px var(--chart-2)}
+.mkey .k-q{background:var(--brand-signal)}
+.mnote{margin-left:auto;font-family:var(--font-mono);font-size:var(--text-micro);
+       letter-spacing:.04em;color:var(--chart-4)}
+.split-rail .kv dt{display:flex;gap:7px;align-items:baseline;min-width:0}
+.split-rail .kv dt .rk{font-family:var(--font-mono);font-size:var(--text-micro);color:var(--ink-faint);
+                       font-weight:400;flex:none;width:9px}
+
+/* ---- mock 04: Claude Cowork calling the MCP server ----
+   Deliberately not our app chrome. This screen is somebody else's client, so it
+   gets a light bar and a chat column instead of the graphite appbar and a data
+   grid — otherwise it reads as a fifth Matterialis screen. */
+.appbar-cw{background:var(--paper-sunken);border-bottom:1px solid var(--rule);gap:9px}
+.cw-brand{font-size:var(--text-lg);font-weight:600;letter-spacing:-.02em;color:var(--ink)}
+.cw-sub{font-family:var(--font-mono);font-size:var(--text-2xs);color:var(--ink-faint);
+        text-transform:uppercase;letter-spacing:var(--tracking-micro)}
+.chip-cw{display:flex;align-items:center;gap:6px;font-family:var(--font-mono);font-size:var(--text-2xs);
+         color:var(--ink-muted);border:1px solid var(--rule);border-radius:var(--radius-indicator);
+         padding:3px 8px;background:var(--paper-raised)}
+.chip-cw i{width:5px;height:5px;border-radius:50%;background:var(--evidence-strong);display:block;flex:none}
+.cw{padding:14px 20px 15px;gap:10px;overflow:hidden}
+.cw-msg{display:flex;gap:12px;min-width:0}
+.cw-who{font-family:var(--font-mono);font-size:var(--text-2xs);color:var(--ink-faint);
+        text-transform:uppercase;letter-spacing:var(--tracking-micro);width:52px;flex:none;padding-top:3px}
+.cw-msg .cw-body{min-width:0;flex:1}
+.cw-user .cw-body{background:var(--paper-sunken);border:1px solid var(--rule-soft);
+                  border-radius:10px;padding:10px 13px}
+.cw-body p{font-size:var(--text-md);line-height:1.55;color:#43464A}
+.cw-line{margin-bottom:8px}
+.cw-line:last-of-type{margin-bottom:0}
+.cw-line b{font-weight:550;color:var(--ink)}
+.cw-tool{border:1px solid var(--rule);border-radius:8px;overflow:hidden;margin-bottom:9px}
+.cw-tool-h{display:flex;align-items:center;gap:9px;padding:7px 11px;background:var(--paper-strip);
+           border-bottom:1px solid var(--rule-soft);font-family:var(--font-mono);font-size:var(--text-2xs);
+           color:var(--ink-muted)}
+.cw-tool-h b{font-weight:400;color:var(--ink)}
+.cw-tool-h .ic{color:var(--ink-faint);stroke:currentColor;fill:none;stroke-width:1.6}
+.cw-ok{margin-left:auto;color:var(--evidence-strong)}
+.cw-args{width:100%;border-collapse:collapse}
+.cw-args td{padding:4px 11px;font-size:var(--text-base);border-bottom:1px solid var(--rule-soft);
+            font-family:var(--font-mono);color:var(--ink-muted)}
+.cw-args tr:last-child td{border-bottom:0}
+.cw-args td.v{text-align:right;color:var(--ink);white-space:nowrap}
+.cw-res{border:1px solid var(--rule);border-radius:8px;overflow:hidden;margin-bottom:10px}
+.cw-res-h{display:flex;align-items:center;justify-content:space-between;padding:7px 12px;
+          background:var(--paper-strip);border-bottom:1px solid var(--rule-soft)}
+.cw-res-h .note{font-size:var(--text-xs);color:var(--ink-faint)}
+.cw-cite{display:flex;align-items:center;gap:7px;margin-top:10px;font-family:var(--font-mono);
+         font-size:var(--text-micro);letter-spacing:.03em;color:var(--ink-faint)}
+/* a chat with no composer leaves the panel bottom visibly empty */
+.cw-compose{margin-top:auto;display:flex;align-items:center;gap:10px;padding:10px 14px;
+            border:1px solid var(--rule);border-radius:9px;background:var(--paper-raised);
+            font-size:var(--text-md);color:var(--ink-faint)}
+.cw-compose .ic{margin-left:auto;color:var(--ink-faint);stroke:currentColor;fill:none;stroke-width:1.8;flex:none}
+.cw-cite .ic{stroke:currentColor;fill:none;stroke-width:1.6;flex:none}
+.res-foot b{font-weight:400;color:var(--evidence-weak)}
+/* classification map screen */
+.map{display:grid;grid-template-columns:minmax(0,1fr) 356px;flex:1;min-height:0}
+.map-main{padding:14px;min-width:0;overflow:hidden}
+.map-rail{border-left:1px solid var(--rule-soft);background:var(--paper-strip);padding:14px;overflow:hidden;display:flex;flex-direction:column}
+.cardgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-top:9px}
+.pcard{border:1px solid var(--rule);border-radius:var(--radius-surface);background:var(--paper-raised);padding:10px 11px 9px;display:flex;flex-direction:column;gap:7px;min-height:112px}
+.pcard-t{display:flex;align-items:center;justify-content:space-between}
+.pcard-t .n{font-family:var(--font-mono);font-size:var(--text-micro);color:var(--ink-faint)}
+.pcard-t svg{width:13px;height:13px;color:var(--ink-faint)}
+.pcard h5{margin:0;font-size:var(--text-md);font-weight:550;letter-spacing:var(--tracking-name)}
+.chips{display:flex;flex-wrap:wrap;gap:3px}
+.chip{font-family:var(--font-mono);font-size:var(--text-micro);color:var(--ink-muted);border:1px solid var(--rule);border-radius:var(--radius-indicator);padding:2px 5px;background:var(--paper-raised)}
+.pcard-f{margin-top:auto;padding-top:8px;border-top:1px solid var(--rule-soft);font-family:var(--font-mono);font-size:var(--text-micro);color:var(--ink-muted);letter-spacing:.04em}
+.nbr{display:flex;align-items:center;gap:9px;padding:7px 0;border-bottom:1px solid var(--rule-soft)}
+.nbr:last-child{border-bottom:0}
+.nbr .nm{flex:1;min-width:0;font-size:var(--text-xs);letter-spacing:var(--tracking-name);line-height:1.25}
+.nbr .nm em{display:block;font-style:normal;font-family:var(--font-mono);font-size:var(--text-micro);color:var(--ink-faint);letter-spacing:var(--tracking-micro);margin-top:2px;text-transform:uppercase}
+.nbr .pc{font-family:var(--font-mono);font-size:var(--text-2xs);width:32px;text-align:right;flex:none}
+.spark{width:70px;height:3px;background:var(--rule-soft);border-radius:var(--radius-indicator);flex:none;position:relative;overflow:hidden}
+.spark i{position:absolute;left:0;top:0;bottom:0;background:var(--chart-2);border-radius:var(--radius-indicator);display:block}
+</style>
+</head>
+<body>
+<svg width="0" height="0" aria-hidden="true" focusable="false" style="position:absolute"><symbol id="mtl-logo" viewBox="0 0 793.256 112.000"><defs><linearGradient id="mtl-signal-blue" x1="0" y1="112" x2="0" y2="0" gradientUnits="userSpaceOnUse"><stop stop-color="#204CBF" /><stop offset="1" stop-color="#3678F3" /></linearGradient><clipPath id="mtl-mark-silhouette"><path d="M4 112C1 112 0 110 2 107L88 4C90 1 92 0 96 0H123C126 0 127 1 127 4V56C127 58 128 58 129 56L168 5C171 2 173 0 176 0H210C213 0 214 1 214 4V108C214 111 213 112 210 112H184C181 112 180 111 180 108V48L177 49L137 103C134 108 133 112 130 112H98C95 112 94 111 94 108V49L40 109C38 111 36 112 33 112H4Z" /></clipPath></defs><path d="M4 112C1 112 0 110 2 107L88 4C90 1 92 0 96 0H123C126 0 127 1 127 4V56C127 58 128 58 129 56L168 5C171 2 173 0 176 0H210C213 0 214 1 214 4V108C214 111 213 112 210 112H184C181 112 180 111 180 108V48L177 49L137 103C134 108 133 112 130 112H98C95 112 94 111 94 108V49L40 109C38 111 36 112 33 112H4Z" fill="#FFFFFF" /><path d="M174 0H212C213.5 0 214 1 212 3L210.25 5L128 116H84L167.75 5C169.75 2 171.75 0 174 0Z" fill="url(#mtl-signal-blue)" clip-path="url(#mtl-mark-silhouette)" /><g transform="translate(266.000 11.000) scale(0.79646018)"><path fill="#FFFFFF" fill-rule="evenodd" d="M 2.577 112.208 C 2.276 112.059 1.954 111.754 1.861 111.531 C 1.769 111.308 1.623 93.575 1.536 72.125 C 1.328 20.213 1.336 8.106 1.581 6.669 C 1.966 4.407 1.547 4.500 11.338 4.500 C 17.017 4.500 20.197 4.595 20.726 4.779 C 21.415 5.019 21.697 5.415 22.730 7.592 C 23.392 8.985 24.021 10.406 24.128 10.750 C 24.235 11.094 24.631 11.994 25.009 12.750 C 25.387 13.506 25.779 14.406 25.881 14.750 C 25.982 15.094 26.271 15.666 26.521 16.023 C 26.772 16.379 27.223 17.327 27.523 18.129 C 27.823 18.932 28.271 19.934 28.518 20.357 C 28.764 20.779 29.205 21.735 29.496 22.480 C 29.787 23.225 30.230 24.125 30.480 24.480 C 30.730 24.835 31.016 25.406 31.116 25.750 C 31.433 26.838 33.292 30.791 34.584 33.125 C 35.269 34.362 36.189 36.050 36.629 36.875 C 37.070 37.700 38.064 39.525 38.840 40.930 C 39.615 42.336 40.250 43.567 40.250 43.667 C 40.250 43.837 43.002 49.935 44.856 53.875 C 45.309 54.837 46.130 56.581 46.680 57.750 C 47.231 58.919 48.034 60.606 48.466 61.500 C 48.897 62.394 49.250 63.249 49.250 63.400 C 49.250 63.551 49.629 64.395 50.092 65.275 C 50.554 66.155 51.076 67.325 51.251 67.875 C 51.426 68.425 51.763 69.156 52.000 69.500 C 52.236 69.844 52.620 70.707 52.854 71.418 C 53.087 72.130 53.436 72.843 53.629 73.004 C 53.823 73.164 54.216 73.922 54.502 74.688 C 54.789 75.453 55.223 76.371 55.468 76.727 C 55.712 77.084 56.060 77.769 56.240 78.250 C 56.669 79.399 57.886 82.021 60.128 86.625 C 61.132 88.688 62.086 90.731 62.248 91.166 C 62.801 92.651 64.721 92.832 65.132 91.438 C 65.320 90.800 66.458 88.342 69.733 81.500 C 70.292 80.331 70.750 79.284 70.750 79.173 C 70.750 78.940 72.620 74.935 73.165 74.000 C 73.366 73.656 73.756 72.869 74.032 72.250 C 74.940 70.218 76.751 66.661 77.915 64.625 C 80.045 60.900 81.032 58.840 83.002 54.000 C 83.310 53.244 83.942 51.703 84.406 50.576 C 84.870 49.450 85.250 48.406 85.250 48.257 C 85.250 48.108 85.573 47.342 85.967 46.555 C 86.362 45.769 86.769 44.844 86.873 44.500 C 87.086 43.793 90.573 36.459 91.152 35.500 C 91.360 35.156 91.751 34.369 92.021 33.750 C 92.291 33.131 92.844 31.950 93.249 31.125 C 94.373 28.839 96.000 25.261 96.000 25.077 C 96.000 24.987 96.465 23.948 97.032 22.769 C 97.600 21.590 98.430 19.837 98.877 18.875 C 101.299 13.651 101.815 12.559 102.179 11.875 C 102.398 11.463 102.854 10.562 103.192 9.875 C 104.705 6.796 105.733 5.305 106.558 4.994 C 107.120 4.782 109.995 4.647 115.750 4.563 C 126.324 4.410 125.302 3.876 125.523 9.660 C 125.611 11.978 125.692 35.579 125.702 62.106 C 125.722 114.665 125.804 111.695 124.325 112.280 C 123.449 112.626 113.251 112.402 112.539 112.021 C 111.500 111.465 111.486 111.131 111.358 84.625 C 111.290 70.600 111.126 54.513 110.993 48.875 C 110.860 43.237 110.751 36.528 110.751 33.964 C 110.750 29.891 110.699 29.284 110.343 29.147 C 109.753 28.921 109.332 29.376 108.785 30.835 C 108.328 32.055 106.970 34.917 105.800 37.125 C 105.509 37.675 104.804 39.138 104.235 40.375 C 102.009 45.211 99.356 50.730 98.646 52.000 C 98.454 52.344 97.768 53.750 97.122 55.125 C 96.476 56.500 95.563 58.413 95.095 59.375 C 94.626 60.337 94.244 61.226 94.246 61.349 C 94.248 61.472 93.856 62.391 93.375 63.392 C 92.894 64.392 92.500 65.366 92.500 65.557 C 92.500 65.747 92.178 66.410 91.784 67.030 C 91.391 67.651 90.926 68.601 90.751 69.142 C 90.577 69.683 90.118 70.744 89.731 71.500 C 89.344 72.256 88.561 73.888 87.990 75.125 C 87.419 76.362 86.525 78.275 86.003 79.375 C 85.482 80.475 84.693 82.162 84.250 83.125 C 82.733 86.423 81.539 88.887 77.168 97.750 C 74.760 102.631 72.711 106.906 72.613 107.250 C 72.357 108.148 70.548 111.399 70.095 111.775 C 69.685 112.116 67.987 112.170 61.178 112.062 L 57.231 112.000 L 56.246 111.062 C 55.525 110.377 55.065 109.587 54.532 108.125 C 53.640 105.675 51.962 101.640 51.413 100.625 C 50.990 99.844 48.617 95.041 47.583 92.875 C 47.255 92.188 46.830 91.344 46.638 91.000 C 46.045 89.936 39.741 77.232 38.823 75.250 C 37.883 73.221 37.487 72.402 37.071 71.625 C 36.624 70.788 34.339 65.984 33.504 64.125 C 33.072 63.163 32.346 61.587 31.891 60.625 C 31.436 59.663 30.648 57.975 30.139 56.875 C 29.631 55.775 29.002 54.481 28.741 54.000 C 28.480 53.519 27.980 52.506 27.630 51.750 C 27.279 50.994 26.820 50.094 26.609 49.750 C 26.399 49.406 26.005 48.619 25.734 48.000 C 25.463 47.381 25.017 46.464 24.743 45.961 C 24.469 45.458 24.091 44.614 23.903 44.086 C 23.715 43.557 22.779 41.494 21.823 39.500 C 19.362 34.369 18.814 33.098 18.244 31.206 C 17.731 29.504 16.448 27.952 15.958 28.442 C 15.517 28.883 15.303 79.785 15.652 101.411 L 15.814 111.447 L 15.106 111.911 C 14.477 112.324 13.778 112.381 8.762 112.427 C 5.103 112.462 2.933 112.385 2.577 112.208 Z" /><path fill="#FFFFFF" fill-rule="evenodd" d="M 158.156 114.466 C 152.486 113.738 145.784 110.555 141.414 106.514 C 135.835 101.356 133.118 91.875 135.083 84.422 C 135.438 83.072 135.890 81.666 136.086 81.297 C 138.185 77.345 138.813 76.482 141.625 73.682 C 143.907 71.410 145.924 69.793 147.375 69.074 C 147.925 68.801 148.713 68.396 149.125 68.173 C 150.267 67.557 155.458 66.041 157.401 65.756 C 158.349 65.617 160.531 65.275 162.250 64.997 C 166.194 64.357 173.745 64.021 184.500 64.005 C 189.106 63.998 192.999 63.910 193.150 63.809 C 193.847 63.343 193.946 62.584 193.729 59.375 C 193.424 54.877 193.325 54.416 192.198 52.275 C 189.903 47.919 187.556 45.701 183.056 43.638 C 180.596 42.511 180.427 42.471 177.116 42.249 C 173.330 41.996 167.984 42.282 165.750 42.858 C 158.536 44.719 154.788 46.680 149.348 51.438 C 146.993 53.498 145.978 53.780 144.926 52.669 C 144.623 52.349 143.728 51.506 142.936 50.795 C 138.400 46.720 138.156 45.946 140.621 43.445 C 146.146 37.837 150.138 35.577 158.000 33.603 C 165.717 31.665 166.730 31.503 172.250 31.328 C 177.937 31.148 182.991 31.546 185.972 32.410 C 187.142 32.749 188.645 33.144 189.313 33.287 C 190.827 33.612 194.713 35.523 196.375 36.760 C 197.592 37.666 200.240 40.387 201.500 42.025 C 203.047 44.037 205.766 49.474 206.251 51.525 C 206.427 52.267 206.796 53.550 207.073 54.375 C 207.695 56.233 207.941 67.018 207.977 93.949 L 208.000 111.273 L 207.386 111.886 C 206.774 112.499 206.763 112.500 201.574 112.496 C 197.923 112.494 196.189 112.400 195.750 112.180 C 194.688 111.650 194.326 110.520 194.130 107.132 C 193.894 103.031 193.385 102.583 191.673 104.966 C 190.706 106.312 188.190 108.553 186.375 109.684 C 183.119 111.714 176.330 113.961 171.875 114.484 C 169.232 114.795 160.627 114.783 158.156 114.466 Z M 174.875 102.505 C 183.445 100.253 188.943 95.740 192.052 88.406 C 193.095 85.946 193.428 84.229 193.707 79.875 C 193.926 76.468 193.908 76.068 193.510 75.500 L 193.071 74.875 L 186.973 74.802 C 168.542 74.582 159.194 76.069 154.203 80.014 C 145.807 86.650 148.594 98.433 159.500 102.406 C 162.215 103.395 162.917 103.480 167.625 103.382 C 171.426 103.302 172.192 103.210 174.875 102.505 Z" /><path fill="#FFFFFF" fill-rule="evenodd" d="M 244.011 113.626 C 237.658 112.119 234.683 110.554 231.538 107.062 C 226.896 101.908 225.557 98.704 225.020 91.466 C 224.883 89.628 224.696 81.094 224.604 72.500 C 224.512 63.906 224.366 54.122 224.281 50.757 L 224.125 44.639 L 223.500 44.323 C 223.055 44.098 221.321 44.006 217.476 44.004 C 212.650 44.000 212.037 43.954 211.695 43.563 C 211.395 43.220 211.274 42.107 211.138 38.455 L 210.964 33.785 L 211.561 33.394 C 212.034 33.084 213.347 32.962 217.854 32.810 C 223.256 32.627 223.573 32.590 223.984 32.082 C 224.373 31.602 224.435 30.530 224.581 21.835 L 224.743 12.125 L 225.375 11.571 C 226.228 10.824 228.625 10.119 231.500 9.769 C 232.806 9.610 234.705 9.361 235.720 9.217 C 238.816 8.775 238.601 7.948 238.750 20.856 C 238.864 30.765 238.913 31.740 239.317 32.186 C 239.733 32.645 240.274 32.684 248.567 32.852 C 262.749 33.140 261.948 32.812 262.313 38.475 C 262.573 42.510 262.492 43.354 261.810 43.716 C 261.571 43.844 256.467 43.990 250.469 44.042 C 241.789 44.117 239.480 44.205 239.157 44.474 C 238.589 44.944 238.540 89.345 239.104 92.000 C 240.285 97.564 244.212 101.350 249.500 102.023 C 252.665 102.425 257.647 101.983 260.260 101.067 C 261.556 100.613 262.610 100.771 262.987 101.476 C 263.125 101.734 263.404 103.360 263.606 105.088 C 263.808 106.816 264.109 108.679 264.273 109.229 C 264.810 111.020 263.834 111.927 260.500 112.733 C 259.331 113.016 257.644 113.433 256.750 113.660 C 253.842 114.399 247.195 114.381 244.011 113.626 Z" /><path fill="#FFFFFF" fill-rule="evenodd" d="M 244.011 113.626 C 237.658 112.119 234.683 110.554 231.538 107.062 C 226.896 101.908 225.557 98.704 225.020 91.466 C 224.883 89.628 224.696 81.094 224.604 72.500 C 224.512 63.906 224.366 54.122 224.281 50.757 L 224.125 44.639 L 223.500 44.323 C 223.055 44.098 221.321 44.006 217.476 44.004 C 212.650 44.000 212.037 43.954 211.695 43.563 C 211.395 43.220 211.274 42.107 211.138 38.455 L 210.964 33.785 L 211.561 33.394 C 212.034 33.084 213.347 32.962 217.854 32.810 C 223.256 32.627 223.573 32.590 223.984 32.082 C 224.373 31.602 224.435 30.530 224.581 21.835 L 224.743 12.125 L 225.375 11.571 C 226.228 10.824 228.625 10.119 231.500 9.769 C 232.806 9.610 234.705 9.361 235.720 9.217 C 238.816 8.775 238.601 7.948 238.750 20.856 C 238.864 30.765 238.913 31.740 239.317 32.186 C 239.733 32.645 240.274 32.684 248.567 32.852 C 262.749 33.140 261.948 32.812 262.313 38.475 C 262.573 42.510 262.492 43.354 261.810 43.716 C 261.571 43.844 256.467 43.990 250.469 44.042 C 241.789 44.117 239.480 44.205 239.157 44.474 C 238.589 44.944 238.540 89.345 239.104 92.000 C 240.285 97.564 244.212 101.350 249.500 102.023 C 252.665 102.425 257.647 101.983 260.260 101.067 C 261.556 100.613 262.610 100.771 262.987 101.476 C 263.125 101.734 263.404 103.360 263.606 105.088 C 263.808 106.816 264.109 108.679 264.273 109.229 C 264.810 111.020 263.834 111.927 260.500 112.733 C 259.331 113.016 257.644 113.433 256.750 113.660 C 253.842 114.399 247.195 114.381 244.011 113.626 Z" transform="translate(40 0)" /><path fill="#FFFFFF" fill-rule="evenodd" d="M 299.148 114.716 C 295.016 114.392 287.771 112.008 284.284 109.825 C 275.063 104.054 269.070 97.291 267.373 90.743 C 267.171 89.963 266.822 88.886 266.598 88.350 C 266.217 87.438 265.491 84.306 264.577 79.625 C 264.108 77.227 264.044 68.322 264.482 66.375 C 264.636 65.688 265.045 63.663 265.389 61.875 C 265.734 60.087 266.284 57.950 266.611 57.125 C 266.938 56.300 267.326 55.171 267.473 54.615 C 267.963 52.768 270.335 48.523 272.358 45.875 C 277.577 39.045 283.321 34.798 289.575 33.148 C 290.840 32.814 292.325 32.378 292.875 32.179 C 297.548 30.490 312.525 30.543 316.750 32.265 C 317.369 32.517 318.693 32.960 319.692 33.249 C 324.909 34.757 331.098 39.108 334.599 43.728 C 336.754 46.572 337.498 47.658 337.956 48.625 C 338.216 49.175 338.718 50.051 339.072 50.571 C 339.425 51.091 339.792 51.878 339.888 52.321 C 339.983 52.763 340.329 53.656 340.656 54.305 C 340.984 54.955 341.470 56.417 341.737 57.555 C 342.004 58.694 342.391 60.100 342.598 60.681 C 343.105 62.106 343.469 65.825 343.554 70.431 C 343.621 74.066 343.599 74.262 343.074 74.787 L 342.525 75.337 L 311.371 75.394 C 276.940 75.458 279.491 75.332 279.128 76.986 C 278.891 78.064 280.596 86.234 281.356 87.661 C 281.710 88.326 282.000 88.990 282.000 89.135 C 282.000 89.667 284.316 92.916 285.700 94.326 C 289.120 97.808 295.116 101.085 299.625 101.937 C 303.987 102.761 312.101 102.225 315.427 100.894 C 316.224 100.575 317.455 100.179 318.163 100.013 C 320.938 99.364 326.419 95.141 328.945 91.705 C 330.626 89.419 331.554 89.033 333.095 89.978 C 333.524 90.240 334.494 90.642 335.250 90.871 C 336.496 91.248 337.505 91.640 340.312 92.841 C 341.571 93.379 341.541 94.135 340.177 96.277 C 338.344 99.156 336.996 100.795 333.987 103.798 C 329.141 108.636 325.044 110.899 316.875 113.248 C 311.815 114.704 305.573 115.221 299.148 114.716 Z M 328.345 63.699 C 329.343 63.166 328.293 59.374 325.834 54.625 C 323.319 49.769 319.706 46.362 314.542 43.976 C 310.797 42.245 310.200 42.133 304.750 42.139 C 299.542 42.144 299.345 42.175 295.213 43.647 C 289.405 45.715 284.679 49.740 282.466 54.500 C 281.173 57.283 280.443 59.175 279.981 60.947 C 279.387 63.221 279.548 63.810 280.839 64.087 C 281.948 64.326 327.874 63.950 328.345 63.699 Z" transform="translate(40 0)" /><path fill="#FFFFFF" fill-rule="evenodd" d="M 352.625 112.118 C 352.075 111.920 351.606 111.756 351.582 111.754 C 350.875 111.692 350.641 94.580 350.881 60.471 L 351.067 33.967 L 351.670 33.572 C 352.171 33.244 353.217 33.173 357.835 33.151 C 364.998 33.117 364.750 32.999 364.750 36.468 C 364.750 40.432 365.499 41.534 366.828 39.526 C 367.556 38.427 370.890 35.468 372.537 34.459 C 374.481 33.269 377.791 31.952 379.729 31.596 C 384.145 30.786 392.677 30.940 394.903 31.871 C 395.870 32.274 396.604 33.540 396.412 34.471 C 395.558 38.595 395.393 39.146 394.327 41.428 C 393.817 42.521 393.410 42.597 389.984 42.238 C 385.304 41.749 381.549 42.193 378.750 43.567 C 373.800 45.996 370.270 49.158 368.497 52.750 C 368.192 53.369 367.802 54.044 367.631 54.250 C 367.101 54.890 365.459 60.439 365.204 62.457 C 365.064 63.557 364.942 74.479 364.918 88.083 C 364.876 111.236 364.864 111.798 364.390 112.145 C 363.689 112.658 354.061 112.635 352.625 112.118 Z" transform="translate(40 0)" /><path fill="#FFFFFF" fill-rule="evenodd" d="M 404.255 112.179 C 402.982 111.535 403.033 113.202 403.037 72.196 L 403.041 33.735 L 403.622 33.354 C 404.109 33.035 405.136 32.986 409.970 33.049 C 415.592 33.123 415.751 33.139 416.306 33.695 L 416.875 34.265 L 416.891 56.695 C 416.900 69.032 416.953 86.269 417.009 95.000 C 417.120 112.384 417.172 111.717 415.655 112.246 C 414.566 112.625 405.027 112.570 404.255 112.179 Z M 408.375 18.080 C 405.076 17.342 403.489 16.169 402.003 13.375 C 399.970 9.549 402.116 3.931 406.125 2.586 C 407.617 2.086 411.391 2.010 412.899 2.450 C 414.779 2.998 417.060 4.983 417.884 6.786 C 420.652 12.848 414.999 19.563 408.375 18.080 Z" transform="translate(40 0)" /><path fill="#FFFFFF" fill-rule="evenodd" d="M 449.500 114.582 C 444.641 114.093 438.968 112.067 435.475 109.572 C 430.659 106.133 427.416 101.658 425.731 96.125 C 424.933 93.506 424.893 93.185 424.884 89.375 C 424.875 85.376 424.875 85.374 425.838 82.561 C 426.368 81.014 426.904 79.684 427.029 79.607 C 427.155 79.529 427.495 78.999 427.787 78.428 C 428.875 76.296 432.323 72.519 435.140 70.375 C 438.313 67.960 445.868 65.642 454.250 64.512 C 455.281 64.373 462.003 64.223 469.187 64.178 C 481.941 64.100 482.266 64.086 482.937 63.581 L 483.625 63.064 L 483.604 59.707 C 483.585 56.584 483.528 56.196 482.779 54.113 C 481.955 51.825 480.624 49.626 479.024 47.911 C 476.858 45.590 471.503 42.960 467.891 42.444 C 465.226 42.063 458.031 42.387 455.875 42.986 C 451.972 44.069 450.076 44.694 449.129 45.208 C 448.581 45.506 448.018 45.750 447.878 45.750 C 447.002 45.750 442.799 48.637 439.593 51.442 C 436.903 53.795 436.387 53.908 434.948 52.465 C 434.350 51.866 432.767 50.352 431.431 49.101 C 429.142 46.960 429.000 46.769 429.000 45.829 C 429.000 43.429 436.765 37.406 442.946 35.012 C 443.672 34.731 444.518 34.336 444.825 34.135 C 445.133 33.933 446.612 33.472 448.112 33.111 C 449.612 32.749 451.115 32.349 451.452 32.221 C 454.833 30.935 470.357 30.947 474.750 32.239 C 475.644 32.502 477.283 32.947 478.393 33.227 C 482.824 34.348 486.098 36.312 489.875 40.114 C 492.423 42.679 494.528 45.814 495.254 48.125 C 495.426 48.675 495.773 49.533 496.023 50.031 C 496.976 51.927 497.049 54.354 497.023 83.170 C 497.009 98.457 496.929 111.145 496.844 111.365 C 496.760 111.584 496.499 111.867 496.264 111.993 C 495.766 112.259 485.328 112.383 484.705 112.130 C 484.023 111.854 483.750 110.596 483.750 107.733 C 483.750 103.530 483.718 103.514 480.750 106.157 C 477.566 108.993 473.184 111.311 468.750 112.504 C 467.856 112.745 466.169 113.223 465.000 113.568 C 461.626 114.562 454.156 115.051 449.500 114.582 Z M 463.875 102.375 C 469.076 101.213 474.424 98.112 477.319 94.581 C 479.430 92.005 479.670 91.658 480.749 89.625 C 482.638 86.062 484.212 77.251 483.197 75.914 C 482.647 75.189 481.157 75.061 472.750 75.018 C 464.715 74.976 460.339 75.212 457.000 75.867 C 451.649 76.916 450.215 77.252 449.217 77.691 C 448.616 77.955 447.731 78.320 447.250 78.502 C 445.973 78.985 443.545 80.755 442.238 82.156 C 437.160 87.597 438.942 96.273 446.000 100.478 C 447.434 101.333 451.237 102.754 453.000 103.094 C 454.775 103.436 460.956 103.027 463.875 102.375 Z" transform="translate(40 0)" /><path fill="#FFFFFF" fill-rule="evenodd" d="M 512.194 112.268 C 509.393 112.142 508.949 112.062 508.482 111.594 L 507.952 111.063 L 507.941 57.969 C 507.933 20.130 508.008 4.682 508.203 4.203 C 508.641 3.124 509.169 3.015 514.808 2.840 C 520.891 2.651 521.317 2.705 521.738 3.722 C 522.077 4.539 522.291 109.384 521.958 110.993 C 521.624 112.601 521.115 112.668 512.194 112.268 Z" transform="translate(40 0)" /><path fill="#FFFFFF" fill-rule="evenodd" d="M 534.432 112.587 C 532.847 112.310 532.959 115.028 532.819 73.315 C 532.726 45.678 532.768 35.095 532.973 34.342 C 533.402 32.764 533.854 32.662 539.824 32.799 C 545.267 32.925 546.077 33.096 546.695 34.250 C 546.972 34.767 547.000 39.546 546.858 61.875 C 546.763 76.725 546.669 93.978 546.650 100.214 L 546.614 111.553 L 546.029 112.026 C 545.530 112.431 545.017 112.500 542.511 112.500 C 540.897 112.500 538.575 112.547 537.351 112.604 C 536.127 112.661 534.813 112.653 534.432 112.587 Z M 536.403 18.237 C 533.274 17.453 530.651 14.469 530.108 11.075 C 529.630 8.083 532.467 3.846 535.719 2.698 C 537.314 2.135 541.917 2.280 543.250 2.935 C 546.149 4.359 547.510 6.231 548.015 9.487 C 548.572 13.075 547.100 15.781 543.625 17.559 C 541.967 18.408 538.414 18.741 536.403 18.237 Z" transform="translate(40 0)" /><path fill="#FFFFFF" fill-rule="evenodd" d="M 577.214 114.474 C 574.733 114.234 568.016 112.586 565.547 111.612 C 563.614 110.849 559.978 108.933 558.851 108.083 C 558.426 107.763 557.974 107.500 557.847 107.500 C 557.624 107.500 555.720 106.030 554.562 104.965 C 553.657 104.132 553.782 102.645 554.841 101.659 C 555.304 101.228 555.975 100.406 556.331 99.834 C 556.688 99.261 557.098 98.719 557.243 98.629 C 557.388 98.539 557.731 98.027 558.005 97.490 C 558.791 95.950 559.964 94.750 560.683 94.750 C 561.035 94.750 561.734 95.110 562.260 95.562 C 565.009 97.924 571.808 101.187 575.125 101.738 C 576.087 101.898 577.775 102.271 578.875 102.566 C 585.084 104.235 595.375 102.299 599.868 98.617 C 602.408 96.536 603.286 94.580 603.286 91.000 C 603.286 87.348 602.317 85.259 599.748 83.374 C 598.587 82.521 594.161 80.500 593.459 80.500 C 593.275 80.501 591.831 80.115 590.250 79.644 C 588.669 79.173 585.350 78.284 582.875 77.668 C 575.844 75.920 575.518 75.834 573.000 75.049 C 568.129 73.531 565.050 71.739 561.870 68.575 C 557.632 64.356 556.000 60.480 556.000 54.635 C 556.000 49.149 556.753 46.549 559.522 42.468 C 562.984 37.368 570.638 32.963 578.375 31.618 C 584.627 30.531 598.399 30.940 601.500 32.305 C 602.119 32.577 603.300 33.002 604.125 33.248 C 608.503 34.555 616.500 39.827 616.500 41.407 C 616.500 42.050 615.713 43.332 614.448 44.750 C 613.773 45.506 612.830 46.712 612.353 47.428 C 610.895 49.618 609.631 50.082 608.481 48.851 C 607.899 48.228 604.753 46.000 604.455 46.000 C 604.376 46.000 603.657 45.606 602.857 45.125 C 602.058 44.644 601.238 44.250 601.034 44.250 C 600.831 44.250 599.965 43.909 599.110 43.493 C 597.050 42.489 592.119 41.732 587.568 41.721 C 585.750 41.716 584.062 41.775 583.818 41.851 C 583.574 41.927 582.644 42.094 581.750 42.223 C 579.606 42.532 575.524 44.473 573.978 45.920 C 570.077 49.569 569.331 55.104 572.285 58.476 C 573.431 59.783 576.438 61.913 577.500 62.170 C 577.844 62.253 578.631 62.574 579.250 62.882 C 579.869 63.190 581.050 63.575 581.875 63.738 C 582.700 63.902 584.275 64.303 585.375 64.629 C 586.475 64.956 588.556 65.407 590.000 65.630 C 591.444 65.854 593.469 66.295 594.500 66.610 C 595.531 66.926 597.219 67.383 598.250 67.627 C 599.281 67.871 600.519 68.264 601.000 68.501 C 601.481 68.738 602.494 69.133 603.250 69.378 C 604.006 69.624 605.017 70.090 605.496 70.413 C 605.974 70.736 606.496 71.000 606.654 71.000 C 607.064 71.000 610.117 73.110 611.815 74.568 C 614.681 77.028 616.824 80.681 617.643 84.500 C 618.335 87.726 617.968 93.998 616.956 96.250 C 616.678 96.869 616.252 97.938 616.010 98.626 C 614.471 102.995 608.898 108.301 602.500 111.490 C 599.878 112.796 595.084 114.197 592.231 114.490 C 589.308 114.790 580.387 114.780 577.214 114.474 Z" transform="translate(40 0)" /></g></symbol></svg>
+<style>
+/* ---- classification section ---- */
+.ont{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:44px}
+.panel{background:var(--paper-raised);border:1px solid var(--rule);border-radius:var(--radius-surface);padding:22px}
+.panel-head{display:flex;align-items:baseline;justify-content:space-between;gap:14px;margin-bottom:16px}
+.panel-head h3{font-size:17px;letter-spacing:-.024em}
+.count{font-family:var(--font-mono);font-size:var(--text-2xs);color:var(--ink-muted);white-space:nowrap}
+.axis{border-top:1px solid var(--rule-soft);padding:13px 0}
+.axis:first-of-type{border-top:0;padding-top:0}
+.axis-t{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin-bottom:8px}
+.axis-t h4{font-size:var(--text-lg);font-weight:550;letter-spacing:var(--tracking-name)}
+.ont-note{margin-top:20px;font-size:var(--text-md);color:var(--ink-muted);line-height:1.5}
+.famgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;border:1px solid var(--rule);border-radius:var(--radius-surface);overflow:hidden;margin-top:14px}
+.fam{padding:13px 14px;border-right:1px solid var(--rule-soft);border-bottom:1px solid var(--rule-soft);background:var(--paper-raised)}
+.fam h5{margin:0 0 7px;font-size:var(--text-md);font-weight:550;letter-spacing:var(--tracking-name)}
+.fam .micro{margin-bottom:6px}
+
+/* ---- use cases ---- */
+.ucards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:44px}
+.uc{
+  background:var(--paper-raised);border:1px solid var(--rule);border-radius:var(--radius-surface);
+  padding:0;text-align:left;font:inherit;color:inherit;cursor:pointer;display:flex;flex-direction:column;
+  transition:border-color var(--dur-fast) var(--ease),background var(--dur-fast) var(--ease);
+}
+.uc:hover{border-color:#D6D9DB;background:var(--paper-strip)}
+.uc-plate{
+  aspect-ratio:16/9;background:var(--paper-sunken);border-bottom:1px solid var(--rule-soft);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:9px;color:var(--ink-faint);
+}
+.uc-plate svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.uc-body{padding:16px 17px 15px;display:flex;flex-direction:column;gap:9px;flex:1}
+.uc-body h3{font-size:var(--text-xl);letter-spacing:-.022em;line-height:1.28;font-weight:600}
+.uc-body p{font-size:var(--text-md);color:var(--ink-muted);line-height:1.5}
+.uc-foot{margin-top:auto;padding-top:13px;border-top:1px solid var(--rule-soft);display:flex;align-items:center;justify-content:space-between;gap:10px}
+.uc-open{display:inline-flex;align-items:center;gap:6px;font-size:var(--text-xs);font-weight:500;color:var(--ink)}
+.uc.self .uc-plate{background:var(--chrome);color:var(--chrome-fg-dim);border-bottom-color:var(--chrome-line)}
+
+/* ---- inspector panel ---- */
+.scrim{position:fixed;inset:0;background:rgb(20 22 24 / .45);opacity:0;pointer-events:none;transition:opacity var(--dur-medium) var(--ease);z-index:90}
+.scrim.on{opacity:1;pointer-events:auto}
+.insp{
+  position:fixed;top:0;right:0;bottom:0;width:min(520px,100%);background:var(--paper-raised);
+  border-left:1px solid var(--rule);z-index:95;transform:translateX(100%);
+  transition:transform var(--dur-slow) var(--ease-out);display:flex;flex-direction:column;
+  box-shadow:var(--shadow-overlay);
+}
+.insp.on{transform:none}
+.insp-bar{height:46px;flex:none;display:flex;align-items:center;gap:10px;padding:0 14px;background:var(--chrome);color:var(--chrome-fg)}
+.insp-bar .micro{color:var(--chrome-fg-dim);flex:1}
+.insp-close{background:transparent;border:1px solid var(--chrome-line);border-radius:var(--radius-control);height:26px;width:26px;display:flex;align-items:center;justify-content:center;color:var(--chrome-fg-muted);cursor:pointer;transition:background var(--dur-fast) var(--ease)}
+.insp-close:hover{background:var(--chrome-raised)}
+.insp-scroll{flex:1;overflow-y:auto}
+.insp-hero{padding:22px 24px 20px;border-bottom:1px solid var(--rule)}
+.insp-hero h2{font-size:24px;letter-spacing:-.026em;line-height:1.15;margin-top:12px}
+.insp-hero .role{font-family:var(--font-mono);font-size:var(--text-2xs);color:var(--ink-muted);margin-top:10px;letter-spacing:.03em}
+.insp-block{padding:20px 24px;border-bottom:1px solid var(--rule-soft)}
+.insp-block:last-child{border-bottom:0}
+.insp-block .micro{margin-bottom:10px}
+.insp-block p{font-size:var(--text-md);line-height:1.6;color:#43464A}
+.insp-block p+p{margin-top:10px}
+.steplist{list-style:none;margin:0;padding:0}
+.steplist li{display:flex;gap:11px;padding:9px 0;border-bottom:1px solid var(--rule-soft);font-size:var(--text-md);line-height:1.5;color:#43464A}
+.steplist li:last-child{border-bottom:0}
+.steplist b{font-family:var(--font-mono);font-size:var(--text-micro);color:var(--ink-faint);letter-spacing:var(--tracking-micro);flex:none;padding-top:3px;width:16px}
+.insp-foot{flex:none;border-top:1px solid var(--rule);padding:12px 24px;display:flex;gap:8px;background:var(--paper-strip)}
+
+/* ---- trust ---- */
+.trust{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:44px}
+.tcard{background:var(--paper-raised);border:1px solid var(--rule);border-radius:var(--radius-surface);padding:22px;display:flex;flex-direction:column;gap:10px}
+.tcard svg{width:16px;height:16px;color:var(--ink-muted);stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;margin-bottom:4px}
+.tcard h3{font-size:var(--text-xl);letter-spacing:-.022em;line-height:1.3}
+.tcard p{font-size:var(--text-md);color:var(--ink-muted);line-height:1.55}
+.datapanel{margin-top:14px;max-width:1020px;background:var(--chrome);border-radius:var(--radius-surface);padding:26px 28px;color:var(--chrome-fg-strong)}
+.datapanel h3{color:#fff;font-size:22px;letter-spacing:-.024em;margin:12px 0 14px;max-width:620px}
+.datapanel p{font-size:var(--text-md);line-height:1.6;color:var(--chrome-fg-muted);max-width:660px}
+.datapanel p+p{margin-top:11px}
+.datapanel .micro{color:var(--chrome-fg-dim)}
+.dtiers{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:var(--chrome-line);border:1px solid var(--chrome-line);border-radius:var(--radius-control);overflow:hidden;margin-top:20px}
+.dtier{background:var(--chrome);padding:16px 18px}
+.dtier h4{color:#fff;font-size:var(--text-lg);font-weight:550;letter-spacing:var(--tracking-name);margin-bottom:7px}
+.dtier p{font-size:var(--text-xs);color:var(--chrome-fg-dim);line-height:1.5;max-width:none}
+.dtiers-label{margin-top:22px;color:var(--chrome-fg-dim);font-size:var(--text-2xs)}
+.dtiers{margin-top:10px}
+.dtier h4{margin-bottom:4px}
+.dtier .dtier-line{color:var(--chrome-fg-strong);font-size:var(--text-md);margin-bottom:7px}
+
+/* ---- comparison: rule-separated grid, never cards ----
+   The three-state mark uses the NEUTRAL data ramp on purpose. Evidence colour
+   (green / amber / red) reports evidence strength about a material and must not
+   be borrowed to score a competitor. The accent stays out of here too. */
+.cmp-scroll{margin-top:44px;overflow-x:auto;-webkit-overflow-scrolling:touch}
+.cmp{min-width:980px;border:1px solid var(--rule);border-radius:var(--radius-surface);background:var(--paper-raised);overflow:hidden}
+.cmp-row{display:grid;grid-template-columns:minmax(0,1.15fr) repeat(5,minmax(0,1fr));border-top:1px solid var(--rule)}
+.cmp-row:first-child{border-top:0}
+.cmp-cell{padding:17px 18px;border-left:1px solid var(--rule-soft);min-width:0}
+.cmp-cell:first-child{border-left:0}
+.cmp-head{background:var(--paper-strip)}
+.cmp-head .cmp-cell{padding-top:14px;padding-bottom:14px}
+.cmp-name{display:block;font-size:var(--text-lg);font-weight:550;letter-spacing:var(--tracking-name);margin-bottom:5px}
+/* competitor logo slots. Held at a shared optical height so differing aspect
+   ratios do not shift the descriptor below, and GREYSCALED on purpose: the
+   three marks are red, teal and green, and this table sits inches from the
+   green/red/amber evidence ramp. Full colour here would read as evidence.
+   Square marks get a nudge — they read small at a shared height. If a file is
+   missing the wordmark text takes over (see the .cmp-logo loop in the JS). */
+/* Slot is sized for the tallest lockup, which is UL's stacked one. Everything
+   else centres inside it, so swapping a logo does not shift the row. */
+.cmp-logo{display:flex;align-items:center;justify-content:center;height:34px;margin-bottom:8px}
+/* ONE INK FOR EVERY THIRD-PARTY LOGO ON THE PAGE. Both the compare header and
+   the team credit go through this, so a logo added to either looks like it
+   belongs to the same page. Greyscale alone is not enough: UL's red drops to a
+   dark grey while SpecialChem's green lands pale and Cambridge's heraldry turns
+   to mud, so the row reads as several different treatments — and SpecialChem's
+   own two-tone logotype splits into black plus pale grey, which looks like a
+   rendering fault. The brightness knock pulls the mid-greys onto the same
+   density as the body ink. Do NOT swap it for brightness(0): these marks have
+   interior detail — UL's counters, the SpecialChem pupil, the Cambridge shield —
+   that a silhouette destroys. */
+.cmp-logo img,.orglogo img{filter:grayscale(1) brightness(.66) contrast(1.06)}
+.cmp-logo img{width:auto;max-width:142px;object-fit:contain}
+.cmp-logo svg{height:18px;width:auto}
+/* Heights are per-logo and optical, NOT shared: these three lockups put wildly
+   different amounts of their box height into the part you actually read. UL is
+   all mark, so its box height IS its cap height; Knowde and SpecialChem carry a
+   full-height mark next to a much shorter logotype, so matching box heights
+   would leave their names half the size of UL's ring. Re-tune by eye against
+   the row labels if a logo is ever re-exported. */
+.cmp-logo.l-ul img{height:31px}       /* stacked lockup: ring over wordmark */
+.cmp-logo.l-knowde img{height:22px}
+.cmp-logo.l-specialchem img{height:22px}
+.cmp-logo.l-matweb img{height:23px}
+.cmp-logo .cmp-name{display:none}
+.cmp-logo.nologo .cmp-name{display:block;margin-bottom:0}
+/* team credit marks, same ink as the compare header. Heights are per-logo and
+   optical for the same reason: IBM is a wordmark whose cap height IS its box,
+   Cambridge is a shield stacked over two lines of type. Matched on width (both
+   land near 50px) rather than height, which is what makes them read as equals.
+   Cambridge is kept whole rather than reduced to the shield — at 44px the
+   wordmark is legible, and the shield alone would drop the institution's name
+   out of its own credit. */
+.orglogos{display:flex;align-items:flex-end;gap:26px;margin-top:20px}
+.orglogo{display:flex;align-items:flex-end;height:54px}
+.orglogo img{width:auto;max-width:150px;object-fit:contain}
+.orglogo.l-ibm img{height:27px}
+.orglogo.l-camb img{height:52px}
+.orglogo .orgname{display:none;font-size:var(--text-md);color:var(--ink-muted)}
+.orglogo.nologo .orgname{display:block}
+/* our column is highlighted with the chrome surface — the same graphite the
+   app chrome uses. NOT the accent: it is reserved for the active state and the
+   reasoning rail, and never a fill behind body text. */
+.cmp-us{background:var(--chrome);border-left-color:var(--chrome);border-right:1px solid var(--chrome)}
+.cmp-us .cmp-name{color:#fff}
+.cmp-us .micro{color:var(--chrome-fg-dim)}
+.cmp-us p{color:var(--chrome-fg-muted)}
+.cmp-head .cmp-us{border-top:2px solid var(--brand-signal)}
+.cmp-head .cmp-us .cmp-name{font-weight:600}
+.cmp-what h3{font-size:16px;letter-spacing:-.02em;line-height:1.3}
+.cmp-what{display:flex;align-items:center}
+.cmp-cell p{font-size:var(--text-xs);color:var(--ink-muted);line-height:1.55}
+/* The four product columns centre their contents — logo, descriptor and mark
+   all on one axis. The row label keeps its left edge. With the marks reduced to
+   a glyph, left-aligning them left each one stranded against a wide cell. */
+.cmp-cell:not(.cmp-what){display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+/* Tick / dash / cross, drawn rather than spelled out. Colour rides on
+   `currentColor`, so the chrome column needs ONE override for all three states
+   instead of a per-state one — the old boxed version needed
+   `.cmp-us .mark.full i` specificity or the marks vanished into the graphite.
+   The ramp is the neutral data ramp, NOT evidence colour: a green tick and a
+   red cross here would be scoring a competitor with the vocabulary reserved for
+   evidence strength about a material. */
+.mark{display:flex;align-items:center;justify-content:center}
+.mark svg{width:17px;height:17px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.mark.full{color:var(--chart-1)}
+.mark.full svg{stroke-width:2.5}
+.mark.part{color:var(--chart-3)}
+.mark.none{color:var(--chart-4)}
+.cmp-us .mark{color:#fff}
+/* icon-only cells still need a name for anyone not looking at them */
+.vh{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+.cmp-swipe{display:none;margin-top:12px}
+.cmp-swipe:not([hidden]){display:flex}
+.cmp-note{margin-top:16px;max-width:820px;font-size:var(--text-md);line-height:1.6;color:var(--ink-faint)}
+.cmp-note a{color:var(--ink-muted);border-bottom:1px solid var(--rule)}
+
+/* ---- faq ---- */
+.faq{max-width:880px;margin-top:40px}
+details{border-bottom:1px solid var(--rule)}
+details:first-of-type{border-top:1px solid var(--rule)}
+summary{list-style:none;cursor:pointer;padding:19px 40px 19px 0;position:relative;font-size:var(--text-xl);font-weight:550;letter-spacing:-.018em}
+summary::-webkit-details-marker{display:none}
+summary:after{content:"";position:absolute;right:6px;top:50%;width:8px;height:8px;border-right:1.5px solid var(--ink-muted);border-bottom:1.5px solid var(--ink-muted);transform:translateY(-72%) rotate(45deg);transition:transform var(--dur-fast) var(--ease)}
+details[open] summary:after{transform:translateY(-28%) rotate(225deg)}
+details .a{padding:0 56px 22px 0;font-size:var(--text-md);line-height:1.65;color:#43464A}
+details .a p+p{margin-top:11px}
+details .a strong{font-weight:550;color:var(--ink)}
+
+/* ---- cta ---- */
+.cta{background:var(--chrome);color:var(--chrome-fg-strong);padding:92px 0}
+.cta h2{color:#fff;max-width:760px;margin-top:16px}
+.cta .lede{color:var(--chrome-fg-muted);margin-top:18px;max-width:600px}
+.opts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:40px 0 32px}
+.opt{border:1px solid var(--chrome-line);border-radius:var(--radius-surface);padding:18px;background:#17191B}
+.opt-head{display:flex;align-items:center;gap:9px;margin-bottom:14px}
+.opt-ic{width:18px;height:18px;flex:none;stroke:var(--chrome-fg-muted);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.opt .micro{color:var(--chrome-fg-dim);display:inline-block}
+.opt h4{color:#fff;font-size:var(--text-xl);letter-spacing:-.02em;margin-bottom:7px;line-height:1.3}
+.opt p{font-size:var(--text-md);color:var(--chrome-fg-dim);line-height:1.5}
+
+/* ---- footer ---- */
+footer{background:var(--chrome);border-top:1px solid var(--chrome-line);padding:30px 0}
+.foot{display:flex;align-items:center;gap:22px;flex-wrap:wrap}
+.foot svg{height:16px;width:auto}
+.foot .m{font-family:var(--font-mono);font-size:var(--text-2xs);color:var(--chrome-fg-dim)}
+.foot nav{margin-left:auto;display:flex;gap:20px;font-size:var(--text-base)}
+.foot nav a{color:var(--chrome-fg-muted)}
+.foot nav a:hover{color:#fff}
+
+/* ---- reveal ---- */
+.rv{opacity:0;transform:translateY(8px);transition:opacity var(--dur-slow) var(--ease-out),transform var(--dur-slow) var(--ease-out)}
+.rv.in{opacity:1;transform:none}
+
+
+/* ---- use-case cards (v3: horizontal, real photography) ---- */
+.ucards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:44px}
+.uc{
+  display:grid;grid-template-columns:190px minmax(0,1fr);background:var(--paper-raised);
+  border:1px solid var(--rule);border-radius:var(--radius-surface);overflow:hidden;
+  text-align:left;font:inherit;color:inherit;cursor:pointer;padding:0;
+  transition:border-color var(--dur-fast) var(--ease),background var(--dur-fast) var(--ease);
+}
+.uc:hover{border-color:#D3D7D9;background:var(--paper-strip)}
+.uc-media{position:relative;background:var(--paper-sunken);border-right:1px solid var(--rule-soft);overflow:hidden;min-height:186px}
+.uc-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.02)}
+.uc-plate{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;color:var(--ink-faint);padding:14px;text-align:center}
+.uc-plate svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.uc-body{padding:16px 18px 15px;display:flex;flex-direction:column;gap:8px;min-width:0}
+.uc-body h3{font-size:var(--text-xl);letter-spacing:-.022em;line-height:1.3;font-weight:600}
+.uc-body p{font-size:var(--text-md);color:var(--ink-muted);line-height:1.5}
+.uc-foot{margin-top:auto;padding-top:13px;display:flex;align-items:center;justify-content:space-between;gap:10px}
+.uc-open{display:inline-flex;align-items:center;gap:6px;font-size:var(--text-xs);font-weight:500}
+.uc.self .uc-media{background:var(--chrome)}
+.uc.self .uc-plate{color:var(--chrome-fg-dim)}
+.uc-more{display:flex;justify-content:center;margin-top:18px}
+.uc-hidden{display:none}
+.uc-hidden.shown{display:grid}
+.credit{margin-top:22px;font-family:var(--font-mono);font-size:var(--text-micro);letter-spacing:.05em;text-transform:uppercase;color:var(--ink-faint)}
+.credit a{border-bottom:1px solid var(--rule)}
+
+/* ---- trust (v3: rule-separated rows, no cards) ---- */
+.tlist{border:1px solid var(--rule);border-radius:var(--radius-surface);background:var(--paper-raised);margin-top:40px;max-width:1020px}
+.trow{display:grid;grid-template-columns:168px minmax(0,1fr);gap:24px;padding:24px 26px;border-top:1px solid var(--rule-soft);align-items:start}
+.trow:first-child{border-top:0}
+.trow-k{display:flex;flex-direction:column;gap:9px}
+.trow-k svg{width:16px;height:16px;color:var(--ink-faint);stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.trow h3{font-size:17px;letter-spacing:-.02em;line-height:1.35;margin-bottom:7px;max-width:56ch}
+.trow p{font-size:var(--text-md);line-height:1.6;color:var(--ink-muted);max-width:82ch}
+
+/* ---- mobile: one mock per step ---- */
+
+@media (max-width:1080px){
+  .ucards{grid-template-columns:minmax(0,1fr)}
+  .trow{grid-template-columns:minmax(0,1fr);gap:12px;padding:20px}
+}
+@media (max-width:760px){
+  .uc{grid-template-columns:minmax(0,1fr)}
+  .uc-media{min-height:0;aspect-ratio:16/9;border-right:0;border-bottom:1px solid var(--rule-soft)}
+}
+
+/* ---- responsive ---- */
+@media (max-width:1080px){
+  /* One column, copy first, and the mock keeps its real size inside a
+     horizontal scroller rather than being scaled into illegibility — at 390px
+     a width-fit scale would be 0.33 and the tables would be 4px tall. The
+     alternating order collapses: every row reads copy-then-mock. */
+  .feat,.feat-flip{grid-template-columns:minmax(0,1fr);gap:22px;padding:38px 0}
+  .feat-flip .feat-shot,.feat-flip .feat-txt{grid-column:1;grid-row:auto}
+  .feat-shot{order:2;aspect-ratio:auto;height:auto;overflow-x:auto;overflow-y:hidden;
+             -webkit-overflow-scrolling:touch;border:1px solid var(--rule);
+             border-radius:var(--radius-frame);background:var(--paper-raised);box-shadow:var(--shadow-frame)}
+  .feat-shot .scaler{position:relative;transform:none!important;width:1180px;height:620px}
+  .feat-shot .surface{border:0;border-radius:0;box-shadow:none}
+  .feat-txt{order:1}
+  .feat-txt .swipe{display:flex}
+  .ont,.ucards,.trust,.opts,.dtiers{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .famgrid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .proof-grid{grid-template-columns:repeat(2,1fr)}
+  .stat{border-bottom:1px solid var(--rule-soft)}
+  .stat:nth-child(2){border-right:0}
+  .cardgrid{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:760px){
+  :root{--gutter:20px}
+  .nav-links{display:none}
+  .navtoggle{display:flex}
+  .nav-actions .btn-ghost-chrome{display:none}
+  .hero{padding-top:52px}
+  .sec{padding:64px 0}
+  .console{padding:22px 18px}
+  .ont,.ucards,.trust,.opts,.dtiers,.famgrid,.proof-grid{grid-template-columns:minmax(0,1fr)}
+  .stat{border-right:0}
+  .insp{width:100%}
+  .foot nav{margin-left:0;width:100%}
+}
+.swipe{display:none;align-items:center;gap:7px;margin-top:10px;font-family:var(--font-mono);font-size:var(--text-micro);text-transform:uppercase;letter-spacing:var(--tracking-micro);color:var(--ink-faint)}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  .rv{opacity:1;transform:none}
+}
+</style>
+<!-- ================= NAV ================= -->
+<nav class="nav">
+  <div class="nav-in">
+    <a class="brand" href="#top" aria-label="Matterialis home"><svg viewBox="0 0 793.256 112.000" role="img" aria-label="Matterialis"><use href="#mtl-logo"/></svg></a>
+    <div class="nav-links">
+      <a href="#product">Product</a>
+      <a href="#cases">Use cases</a>
+      <a href="#compare">Compare</a>
+      <a href="#trust">Research</a>
+      <a href="#faq">FAQ</a>
+    </div>
+    <div class="nav-actions">
+      <!-- TODO: replace with the real Calendly link -->
+      <a class="btn btn-on-chrome" href="https://calendar.app.google/LcwtFTNrrVFJnGiz9" target="_blank" rel="noopener">Book a demo</a>
+      <a class="btn btn-ghost-chrome" href="#contact">Contact us</a>
+      <button class="navtoggle" id="navtoggle" aria-label="Open menu">
+        <svg class="ic" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- ================= HERO ================= -->
+<header class="hero" id="top">
+  <div class="wrap hero-in">
+    <span class="eyebrow"><span class="dot dot-signal"></span>A foundation model for industrial materials</span>
+    <h1>An AI that understands industrial materials, <span class="soft">not just molecules.</span></h1>
+    <p class="lede">Molecular models do not know what a datasheet leaves out, how a grade is classified for your end use, or whether it clears REACH. Matterialis learns from the documents industry runs on. It predicts unreported properties, navigates chemical space, finds substitutes under real constraints, and proposes reformulations.</p>
+    <div class="hero-cta">
+      <a class="btn btn-primary btn-lg" href="https://calendar.app.google/LcwtFTNrrVFJnGiz9" target="_blank" rel="noopener">Book a demo</a>
+      <a class="btn btn-secondary btn-lg" href="#product">See how it works</a>
+      <span class="hero-limit">It does not run your experiments. It decides which are worth running.</span>
+    </div>
+  </div>
+
+  <div class="wrap" style="margin-top:48px">
+    <div class="surface surface-float rv">
+      <div class="appbar">
+        <span class="lg"><svg viewBox="0 0 793.256 112.000" role="img" aria-label="Matterialis"><use href="#mtl-logo"/></svg></span>
+        <div class="tabs">
+          <span class="tab on"><svg class="ic" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>Search</span>
+          <span class="tab">Results <b>10</b></span>
+          <span class="tab">Library <b>200,000+</b></span>
+        </div>
+        
+      </div>
+      <div class="console">
+        <h3>Find a better <span id="typed">non-ionic emulsifier</span><span class="caret"></span></h3>
+        <div class="field">
+          <div class="area">Paste S/TDS text, or describe what the material has to do</div>
+          <div class="bar">
+            <span class="btn btn-secondary"><svg class="ic" viewBox="0 0 24 24"><path d="M14 3v5h5M6 2h9l5 5v15H6z"/></svg>Attach S/TDS</span>
+            <span class="filetag">PA6-GF30-incumbent-TDS.pdf</span>
+            <span class="push">
+                            <span class="btn btn-primary"><svg class="ic ic-fill" viewBox="0 0 24 24"><path d="M12 2l1.7 5.4L19 9l-4.2 3.5 1.4 5.5L12 15.3 7.8 18l1.4-5.5L5 9l5.3-1.6z"/></svg>Search materials</span>
+            </span>
+          </div>
+        </div>
+        <span class="micro" style="margin-top:26px">Functional purpose</span>
+        <div class="cardgrid" style="grid-template-columns:repeat(4,1fr)">
+          <div class="pcard"><div class="pcard-t"><span class="n">01</span><svg class="ic" viewBox="0 0 24 24"><path d="M12 2l9 5-9 5-9-5 9-5zM3 12l9 5 9-5M3 17l9 5 9-5"/></svg></div><h5>Structural &amp; mechanical</h5><div class="chips"><span class="chip">Reinforcement</span><span class="chip">Toughness</span><span class="chip">Fillers</span></div><div class="pcard-f">4,180 materials</div></div>
+          <div class="pcard"><div class="pcard-t"><span class="n">02</span><svg class="ic" viewBox="0 0 24 24"><path d="M12 22c4-2 6-5 6-9 0-5-6-11-6-11S6 8 6 13c0 4 2 7 6 9z"/></svg></div><h5>Thermal &amp; fire</h5><div class="chips"><span class="chip">Insulation</span><span class="chip">Flame retardancy</span></div><div class="pcard-f">2,640 materials</div></div>
+          <div class="pcard"><div class="pcard-t"><span class="n">03</span><svg class="ic" viewBox="0 0 24 24"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6z"/></svg></div><h5>Barrier &amp; protection</h5><div class="chips"><span class="chip">Moisture</span><span class="chip">Chemical</span><span class="chip">UV</span></div><div class="pcard-f">3,015 materials</div></div>
+          <div class="pcard"><div class="pcard-t"><span class="n">04</span><svg class="ic" viewBox="0 0 24 24"><path d="M13 2L5 14h6l-1 8 8-12h-6z"/></svg></div><h5>Electrical &amp; optical</h5><div class="chips"><span class="chip">Conductivity</span><span class="chip">Gloss</span></div><div class="pcard-f">1,922 materials</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ================= PROOF ================= -->
+<div class="proof">
+  <div class="wrap"><div class="proof-grid">
+    <div class="stat"><span class="micro">Library</span><span class="v" data-count="200000">200,000</span><span class="l">material grades indexed from technical and safety datasheets.</span></div>
+    <div class="stat"><span class="micro">Property space</span><span class="v">500<span class="u">+</span></span><span class="l">properties, including values suppliers never published.</span></div>
+    <div class="stat"><span class="micro">Research</span><span class="v">NeurIPS</span><span class="l">a paper behind the method, under peer review, and a patent pending.</span></div>
+    <div class="stat"><span class="micro">Team</span><span class="v" style="font-size:clamp(19px,1.8vw,25px)">IBM&#8202;·&#8202;Cambridge</span><span class="l">machine learning research and materials science in one team.</span></div>
+  </div></div>
+</div>
+
+<!-- ================= PRODUCT ================= -->
+<section class="sec" id="product">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="micro">The product</span>
+      <h2>Not a database. An intelligence layer over industrial chemistry.</h2>
+      <p class="lede">Everyone else gives you a search box over what suppliers chose to publish. Matterialis reasons about materials.</p>
+    </div>
+
+    <div class="feats">
+      <div class="feat rv">
+        <div class="feat-shot">
+<div class="scaler"><div class="surface">
+<div class="appbar"><span class="lg"><svg viewBox="0 0 793.256 112.000" role="img" aria-label="Matterialis"><use href="#mtl-logo"/></svg></span>
+<div class="tabs"><span class="tab">Search</span><span class="tab on">Results <b>10</b></span><span class="tab">Library <b>200,000+</b></span></div>
+<span class="appbar-right"><span class="chip-chrome">Under-bonnet bracket</span></span>
+</div>
+<div class="screen-body">
+<div class="mk-head">
+<div class="crumb">Ranked results / Polybutylene terephthalate, 20% glass fibre</div>
+<div class="mk-title">
+<div><h4>Polybutylene terephthalate, 20% glass fibre</h4>
+<div class="mk-sub">AMP-3118 · CAS 24968-12-5 · Chang Chun</div></div>
+<div class="figure"><div class="v">88<small>%</small></div><span class="micro">Match</span></div>
+</div>
+<div class="badges">
+<span class="badge badge-strong"><span class="dot dot-strong"></span>Strong evidence</span>
+<span class="badge">Polyester (PBT)</span>
+<span class="badge badge-ai">6 AI-generated values</span>
+
+</div>
+</div>
+<div class="split">
+<div class="split-main">
+<div class="reason"><svg viewBox="0 0 24 24"><path d="M12 2l1.7 5.4L19 9l-4.2 3.5 1.4 5.5L12 15.3 7.8 18l1.4-5.5L5 9l5.3-1.6z"/></svg><p>Lower moisture pickup than the incumbent and a tighter shrinkage window, but density sits above the stated ceiling.</p></div>
+<div class="strip"><span class="micro"><b>Properties · mechanical</b></span></div>
+<table class="ptab">
+<tr><td>Tensile strength</td><td class="v">110 MPa</td><td class="b"><span class="badge">Scraped</span></td></tr>
+<tr><td>Flexural modulus</td><td class="v">5940 MPa</td><td class="b"><span class="badge badge-ai">AI-generated</span></td></tr>
+<tr><td>Notched impact, 23 °C</td><td class="v">8.6 kJ/m²</td><td class="b"><span class="badge">Scraped</span></td></tr>
+<tr><td>Elongation at break</td><td class="v">2.9 %</td><td class="b"><span class="badge">Scraped</span></td></tr>
+</table>
+<div class="strip"><span class="micro"><b>Thermal</b></span></div>
+<table class="ptab">
+<tr><td>Heat deflection, 1.8 MPa</td><td class="v">140 °C</td><td class="b"><span class="badge">Scraped</span></td></tr>
+<tr><td>Glass transition</td><td class="v">48 °C</td><td class="b"><span class="badge badge-ai">AI-generated</span></td></tr>
+</table>
+<div class="strip"><span class="micro"><b>Barrier &amp; transport</b></span></div>
+<table class="ptab">
+<tr><td>Water vapour transmission rate</td><td class="v">2.4 g/m²·day</td><td class="b"><span class="badge badge-ai">AI-generated</span></td></tr>
+<tr><td>Moisture absorption</td><td class="v">0.28 %</td><td class="b"><span class="badge badge-ai">AI-generated</span></td></tr>
+</table>
+</div>
+<aside class="split-rail">
+<span class="micro">Classification</span>
+<dl>
+<div class="kv"><dt>Chemical family</dt><dd>Polyester (PBT)</dd></div>
+<div class="kv"><dt>Functional purpose</dt><dd>Structural reinforcement</dd></div>
+<div class="kv"><dt>Industry</dt><dd>Automotive</dd></div>
+<div class="kv"><dt>CAS</dt><dd>24968-12-5</dd></div>
+</dl>
+<span class="micro">Metadata</span>
+<dl>
+<div class="kv"><dt>Supplier</dt><dd>Chang Chun</dd></div>
+<div class="kv"><dt>Grade code</dt><dd>AMP-3118</dd></div>
+<div class="kv"><dt>Indexed</dt><dd>2026-06-30</dd></div>
+</dl>
+</aside>
+</div>
+</div>
+</div></div>
+        </div>
+        <div class="feat-txt">
+          <span class="micro">01</span>
+          <h3>Search published and AI-predicted properties together</h3>
+          <p>Suppliers publish what sells the grade, not what decides your formulation. Matterialis predicts the missing values and lets you filter on them. Model-generated values are always marked.</p>
+          <div class="out">You search the properties that matter, not the ones that happen to be printed.</div>
+          <div class="swipe">Swipe the panel to explore<svg class="ic" viewBox="0 0 24 24" style="width:12px;height:12px"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+        </div>
+      </div>
+      <div class="feat feat-flip rv">
+        <div class="feat-shot">
+<div class="scaler"><div class="surface">
+<div class="appbar"><span class="lg"><svg viewBox="0 0 793.256 112.000" role="img" aria-label="Matterialis"><use href="#mtl-logo"/></svg></span>
+<div class="tabs"><span class="tab on">Neighbourhood</span><span class="tab">Results <b>12</b></span><span class="tab">Library <b>200,000+</b></span></div>
+<span class="appbar-right"><span class="chip-chrome">Sector filter &#183; off</span></span>
+</div>
+<div class="screen-body">
+<div class="mk-head">
+<div class="crumb">Search / Nearest materials by behaviour</div>
+<div class="mk-title">
+<div><h4>Sorbitan monostearate, technical grade</h4><div class="mk-sub">AMP-8802 &#183; CAS 1338-41-6 &#183; query material</div></div>
+<div class="figure"><div class="v">12</div><span class="micro">Near neighbours</span></div>
+</div>
+<div class="badges"><span class="badge">Nonionic surfactant</span><span class="badge">HLB 4.7</span><span class="badge">Food &amp; beverage</span></div>
+</div>
+<div class="split">
+<div class="split-main col">
+<div class="reason"><svg viewBox="0 0 24 24"><path d="M12 2l1.7 5.4L19 9l-4.2 3.5 1.4 5.5L12 15.3 7.8 18l1.4-5.5L5 9l5.3-1.6z"/></svg><p>Five of the eight nearest grades are sold into a different industry. Distance from the centre is similarity, so a hollow dot close in is a cross-sector match worth reading.</p></div>
+<div class="mapwrap"><svg class="map" viewBox="0 0 820 300" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+<defs><pattern id="mgrid" width="41" height="41" patternUnits="userSpaceOnUse"><path d="M41 0H0V41" fill="none" stroke="var(--rule-soft)" stroke-width="1"/></pattern></defs>
+<rect x="0" y="0" width="820" height="300" fill="url(#mgrid)"/>
+<ellipse cx="410" cy="150" rx="65" ry="27" fill="none" stroke="var(--chart-5)" stroke-width="1" stroke-dasharray="3 4"/>
+<text x="410" y="135" class="mring" text-anchor="middle">90%</text>
+<ellipse cx="410" cy="150" rx="131" ry="53" fill="none" stroke="var(--chart-5)" stroke-width="1" stroke-dasharray="3 4"/>
+<text x="410" y="109" class="mring" text-anchor="middle">80%</text>
+<ellipse cx="410" cy="150" rx="196" ry="80" fill="none" stroke="var(--chart-5)" stroke-width="1" stroke-dasharray="3 4"/>
+<text x="410" y="82" class="mring" text-anchor="middle">70%</text>
+<circle cx="312" cy="103" r="2.5" fill="var(--chart-5)"/>
+<circle cx="488" cy="182" r="2.5" fill="var(--chart-5)"/>
+<circle cx="340" cy="199" r="2.5" fill="var(--chart-5)"/>
+<circle cx="506" cy="82" r="2.5" fill="var(--chart-5)"/>
+<circle cx="178" cy="170" r="2.5" fill="var(--chart-5)"/>
+<circle cx="677" cy="121" r="2.5" fill="var(--chart-5)"/>
+<circle cx="373" cy="258" r="2.5" fill="var(--chart-5)"/>
+<circle cx="342" cy="178" r="2.5" fill="var(--chart-5)"/>
+<circle cx="309" cy="72" r="2.5" fill="var(--chart-5)"/>
+<circle cx="678" cy="194" r="2.5" fill="var(--chart-5)"/>
+<circle cx="462" cy="49" r="2.5" fill="var(--chart-5)"/>
+<circle cx="457" cy="217" r="2.5" fill="var(--chart-5)"/>
+<line x1="410" y1="150" x2="440" y2="140" stroke="var(--chart-5)" stroke-width="1"/>
+<line x1="410" y1="150" x2="345" y2="162" stroke="var(--chart-5)" stroke-width="1"/>
+<line x1="410" y1="150" x2="314" y2="127" stroke="var(--chart-5)" stroke-width="1"/>
+<line x1="410" y1="150" x2="555" y2="166" stroke="var(--chart-5)" stroke-width="1"/>
+<line x1="410" y1="150" x2="377" y2="74" stroke="var(--chart-5)" stroke-width="1"/>
+<line x1="410" y1="150" x2="616" y2="116" stroke="var(--chart-5)" stroke-width="1"/>
+<line x1="410" y1="150" x2="161" y2="128" stroke="var(--chart-5)" stroke-width="1"/>
+<line x1="410" y1="150" x2="495" y2="257" stroke="var(--chart-5)" stroke-width="1"/>
+<circle cx="440" cy="140" r="6" fill="var(--chart-1)"/>
+<text x="453" y="143" class="mlab" text-anchor="start">1</text>
+<circle cx="345" cy="162" r="6" fill="var(--paper-raised)" stroke="var(--chart-2)" stroke-width="1.6"/>
+<text x="332" y="166" class="mlab" text-anchor="end">2</text>
+<circle cx="314" cy="127" r="6" fill="var(--paper-raised)" stroke="var(--chart-2)" stroke-width="1.6"/>
+<text x="301" y="131" class="mlab" text-anchor="end">3</text>
+<circle cx="555" cy="166" r="6" fill="var(--paper-raised)" stroke="var(--chart-2)" stroke-width="1.6"/>
+<text x="568" y="169" class="mlab" text-anchor="start">4</text>
+<circle cx="377" cy="74" r="6" fill="var(--paper-raised)" stroke="var(--chart-2)" stroke-width="1.6"/>
+<text x="364" y="77" class="mlab" text-anchor="end">5</text>
+<circle cx="616" cy="116" r="6" fill="var(--chart-1)"/>
+<text x="629" y="120" class="mlab" text-anchor="start">6</text>
+<circle cx="161" cy="128" r="6" fill="var(--paper-raised)" stroke="var(--chart-2)" stroke-width="1.6"/>
+<text x="148" y="132" class="mlab" text-anchor="end">7</text>
+<circle cx="495" cy="257" r="6" fill="var(--chart-1)"/>
+<text x="508" y="260" class="mlab" text-anchor="start">8</text>
+<ellipse cx="410" cy="150" rx="15" ry="13" fill="none" stroke="var(--brand-signal)" stroke-width="1.4"/>
+<circle cx="410" cy="150" r="5" fill="var(--brand-signal)"/>
+<text x="410" y="184" class="mq" text-anchor="middle">AMP-8802 &#183; QUERY</text>
+</svg></div>
+<div class="maplegend">
+<span class="mkey"><i class="k-same"></i>Your sector</span>
+<span class="mkey"><i class="k-other"></i>Another sector</span>
+<span class="mkey"><i class="k-q"></i>Query grade</span>
+<span class="mnote">RINGS ARE SIMILARITY, NOT DISTANCE IN ANY ONE PROPERTY</span>
+</div>
+</div>
+<aside class="split-rail">
+<span class="micro">Nearest by similarity</span>
+<dl>
+<div class="kv"><dt><b class="rk">1</b>Sorbitan ester, food grade</dt><dd>94 %</dd></div>
+<div class="kv"><dt><b class="rk">2</b>Polyglyceryl-4 laurate</dt><dd>89 %</dd></div>
+<div class="kv"><dt><b class="rk">3</b>Alkyl polyglucoside C8-10</dt><dd>83 %</dd></div>
+<div class="kv"><dt><b class="rk">4</b>Ethoxylated fatty alcohol</dt><dd>77 %</dd></div>
+<div class="kv"><dt><b class="rk">5</b>Sucrose stearate, HLB 15</dt><dd>71 %</dd></div>
+<div class="kv"><dt><b class="rk">6</b>Lecithin, deoiled</dt><dd>66 %</dd></div>
+<div class="kv"><dt><b class="rk">7</b>Methyl glucose sesquistearate</dt><dd>61 %</dd></div>
+<div class="kv"><dt><b class="rk">8</b>Glyceryl monostearate</dt><dd>58 %</dd></div>
+</dl>
+<span class="micro">Industries in view</span>
+<div class="src"><b>Cosmetics &#183; 3</b>Emulsifiers with the same HLB band.</div>
+<div class="src"><b>Home care &#183; 1</b>Alkyl polyglucoside, cost-competitive.</div>
+<div class="src"><b>Pharma &#183; 1</b>Excipient grade, tighter purity.</div>
+</aside>
+</div>
+</div>
+</div></div>
+        </div>
+        <div class="feat-txt">
+          <span class="micro">02</span>
+          <h3>Move by chemistry, not by catalogue</h3>
+          <p>Move through materials by how they behave, not by keyword or supplier catalogue. Neighbouring grades surface even when they come from an industry you have never bought from: a food-grade ester for a cosmetics problem, a packaging polymer for a membrane.</p>
+          <div class="out">You find the options your catalogue was never going to show you.</div>
+          <div class="swipe">Swipe the panel to explore<svg class="ic" viewBox="0 0 24 24" style="width:12px;height:12px"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+        </div>
+      </div>
+      <div class="feat rv">
+        <div class="feat-shot">
+<div class="scaler"><div class="surface">
+<div class="appbar"><span class="lg"><svg viewBox="0 0 793.256 112.000" role="img" aria-label="Matterialis"><use href="#mtl-logo"/></svg></span>
+<div class="tabs"><span class="tab">Search</span><span class="tab on">Results <b>10</b></span><span class="tab">Library <b>200,000+</b></span></div>
+<span class="appbar-right"><span class="chip-chrome">Under-bonnet bracket</span></span>
+</div>
+<div class="screen-body"><div class="res">
+<div class="res-filter">
+<div class="fh"><span class="micro">Property criteria</span><a>Reset</a></div>
+<div class="finput"><svg class="ic" viewBox="0 0 24 24" style="width:11px;height:11px"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>Search 500+ properties</div>
+<div class="crit"><div class="crit-t"><span>Tensile strength</span><svg class="ic" viewBox="0 0 24 24"><path d="M4 7h16M9 7V4h6v3M6 7l1 13h10l1-13"/></svg></div><div class="crit-r"><span class="op">≥</span><span class="val">60 <i>MPa</i></span></div></div>
+<div class="crit"><div class="crit-t"><span>Max service temp.</span><svg class="ic" viewBox="0 0 24 24"><path d="M4 7h16M9 7V4h6v3M6 7l1 13h10l1-13"/></svg></div><div class="crit-r"><span class="op">≥</span><span class="val">120 <i>°C</i></span></div></div>
+<div class="crit"><div class="crit-t"><span>Water vapour trans.</span><svg class="ic" viewBox="0 0 24 24"><path d="M4 7h16M9 7V4h6v3M6 7l1 13h10l1-13"/></svg></div><div class="crit-r"><span class="op">≤</span><span class="val">5.0 <i>g/m²·d</i></span></div></div>
+<div class="crit"><div class="crit-t"><span>Compliance</span><svg class="ic" viewBox="0 0 24 24"><path d="M4 7h16M9 7V4h6v3M6 7l1 13h10l1-13"/></svg></div><div class="crit-r"><span class="val">RoHS · REACH</span></div></div>
+</div>
+<div class="res-main">
+<div class="res-top"><span class="micro">Ranked results</span><span class="note">Ranked against your criteria</span></div>
+<table class="grid">
+<tr><th>Rank</th><th>Material</th><th>Evidence</th><th>Criteria met</th><th class="r">Tensile</th><th class="r">T max</th><th class="r">WVTR</th><th class="r">Match</th></tr>
+<tr><td class="rk">1</td><td><span class="matname">Polyamide 6, 30% glass fibre<span>AMP-4412 · 25038-54-4</span></span></td><td><span class="ev"><span class="dot dot-strong"></span>Strong</span></td><td><span class="met"><span class="seg"><i class="s"></i><i class="s"></i><i class="s"></i></span><span>3 of 3</span></span></td><td class="r n-ok">165</td><td class="r n-ok">150</td><td class="r n-ok">3.2<sup class="ai">AI</sup></td><td class="r n">94 %</td></tr>
+<tr><td class="rk">2</td><td><span class="matname">Polyamide 66, 35% glass fibre<span>AMP-4680 · 32131-17-2</span></span></td><td><span class="ev"><span class="dot dot-strong"></span>Strong</span></td><td><span class="met"><span class="seg"><i class="s"></i><i class="s"></i><i class="s"></i></span><span>3 of 3</span></span></td><td class="r n-ok">180</td><td class="r n-ok">160</td><td class="r n-ok">3.6</td><td class="r n">91 %</td></tr>
+<tr><td class="rk">3</td><td><span class="matname">Polybutylene terephthalate, 20% GF<span>AMP-3118 · 24968-12-5</span></span></td><td><span class="ev"><span class="dot dot-strong"></span>Strong</span></td><td><span class="met"><span class="seg"><i class="s"></i><i class="s"></i><i class="s"></i></span><span>3 of 3</span></span></td><td class="r n-ok">110</td><td class="r n-ok">140</td><td class="r n-ok">2.4</td><td class="r n">88 %</td></tr>
+<tr><td class="rk">4</td><td><span class="matname">Polyphenylene sulphide, 40% GF<span>AMP-5902 · 26125-40-6</span></span></td><td><span class="ev"><span class="dot dot-strong"></span>Strong</span></td><td><span class="met"><span class="seg"><i class="s"></i><i class="s"></i><i class="s"></i></span><span>3 of 3</span></span></td><td class="r n-ok">190</td><td class="r n-ok">220</td><td class="r n-ok">0.9</td><td class="r n">83 %</td></tr>
+<tr><td class="rk">5</td><td><span class="matname">Copolyester, high-clarity extrusion<span>AMP-1355 · 25038-59-9</span></span></td><td><span class="ev"><span class="dot dot-strong"></span>Strong</span></td><td><span class="met"><span class="seg"><i class="s"></i><i class="s"></i><i class="s"></i></span><span>3 of 3</span></span></td><td class="r n-ok">72</td><td class="r n-ok">120</td><td class="r n-ok">1.8</td><td class="r n">77 %</td></tr>
+<tr><td class="rk">6</td><td><span class="matname">Polycarbonate / ABS, flame-retardant<span>AMP-2207 · 25037-45-0</span></span></td><td><span class="ev"><span class="dot dot-limited"></span>Limited</span></td><td><span class="met"><span class="seg"><i class="l"></i><i class="l"></i><i></i></span><span>2 of 3</span></span></td><td class="r n-ok">62</td><td class="r n-ok">125</td><td class="r n-no">6.8<sup class="ai">AI</sup></td><td class="r n">86 %</td></tr>
+<tr><td class="rk">7</td><td><span class="matname">Polypropylene TPO impact copolymer<span>AMP-0914 · 9010-79-1</span></span></td><td><span class="ev"><span class="dot dot-limited"></span>Limited</span></td><td><span class="met"><span class="seg"><i class="w"></i><i></i><i></i></span><span>1 of 3</span></span></td><td class="r n-no">28</td><td class="r n-no">105</td><td class="r n-ok">1.1</td><td class="r n">74 %</td></tr>
+<tr><td class="rk">8</td><td><span class="matname">High-density polyethylene, injection<span>AMP-0271 · 9002-88-4</span></span></td><td><span class="ev"><span class="dot dot-strong"></span>Strong</span></td><td><span class="met"><span class="seg"><i class="w"></i><i></i><i></i></span><span>1 of 3</span></span></td><td class="r n-no">31</td><td class="r n-no">95</td><td class="r n-ok">0.4</td><td class="r n">68 %</td></tr>
+<tr><td class="rk">9</td><td><span class="matname">Thermoplastic polyurethane, aliphatic 95A<span>AMP-7741 · 9009-54-5</span></span></td><td><span class="ev"><span class="dot dot-limited"></span>Limited</span></td><td><span class="met"><span class="seg"><i></i><i></i><i></i></span><span>0 of 3</span></span></td><td class="r n-no">48</td><td class="r n-no">110</td><td class="r n-no">12.0<sup class="ai">AI</sup></td><td class="r n">79 %</td></tr>
+<tr><td class="rk">10</td><td><span class="matname">Polylactide / PBAT compound<span>AMP-6620 · 9051-89-2</span></span></td><td><span class="ev"><span class="dot dot-weak"></span>Weak</span></td><td><span class="met"><span class="seg"><i></i><i></i><i></i></span><span>0 of 3</span></span></td><td class="r n-no">45</td><td class="r n-no">65</td><td class="r n-no">22.0<sup class="ai">AI</sup></td><td class="r n">71 %</td></tr>
+</table>
+<div class="res-foot"><em>GREEN</em> MEETS THE CRITERION · <b>RED</b> MISSES IT · <sup class="ai">AI</sup> MODEL-GENERATED, NOT MEASURED</div>
+</div>
+</div></div>
+</div></div>
+        </div>
+        <div class="feat-txt">
+          <span class="micro">03</span>
+          <h3>Rank substitutes against every constraint at once</h3>
+          <p>State the constraint instead of hunting the catalogue: property floors, restricted-substance lists, end-use and industry. Every candidate comes back ranked with its trade-off stated, including which numbers are predicted rather than measured. Filtering by region is in development.</p>
+          <div class="out">A shortlist in an afternoon, not a month of datasheets.</div>
+          <div class="swipe">Swipe the panel to explore<svg class="ic" viewBox="0 0 24 24" style="width:12px;height:12px"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+        </div>
+      </div>
+      <div class="feat feat-flip rv">
+        <div class="feat-shot">
+<div class="scaler"><div class="surface">
+<div class="appbar appbar-cw">
+<span class="cw-brand">Claude</span><span class="cw-sub">Cowork</span>
+<span class="appbar-right"><span class="chip-cw"><i></i>matterialis &#183; MCP</span></span>
+</div>
+<div class="screen-body cw">
+<div class="cw-msg cw-user">
+<span class="cw-who">You</span>
+<div class="cw-body"><p>We need to drop AMP-9140 from the barrier film. Has to hold 60 MPa tensile and 120 &#176;C, clear RoHS and REACH, and be sourceable in the UK. What are my options?</p></div>
+</div>
+<div class="cw-msg">
+<span class="cw-who">Claude</span>
+<div class="cw-body">
+<p class="cw-line">Checking the library rather than guessing. Calling the Matterialis server.</p>
+<div class="cw-tool">
+<div class="cw-tool-h"><svg class="ic" viewBox="0 0 24 24" style="width:11px;height:11px"><path d="M4 8l4 4-4 4"/><path d="M11 16h9"/></svg><b>matterialis</b><span>find_substitutes</span><span class="cw-ok">200</span></div>
+<table class="cw-args">
+<tr><td>Incumbent</td><td class="v">AMP-9140</td></tr>
+<tr><td>Tensile, min</td><td class="v">60 MPa</td></tr>
+<tr><td>Service temp, min</td><td class="v">120 &#176;C</td></tr>
+<tr><td>Compliance</td><td class="v">RoHS, REACH</td></tr>
+</table>
+</div>
+<div class="cw-res">
+<div class="cw-res-h"><span class="micro">3 candidates returned</span><span class="note">each with its evidence</span></div>
+<table class="grid">
+<tr><th>Grade</th><th>Evidence</th><th>Criteria</th><th class="r">Tensile</th><th class="r">T max</th><th class="r">Match</th></tr>
+<tr><td><span class="matname">Polyamide 6, 30% GF<span>AMP-4412</span></span></td><td><span class="ev"><span class="dot dot-strong"></span>Strong</span></td><td><span class="met"><span class="seg"><i class="s"></i><i class="s"></i><i class="s"></i></span><span>3 of 3</span></span></td><td class="r n-ok">165</td><td class="r n-ok">150</td><td class="r n">94 %</td></tr>
+<tr><td><span class="matname">PBT, 20% GF<span>AMP-3118</span></span></td><td><span class="ev"><span class="dot dot-strong"></span>Strong</span></td><td><span class="met"><span class="seg"><i class="s"></i><i class="s"></i><i class="s"></i></span><span>3 of 3</span></span></td><td class="r n-ok">110</td><td class="r n-ok">140</td><td class="r n">88 %</td></tr>
+<tr><td><span class="matname">PC / ABS, FR<span>AMP-2207</span></span></td><td><span class="ev"><span class="dot dot-limited"></span>Limited</span></td><td><span class="met"><span class="seg"><i class="l"></i><i class="l"></i><i></i></span><span>2 of 3</span></span></td><td class="r n-ok">62</td><td class="r n-ok">125<sup class="ai">AI</sup></td><td class="r n">86 %</td></tr>
+</table>
+</div>
+<p class="cw-line">Two clear it outright. <b>AMP-4412</b> has the most headroom on both. On <b>AMP-2207</b> the 125 &#176;C is model-generated, not measured, so I would not commit to it without a lab check.</p>
+<p class="cw-cite">Every value carries its status. Predictions stay marked <sup class="ai">AI</sup>.</p>
+</div>
+</div>
+<div class="cw-compose"><span>Ask a follow-up, or tell it which one to take to the lab</span><svg class="ic" viewBox="0 0 24 24" style="width:12px;height:12px"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+</div>
+</div></div>
+        </div>
+        <div class="feat-txt">
+          <span class="micro">04</span>
+          <h3>Connect it to your own AI scientists</h3>
+          <p>An AI assistant is only as good as the data it can reach, and industrial chemistry is not in its training set. Matterialis exposes the same intelligence layer over an MCP server, so Claude and any other MCP client can query grades, properties and substitutes directly, with the evidence attached and every prediction still marked.</p>
+          <div class="out">Your agents stop guessing about materials and start looking them up.</div>
+          <div class="swipe">Swipe the panel to explore<svg class="ic" viewBox="0 0 24 24" style="width:12px;height:12px"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+<!-- ================= USE CASES ================= -->
+<section class="sec" id="cases">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="micro">Customer cases</span>
+      <h2>Six problems customers brought us.</h2>
+      <p class="lede">Every one of them starts with a constraint someone else set: a substance gets restricted, a supply route closes, a spec has to hold. The answer is somewhere in a few hundred datasheets, and nobody has time to read them. Open a case to see how we handle it.</p>
+    </div>
+
+    <div class="ucards">
+      <button class="uc rv" data-case="defence">
+        <span class="uc-media">
+          <span class="uc-plate" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M2 12h3M19 12h3M4.9 19.1L7 17M17 7l2.1-2.1"/></svg><span class="micro">Photography slot &#183; machined components</span></span>
+          <img src="img/defence.jpg" alt="" loading="lazy" decoding="async" onerror="this.remove()">
+        </span>
+        <span class="uc-body">
+          <span class="micro">Defence &#183; UK reshoring</span>
+          <h3>A component has to be made in the UK, and the material comes from Europe</h3>
+          <p>A defence manufacturer needs a cellulose nitrate grade equivalent to one it has bought from mainland Europe for decades.</p>
+          <span class="uc-foot"><span class="uc-open">Open case<svg class="ic" viewBox="0 0 24 24" style="width:12px;height:12px"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span><span class="badge">Reshoring</span></span>
+        </span>
+      </button>
+      <button class="uc self rv" data-case="membranes">
+        <span class="uc-media">
+          <span class="uc-plate" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 8h18M3 12h18M3 16h18" stroke-dasharray="3 3"/></svg><span class="micro on-chrome">Photography slot &#183; membrane macro</span></span>
+          <img src="img/membranes.jpg" alt="" loading="lazy" decoding="async" onerror="this.remove()">
+        </span>
+        <span class="uc-body">
+          <span class="micro">Technical textiles &#183; our own product</span>
+          <h3>A fossil-based polymer has to become bio-based</h3>
+          <p>Amphico builds PFAS-free waterproof membranes. Matterialis was built for this problem first.</p>
+          <span class="uc-foot"><span class="uc-open">Open case<svg class="ic" viewBox="0 0 24 24" style="width:12px;height:12px"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span><span class="badge">Customer zero</span></span>
+        </span>
+      </button>
+      <button class="uc rv" data-case="compounding">
+        <span class="uc-media">
+          <span class="uc-plate" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2l9 5-9 5-9-5 9-5zM3 12l9 5 9-5M3 17l9 5 9-5"/></svg><span class="micro">Photography slot &#183; polymer pellets</span></span>
+          <img src="img/compounding.jpg" alt="" loading="lazy" decoding="async" onerror="this.remove()">
+        </span>
+        <span class="uc-body">
+          <span class="micro">Polymer compounding</span>
+          <h3>The property that decides the part is not on the datasheet</h3>
+          <p>A compounder specifying for high-performance moulding, with no published heat deflection under load.</p>
+          <span class="uc-foot"><span class="uc-open">Open case<svg class="ic" viewBox="0 0 24 24" style="width:12px;height:12px"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span><span class="badge">Property gap</span></span>
+        </span>
+      </button>
+      <button class="uc rv" data-case="cosmetics">
+        <span class="uc-media">
+          <span class="uc-plate" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 3h6v5l3 6v7H6v-7l3-6z"/><path d="M6 16h12"/></svg><span class="micro">Photography slot &#183; gel sample dishes</span></span>
+          <img src="img/cosmetics.jpg" alt="" loading="lazy" decoding="async" onerror="this.remove()">
+        </span>
+        <span class="uc-body">
+          <span class="micro">Cosmetics</span>
+          <h3>The formulation does not clear in the market you want to enter</h3>
+          <p>A formulator holding sensory performance while the restricted-substance list changes.</p>
+          <span class="uc-foot"><span class="uc-open">Open case<svg class="ic" viewBox="0 0 24 24" style="width:12px;height:12px"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span><span class="badge">Market entry</span></span>
+        </span>
+      </button>
+      <button class="uc uc-hidden rv" data-case="food">
+        <span class="uc-media">
+          <span class="uc-plate" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3v18M3 8h18M5 8v11h14V8"/></svg><span class="micro">Photography slot &#183; powder blend</span></span>
+          <img src="img/food.jpg" alt="" loading="lazy" decoding="async" onerror="this.remove()">
+        </span>
+        <span class="uc-body">
+          <span class="micro">Food &amp; beverage</span>
+          <h3>An ingredient has to go, and the deadline is commercial</h3>
+          <p>A developer who needs a shortlist before the reformulation window closes.</p>
+          <span class="uc-foot"><span class="uc-open">Open case<svg class="ic" viewBox="0 0 24 24" style="width:12px;height:12px"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span><span class="badge">Speed</span></span>
+        </span>
+      </button>
+      <button class="uc uc-hidden rv" data-case="pharma">
+        <span class="uc-media">
+          <span class="uc-plate" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M10 3h4v6l4 6v6H6v-6l4-6z"/><path d="M8 15h8"/></svg><span class="micro">Photography slot &#183; sample vials</span></span>
+          <img src="img/pharma.jpg" alt="" loading="lazy" decoding="async" onerror="this.remove()">
+        </span>
+        <span class="uc-body">
+          <span class="micro">Pharmaceutical formulation</span>
+          <h3>The person who makes this call is retiring</h3>
+          <p>One specialist decides which grades reach the shortlist, and none of that reasoning is written down.</p>
+          <span class="uc-foot"><span class="uc-open">Open case<svg class="ic" viewBox="0 0 24 24" style="width:12px;height:12px"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span><span class="badge">Knowledge capture</span></span>
+        </span>
+      </button>
+    </div>
+    <div class="uc-more">
+      <button class="btn btn-secondary" id="morecases" aria-expanded="false">Show 2 more cases</button>
+    </div>
+    <p class="credit" id="credit" hidden>Photography: <span></span></p>
+  </div>
+
+  <!-- case detail source (read by the inspector) -->
+  <div hidden id="case-src">
+    <div data-c="defence" data-role="Defence manufacturing &#183; United Kingdom" data-title="A component has to be made in the UK, and the material comes from Europe">
+      <div data-k="problem"><p>A UK defence manufacturer is bringing component production back onshore. One of the materials is a cellulose nitrate grade it has bought from the same mainland European supplier for decades. It is specified by that supplier&#8217;s own designation rather than by properties, because nobody ever needed to describe it any other way.</p><p>To source it in the UK, someone first has to work out what the grade actually is: nitrogen content, viscosity grade, damping solvent, plasticiser compatibility. Then find who in the country makes something equivalent. Supplier catalogues are organised by supplier, so there is no way to ask that question directly.</p></div>
+      <div data-k="how"><ol><li><b>01</b>Paste the incumbent datasheet. The grade comes back described by what it is rather than by whose catalogue it sits in.</li><li><b>02</b>Set the binding constraints, nitrogen content and viscosity grade, and rank the field by how closely each grade matches. Filtering by region is in development, so for now you narrow the result to UK suppliers yourself.</li><li><b>03</b>The result is equivalent grades ranked by property match, each with the supplier that published it. Where a supplier publishes nothing on a critical property, the gap is named rather than guessed.</li></ol></div>
+      <div data-k="get"><p>A shortlist of grades that hold the specification, with the supplier for each, and a clear list of what still needs testing before qualification. The same query answers supply-risk and dual-sourcing questions, not only reshoring.</p></div>
+    </div>
+    <div data-c="compounding" data-role="Polymer compounder · high-performance moulding" data-title="The property that decides the part is not on the datasheet">
+      <div data-k="problem"><p>You are specifying a grade for a moulded part that has to survive under-bonnet temperatures under load. Tensile and melt flow are on the datasheet. Heat deflection at 1.8 MPa is not, and neither is the shrinkage window that determines whether the part holds tolerance.</p><p>So the options are to email the supplier and wait two weeks per grade, or to buy samples and measure it yourself. That only works once the field is narrowed, which was the problem in the first place.</p></div>
+      <div data-k="how"><ol><li><b>01</b>Paste the incumbent datasheet. The grade comes back described by its properties, its chemistry and its end use, rather than by the catalogue it sits in.</li><li><b>02</b>Set the floor on the property that actually governs the part, whether or not it was published. Predicted values are filterable and marked as predicted.</li><li><b>03</b>Read the shortlist by criteria met, then by similarity. Each candidate states which numbers are measured, which are model-generated, and which still need a lab.</li></ol></div>
+      <div data-k="get"><p>A ranked candidate set with the unknowns named, so the lab list is short and every entry on it is there for a reason.</p></div>
+    </div>
+
+    <div data-c="cosmetics" data-role="Cosmetics formulator · personal care" data-title="The formulation does not clear in the market you want to enter">
+      <div data-k="problem"><p>Commercial has a market. Compliance has a blocker. The usual sequence is that R&amp;D reformulates for performance, compliance reviews the result, something fails, and R&amp;D starts again. Each loop is weeks, and the number of loops is unpredictable because the compliance constraint was never inside the search.</p><p>Localisation compounds it: an ingredient that is compliant and available in Europe but unobtainable in the target region has not solved anything.</p></div>
+      <div data-k="how"><ol><li><b>01</b>Restricted-substance lists for the target market are applied as a hard filter before ranking, so compliance review checks a shortlist that already clears, instead of finding the blocker on the third loop.</li><li><b>02</b>Properties the supplier never published are predicted, so a candidate is not dropped just for leaving a blank on its datasheet.</li><li><b>03</b>Because ingredient lists overlap across a portfolio, the search targets substitutions that resolve several products at once.</li></ol></div>
+      <div data-k="get"><p>A shortlist where every candidate already clears the restricted-substance list for the market you are entering. Matterialis narrows the field; your regulatory function still owns the determination. Filtering by regional availability is in development.</p></div>
+    </div>
+
+    <div data-c="membranes" data-role="Amphico · PFAS-free waterproof membranes" data-title="A fossil-based polymer has to become bio-based">
+      <div data-k="problem"><p>Amphico makes PFAS-free waterproof membranes. Replacing the polyolefin compound in our own product with a bio-based alternative is constrained on three axes at once: it has to hold membrane performance, it has to be bio-based, and it has to be sourceable at volume by a company our size.</p><p>The useful candidates are not in the technical textile supply chain. They are in packaging and biomedical. Those suppliers have no reason to call us, and a membrane engineer has no reason to read their datasheets.</p></div>
+      <div data-k="how"><ol><li><b>01</b>The index is organised by what materials are and do, not by which industry's suppliers sell them, so a packaging polymer surfaces for a membrane problem when it fits.</li><li><b>02</b>Candidates are compared on how they behave, which is what lets a grade sold into packaging be read against a membrane requirement at all.</li><li><b>03</b>Cross-sector candidates carry what the transfer involves: different regulatory status in your application, different grades and purities, different supply structure.</li></ol></div>
+      <div data-k="get"><p>We built Matterialis because we needed it. This work is in progress and we will publish what we find, including what does not work.</p></div>
+    </div>
+
+    <div data-c="food" data-role="Food &amp; beverage · product development" data-title="An ingredient has to go, and the deadline is commercial">
+      <div data-k="problem"><p>An ingredient becomes unavailable, uneconomic, or unacceptable, and the replacement has to hold texture, stability and shelf life without changing the label more than it has to. Screening, before a single physical trial, takes weeks. It is reading a few hundred datasheets by hand.</p></div>
+      <div data-k="how"><ol><li><b>01</b>Screening moves to the index. Property filtering, including on values that were never reported, narrows the candidate set without downloading anything.</li><li><b>02</b>The output separates properties we can predict from properties genuinely unknown. That second list is the lab list.</li><li><b>03</b>Candidates that enter trial have already cleared the property and compliance constraints, so the trials test real uncertainty.</li></ol></div>
+      <div data-k="get"><p>A shortlist in days rather than weeks, and lab time spent on the questions data cannot settle. It does not replace the trial; it decides which trials are worth running.</p></div>
+    </div>
+
+    <div data-c="pharma" data-role="Pharmaceutical formulator · excipients and solid dose" data-title="The person who makes this call is retiring">
+      <div data-k="problem"><p>Excipient selection runs through one person, because only one person can actually do it. The procedure is documentable: build a matrix of target properties, filter a few hundred grades to six or eight, generate data on what nobody reported, then design the trials.</p><p>What is not documentable is which grades enter the matrix at all. That rests on inferences made without writing them down, and reconstructed after the decision, if at all. So a junior scientist learns the procedure and builds a defensible-looking matrix from the wrong candidate set.</p></div>
+      <div data-k="how"><ol><li><b>01</b>The inference layer becomes explicit: a predicted property is marked as predicted, so it can be inspected and disagreed with.</li><li><b>02</b>Constraints that used to be applied silently (qualification complexity, acceptable property trade-offs, prior familiarity with a supplier) become parameters you can review and reuse.</li><li><b>03</b>Every shortlist exports as a rationale: constraints applied, candidates rejected and why, values relied on and how confident, properties still to measure.</li></ol></div>
+      <div data-k="get"><p>A shortlist a junior scientist can defend in review, and a specialist who audits the reasoning rather than redoing the work. The judgement stays with your expert; it stops being the throughput limit.</p></div>
+    </div>
+  </div>
+
+  <!-- inspector -->
+  <div class="scrim" id="scrim"></div>
+  <aside class="insp" id="insp" role="dialog" aria-modal="true" aria-labelledby="insp-title" tabindex="-1">
+    <div class="insp-bar">
+      <span class="micro" id="insp-eyebrow">Business case</span>
+      <button class="insp-close" id="insp-close" aria-label="Close">
+        <svg class="ic" viewBox="0 0 24 24" style="width:13px;height:13px"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+    <div class="insp-scroll">
+      <div class="insp-hero">
+        <span class="micro" id="insp-role"></span>
+        <h2 id="insp-title"></h2>
+      </div>
+      <div class="insp-block"><span class="micro">The problem</span><div id="insp-problem"></div></div>
+      <div class="insp-block"><span class="micro">How Matterialis handles it</span><ol class="steplist" id="insp-how"></ol></div>
+      <div class="insp-block"><span class="micro">What you get</span><div id="insp-get"></div></div>
+    </div>
+    <div class="insp-foot">
+      <a class="btn btn-primary" href="https://calendar.app.google/LcwtFTNrrVFJnGiz9" target="_blank" rel="noopener">Book a demo</a>
+      <a class="btn btn-secondary" href="#contact">Contact us</a>
+    </div>
+  </aside>
+</section>
+
+<hr class="rule">
+
+<!-- ================= COMPARISON ================= -->
+<section class="sec" id="compare">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="micro">Where we differ</span>
+      <h2>They index datasheets. We model the material.</h2>
+      <p class="lede">That is the whole difference.</p>
+    </div>
+
+    <div class="cmp-scroll rv">
+      <div class="cmp">
+        <div class="cmp-row cmp-head">
+          <div class="cmp-cell cmp-what"><span class="micro">Capability</span></div>
+          <div class="cmp-cell cmp-us"><span class="cmp-logo"><svg viewBox="0 0 793.256 112.000" role="img" aria-label="Matterialis"><use href="#mtl-logo"/></svg></span><span class="micro">A model</span></div>
+          <div class="cmp-cell"><span class="cmp-logo l-ul"><img src="img/logos/ul-prospector.png" alt="UL Prospector"><span class="cmp-name">UL Prospector</span></span><span class="micro">An index</span></div>
+          <div class="cmp-cell"><span class="cmp-logo l-knowde"><img src="img/logos/knowde.png" alt="Knowde"><span class="cmp-name">Knowde</span></span><span class="micro">A marketplace</span></div>
+          <div class="cmp-cell"><span class="cmp-logo l-specialchem"><img src="img/logos/specialchem.png" alt="SpecialChem"><span class="cmp-name">SpecialChem</span></span><span class="micro">An index</span></div>
+          <div class="cmp-cell"><span class="cmp-logo l-matweb"><img src="img/logos/matweb.png" alt="MatWeb"><span class="cmp-name">MatWeb</span></span><span class="micro">A property database</span></div>
+        </div>
+
+        <div class="cmp-row">
+          <div class="cmp-cell cmp-what"><h3>Properties nobody published</h3></div>
+          <div class="cmp-cell cmp-us"><span class="mark full"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 12.5l5 5 10-11"/></svg><span class="vh">Yes</span></span></div>
+          <div class="cmp-cell"><span class="mark none"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 6.5l11 11M17.5 6.5l-11 11"/></svg><span class="vh">No</span></span></div>
+          <div class="cmp-cell"><span class="mark part"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/></svg><span class="vh">Partly</span></span></div>
+          <div class="cmp-cell"><span class="mark none"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 6.5l11 11M17.5 6.5l-11 11"/></svg><span class="vh">No</span></span></div>
+          <div class="cmp-cell"><span class="mark none"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 6.5l11 11M17.5 6.5l-11 11"/></svg><span class="vh">No</span></span></div>
+        </div>
+
+        <div class="cmp-row">
+          <div class="cmp-cell cmp-what"><h3>Filtering by property value</h3></div>
+          <div class="cmp-cell cmp-us"><span class="mark full"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 12.5l5 5 10-11"/></svg><span class="vh">Yes</span></span></div>
+          <div class="cmp-cell"><span class="mark full"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 12.5l5 5 10-11"/></svg><span class="vh">Yes</span></span></div>
+          <div class="cmp-cell"><span class="mark part"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/></svg><span class="vh">Partly</span></span></div>
+          <div class="cmp-cell"><span class="mark full"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 12.5l5 5 10-11"/></svg><span class="vh">Yes</span></span></div>
+          <div class="cmp-cell"><span class="mark full"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 12.5l5 5 10-11"/></svg><span class="vh">Yes</span></span></div>
+        </div>
+
+        <div class="cmp-row">
+          <div class="cmp-cell cmp-what"><h3>Substitutes ranked against your constraints</h3></div>
+          <div class="cmp-cell cmp-us"><span class="mark full"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 12.5l5 5 10-11"/></svg><span class="vh">Yes</span></span></div>
+          <div class="cmp-cell"><span class="mark part"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/></svg><span class="vh">Partly</span></span></div>
+          <div class="cmp-cell"><span class="mark part"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/></svg><span class="vh">Partly</span></span></div>
+          <div class="cmp-cell"><span class="mark part"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/></svg><span class="vh">Partly</span></span></div>
+          <div class="cmp-cell"><span class="mark part"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/></svg><span class="vh">Partly</span></span></div>
+        </div>
+
+        <div class="cmp-row">
+          <div class="cmp-cell cmp-what"><h3>Equivalents from outside your sector</h3></div>
+          <div class="cmp-cell cmp-us"><span class="mark full"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 12.5l5 5 10-11"/></svg><span class="vh">Yes</span></span></div>
+          <div class="cmp-cell"><span class="mark none"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 6.5l11 11M17.5 6.5l-11 11"/></svg><span class="vh">No</span></span></div>
+          <div class="cmp-cell"><span class="mark none"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 6.5l11 11M17.5 6.5l-11 11"/></svg><span class="vh">No</span></span></div>
+          <div class="cmp-cell"><span class="mark none"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 6.5l11 11M17.5 6.5l-11 11"/></svg><span class="vh">No</span></span></div>
+          <div class="cmp-cell"><span class="mark none"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 6.5l11 11M17.5 6.5l-11 11"/></svg><span class="vh">No</span></span></div>
+        </div>
+
+        <div class="cmp-row">
+          <div class="cmp-cell cmp-what"><h3>An MCP server for your own AI agents</h3></div>
+          <div class="cmp-cell cmp-us"><span class="mark full"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 12.5l5 5 10-11"/></svg><span class="vh">Yes</span></span></div>
+          <div class="cmp-cell"><span class="mark none"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 6.5l11 11M17.5 6.5l-11 11"/></svg><span class="vh">No</span></span></div>
+          <div class="cmp-cell"><span class="mark none"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 6.5l11 11M17.5 6.5l-11 11"/></svg><span class="vh">No</span></span></div>
+          <div class="cmp-cell"><span class="mark none"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 6.5l11 11M17.5 6.5l-11 11"/></svg><span class="vh">No</span></span></div>
+          <div class="cmp-cell"><span class="mark none"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 6.5l11 11M17.5 6.5l-11 11"/></svg><span class="vh">No</span></span></div>
+        </div>
+      </div>
+    </div>
+
+    <p class="swipe cmp-swipe" id="cmpswipe" hidden>Swipe the table to compare<svg class="ic" viewBox="0 0 24 24" style="width:12px;height:12px"><path d="M5 12h14M13 6l6 6-6 6"/></svg></p>
+
+    <p class="cmp-note rv">From public product information, August 2026. We compare what each platform is built to do, not how well it does it. <a href="#contact">Tell us</a> if we have anything wrong.</p>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- ================= TRUST ================= -->
+<section class="sec" id="trust">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="micro">Trust</span>
+      <h2>Why you can trust it.</h2>
+      <p class="lede">Research behind the method, a team that does both halves of the problem, and a product of our own that depends on it.</p>
+    </div>
+
+    <div class="tlist rv">
+      <div class="trow">
+        <div class="trow-k">
+          <svg viewBox="0 0 24 24"><path d="M4 4h11l5 5v11H4z"/><path d="M15 4v5h5"/><path d="M8 13h8M8 17h5"/></svg>
+          <span class="micro">Research</span>
+        </div>
+        <div>
+          <h3>The science is written up, and the method is patent pending.</h3>
+          <p>Our work on how to represent a material is under review at NeurIPS AI4Science, one of the main machine-learning research conferences, and the method is patent pending. We will publish the paper once it clears review, so your own technical people can read how it works rather than take a claim on trust. The corpus and the property models are ours.</p>
+        </div>
+      </div>
+      <div class="trow">
+        <div class="trow-k">
+          <svg viewBox="0 0 24 24"><path d="M12 3l9 5-9 5-9-5 9-5z"/><path d="M21 12v5c0 1-4 3-9 3s-9-2-9-3v-5"/></svg>
+          <span class="micro">Team</span>
+        </div>
+        <div>
+          <h3>Built by a team from IBM Research and the University of Cambridge.</h3>
+          <p>Machine learning research and materials science in the same building. The credibility sits in the team rather than in an advisory board.</p>
+          <div class="orglogos">
+            <span class="orglogo l-ibm"><img src="img/logos/ibm.png" alt="IBM"><span class="orgname">IBM Research</span></span>
+            <span class="orglogo l-camb"><img src="img/logos/cambridge.png" alt="University of Cambridge"><span class="orgname">University of Cambridge</span></span>
+          </div>
+        </div>
+      </div>
+      <div class="trow">
+        <div class="trow-k">
+          <svg viewBox="0 0 24 24"><path d="M9 3h6v5l3 6v7H6v-7l3-6z"/><path d="M6 16h12"/></svg>
+          <span class="micro">Origin</span>
+        </div>
+        <div>
+          <h3>We built it for our own product first.</h3>
+          <p>Amphico makes PFAS-free waterproof membranes. Matterialis exists because we had a reformulation problem and the available tools could not help with it. We still use it for that, which is why the limits are stated as plainly as the capabilities.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="datapanel rv">
+      <span class="micro">Your data</span>
+      <h3>You get value without giving us your proprietary data.</h3>
+      <p>By default, none of your proprietary data is required and none of it is stored. Matterialis is trained on public and licensed industrial documentation, so search, prediction and substitute ranking all work without you uploading a single internal document.</p>
+      <span class="micro dtiers-label">Product offerings</span>
+      <div class="dtiers">
+        <div class="dtier">
+          <h4>Standard</h4>
+          <p class="dtier-line">You upload nothing.</p>
+          <p>Everything on this page works against the public index alone.</p>
+        </div>
+        <div class="dtier">
+          <h4>Enterprise</h4>
+          <p class="dtier-line">Standard, plus your own data.</p>
+          <p>Add your formulations and historical results to gain intelligence from them too. Your workspace stays isolated and is never used to train shared models.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- ================= FAQ ================= -->
+<section class="sec" id="faq">
+  <div class="wrap">
+    <div class="sec-head rv"><span class="micro">FAQ</span><h2>The questions we get.</h2></div>
+    <div class="faq">
+      <details open>
+        <summary>I already use ChatGPT to find materials. How is this better?</summary>
+        <div class="a">
+          <p>For one project, with datasheets you have already downloaded, a general model reads and compares them well. Three things it cannot do: search grades you never downloaded, return a property value that appears in none of the source documents, or give you the same answer twice.</p>
+          <p>Matterialis is not a chat wrapper over a search index. It is a model trained on more than 200,000 material grades, with 500+ properties underneath every query. <strong>Predicted values arrive marked as predicted</strong>, and a general model has nothing to predict from.</p>
+        </div>
+      </details>
+      <details>
+        <summary>How is this different from UL Prospector or a supplier database?</summary>
+        <div class="a"><p>Those are static databases: they return what suppliers chose to report. Matterialis is an intelligence layer built on that kind of data — predicting unreported properties, ranking by material relationship rather than keyword, and applied to reformulation, innovation and R&amp;D problems rather than lookups.</p></div>
+      </details>
+      <details>
+        <summary>What will it not do?</summary>
+        <div class="a">
+          <p>It will not run your experiments; it decides which are worth running. It will not tell you how a finished formulation performs, because it works at grade level. It will not replace design of experiments or the lab, only shorten the list going into both. And it will not hide uncertainty — predictions we are unsure of are marked as values to measure.</p>
+          <p>Interaction-order prediction is the harder problem and it is next. It is not today's claim.</p>
+        </div>
+      </details>
+      <details>
+        <summary>How do I know a predicted value is right?</summary>
+        <div class="a"><p>You do not take it on faith. Every predicted value is labelled as model-generated everywhere it appears. Measured and predicted numbers are never mixed silently.</p></div>
+      </details>
+      <details>
+        <summary>Is our data used to train your models?</summary>
+        <div class="a"><p>No. By default you upload nothing and we store nothing. On the Enterprise subscription you can add your own data to gain intelligence from it; that workspace stays isolated and is never used to train shared models.</p></div>
+      </details>
+      <details>
+        <summary>Who built it?</summary>
+        <div class="a"><p>A team from IBM Research and the University of Cambridge, inside Amphico. The method is under review for the NeurIPS AI4Science programme and patent pending.</p></div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CTA ================= -->
+<section class="cta" id="contact">
+  <div class="wrap">
+    <span class="micro">Get started</span>
+    <h2>Bring us a problem you are working on.</h2>
+    <p class="lede">We will show you what the platform does with it. Three ways people start:</p>
+    <div class="opts">
+      <div class="opt"><span class="opt-head"><svg class="opt-ic" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="13" rx="2"/><path d="M8 21h8M12 17v4"/><path d="m10 8 4 2.5-4 2.5z"/></svg><span class="micro">01</span></span><h4>A live demo</h4><p>Walked through on your own material class, not a canned example.</p></div>
+      <div class="opt"><span class="opt-head"><svg class="opt-ic" viewBox="0 0 24 24"><path d="M4 4h11l5 5v11H4z"/><path d="M15 4v5h5"/><path d="M8 14h3M8 17h6"/><path d="m8 11 1.5 1.5L13 9"/></svg><span class="micro">02</span></span><h4>A substitute report</h4><p>Ranked replacements for a specific constraint, with trade-offs stated. Bring one you have already solved and compare.</p></div>
+      <div class="opt"><span class="opt-head"><svg class="opt-ic" viewBox="0 0 24 24"><path d="M3 20V10M9 20V4M15 20v-7M21 20v-4"/><path d="M2 20h20"/></svg><span class="micro">03</span></span><h4>A property gap analysis</h4><p>What we can fill in for the grades you are already evaluating.</p></div>
+    </div>
+    <div class="hero-cta">
+      <a class="btn btn-on-chrome btn-lg" href="https://calendar.app.google/LcwtFTNrrVFJnGiz9" target="_blank" rel="noopener">Book a demo</a>
+      <a class="btn btn-ghost-chrome btn-lg" href="mailto:j.orri@amphico.uk">Contact us</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot">
+    <svg viewBox="0 0 793.256 112.000" role="img" aria-label="Matterialis"><use href="#mtl-logo"/></svg>
+    <span class="m">by Amphico</span>
+    <nav>
+      <a href="#product">Product</a>
+      <a href="#trust">Research</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+  </div>
+</footer>
+
+<script src="img/credits.js" onerror="void 0"></script>
+<script>
+(function(){
+  var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* reveal */
+  var rv = document.querySelectorAll('.rv');
+  if('IntersectionObserver' in window && !reduce){
+    var ro = new IntersectionObserver(function(es){
+      es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); ro.unobserve(e.target); } });
+    },{threshold:.1, rootMargin:'0px 0px -6% 0px'});
+    rv.forEach(function(el){ ro.observe(el); });
+  } else { rv.forEach(function(el){ el.classList.add('in'); }); }
+
+  /* ---- product section: scale each mock to its own column ----
+     Each mock is authored at a fixed 1180px and transform-scaled to whatever
+     width its row gives it. That is all that is left of what used to be here:
+     the pinned-mock version needed a scroll handler, a nearest-to-centre
+     chooser with a dead band, and a function that moved mocks between parents
+     on resize. Rows that sit next to their own copy need none of it.
+
+     Below 1080px the mocks are not scaled at all — they keep 1180px inside a
+     horizontal scroller, because a width-fit scale at phone widths lands
+     around 0.33 and the tables become unreadable. */
+  function fit(){
+    if(innerWidth <= 1080){
+      document.querySelectorAll('.scaler').forEach(function(el){ el.style.transform = ''; });
+      return;
+    }
+    document.querySelectorAll('.feat-shot').forEach(function(shot){
+      var w = shot.clientWidth; if(!w) return;
+      var sc = shot.querySelector('.scaler');
+      if(sc) sc.style.transform = 'scale(' + (w / 1180) + ')';
+    });
+  }
+  fit();
+  addEventListener('resize', fit);
+  /* the mock height depends on the scale, and the scale depends on a layout
+     that shifts once the webfonts land */
+  if(document.fonts && document.fonts.ready) document.fonts.ready.then(fit);
+
+  /* Third-party logo slots — compare header and team credit — fall back to the
+     text name sitting beside the image. Both must read correctly whether or not
+     img/logos/ has been populated, so nothing here is load-bearing. */
+  [].slice.call(document.querySelectorAll('.cmp-logo img, .orglogo img')).forEach(function(img){
+    function fail(){
+      var slot = img.parentNode;
+      if(slot) slot.classList.add('nologo');
+      img.remove();
+    }
+    img.addEventListener('error', fail);
+    /* this script is at the foot of the document, so a missing file has very
+       likely already errored by the time we get here and the event is long
+       gone. Catch that case explicitly rather than waiting for one that will
+       never fire. */
+    if(img.complete && !img.naturalWidth) fail();
+  });
+
+  /* the comparison table keeps its columns and scrolls; only offer the swipe
+     hint when it actually overflows */
+  var cmpScroll = document.querySelector('.cmp-scroll'), cmpSwipe = document.getElementById('cmpswipe');
+  function cmpHint(){
+    if(!cmpScroll || !cmpSwipe) return;
+    cmpSwipe.hidden = cmpScroll.scrollWidth <= cmpScroll.clientWidth + 1;
+  }
+  cmpHint();
+  addEventListener('resize', cmpHint);
+
+  /* library counter */
+  var c = document.querySelector('[data-count]');
+  if(c && 'IntersectionObserver' in window && !reduce){
+    var co = new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        if(!e.isIntersecting) return;
+        var end = +c.getAttribute('data-count'), t0 = null;
+        function tick(t){
+          if(!t0) t0 = t;
+          var p = Math.min((t-t0)/1000,1), k = 1-Math.pow(1-p,3);
+          c.textContent = Math.round(end*k).toLocaleString('en-GB') + (p===1 ? '+' : '');
+          if(p<1) requestAnimationFrame(tick);
+        }
+        requestAnimationFrame(tick); co.unobserve(c);
+      });
+    },{threshold:.6});
+    co.observe(c);
+  } else if(c){ c.textContent = '200,000+'; }
+
+  /* hero query cycling */
+  var typed = document.getElementById('typed');
+  if(typed && !reduce){
+    var words = ['non-ionic emulsifier','bio-based membrane polymer','cadmium-free green pigment','low-VOC binder','PFAS-free repellent'];
+    var wi = 0, ci = words[0].length, dir = -1;
+    (function step(){
+      var w = words[wi];
+      ci += dir;
+      typed.textContent = w.slice(0, ci);
+      if(dir === -1 && ci === 0){ dir = 1; wi = (wi+1) % words.length; }
+      else if(dir === 1 && ci === words[wi].length){ dir = -1; return void setTimeout(step, 2400); }
+      setTimeout(step, dir === 1 ? 50 : 25);
+    })();
+  }
+
+  /* ---- inspector panel for business cases ---- */
+  var insp = document.getElementById('insp'), scrim = document.getElementById('scrim'),
+      src = document.getElementById('case-src'), lastFocus = null;
+  function open(key, trigger){
+    var node = src.querySelector('[data-c="' + key + '"]');
+    if(!node) return;
+    lastFocus = trigger || null;
+    document.getElementById('insp-role').textContent = node.getAttribute('data-role');
+    document.getElementById('insp-title').textContent = node.getAttribute('data-title');
+    document.getElementById('insp-problem').innerHTML = node.querySelector('[data-k="problem"]').innerHTML;
+    document.getElementById('insp-how').innerHTML = node.querySelector('[data-k="how"] ol').innerHTML;
+    document.getElementById('insp-get').innerHTML = node.querySelector('[data-k="get"]').innerHTML;
+    insp.classList.add('on'); scrim.classList.add('on');
+    document.body.style.overflow = 'hidden';
+    insp.focus();
+  }
+  function close(){
+    insp.classList.remove('on'); scrim.classList.remove('on');
+    document.body.style.overflow = '';
+    if(lastFocus) lastFocus.focus();
+  }
+  document.querySelectorAll('.uc').forEach(function(b){
+    b.addEventListener('click', function(){ open(b.getAttribute('data-case'), b); });
+  });
+  document.getElementById('insp-close').addEventListener('click', close);
+  scrim.addEventListener('click', close);
+  addEventListener('keydown', function(e){ if(e.key === 'Escape' && insp.classList.contains('on')) close(); });
+
+  /* FAQ — one open at a time */
+  var dets = [].slice.call(document.querySelectorAll('.faq details'));
+  dets.forEach(function(d){
+    d.addEventListener('toggle', function(){
+      if(!d.open) return;
+      dets.forEach(function(o){ if(o !== d) o.open = false; });
+    });
+  });
+
+  /* use cases — reveal the rest */
+  var more = document.getElementById('morecases');
+  if(more) more.addEventListener('click', function(){
+    var open = more.getAttribute('aria-expanded') === 'true';
+    document.querySelectorAll('.uc-hidden').forEach(function(c){
+      c.classList.toggle('shown', !open);
+      if(!open) c.classList.add('in');
+    });
+    more.setAttribute('aria-expanded', String(!open));
+    more.textContent = open ? 'Show 2 more cases' : 'Show fewer cases';
+  });
+
+  /* photo credits — populated by img/credits.js once the images are in place */
+  if(window.MATTERIALIS_CREDITS && window.MATTERIALIS_CREDITS.length){
+    var cr = document.getElementById('credit');
+    if(cr){
+      cr.hidden = false;
+      cr.querySelector('span').innerHTML = window.MATTERIALIS_CREDITS.map(function(c){
+        return '<a href="' + c.photographer_url + '?utm_source=matterialis&utm_medium=referral" target="_blank" rel="noopener">' + c.photographer + '</a>';
+      }).join(', ') + ' on <a href="https://unsplash.com/?utm_source=matterialis&utm_medium=referral" target="_blank" rel="noopener">Unsplash</a>';
+    }
+  }
+
+  /* mobile menu */
+  var t = document.getElementById('navtoggle'), links = document.querySelector('.nav-links');
+  if(t) t.addEventListener('click', function(){
+    var open = links.style.display === 'flex';
+    links.style.display = open ? '' : 'flex';
+    links.style.cssText += open ? '' : 'position:absolute;top:56px;left:0;right:0;background:var(--chrome);flex-direction:column;align-items:flex-start;gap:0;padding:6px 20px 12px;border-bottom:1px solid var(--chrome-line);height:auto';
+  });
+
+  /* nav section highlight */
+  var secs = ['product','cases','compare','trust','faq'];
+  if('IntersectionObserver' in window){
+    var no = new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        if(!e.isIntersecting) return;
+        document.querySelectorAll('.nav-links a').forEach(function(a){
+          a.classList.toggle('on', a.getAttribute('href') === '#' + e.target.id);
+        });
+      });
+    },{threshold:.01, rootMargin:'-45% 0px -50% 0px'});
+    secs.forEach(function(id){ var el = document.getElementById(id); if(el) no.observe(el); });
+  }
+})();
+</script>
+
+<!-- ================= ANALYTICS — page instrumentation =================
+     Reading depth, product-claim dwell, intent clicks, exit point.
+     Deliberately self-contained: it reads the DOM and listens, and the
+     behaviour script above knows nothing about it. Delete this block and the
+     page is byte-for-byte unchanged in behaviour. -->
+<script>
+(function(){
+  var t = window.mtl; if(!t) return;
+  var IDLE = (window.MTL_ANALYTICS || {}).idleMs || 30000;
+
+  function list(pairs){
+    return pairs.map(function(p){ return {name:p[0], el:document.querySelector(p[1])}; })
+                .filter(function(s){ return s.el; });
+  }
+
+  /* Top-level sections, plus the four product claims as a second, finer
+     track. Exactly one entry in each list owns the viewport centre at any
+     moment, so engaged time sums cleanly instead of double-counting the
+     overlaps. Nearest-to-centre rather than an IntersectionObserver, for the
+     same reason the product rail used to avoid one: a narrow band can miss a
+     section outright on a fast scroll. */
+  var SECTIONS = list([
+    ['hero','#top'], ['proof','.proof'], ['product','#product'], ['cases','#cases'],
+    ['compare','#compare'], ['trust','#trust'], ['faq','#faq'], ['cta','#contact']
+  ]);
+  var FEATS = [].slice.call(document.querySelectorAll('#product .feat')).map(function(el, i){
+    var h = el.querySelector('.feat-txt h3');
+    return { name:'claim_' + (i + 1), el:el, title:h ? h.textContent.trim() : '' };
+  });
+
+  var read = {}, claim = {}, hit = {}, path = [];
+  var cur = null, curClaim = null, mark = Date.now(), act = Date.now(), depth = 0;
+
+  function awake(){ return !document.hidden && (Date.now() - act) < IDLE; }
+
+  function owner(items){
+    var mid = innerHeight / 2, best = null, bestD = Infinity;
+    for(var i = 0; i < items.length; i++){
+      var r = items[i].el.getBoundingClientRect();
+      if(r.top <= mid && r.bottom >= mid) return items[i];
+      var d = Math.min(Math.abs(r.top - mid), Math.abs(r.bottom - mid));
+      if(d < bestD){ bestD = d; best = items[i]; }
+    }
+    return best;
+  }
+
+  function sample(){
+    var now = Date.now(), dt = (now - mark) / 1000;
+    mark = now;
+    /* dt is capped as well as gated: a laptop waking from sleep hands back a
+       gap of hours that was never reading time */
+    if(awake() && dt > 0 && dt < 30){
+      if(cur){
+        read[cur] = (read[cur] || 0) + dt;
+        /* one live event per section as it crosses 10s. Sent now rather than
+           at exit because unload delivery is best-effort, and this is the
+           signal worth being certain of. */
+        if(read[cur] >= 10 && !hit[cur]){
+          hit[cur] = 1;
+          t.track('section_read', { section:cur, engaged_seconds:Math.round(read[cur]) });
+        }
+      }
+      if(curClaim){
+        var n = curClaim.name;
+        claim[n] = (claim[n] || 0) + dt;
+        if(claim[n] >= 8 && !hit[n]){
+          hit[n] = 1;
+          t.track('product_claim_read', {
+            claim:n, title:curClaim.title, engaged_seconds:Math.round(claim[n])
+          });
+        }
+      }
+    }
+    var s = owner(SECTIONS);
+    cur = s ? s.name : null;
+    if(cur && path[path.length - 1] !== cur) path.push(cur);
+    curClaim = (cur === 'product' && FEATS.length) ? owner(FEATS) : null;
+
+    var sh = document.documentElement.scrollHeight || 1;
+    var d = Math.min(100, Math.round((pageYOffset + innerHeight) / sh * 100));
+    if(d > depth) depth = d;
+  }
+
+  var ticking = false;
+  addEventListener('scroll', function(){
+    act = Date.now();
+    if(ticking) return;
+    ticking = true;
+    requestAnimationFrame(function(){ sample(); ticking = false; });
+  }, {passive:true});
+  ['pointerdown','pointermove','keydown','touchstart'].forEach(function(e){
+    addEventListener(e, function(){ act = Date.now(); }, {passive:true});
+  });
+  /* time has to accrue while someone reads without scrolling, too */
+  setInterval(sample, 1000);
+  sample();
+
+  /* ---- use-case inspector ----
+     Watched rather than hooked: the panel closes four different ways (button,
+     scrim, Escape, and whatever gets added next) and the class is the one
+     thing all of them change. */
+  var insp = document.getElementById('insp');
+  var caseKey = null, caseAt = 0;
+  document.addEventListener('click', function(e){
+    var b = e.target.closest && e.target.closest('.uc[data-case]');
+    if(b) caseKey = b.getAttribute('data-case');
+  }, true);
+  if(insp && window.MutationObserver){
+    var wasOpen = false;
+    new MutationObserver(function(){
+      var open = insp.classList.contains('on');
+      if(open === wasOpen) return;
+      wasOpen = open;
+      if(open){
+        caseAt = Date.now();
+        t.track('use_case_opened', { case:caseKey || 'unknown' });
+      } else if(caseAt){
+        t.track('use_case_closed', {
+          case:caseKey || 'unknown',
+          seconds_open:Math.round((Date.now() - caseAt) / 1000)
+        });
+        caseAt = 0;
+      }
+    }).observe(insp, {attributes:true, attributeFilter:['class']});
+  }
+
+  /* ---- objections ----
+     Which question they open says more about the deal than anything else on
+     the page: the data-and-training question means a security review is
+     coming, "who built it" means they are still deciding if we are real. */
+  [].slice.call(document.querySelectorAll('.faq details')).forEach(function(d){
+    d.addEventListener('toggle', function(){
+      if(!d.open) return;
+      var q = d.querySelector('summary');
+      t.track('faq_opened', { question:q ? q.textContent.trim() : '' });
+    });
+  });
+
+  var more = document.getElementById('morecases');
+  if(more) more.addEventListener('click', function(){
+    /* capture phase, so aria-expanded is still the pre-click state */
+    t.track('more_cases_clicked', { expanded:more.getAttribute('aria-expanded') !== 'true' });
+  }, true);
+
+  /* Where a CTA was clicked matters more than what it said: the same "Book a
+     demo" in the nav and at the foot of the page are different levels of
+     conviction. */
+  function place(el){
+    var s = el.closest ? el.closest('section[id], header[id], footer, nav') : null;
+    return s ? (s.id || s.tagName.toLowerCase()) : 'unknown';
+  }
+  document.addEventListener('click', function(e){
+    var a = e.target.closest && e.target.closest('a[href]');
+    if(!a) return;
+    var href = a.getAttribute('href') || '';
+    /* Booking runs on a Google Calendar appointment page. Match the host
+       explicitly: this test is the only thing that turns a "Book a demo"
+       click into a cta_click, so changing the booking provider without
+       adding its host here loses every demo click, silently. Calendly is
+       kept in the list so a switch back cannot break it either. */
+    var booking = /calendar\.app\.google|calendly\.com/i;
+    if(/^mailto:/i.test(href) || booking.test(href)){
+      t.track('cta_click', {
+        kind:/^mailto:/i.test(href) ? 'contact' : 'demo',
+        location:place(a),
+        label:(a.textContent || '').trim().slice(0, 40)
+      });
+    } else if(href.charAt(0) === '#' && href.length > 1){
+      t.track('nav_click', { to:href.slice(1), location:place(a) });
+    }
+  }, true);
+
+  /* did they read across the competitor columns, or only ours */
+  var cmp = document.querySelector('.cmp-scroll');
+  if(cmp){
+    var swiped = false;
+    cmp.addEventListener('scroll', function(){
+      if(swiped || cmp.scrollLeft <= 40) return;
+      swiped = true;
+      t.track('compare_scrolled', {});
+    }, {passive:true});
+  }
+
+  /* ---- the exit point ----
+     visibilitychange, not unload: pagehide and unload drop silently on mobile
+     Safari, and sendBeacon survives the page going away. Per-section seconds
+     go out as flat properties so they chart without unpacking anything. */
+  var sent = false;
+  function exit(){
+    if(sent) return;
+    sent = true;
+    sample();
+    var total = 0, deepest = null, most = 0;
+    Object.keys(read).forEach(function(k){
+      total += read[k];
+      if(read[k] > most){ most = read[k]; deepest = k; }
+    });
+    var p = {
+      last_section:cur,
+      most_read_section:deepest,
+      section_path:path.join(' > '),
+      sections_read:Object.keys(read).filter(function(k){ return read[k] >= 3; }).length,
+      max_depth_pct:depth,
+      total_engaged_seconds:Math.round(total)
+    };
+    SECTIONS.forEach(function(s){ p['read_' + s.name] = Math.round(read[s.name] || 0); });
+    FEATS.forEach(function(f){ p['read_' + f.name] = Math.round(claim[f.name] || 0); });
+    t.track('page_exit', p, true);
+  }
+  addEventListener('visibilitychange', function(){ if(document.hidden) exit(); });
+  addEventListener('pagehide', exit);
+})();
+</script>
+</body>
+</html>

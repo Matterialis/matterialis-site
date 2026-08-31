@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Matterialis — Future Labs Live USA 2026</title>
+<meta name="description" content="A foundation model for industrial materials. Enriches datasheets with properties nobody published, and ranks substitute grades against every constraint.">
+<!-- This URL is printed on one thing only: the stand SU19 panel. Traffic here IS
+     the booth attribution, so it must not leak into search results and be diluted
+     by anyone else. Do not publish the URL anywhere else either. -->
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="/img/brand/materialis-favicon.ico">
+<link rel="apple-touch-icon" href="/img/brand/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@500&display=swap" rel="stylesheet">
+
+<!-- ============================================================
+     ANALYTICS — PostHog (EU), project "Matterialis" · id 105300
+     https://eu.posthog.com/project/105300
+
+     Deliberately smaller than the homepage block. This page has to
+     answer three questions and no others:
+
+       scans         $pageview
+       real humans   inbound_engaged
+       leads         inbound_submitted
+
+     The number the panel is judged on is abandonment, and that is
+     inbound_engaged minus inbound_submitted. There is no event for it
+     because subtracting two honest numbers beats inventing a third.
+     Same shape as the homepage's $pageview minus visit_engaged.
+
+     The email address is NOT sent here. Only its domain, which names
+     the company without naming the person — the line ANALYTICS.md
+     already draws for outreach tokens. The address itself lives in
+     Formspree and in the inbox, and nowhere else.
+
+     No replay, no autocapture, no pageleave: a ten-second form page
+     needs none of them and each costs weight on a bad connection.
+
+     outreach_token is registered as the same value the redirect hands
+     the homepage, so one scan reads as one person across both pages.
+
+     This block plus ONE guarded line in the form script is the whole
+     of it. Delete both and the page behaves identically — the gate
+     must never depend on analytics being reachable.
+     ============================================================ -->
+<script>
+!function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init capture register register_once register_for_session unregister unregister_for_session getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on reset onFeatureFlags onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey getNextSurveyStep identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty createPersonProfile opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing debug".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+</script>
+<script>
+(function(){
+  /* no-ops if posthog is absent, blocked by a corporate proxy, or opted out.
+     Nothing on this page may break because analytics did. */
+  window.mtl = {
+    track: function(name, props, beacon){
+      try{
+        if(window.posthog && posthog.capture){
+          posthog.capture(name, props || {}, beacon ? {transport:'sendBeacon'} : undefined);
+        }
+      }catch(e){}
+    }
+  };
+
+  try{
+    posthog.init('phc_GnUG6LSAkfO92r5vN5asriOtooGLbGPx3V40gANPcBi', {
+      api_host: 'https://eu.i.posthog.com',
+      ui_host:  'https://eu.posthog.com',
+      person_profiles: 'always',
+      /* fired by hand below, once the show properties are registered */
+      capture_pageview: false,
+      capture_pageleave: false,
+      autocapture: false,
+      /* a one-field form page has nothing to learn from web vitals or a
+         heatmap, and both cost payload on the connection this page exists
+         for. The homepage keeps them; this one does not need them. */
+      capture_performance: false,
+      capture_heatmaps: false,
+      disable_session_recording: true,
+      persistence: 'localStorage+cookie'
+    });
+
+    /* #internal keeps our own stand tests out of the numbers — at booth
+       volume a morning of us demoing the QR would drown the real scans. */
+    var h = location.hash;
+    if(h === '#internal' || h === '#do-not-track'){ posthog.opt_out_capturing(); return; }
+    if(h === '#track-me') posthog.opt_in_capturing();
+
+    posthog.register({
+      outreach_token: 'fll-usa-26',
+      source: 'booth',
+      show: 'Future Labs Live USA 2026',
+      stand: 'SU19'
+    });
+    posthog.capture('$pageview');
+
+    /* --- the human gate ---
+       Something that fetches and renders without touching anything is not a
+       scan. Keeping it out of inbound_engaged leaves the prefetch share
+       visible as a subtraction rather than silently inflating the scans. */
+    var engaged = false, visibleMs = 0, poll = null;
+    var SIGNALS = ['pointermove','pointerdown','keydown','touchstart','wheel','scroll'];
+    function engage(){
+      if(engaged) return;
+      engaged = true;
+      if(poll) clearInterval(poll);
+      SIGNALS.forEach(function(s){ removeEventListener(s, engage, true); });
+      window.mtl.track('inbound_engaged');
+    }
+    SIGNALS.forEach(function(s){ addEventListener(s, engage, true); });
+    /* someone who reads the pill and the headline without moving anything */
+    poll = setInterval(function(){
+      if(!document.hidden) visibleMs += 500;
+      if(visibleMs >= 3000) engage();
+    }, 500);
+  }catch(e){}
+})();
+</script>
+
+<!-- ============================================================
+     /inbound — Future Labs Live USA 2026, Philadelphia, stand SU19
+
+     Reached by scanning the QR on the printed panel and nothing else.
+     The URL is burned into the printed code and cannot be changed.
+
+     Built for convention-centre wifi, so: one file, inline CSS, no
+     third-party script, no iframe. The gate must never depend on
+     somebody else's CDN being up.
+
+     Tokens below are COPIED from index.html :root, not imported —
+     same portability trade the main page makes. If a token changes
+     there, it changes here too. Nothing enforces the match.
+     ============================================================ -->
+<style>
+:root{
+  --chrome:#141618; --chrome-line:#2A2C2E; --chrome-fg-dim:#8A9297;
+  --brand-signal:#0E6B72;
+  --paper:#FDFDFC; --paper-raised:#FFFFFF; --paper-sunken:#F5F6F6;
+  --rule:#E8EAEC; --rule-soft:#F2F3F4;
+  --ink:#17191B; --ink-muted:#6C7276; --ink-faint:#9CA1A5;
+  --font-sans:Geist,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
+  --font-mono:"Geist Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+  --text-2xs:10.5px; --text-sm:12px; --text-md:13px;
+  --tracking-micro:.09em;
+  --radius-indicator:2px; --radius-control:3px; --radius-surface:6px;
+  --dur-fast:130ms; --ease:cubic-bezier(.4,0,.2,1);
+}
+*{box-sizing:border-box}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:var(--font-sans);font-size:16px;line-height:1.5;font-weight:400;
+  -webkit-font-smoothing:antialiased;font-variant-numeric:tabular-nums;
+  min-height:100vh;display:flex;flex-direction:column;
+}
+svg{display:block}
+:focus-visible{outline:none;box-shadow:0 0 0 1px var(--brand-signal);border-radius:var(--radius-control)}
+
+/* graphite band — same treatment as the site nav and footer, and the
+   closest thing on screen to the panel they just scanned */
+.band{background:var(--chrome);border-bottom:1px solid var(--chrome-line);flex:none}
+.band-in{max-width:560px;margin:0 auto;padding:0 24px;height:56px;display:flex;align-items:center}
+.band svg{height:18px;width:auto}
+
+main{flex:1;max-width:560px;width:100%;margin:0 auto;padding:44px 24px 40px}
+
+.eyebrow{
+  /* the label is long enough to wrap at phone widths, so the dot aligns to the
+     first line rather than to the centre of a two-line block */
+  display:inline-flex;align-items:flex-start;gap:8px;border:1px solid var(--rule);
+  background:var(--paper-raised);border-radius:var(--radius-control);padding:4px 9px;
+  font-family:var(--font-mono);font-size:var(--text-2xs);font-weight:500;
+  letter-spacing:var(--tracking-micro);text-transform:uppercase;color:var(--ink-muted);
+}
+.eyebrow .dot{width:5px;height:5px;margin-top:.42em;border-radius:var(--radius-indicator);flex:none;display:block;background:var(--brand-signal)}
+
+h1{
+  margin:22px 0 0;font-size:clamp(29px,7.4vw,38px);font-weight:600;
+  letter-spacing:-.032em;line-height:1.08;
+}
+h1 .soft{color:var(--ink-muted)}
+.lede{margin:18px 0 0;font-size:17px;line-height:1.55;color:#3B3E41;letter-spacing:-.008em}
+
+form{margin-top:32px;padding-top:28px;border-top:1px solid var(--rule)}
+label{display:block;font-family:var(--font-mono);font-size:var(--text-2xs);font-weight:500;
+  letter-spacing:var(--tracking-micro);text-transform:uppercase;color:var(--ink-faint);margin-bottom:9px}
+input[type=email]{
+  display:block;width:100%;height:50px;padding:0 13px;
+  border:1px solid var(--rule);border-radius:var(--radius-surface);background:var(--paper-raised);
+  font-family:var(--font-sans);font-size:16px;color:var(--ink);
+  transition:border-color var(--dur-fast) var(--ease);
+}
+input[type=email]::placeholder{color:var(--ink-faint)}
+input[type=email]:focus{outline:none;border-color:var(--brand-signal);box-shadow:0 0 0 1px var(--brand-signal)}
+button{
+  display:flex;align-items:center;justify-content:center;width:100%;height:50px;margin-top:10px;
+  border:1px solid transparent;border-radius:var(--radius-control);background:var(--chrome);color:#fff;
+  font-family:var(--font-sans);font-size:15px;font-weight:500;letter-spacing:-.005em;cursor:pointer;
+  transition:background var(--dur-fast) var(--ease);
+}
+button:hover{background:#1E2022}
+button[disabled]{background:#3A3D40;cursor:default}
+.consent{margin:14px 0 0;font-size:var(--text-md);line-height:1.5;color:var(--ink-muted)}
+
+.foot{max-width:560px;width:100%;margin:0 auto;padding:0 24px 34px;
+  font-family:var(--font-mono);font-size:var(--text-2xs);font-weight:500;
+  letter-spacing:var(--tracking-micro);text-transform:uppercase;color:var(--ink-faint)}
+
+@media (min-width:600px){
+  main{padding-top:64px}
+  button{width:auto;min-width:180px;margin-top:12px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" aria-hidden="true" focusable="false" style="position:absolute"><symbol id="mtl-logo" viewBox="0 0 793.256 112.000"><defs><linearGradient id="mtl-signal-blue" x1="0" y1="112" x2="0" y2="0" gradientUnits="userSpaceOnUse"><stop stop-color="#204CBF" /><stop offset="1" stop-color="#3678F3" /></linearGradient><clipPath id="mtl-mark-silhouette"><path d="M4 112C1 112 0 110 2 107L88 4C90 1 92 0 96 0H123C126 0 127 1 127 4V56C127 58 128 58 129 56L168 5C171 2 173 0 176 0H210C213 0 214 1 214 4V108C214 111 213 112 210 112H184C181 112 180 111 180 108V48L177 49L137 103C134 108 133 112 130 112H98C95 112 94 111 94 108V49L40 109C38 111 36 112 33 112H4Z" /></clipPath></defs><path d="M4 112C1 112 0 110 2 107L88 4C90 1 92 0 96 0H123C126 0 127 1 127 4V56C127 58 128 58 129 56L168 5C171 2 173 0 176 0H210C213 0 214 1 214 4V108C214 111 213 112 210 112H184C181 112 180 111 180 108V48L177 49L137 103C134 108 133 112 130 112H98C95 112 94 111 94 108V49L40 109C38 111 36 112 33 112H4Z" fill="#FFFFFF" /><path d="M174 0H212C213.5 0 214 1 212 3L210.25 5L128 116H84L167.75 5C169.75 2 171.75 0 174 0Z" fill="url(#mtl-signal-blue)" clip-path="url(#mtl-mark-silhouette)" /><g transform="translate(266.000 11.000) scale(0.79646018)"><path fill="#FFFFFF" fill-rule="evenodd" d="M 2.577 112.208 C 2.276 112.059 1.954 111.754 1.861 111.531 C 1.769 111.308 1.623 93.575 1.536 72.125 C 1.328 20.213 1.336 8.106 1.581 6.669 C 1.966 4.407 1.547 4.500 11.338 4.500 C 17.017 4.500 20.197 4.595 20.726 4.779 C 21.415 5.019 21.697 5.415 22.730 7.592 C 23.392 8.985 24.021 10.406 24.128 10.750 C 24.235 11.094 24.631 11.994 25.009 12.750 C 25.387 13.506 25.779 14.406 25.881 14.750 C 25.982 15.094 26.271 15.666 26.521 16.023 C 26.772 16.379 27.223 17.327 27.523 18.129 C 27.823 18.932 28.271 19.934 28.518 20.357 C 28.764 20.779 29.205 21.735 29.496 22.480 C 29.787 23.225 30.230 24.125 30.480 24.480 C 30.730 24.835 31.016 25.406 31.116 25.750 C 31.433 26.838 33.292 30.791 34.584 33.125 C 35.269 34.362 36.189 36.050 36.629 36.875 C 37.070 37.700 38.064 39.525 38.840 40.930 C 39.615 42.336 40.250 43.567 40.250 43.667 C 40.250 43.837 43.002 49.935 44.856 53.875 C 45.309 54.837 46.130 56.581 46.680 57.750 C 47.231 58.919 48.034 60.606 48.466 61.500 C 48.897 62.394 49.250 63.249 49.250 63.400 C 49.250 63.551 49.629 64.395 50.092 65.275 C 50.554 66.155 51.076 67.325 51.251 67.875 C 51.426 68.425 51.763 69.156 52.000 69.500 C 52.236 69.844 52.620 70.707 52.854 71.418 C 53.087 72.130 53.436 72.843 53.629 73.004 C 53.823 73.164 54.216 73.922 54.502 74.688 C 54.789 75.453 55.223 76.371 55.468 76.727 C 55.712 77.084 56.060 77.769 56.240 78.250 C 56.669 79.399 57.886 82.021 60.128 86.625 C 61.132 88.688 62.086 90.731 62.248 91.166 C 62.801 92.651 64.721 92.832 65.132 91.438 C 65.320 90.800 66.458 88.342 69.733 81.500 C 70.292 80.331 70.750 79.284 70.750 79.173 C 70.750 78.940 72.620 74.935 73.165 74.000 C 73.366 73.656 73.756 72.869 74.032 72.250 C 74.940 70.218 76.751 66.661 77.915 64.625 C 80.045 60.900 81.032 58.840 83.002 54.000 C 83.310 53.244 83.942 51.703 84.406 50.576 C 84.870 49.450 85.250 48.406 85.250 48.257 C 85.250 48.108 85.573 47.342 85.967 46.555 C 86.362 45.769 86.769 44.844 86.873 44.500 C 87.086 43.793 90.573 36.459 91.152 35.500 C 91.360 35.156 91.751 34.369 92.021 33.750 C 92.291 33.131 92.844 31.950 93.249 31.125 C 94.373 28.839 96.000 25.261 96.000 25.077 C 96.000 24.987 96.465 23.948 97.032 22.769 C 97.600 21.590 98.430 19.837 98.877 18.875 C 101.299 13.651 101.815 12.559 102.179 11.875 C 102.398 11.463 102.854 10.562 103.192 9.875 C 104.705 6.796 105.733 5.305 106.558 4.994 C 107.120 4.782 109.995 4.647 115.750 4.563 C 126.324 4.410 125.302 3.876 125.523 9.660 C 125.611 11.978 125.692 35.579 125.702 62.106 C 125.722 114.665 125.804 111.695 124.325 112.280 C 123.449 112.626 113.251 112.402 112.539 112.021 C 111.500 111.465 111.486 111.131 111.358 84.625 C 111.290 70.600 111.126 54.513 110.993 48.875 C 110.860 43.237 110.751 36.528 110.751 33.964 C 110.750 29.891 110.699 29.284 110.343 29.147 C 109.753 28.921 109.332 29.376 108.785 30.835 C 108.328 32.055 106.970 34.917 105.800 37.125 C 105.509 37.675 104.804 39.138 104.235 40.375 C 102.009 45.211 99.356 50.730 98.646 52.000 C 98.454 52.344 97.768 53.750 97.122 55.125 C 96.476 56.500 95.563 58.413 95.095 59.375 C 94.626 60.337 94.244 61.226 94.246 61.349 C 94.248 61.472 93.856 62.391 93.375 63.392 C 92.894 64.392 92.500 65.366 92.500 65.557 C 92.500 65.747 92.178 66.410 91.784 67.030 C 91.391 67.651 90.926 68.601 90.751 69.142 C 90.577 69.683 90.118 70.744 89.731 71.500 C 89.344 72.256 88.561 73.888 87.990 75.125 C 87.419 76.362 86.525 78.275 86.003 79.375 C 85.482 80.475 84.693 82.162 84.250 83.125 C 82.733 86.423 81.539 88.887 77.168 97.750 C 74.760 102.631 72.711 106.906 72.613 107.250 C 72.357 108.148 70.548 111.399 70.095 111.775 C 69.685 112.116 67.987 112.170 61.178 112.062 L 57.231 112.000 L 56.246 111.062 C 55.525 110.377 55.065 109.587 54.532 108.125 C 53.640 105.675 51.962 101.640 51.413 100.625 C 50.990 99.844 48.617 95.041 47.583 92.875 C 47.255 92.188 46.830 91.344 46.638 91.000 C 46.045 89.936 39.741 77.232 38.823 75.250 C 37.883 73.221 37.487 72.402 37.071 71.625 C 36.624 70.788 34.339 65.984 33.504 64.125 C 33.072 63.163 32.346 61.587 31.891 60.625 C 31.436 59.663 30.648 57.975 30.139 56.875 C 29.631 55.775 29.002 54.481 28.741 54.000 C 28.480 53.519 27.980 52.506 27.630 51.750 C 27.279 50.994 26.820 50.094 26.609 49.750 C 26.399 49.406 26.005 48.619 25.734 48.000 C 25.463 47.381 25.017 46.464 24.743 45.961 C 24.469 45.458 24.091 44.614 23.903 44.086 C 23.715 43.557 22.779 41.494 21.823 39.500 C 19.362 34.369 18.814 33.098 18.244 31.206 C 17.731 29.504 16.448 27.952 15.958 28.442 C 15.517 28.883 15.303 79.785 15.652 101.411 L 15.814 111.447 L 15.106 111.911 C 14.477 112.324 13.778 112.381 8.762 112.427 C 5.103 112.462 2.933 112.385 2.577 112.208 Z" /><path fill="#FFFFFF" fill-rule="evenodd" d="M 158.156 114.466 C 152.486 113.738 145.784 110.555 141.414 106.514 C 135.835 101.356 133.118 91.875 135.083 84.422 C 135.438 83.072 135.890 81.666 136.086 81.297 C 138.185 77.345 138.813 76.482 141.625 73.682 C 143.907 71.410 145.924 69.793 147.375 69.074 C 147.925 68.801 148.713 68.396 149.125 68.173 C 150.267 67.557 155.458 66.041 157.401 65.756 C 158.349 65.617 160.531 65.275 162.250 64.997 C 166.194 64.357 173.745 64.021 184.500 64.005 C 189.106 63.998 192.999 63.910 193.150 63.809 C 193.847 63.343 193.946 62.584 193.729 59.375 C 193.424 54.877 193.325 54.416 192.198 52.275 C 189.903 47.919 187.556 45.701 183.056 43.638 C 180.596 42.511 180.427 42.471 177.116 42.249 C 173.330 41.996 167.984 42.282 165.750 42.858 C 158.536 44.719 154.788 46.680 149.348 51.438 C 146.993 53.498 145.978 53.780 144.926 52.669 C 144.623 52.349 143.728 51.506 142.936 50.795 C 138.400 46.720 138.156 45.946 140.621 43.445 C 146.146 37.837 150.138 35.577 158.000 33.603 C 165.717 31.665 166.730 31.503 172.250 31.328 C 177.937 31.148 182.991 31.546 185.972 32.410 C 187.142 32.749 188.645 33.144 189.313 33.287 C 190.827 33.612 194.713 35.523 196.375 36.760 C 197.592 37.666 200.240 40.387 201.500 42.025 C 203.047 44.037 205.766 49.474 206.251 51.525 C 206.427 52.267 206.796 53.550 207.073 54.375 C 207.695 56.233 207.941 67.018 207.977 93.949 L 208.000 111.273 L 207.386 111.886 C 206.774 112.499 206.763 112.500 201.574 112.496 C 197.923 112.494 196.189 112.400 195.750 112.180 C 194.688 111.650 194.326 110.520 194.130 107.132 C 193.894 103.031 193.385 102.583 191.673 104.966 C 190.706 106.312 188.190 108.553 186.375 109.684 C 183.119 111.714 176.330 113.961 171.875 114.484 C 169.232 114.795 160.627 114.783 158.156 114.466 Z M 174.875 102.505 C 183.445 100.253 188.943 95.740 192.052 88.406 C 193.095 85.946 193.428 84.229 193.707 79.875 C 193.926 76.468 193.908 76.068 193.510 75.500 L 193.071 74.875 L 186.973 74.802 C 168.542 74.582 159.194 76.069 154.203 80.014 C 145.807 86.650 148.594 98.433 159.500 102.406 C 162.215 103.395 162.917 103.480 167.625 103.382 C 171.426 103.302 172.192 103.210 174.875 102.505 Z" /><path fill="#FFFFFF" fill-rule="evenodd" d="M 244.011 113.626 C 237.658 112.119 234.683 110.554 231.538 107.062 C 226.896 101.908 225.557 98.704 225.020 91.466 C 224.883 89.628 224.696 81.094 224.604 72.500 C 224.512 63.906 224.366 54.122 224.281 50.757 L 224.125 44.639 L 223.500 44.323 C 223.055 44.098 221.321 44.006 217.476 44.004 C 212.650 44.000 212.037 43.954 211.695 43.563 C 211.395 43.220 211.274 42.107 211.138 38.455 L 210.964 33.785 L 211.561 33.394 C 212.034 33.084 213.347 32.962 217.854 32.810 C 223.256 32.627 223.573 32.590 223.984 32.082 C 224.373 31.602 224.435 30.530 224.581 21.835 L 224.743 12.125 L 225.375 11.571 C 226.228 10.824 228.625 10.119 231.500 9.769 C 232.806 9.610 234.705 9.361 235.720 9.217 C 238.816 8.775 238.601 7.948 238.750 20.856 C 238.864 30.765 238.913 31.740 239.317 32.186 C 239.733 32.645 240.274 32.684 248.567 32.852 C 262.749 33.140 261.948 32.812 262.313 38.475 C 262.573 42.510 262.492 43.354 261.810 43.716 C 261.571 43.844 256.467 43.990 250.469 44.042 C 241.789 44.117 239.480 44.205 239.157 44.474 C 238.589 44.944 238.540 89.345 239.104 92.000 C 240.285 97.564 244.212 101.350 249.500 102.023 C 252.665 102.425 257.647 101.983 260.260 101.067 C 261.556 100.613 262.610 100.771 262.987 101.476 C 263.125 101.734 263.404 103.360 263.606 105.088 C 263.808 106.816 264.109 108.679 264.273 109.229 C 264.810 111.020 263.834 111.927 260.500 112.733 C 259.331 113.016 257.644 113.433 256.750 113.660 C 253.842 114.399 247.195 114.381 244.011 113.626 Z" /><path fill="#FFFFFF" fill-rule="evenodd" d="M 244.011 113.626 C 237.658 112.119 234.683 110.554 231.538 107.062 C 226.896 101.908 225.557 98.704 225.020 91.466 C 224.883 89.628 224.696 81.094 224.604 72.500 C 224.512 63.906 224.366 54.122 224.281 50.757 L 224.125 44.639 L 223.500 44.323 C 223.055 44.098 221.321 44.006 217.476 44.004 C 212.650 44.000 212.037 43.954 211.695 43.563 C 211.395 43.220 211.274 42.107 211.138 38.455 L 210.964 33.785 L 211.561 33.394 C 212.034 33.084 213.347 32.962 217.854 32.810 C 223.256 32.627 223.573 32.590 223.984 32.082 C 224.373 31.602 224.435 30.530 224.581 21.835 L 224.743 12.125 L 225.375 11.571 C 226.228 10.824 228.625 10.119 231.500 9.769 C 232.806 9.610 234.705 9.361 235.720 9.217 C 238.816 8.775 238.601 7.948 238.750 20.856 C 238.864 30.765 238.913 31.740 239.317 32.186 C 239.733 32.645 240.274 32.684 248.567 32.852 C 262.749 33.140 261.948 32.812 262.313 38.475 C 262.573 42.510 262.492 43.354 261.810 43.716 C 261.571 43.844 256.467 43.990 250.469 44.042 C 241.789 44.117 239.480 44.205 239.157 44.474 C 238.589 44.944 238.540 89.345 239.104 92.000 C 240.285 97.564 244.212 101.350 249.500 102.023 C 252.665 102.425 257.647 101.983 260.260 101.067 C 261.556 100.613 262.610 100.771 262.987 101.476 C 263.125 101.734 263.404 103.360 263.606 105.088 C 263.808 106.816 264.109 108.679 264.273 109.229 C 264.810 111.020 263.834 111.927 260.500 112.733 C 259.331 113.016 257.644 113.433 256.750 113.660 C 253.842 114.399 247.195 114.381 244.011 113.626 Z" transform="translate(40 0)" /><path fill="#FFFFFF" fill-rule="evenodd" d="M 299.148 114.716 C 295.016 114.392 287.771 112.008 284.284 109.825 C 275.063 104.054 269.070 97.291 267.373 90.743 C 267.171 89.963 266.822 88.886 266.598 88.350 C 266.217 87.438 265.491 84.306 264.577 79.625 C 264.108 77.227 264.044 68.322 264.482 66.375 C 264.636 65.688 265.045 63.663 265.389 61.875 C 265.734 60.087 266.284 57.950 266.611 57.125 C 266.938 56.300 267.326 55.171 267.473 54.615 C 267.963 52.768 270.335 48.523 272.358 45.875 C 277.577 39.045 283.321 34.798 289.575 33.148 C 290.840 32.814 292.325 32.378 292.875 32.179 C 297.548 30.490 312.525 30.543 316.750 32.265 C 317.369 32.517 318.693 32.960 319.692 33.249 C 324.909 34.757 331.098 39.108 334.599 43.728 C 336.754 46.572 337.498 47.658 337.956 48.625 C 338.216 49.175 338.718 50.051 339.072 50.571 C 339.425 51.091 339.792 51.878 339.888 52.321 C 339.983 52.763 340.329 53.656 340.656 54.305 C 340.984 54.955 341.470 56.417 341.737 57.555 C 342.004 58.694 342.391 60.100 342.598 60.681 C 343.105 62.106 343.469 65.825 343.554 70.431 C 343.621 74.066 343.599 74.262 343.074 74.787 L 342.525 75.337 L 311.371 75.394 C 276.940 75.458 279.491 75.332 279.128 76.986 C 278.891 78.064 280.596 86.234 281.356 87.661 C 281.710 88.326 282.000 88.990 282.000 89.135 C 282.000 89.667 284.316 92.916 285.700 94.326 C 289.120 97.808 295.116 101.085 299.625 101.937 C 303.987 102.761 312.101 102.225 315.427 100.894 C 316.224 100.575 317.455 100.179 318.163 100.013 C 320.938 99.364 326.419 95.141 328.945 91.705 C 330.626 89.419 331.554 89.033 333.095 89.978 C 333.524 90.240 334.494 90.642 335.250 90.871 C 336.496 91.248 337.505 91.640 340.312 92.841 C 341.571 93.379 341.541 94.135 340.177 96.277 C 338.344 99.156 336.996 100.795 333.987 103.798 C 329.141 108.636 325.044 110.899 316.875 113.248 C 311.815 114.704 305.573 115.221 299.148 114.716 Z M 328.345 63.699 C 329.343 63.166 328.293 59.374 325.834 54.625 C 323.319 49.769 319.706 46.362 314.542 43.976 C 310.797 42.245 310.200 42.133 304.750 42.139 C 299.542 42.144 299.345 42.175 295.213 43.647 C 289.405 45.715 284.679 49.740 282.466 54.500 C 281.173 57.283 280.443 59.175 279.981 60.947 C 279.387 63.221 279.548 63.810 280.839 64.087 C 281.948 64.326 327.874 63.950 328.345 63.699 Z" transform="translate(40 0)" /><path fill="#FFFFFF" fill-rule="evenodd" d="M 352.625 112.118 C 352.075 111.920 351.606 111.756 351.582 111.754 C 350.875 111.692 350.641 94.580 350.881 60.471 L 351.067 33.967 L 351.670 33.572 C 352.171 33.244 353.217 33.173 357.835 33.151 C 364.998 33.117 364.750 32.999 364.750 36.468 C 364.750 40.432 365.499 41.534 366.828 39.526 C 367.556 38.427 370.890 35.468 372.537 34.459 C 374.481 33.269 377.791 31.952 379.729 31.596 C 384.145 30.786 392.677 30.940 394.903 31.871 C 395.870 32.274 396.604 33.540 396.412 34.471 C 395.558 38.595 395.393 39.146 394.327 41.428 C 393.817 42.521 393.410 42.597 389.984 42.238 C 385.304 41.749 381.549 42.193 378.750 43.567 C 373.800 45.996 370.270 49.158 368.497 52.750 C 368.192 53.369 367.802 54.044 367.631 54.250 C 367.101 54.890 365.459 60.439 365.204 62.457 C 365.064 63.557 364.942 74.479 364.918 88.083 C 364.876 111.236 364.864 111.798 364.390 112.145 C 363.689 112.658 354.061 112.635 352.625 112.118 Z" transform="translate(40 0)" /><path fill="#FFFFFF" fill-rule="evenodd" d="M 404.255 112.179 C 402.982 111.535 403.033 113.202 403.037 72.196 L 403.041 33.735 L 403.622 33.354 C 404.109 33.035 405.136 32.986 409.970 33.049 C 415.592 33.123 415.751 33.139 416.306 33.695 L 416.875 34.265 L 416.891 56.695 C 416.900 69.032 416.953 86.269 417.009 95.000 C 417.120 112.384 417.172 111.717 415.655 112.246 C 414.566 112.625 405.027 112.570 404.255 112.179 Z M 408.375 18.080 C 405.076 17.342 403.489 16.169 402.003 13.375 C 399.970 9.549 402.116 3.931 406.125 2.586 C 407.617 2.086 411.391 2.010 412.899 2.450 C 414.779 2.998 417.060 4.983 417.884 6.786 C 420.652 12.848 414.999 19.563 408.375 18.080 Z" transform="translate(40 0)" /><path fill="#FFFFFF" fill-rule="evenodd" d="M 449.500 114.582 C 444.641 114.093 438.968 112.067 435.475 109.572 C 430.659 106.133 427.416 101.658 425.731 96.125 C 424.933 93.506 424.893 93.185 424.884 89.375 C 424.875 85.376 424.875 85.374 425.838 82.561 C 426.368 81.014 426.904 79.684 427.029 79.607 C 427.155 79.529 427.495 78.999 427.787 78.428 C 428.875 76.296 432.323 72.519 435.140 70.375 C 438.313 67.960 445.868 65.642 454.250 64.512 C 455.281 64.373 462.003 64.223 469.187 64.178 C 481.941 64.100 482.266 64.086 482.937 63.581 L 483.625 63.064 L 483.604 59.707 C 483.585 56.584 483.528 56.196 482.779 54.113 C 481.955 51.825 480.624 49.626 479.024 47.911 C 476.858 45.590 471.503 42.960 467.891 42.444 C 465.226 42.063 458.031 42.387 455.875 42.986 C 451.972 44.069 450.076 44.694 449.129 45.208 C 448.581 45.506 448.018 45.750 447.878 45.750 C 447.002 45.750 442.799 48.637 439.593 51.442 C 436.903 53.795 436.387 53.908 434.948 52.465 C 434.350 51.866 432.767 50.352 431.431 49.101 C 429.142 46.960 429.000 46.769 429.000 45.829 C 429.000 43.429 436.765 37.406 442.946 35.012 C 443.672 34.731 444.518 34.336 444.825 34.135 C 445.133 33.933 446.612 33.472 448.112 33.111 C 449.612 32.749 451.115 32.349 451.452 32.221 C 454.833 30.935 470.357 30.947 474.750 32.239 C 475.644 32.502 477.283 32.947 478.393 33.227 C 482.824 34.348 486.098 36.312 489.875 40.114 C 492.423 42.679 494.528 45.814 495.254 48.125 C 495.426 48.675 495.773 49.533 496.023 50.031 C 496.976 51.927 497.049 54.354 497.023 83.170 C 497.009 98.457 496.929 111.145 496.844 111.365 C 496.760 111.584 496.499 111.867 496.264 111.993 C 495.766 112.259 485.328 112.383 484.705 112.130 C 484.023 111.854 483.750 110.596 483.750 107.733 C 483.750 103.530 483.718 103.514 480.750 106.157 C 477.566 108.993 473.184 111.311 468.750 112.504 C 467.856 112.745 466.169 113.223 465.000 113.568 C 461.626 114.562 454.156 115.051 449.500 114.582 Z M 463.875 102.375 C 469.076 101.213 474.424 98.112 477.319 94.581 C 479.430 92.005 479.670 91.658 480.749 89.625 C 482.638 86.062 484.212 77.251 483.197 75.914 C 482.647 75.189 481.157 75.061 472.750 75.018 C 464.715 74.976 460.339 75.212 457.000 75.867 C 451.649 76.916 450.215 77.252 449.217 77.691 C 448.616 77.955 447.731 78.320 447.250 78.502 C 445.973 78.985 443.545 80.755 442.238 82.156 C 437.160 87.597 438.942 96.273 446.000 100.478 C 447.434 101.333 451.237 102.754 453.000 103.094 C 454.775 103.436 460.956 103.027 463.875 102.375 Z" transform="translate(40 0)" /><path fill="#FFFFFF" fill-rule="evenodd" d="M 512.194 112.268 C 509.393 112.142 508.949 112.062 508.482 111.594 L 507.952 111.063 L 507.941 57.969 C 507.933 20.130 508.008 4.682 508.203 4.203 C 508.641 3.124 509.169 3.015 514.808 2.840 C 520.891 2.651 521.317 2.705 521.738 3.722 C 522.077 4.539 522.291 109.384 521.958 110.993 C 521.624 112.601 521.115 112.668 512.194 112.268 Z" transform="translate(40 0)" /><path fill="#FFFFFF" fill-rule="evenodd" d="M 534.432 112.587 C 532.847 112.310 532.959 115.028 532.819 73.315 C 532.726 45.678 532.768 35.095 532.973 34.342 C 533.402 32.764 533.854 32.662 539.824 32.799 C 545.267 32.925 546.077 33.096 546.695 34.250 C 546.972 34.767 547.000 39.546 546.858 61.875 C 546.763 76.725 546.669 93.978 546.650 100.214 L 546.614 111.553 L 546.029 112.026 C 545.530 112.431 545.017 112.500 542.511 112.500 C 540.897 112.500 538.575 112.547 537.351 112.604 C 536.127 112.661 534.813 112.653 534.432 112.587 Z M 536.403 18.237 C 533.274 17.453 530.651 14.469 530.108 11.075 C 529.630 8.083 532.467 3.846 535.719 2.698 C 537.314 2.135 541.917 2.280 543.250 2.935 C 546.149 4.359 547.510 6.231 548.015 9.487 C 548.572 13.075 547.100 15.781 543.625 17.559 C 541.967 18.408 538.414 18.741 536.403 18.237 Z" transform="translate(40 0)" /><path fill="#FFFFFF" fill-rule="evenodd" d="M 577.214 114.474 C 574.733 114.234 568.016 112.586 565.547 111.612 C 563.614 110.849 559.978 108.933 558.851 108.083 C 558.426 107.763 557.974 107.500 557.847 107.500 C 557.624 107.500 555.720 106.030 554.562 104.965 C 553.657 104.132 553.782 102.645 554.841 101.659 C 555.304 101.228 555.975 100.406 556.331 99.834 C 556.688 99.261 557.098 98.719 557.243 98.629 C 557.388 98.539 557.731 98.027 558.005 97.490 C 558.791 95.950 559.964 94.750 560.683 94.750 C 561.035 94.750 561.734 95.110 562.260 95.562 C 565.009 97.924 571.808 101.187 575.125 101.738 C 576.087 101.898 577.775 102.271 578.875 102.566 C 585.084 104.235 595.375 102.299 599.868 98.617 C 602.408 96.536 603.286 94.580 603.286 91.000 C 603.286 87.348 602.317 85.259 599.748 83.374 C 598.587 82.521 594.161 80.500 593.459 80.500 C 593.275 80.501 591.831 80.115 590.250 79.644 C 588.669 79.173 585.350 78.284 582.875 77.668 C 575.844 75.920 575.518 75.834 573.000 75.049 C 568.129 73.531 565.050 71.739 561.870 68.575 C 557.632 64.356 556.000 60.480 556.000 54.635 C 556.000 49.149 556.753 46.549 559.522 42.468 C 562.984 37.368 570.638 32.963 578.375 31.618 C 584.627 30.531 598.399 30.940 601.500 32.305 C 602.119 32.577 603.300 33.002 604.125 33.248 C 608.503 34.555 616.500 39.827 616.500 41.407 C 616.500 42.050 615.713 43.332 614.448 44.750 C 613.773 45.506 612.830 46.712 612.353 47.428 C 610.895 49.618 609.631 50.082 608.481 48.851 C 607.899 48.228 604.753 46.000 604.455 46.000 C 604.376 46.000 603.657 45.606 602.857 45.125 C 602.058 44.644 601.238 44.250 601.034 44.250 C 600.831 44.250 599.965 43.909 599.110 43.493 C 597.050 42.489 592.119 41.732 587.568 41.721 C 585.750 41.716 584.062 41.775 583.818 41.851 C 583.574 41.927 582.644 42.094 581.750 42.223 C 579.606 42.532 575.524 44.473 573.978 45.920 C 570.077 49.569 569.331 55.104 572.285 58.476 C 573.431 59.783 576.438 61.913 577.500 62.170 C 577.844 62.253 578.631 62.574 579.250 62.882 C 579.869 63.190 581.050 63.575 581.875 63.738 C 582.700 63.902 584.275 64.303 585.375 64.629 C 586.475 64.956 588.556 65.407 590.000 65.630 C 591.444 65.854 593.469 66.295 594.500 66.610 C 595.531 66.926 597.219 67.383 598.250 67.627 C 599.281 67.871 600.519 68.264 601.000 68.501 C 601.481 68.738 602.494 69.133 603.250 69.378 C 604.006 69.624 605.017 70.090 605.496 70.413 C 605.974 70.736 606.496 71.000 606.654 71.000 C 607.064 71.000 610.117 73.110 611.815 74.568 C 614.681 77.028 616.824 80.681 617.643 84.500 C 618.335 87.726 617.968 93.998 616.956 96.250 C 616.678 96.869 616.252 97.938 616.010 98.626 C 614.471 102.995 608.898 108.301 602.500 111.490 C 599.878 112.796 595.084 114.197 592.231 114.490 C 589.308 114.790 580.387 114.780 577.214 114.474 Z" transform="translate(40 0)" /></g></symbol></svg>
+
+<div class="band"><div class="band-in">
+  <svg viewBox="0 0 793.256 112.000" role="img" aria-label="Matterialis"><use href="#mtl-logo"/></svg>
+</div></div>
+
+<main>
+  <span class="eyebrow"><span class="dot"></span>A foundation model for industrial materials</span>
+
+  <h1>Finally, an AI that understands industrial materials, <span class="soft">not just molecules.</span></h1>
+
+  <p class="lede">Enriches datasheets with properties nobody published, and ranks substitute grades against every constraint.</p>
+
+  <!-- Plain HTML POST. With JavaScript off this still works end to end: the
+       browser posts, Formspree redirects to _next. The script at the foot only
+       makes it faster, it is not what makes it work. -->
+  <form id="gate" action="https://formspree.io/f/xjyvvany" method="POST">
+    <input type="hidden" name="_subject" value="Future Labs Live USA 2026 — booth lead">
+    <input type="hidden" name="source" value="Future Labs Live USA 2026 · stand SU19">
+    <input type="hidden" name="_next" value="https://matterialis.com/?c=fll-usa-26">
+    <!-- honeypot: Formspree drops anything that fills this in -->
+    <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px">
+
+    <label for="email">Work email</label>
+    <input id="email" type="email" name="email" required
+           inputmode="email" autocomplete="email" autocapitalize="off"
+           autocorrect="off" spellcheck="false" placeholder="you@company.com">
+    <button type="submit">Get access</button>
+    <p class="consent">We use this to follow up after the show, and for nothing else. Amphico is the data controller; reply to any message to be removed.</p>
+  </form>
+</main>
+
+<div class="foot">Future Labs Live USA 2026 · Stand SU19</div>
+
+<script>
+/* The redirect must never wait on the network. Post with keepalive so the
+   request outlives the navigation, then leave on whichever comes first: the
+   response, or 1.2s. A lost confirmation is cheap; a lost lead is not.
+   FormData + Accept are CORS-safelisted, so there is no preflight round trip. */
+(function(){
+  var f = document.getElementById('gate');
+  if(!f || !window.fetch || !window.FormData) return;   /* native POST already covers this */
+
+  f.addEventListener('submit', function(e){
+    if(f.checkValidity && !f.checkValidity()) return;   /* let the browser say so itself */
+    e.preventDefault();
+
+    var next = f.elements._next.value;   /* read now, so it is always the value being posted */
+
+    var btn = f.querySelector('button');
+    if(btn){ btn.disabled = true; btn.textContent = 'One moment'; }
+
+    var data = new FormData(f), gone = false;
+    function go(){ if(gone) return; gone = true; location.href = next; }
+    setTimeout(go, 1200);
+
+    /* The company, not the person: the domain goes to PostHog, the address
+       does not. Beacon, so it survives the navigation a few hundred ms later.
+       Guarded, so deleting the analytics block leaves this a no-op.
+       A no-JS submit never reaches here — Formspree still gets that lead, it
+       just will not appear in inbound_submitted. */
+    if(window.mtl){
+      var addr = String(f.elements.email.value || ''), at = addr.lastIndexOf('@');
+      window.mtl.track('inbound_submitted',
+        { email_domain: at > -1 ? addr.slice(at + 1).toLowerCase() : null }, true);
+    }
+
+    try{
+      fetch(f.action, {
+        method:'POST', body:data, headers:{Accept:'application/json'}, keepalive:true
+      }).then(go, go);
+    }catch(err){
+      try{ navigator.sendBeacon(f.action, data); }catch(e2){}
+      go();
+    }
+  });
+})();
+</script>
+</body>
+</html>

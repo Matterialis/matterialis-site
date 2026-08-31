@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="214.000" height="112.000" viewBox="0 0 214.000 112.000" role="img" aria-labelledby="title desc">
+  <title id="title">Materialis colour mark</title>
+  <desc id="desc">The approved Materialis mark in graphite and signal blue.</desc>
+  <defs>
+    <linearGradient id="signal-blue" x1="0" y1="112" x2="0" y2="0" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#204CBF"/>
+      <stop offset="1" stop-color="#3678F3"/>
+    </linearGradient>
+    <clipPath id="mark-silhouette">
+      <path d="M4 112C1 112 0 110 2 107L88 4C90 1 92 0 96 0H123C126 0 127 1 127 4V56C127 58 128 58 129 56L168 5C171 2 173 0 176 0H210C213 0 214 1 214 4V108C214 111 213 112 210 112H184C181 112 180 111 180 108V48L177 49L137 103C134 108 133 112 130 112H98C95 112 94 111 94 108V49L40 109C38 111 36 112 33 112H4Z"/>
+    </clipPath>
+  </defs>
+  <path d="M4 112C1 112 0 110 2 107L88 4C90 1 92 0 96 0H123C126 0 127 1 127 4V56C127 58 128 58 129 56L168 5C171 2 173 0 176 0H210C213 0 214 1 214 4V108C214 111 213 112 210 112H184C181 112 180 111 180 108V48L177 49L137 103C134 108 133 112 130 112H98C95 112 94 111 94 108V49L40 109C38 111 36 112 33 112H4Z" fill="#17191B"/>
+  <path d="M174 0H212C213.5 0 214 1 212 3L210.25 5L128 116H84L167.75 5C169.75 2 171.75 0 174 0Z" fill="url(#signal-blue)" clip-path="url(#mark-silhouette)"/>
+</svg>

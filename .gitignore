@@ -1,0 +1,23 @@
+# ── Internal only — never publish ────────────────────────────
+# Content constraints, competitor-claim reasoning, commercial decisions.
+CLAUDE.md
+# Prospect attribution, deliverability tactics, consent-posture reasoning.
+# Split out of ANALYTICS.md when that file was made public (26 Aug 2026).
+OUTREACH.md
+# Agent config.
+.claude/
+
+# Build/fetch tooling. The outputs are committed; the scripts, their pinned
+# source IDs and the untouched third-party originals are not part of the site.
+img/fetch-images.sh
+img/logos/src/
+img/logos/normalise-logos.sh
+img/logos/README.md
+
+# Sales collateral, not part of the site. Committing it would publish the deck
+# at matterialis.com/deck/ — it is for email and LinkedIn only.
+deck/
+
+# macOS
+.DS_Store
+._*
