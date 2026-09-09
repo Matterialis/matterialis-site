@@ -106,10 +106,11 @@ which is precisely why this system's accent is teal. The stripe was a
 `#204CBF -> #3678F3` gradient until 9 Sep 2026; it is now the single bright
 stop, so **there is no legal gradient anywhere in the system**, the logo
 included. The masters live in `img/brand/` (lockup with the "by Amphico"
-endorsement, wordmark, mark, each in colour and reverse), and every full
-mention of the logo carries "by Amphico" — as endorsement text inside the
-lockup artwork, or as an adjacent mono micro-label where the logo renders too
-small for it (the site nav and footer).
+endorsement, wordmark, mark, each in colour and reverse). The lockup with the
+in-artwork "by Amphico" endorsement is for closing/anchor placements — the
+site footer, the deck cover and closing slide. Running chrome stays plain: the
+site nav and the in-app mock bars use the wordmark-only variant, no
+endorsement.
 
 ---
 
