@@ -8,15 +8,18 @@ OUTREACH.md
 .claude/
 
 # Build/fetch tooling. The outputs are committed; the scripts, their pinned
-# source IDs and the untouched third-party originals are not part of the site.
+# source IDs and the untouched originals are not part of the site.
 img/fetch-images.sh
 img/logos/src/
 img/logos/normalise-logos.sh
 img/logos/README.md
+img/brand/src/
 
-# Sales collateral, not part of the site. Committing it would publish the deck
-# at matterialis.com/deck/ — it is for email and LinkedIn only.
-deck/
+# Sales collateral and print artwork, not part of the site. Committing it would
+# publish the deck at matterialis.com/prints_and_media/ — it is for email,
+# LinkedIn and the booth printer only. (Was `deck/` before the folder was
+# renamed.)
+prints_and_media/
 
 # macOS
 .DS_Store
