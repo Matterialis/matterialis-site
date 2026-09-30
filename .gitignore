@@ -8,7 +8,9 @@ OUTREACH.md
 .claude/
 
 # Build/fetch tooling. The outputs are committed; the scripts, their pinned
-# source IDs and the untouched originals are not part of the site.
+# source IDs and the untouched originals are not part of the site. Since
+# 30 Sep 2026 they all live in the private github.com/matterialis/matterialis-brand
+# (cloned beside this folder); these lines stay as a guard against stray copies.
 img/fetch-images.sh
 img/logos/src/
 img/logos/normalise-logos.sh

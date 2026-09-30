@@ -105,8 +105,13 @@ logo artwork. Saturated blue on white is the signature of a generic AI product,
 which is precisely why this system's accent is teal. The stripe was a
 `#204CBF -> #3678F3` gradient until 9 Sep 2026; it is now the single bright
 stop, so **there is no legal gradient anywhere in the system**, the logo
-included. The masters live in `img/brand/` (lockup with the "by Amphico"
-endorsement, wordmark, mark, each in colour and reverse). The lockup with the
+included. There is one master, `img/brand/matterialis-lockup-colour.svg` (mark,
+wordmark and "by Amphico", ink on light). Every other variant is a crop or a
+recolour of it: the wordmark is the lockup cropped to its top 82 units, the
+mark is cropped to 155.9 x 82 (favicon and touch icon), and reverse is the
+same drawing with white ink. `brand/make-brand.py` in the private `matterialis-brand` repo makes all of them
+and writes them into the pages, so a logo change is one file and one command.
+The lockup with the
 in-artwork "by Amphico" endorsement is for closing/anchor placements — the
 site footer, the deck cover and closing slide. Running chrome stays plain: the
 site nav and the in-app mock bars use the wordmark-only variant, no
