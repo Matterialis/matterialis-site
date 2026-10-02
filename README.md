@@ -21,10 +21,10 @@ CNAME                 matterialis.com
 
 The site speaks to two customers. **Formulators** (scientists who search for and
 substitute materials) land on `/`. **Suppliers and distributors** (who sell them,
-and whose buyers would use the website assistant) land on `/suppliers/`. A switch
-in the nav of both pages, a band above each footer and a footer link cross them
-over; the switch marks where you are with the accent, which is the one job the
-accent has on chrome.
+and whose buyers would use the website assistant) land on `/suppliers/`. A two-word
+switch beside the logo (Formulators | Suppliers, in the body face, the raised segment
+marking where you are) and a band above each footer cross them over. The home page
+leads with the problems (`#cases`) and then how the product answers them (`#product`).
 
 `/suppliers/` is assembled from `index.html` by the build step described in its
 own header comment: the `<head>`, both stylesheets and the logo sprite are copied

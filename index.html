@@ -301,26 +301,36 @@ p{margin:0}
 .navtoggle{display:none;background:none;border:1px solid var(--chrome-line);border-radius:var(--radius-control);color:var(--chrome-fg-muted);height:30px;width:32px;align-items:center;justify-content:center;cursor:pointer}
 
 /* ---- audience switch ----
-   Two destinations, one of which is where you are. The accent marks the
-   active one: the one job it is allowed on chrome. Mirrored in /suppliers/. */
-.aud{display:flex;align-items:center;height:100%;gap:14px;margin-left:4px;padding-left:18px;border-left:1px solid var(--chrome-line)}
+   Two words beside the logo, in the body face: the story this page tells and
+   the other one, a click away. A raised segment marks where you are, so the
+   accent keeps its one job on chrome, the active section link. Mirrored in
+   /suppliers/. Below 1080px the section links fold into the menu to make room
+   for it; below 760px the bar keeps the logo, the switch and the menu. */
+.aud{display:inline-flex;align-items:center;gap:2px;padding:2px;border:1px solid var(--chrome-line);border-radius:var(--radius-control);flex-shrink:0}
 .aud a{
-  display:flex;align-items:center;height:100%;font-family:var(--font-mono);font-size:var(--text-2xs);
-  letter-spacing:var(--tracking-micro);text-transform:uppercase;color:var(--chrome-fg-dim);
-  border-bottom:2px solid transparent;white-space:nowrap;
-  transition:color var(--dur-fast) var(--ease),border-color var(--dur-fast) var(--ease);
+  display:flex;align-items:center;height:24px;padding:0 10px;border-radius:var(--radius-indicator);
+  font-size:var(--text-sm);font-weight:450;letter-spacing:-.005em;color:var(--chrome-fg-dim);white-space:nowrap;
+  transition:color var(--dur-fast) var(--ease),background-color var(--dur-fast) var(--ease);
 }
 .aud a:hover{color:var(--chrome-fg-muted)}
-.aud a.on{color:var(--chrome-fg);border-bottom-color:var(--brand-signal)}
-/* Below 1080px the bar cannot hold the switch beside the links and the buttons,
-   so the other audience becomes one link among the nav links instead; on phones
-   that collapses into the menu with the rest. */
-.nav-x{display:none}
+.aud a.on{background:var(--chrome-raised);color:var(--chrome-fg)}
+.nav-links .menu-only{display:none}
 @media (max-width:1080px){
-  .aud{display:none}
-  .nav-links{gap:18px}
-  .nav-links a.nav-x{display:flex}
+  .nav-in{gap:18px}
+  .nav-links{display:none}
+  .nav-links .menu-only{display:flex}
+  .navtoggle{display:flex}
   .nav-actions .btn-ghost-chrome{display:none}
+}
+@media (max-width:760px){
+  .nav-in{gap:14px}
+  .brand svg{height:17px}
+  .aud a{padding:0 8px}
+  .nav-actions .btn-on-chrome{display:none}
+}
+@media (max-width:400px){
+  .brand svg{height:15px}
+  .aud a{padding:0 7px;font-size:var(--text-xs)}
 }
 /* the band that sends a supplier to the other story, above the footer */
 .xlink{border-top:1px solid var(--rule);background:var(--paper-raised)}
@@ -889,7 +899,6 @@ footer{background:var(--chrome);border-top:1px solid var(--chrome-line);padding:
 @media (max-width:760px){
   :root{--gutter:20px}
   .nav-links{display:none}
-  .aud{padding-left:12px;gap:10px}
   .navtoggle{display:flex}
   .nav-actions .btn-ghost-chrome{display:none}
   .hero{padding-top:52px}
@@ -911,16 +920,16 @@ footer{background:var(--chrome);border-top:1px solid var(--chrome-line);padding:
   <div class="nav-in">
     <a class="brand" href="#top" aria-label="Matterialis home"><svg viewBox="0 0 577.6 82" role="img" aria-label="Matterialis"><use href="#mtl-logo"/></svg></a>
     <div class="aud" aria-label="Who this page is for">
-      <a href="#top" class="on" aria-current="page">For formulators</a>
-      <a href="suppliers/" data-audience="suppliers">For suppliers</a>
+      <a href="#top" class="on" aria-current="page">Formulators</a>
+      <a href="suppliers/" data-audience="suppliers">Suppliers</a>
     </div>
     <div class="nav-links">
-      <a href="#product">Product</a>
-      <a href="#cases">Use cases</a>
+      <a href="#cases">Problems</a>
+      <a href="#product">How it works</a>
       <a href="#compare">Compare</a>
       <a href="#trust">Research</a>
       <a href="#faq">FAQ</a>
-      <a href="suppliers/" class="nav-x" data-audience="suppliers">For suppliers</a>
+      <a class="menu-only" href="https://calendar.app.google/LcwtFTNrrVFJnGiz9" target="_blank" rel="noopener">Book a demo</a>
     </div>
     <div class="nav-actions">
       <!-- TODO: replace with the real Calendly link -->
@@ -936,12 +945,12 @@ footer{background:var(--chrome);border-top:1px solid var(--chrome-line);padding:
 <!-- ================= HERO ================= -->
 <header class="hero" id="top">
   <div class="wrap hero-in">
-    <span class="eyebrow"><span class="dot dot-signal"></span>A foundation model for industrial materials</span>
-    <h1>An AI that understands industrial materials, <span class="soft">not just molecules.</span></h1>
-    <p class="lede">Molecular models do not know what a datasheet leaves out, how a grade is classified for your end use, or whether it clears REACH. Matterialis learns from the documents industry runs on. It predicts unreported properties, navigates chemical space, finds substitutes under real constraints, and proposes reformulations.</p>
+    <span class="eyebrow"><span class="dot dot-signal"></span>For formulators, R&amp;D and sourcing teams</span>
+    <h1>The material you need is in somebody's datasheet. <span class="soft">Nobody has time to read four hundred of them.</span></h1>
+    <p class="lede">A substance gets restricted, a supply route closes, a spec has to hold. The answer is in a few hundred datasheets, across suppliers you may never have bought from, and the one property that decides it is often missing from the sheet. Matterialis reads them all, fills in the values nobody published, and ranks every candidate against your constraints, with the evidence beside each number.</p>
     <div class="hero-cta">
       <a class="btn btn-primary btn-lg" href="https://calendar.app.google/LcwtFTNrrVFJnGiz9" target="_blank" rel="noopener">Book a demo</a>
-      <a class="btn btn-secondary btn-lg" href="#product">See how it works</a>
+      <a class="btn btn-secondary btn-lg" href="#cases">See six real problems</a>
       <span class="hero-limit">It does not run your experiments. It decides which are worth running.</span>
     </div>
   </div>
@@ -991,294 +1000,11 @@ footer{background:var(--chrome);border-top:1px solid var(--chrome-line);padding:
   </div></div>
 </div>
 
-<!-- ================= PRODUCT ================= -->
-<section class="sec" id="product">
-  <div class="wrap">
-    <div class="sec-head rv">
-      <span class="micro">The product</span>
-      <h2>Not a database. An intelligence layer over industrial chemistry.</h2>
-      <p class="lede">Everyone else gives you a search box over what suppliers chose to publish. Matterialis reasons about materials.</p>
-    </div>
-
-    <div class="feats">
-      <div class="feat rv">
-        <div class="feat-shot">
-<div class="scaler"><div class="surface">
-<div class="appbar"><span class="lg"><svg viewBox="0 0 577.6 82" role="img" aria-label="Matterialis"><use href="#mtl-logo"/></svg></span>
-<div class="tabs"><span class="tab">Search</span><span class="tab on">Results <b>10</b></span><span class="tab">Library <b>200,000+</b></span></div>
-<span class="appbar-right"><span class="chip-chrome">Under-bonnet bracket</span></span>
-</div>
-<div class="screen-body">
-<div class="mk-head">
-<div class="crumb">Ranked results / Polybutylene terephthalate, 20% glass fibre</div>
-<div class="mk-title">
-<div><h4>Polybutylene terephthalate, 20% glass fibre</h4>
-<div class="mk-sub">AMP-3118 · CAS 24968-12-5 · Chang Chun</div></div>
-<div class="figure"><div class="v">88<small>%</small></div><span class="micro">Match</span></div>
-</div>
-<div class="badges">
-<span class="badge badge-strong"><span class="dot dot-strong"></span>Strong evidence</span>
-<span class="badge">Polyester (PBT)</span>
-<span class="badge badge-ai">6 AI-generated values</span>
-
-</div>
-</div>
-<div class="split">
-<div class="split-main">
-<div class="reason"><svg viewBox="0 0 24 24"><path d="M12 2l1.7 5.4L19 9l-4.2 3.5 1.4 5.5L12 15.3 7.8 18l1.4-5.5L5 9l5.3-1.6z"/></svg><p>Lower moisture pickup than the incumbent and a tighter shrinkage window, but density sits above the stated ceiling.</p></div>
-<div class="strip"><span class="micro"><b>Properties · mechanical</b></span></div>
-<table class="ptab">
-<tr><td>Tensile strength</td><td class="v">110 MPa</td><td class="b"><span class="badge">Scraped</span></td></tr>
-<tr><td>Flexural modulus</td><td class="v">5940 MPa</td><td class="b"><span class="badge badge-ai">AI-generated</span></td></tr>
-<tr><td>Notched impact, 23 °C</td><td class="v">8.6 kJ/m²</td><td class="b"><span class="badge">Scraped</span></td></tr>
-<tr><td>Elongation at break</td><td class="v">2.9 %</td><td class="b"><span class="badge">Scraped</span></td></tr>
-</table>
-<div class="strip"><span class="micro"><b>Thermal</b></span></div>
-<table class="ptab">
-<tr><td>Heat deflection, 1.8 MPa</td><td class="v">140 °C</td><td class="b"><span class="badge">Scraped</span></td></tr>
-<tr><td>Glass transition</td><td class="v">48 °C</td><td class="b"><span class="badge badge-ai">AI-generated</span></td></tr>
-</table>
-<div class="strip"><span class="micro"><b>Barrier &amp; transport</b></span></div>
-<table class="ptab">
-<tr><td>Water vapour transmission rate</td><td class="v">2.4 g/m²·day</td><td class="b"><span class="badge badge-ai">AI-generated</span></td></tr>
-<tr><td>Moisture absorption</td><td class="v">0.28 %</td><td class="b"><span class="badge badge-ai">AI-generated</span></td></tr>
-</table>
-</div>
-<aside class="split-rail">
-<span class="micro">Classification</span>
-<dl>
-<div class="kv"><dt>Chemical family</dt><dd>Polyester (PBT)</dd></div>
-<div class="kv"><dt>Functional purpose</dt><dd>Structural reinforcement</dd></div>
-<div class="kv"><dt>Industry</dt><dd>Automotive</dd></div>
-<div class="kv"><dt>CAS</dt><dd>24968-12-5</dd></div>
-</dl>
-<span class="micro">Metadata</span>
-<dl>
-<div class="kv"><dt>Supplier</dt><dd>Chang Chun</dd></div>
-<div class="kv"><dt>Grade code</dt><dd>AMP-3118</dd></div>
-<div class="kv"><dt>Indexed</dt><dd>2026-06-30</dd></div>
-</dl>
-</aside>
-</div>
-</div>
-</div></div>
-        </div>
-        <div class="feat-txt">
-          <span class="micro">01</span>
-          <h3>Search published and AI-predicted properties together</h3>
-          <p>Suppliers publish what sells the grade, not what decides your formulation. Matterialis predicts the missing values and lets you filter on them. Model-generated values are always marked.</p>
-          <div class="out">You search the properties that matter, not the ones that happen to be printed.</div>
-          <div class="swipe">Swipe the panel to explore<svg class="ic" viewBox="0 0 24 24" style="width:12px;height:12px"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
-        </div>
-      </div>
-      <div class="feat feat-flip rv">
-        <div class="feat-shot">
-<div class="scaler"><div class="surface">
-<div class="appbar"><span class="lg"><svg viewBox="0 0 577.6 82" role="img" aria-label="Matterialis"><use href="#mtl-logo"/></svg></span>
-<div class="tabs"><span class="tab on">Neighbourhood</span><span class="tab">Results <b>12</b></span><span class="tab">Library <b>200,000+</b></span></div>
-<span class="appbar-right"><span class="chip-chrome">Sector filter &#183; off</span></span>
-</div>
-<div class="screen-body">
-<div class="mk-head">
-<div class="crumb">Search / Nearest materials by behaviour</div>
-<div class="mk-title">
-<div><h4>Sorbitan monostearate, technical grade</h4><div class="mk-sub">AMP-8802 &#183; CAS 1338-41-6 &#183; query material</div></div>
-<div class="figure"><div class="v">12</div><span class="micro">Near neighbours</span></div>
-</div>
-<div class="badges"><span class="badge">Nonionic surfactant</span><span class="badge">HLB 4.7</span><span class="badge">Food &amp; beverage</span></div>
-</div>
-<div class="split">
-<div class="split-main col">
-<div class="reason"><svg viewBox="0 0 24 24"><path d="M12 2l1.7 5.4L19 9l-4.2 3.5 1.4 5.5L12 15.3 7.8 18l1.4-5.5L5 9l5.3-1.6z"/></svg><p>Five of the eight nearest grades are sold into a different industry. Distance from the centre is similarity, so a hollow dot close in is a cross-sector match worth reading.</p></div>
-<div class="mapwrap"><svg class="map" viewBox="0 0 820 300" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
-<defs><pattern id="mgrid" width="41" height="41" patternUnits="userSpaceOnUse"><path d="M41 0H0V41" fill="none" stroke="var(--rule-soft)" stroke-width="1"/></pattern></defs>
-<rect x="0" y="0" width="820" height="300" fill="url(#mgrid)"/>
-<ellipse cx="410" cy="150" rx="65" ry="27" fill="none" stroke="var(--chart-5)" stroke-width="1" stroke-dasharray="3 4"/>
-<text x="410" y="135" class="mring" text-anchor="middle">90%</text>
-<ellipse cx="410" cy="150" rx="131" ry="53" fill="none" stroke="var(--chart-5)" stroke-width="1" stroke-dasharray="3 4"/>
-<text x="410" y="109" class="mring" text-anchor="middle">80%</text>
-<ellipse cx="410" cy="150" rx="196" ry="80" fill="none" stroke="var(--chart-5)" stroke-width="1" stroke-dasharray="3 4"/>
-<text x="410" y="82" class="mring" text-anchor="middle">70%</text>
-<circle cx="312" cy="103" r="2.5" fill="var(--chart-5)"/>
-<circle cx="488" cy="182" r="2.5" fill="var(--chart-5)"/>
-<circle cx="340" cy="199" r="2.5" fill="var(--chart-5)"/>
-<circle cx="506" cy="82" r="2.5" fill="var(--chart-5)"/>
-<circle cx="178" cy="170" r="2.5" fill="var(--chart-5)"/>
-<circle cx="677" cy="121" r="2.5" fill="var(--chart-5)"/>
-<circle cx="373" cy="258" r="2.5" fill="var(--chart-5)"/>
-<circle cx="342" cy="178" r="2.5" fill="var(--chart-5)"/>
-<circle cx="309" cy="72" r="2.5" fill="var(--chart-5)"/>
-<circle cx="678" cy="194" r="2.5" fill="var(--chart-5)"/>
-<circle cx="462" cy="49" r="2.5" fill="var(--chart-5)"/>
-<circle cx="457" cy="217" r="2.5" fill="var(--chart-5)"/>
-<line x1="410" y1="150" x2="440" y2="140" stroke="var(--chart-5)" stroke-width="1"/>
-<line x1="410" y1="150" x2="345" y2="162" stroke="var(--chart-5)" stroke-width="1"/>
-<line x1="410" y1="150" x2="314" y2="127" stroke="var(--chart-5)" stroke-width="1"/>
-<line x1="410" y1="150" x2="555" y2="166" stroke="var(--chart-5)" stroke-width="1"/>
-<line x1="410" y1="150" x2="377" y2="74" stroke="var(--chart-5)" stroke-width="1"/>
-<line x1="410" y1="150" x2="616" y2="116" stroke="var(--chart-5)" stroke-width="1"/>
-<line x1="410" y1="150" x2="161" y2="128" stroke="var(--chart-5)" stroke-width="1"/>
-<line x1="410" y1="150" x2="495" y2="257" stroke="var(--chart-5)" stroke-width="1"/>
-<circle cx="440" cy="140" r="6" fill="var(--chart-1)"/>
-<text x="453" y="143" class="mlab" text-anchor="start">1</text>
-<circle cx="345" cy="162" r="6" fill="var(--paper-raised)" stroke="var(--chart-2)" stroke-width="1.6"/>
-<text x="332" y="166" class="mlab" text-anchor="end">2</text>
-<circle cx="314" cy="127" r="6" fill="var(--paper-raised)" stroke="var(--chart-2)" stroke-width="1.6"/>
-<text x="301" y="131" class="mlab" text-anchor="end">3</text>
-<circle cx="555" cy="166" r="6" fill="var(--paper-raised)" stroke="var(--chart-2)" stroke-width="1.6"/>
-<text x="568" y="169" class="mlab" text-anchor="start">4</text>
-<circle cx="377" cy="74" r="6" fill="var(--paper-raised)" stroke="var(--chart-2)" stroke-width="1.6"/>
-<text x="364" y="77" class="mlab" text-anchor="end">5</text>
-<circle cx="616" cy="116" r="6" fill="var(--chart-1)"/>
-<text x="629" y="120" class="mlab" text-anchor="start">6</text>
-<circle cx="161" cy="128" r="6" fill="var(--paper-raised)" stroke="var(--chart-2)" stroke-width="1.6"/>
-<text x="148" y="132" class="mlab" text-anchor="end">7</text>
-<circle cx="495" cy="257" r="6" fill="var(--chart-1)"/>
-<text x="508" y="260" class="mlab" text-anchor="start">8</text>
-<ellipse cx="410" cy="150" rx="15" ry="13" fill="none" stroke="var(--brand-signal)" stroke-width="1.4"/>
-<circle cx="410" cy="150" r="5" fill="var(--brand-signal)"/>
-<text x="410" y="184" class="mq" text-anchor="middle">AMP-8802 &#183; QUERY</text>
-</svg></div>
-<div class="maplegend">
-<span class="mkey"><i class="k-same"></i>Your sector</span>
-<span class="mkey"><i class="k-other"></i>Another sector</span>
-<span class="mkey"><i class="k-q"></i>Query grade</span>
-<span class="mnote">RINGS ARE SIMILARITY, NOT DISTANCE IN ANY ONE PROPERTY</span>
-</div>
-</div>
-<aside class="split-rail">
-<span class="micro">Nearest by similarity</span>
-<dl>
-<div class="kv"><dt><b class="rk">1</b>Sorbitan ester, food grade</dt><dd>94 %</dd></div>
-<div class="kv"><dt><b class="rk">2</b>Polyglyceryl-4 laurate</dt><dd>89 %</dd></div>
-<div class="kv"><dt><b class="rk">3</b>Alkyl polyglucoside C8-10</dt><dd>83 %</dd></div>
-<div class="kv"><dt><b class="rk">4</b>Ethoxylated fatty alcohol</dt><dd>77 %</dd></div>
-<div class="kv"><dt><b class="rk">5</b>Sucrose stearate, HLB 15</dt><dd>71 %</dd></div>
-<div class="kv"><dt><b class="rk">6</b>Lecithin, deoiled</dt><dd>66 %</dd></div>
-<div class="kv"><dt><b class="rk">7</b>Methyl glucose sesquistearate</dt><dd>61 %</dd></div>
-<div class="kv"><dt><b class="rk">8</b>Glyceryl monostearate</dt><dd>58 %</dd></div>
-</dl>
-<span class="micro">Industries in view</span>
-<div class="src"><b>Cosmetics &#183; 3</b>Emulsifiers with the same HLB band.</div>
-<div class="src"><b>Home care &#183; 1</b>Alkyl polyglucoside, cost-competitive.</div>
-<div class="src"><b>Pharma &#183; 1</b>Excipient grade, tighter purity.</div>
-</aside>
-</div>
-</div>
-</div></div>
-        </div>
-        <div class="feat-txt">
-          <span class="micro">02</span>
-          <h3>Move by chemistry, not by catalogue</h3>
-          <p>Move through materials by how they behave, not by keyword or supplier catalogue. Neighbouring grades surface even when they come from an industry you have never bought from: a food-grade ester for a cosmetics problem, a packaging polymer for a membrane.</p>
-          <div class="out">You find the options your catalogue was never going to show you.</div>
-          <div class="swipe">Swipe the panel to explore<svg class="ic" viewBox="0 0 24 24" style="width:12px;height:12px"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
-        </div>
-      </div>
-      <div class="feat rv">
-        <div class="feat-shot">
-<div class="scaler"><div class="surface">
-<div class="appbar"><span class="lg"><svg viewBox="0 0 577.6 82" role="img" aria-label="Matterialis"><use href="#mtl-logo"/></svg></span>
-<div class="tabs"><span class="tab">Search</span><span class="tab on">Results <b>10</b></span><span class="tab">Library <b>200,000+</b></span></div>
-<span class="appbar-right"><span class="chip-chrome">Under-bonnet bracket</span></span>
-</div>
-<div class="screen-body"><div class="res">
-<div class="res-filter">
-<div class="fh"><span class="micro">Property criteria</span><a>Reset</a></div>
-<div class="finput"><svg class="ic" viewBox="0 0 24 24" style="width:11px;height:11px"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>Search 500+ properties</div>
-<div class="crit"><div class="crit-t"><span>Tensile strength</span><svg class="ic" viewBox="0 0 24 24"><path d="M4 7h16M9 7V4h6v3M6 7l1 13h10l1-13"/></svg></div><div class="crit-r"><span class="op">≥</span><span class="val">60 <i>MPa</i></span></div></div>
-<div class="crit"><div class="crit-t"><span>Max service temp.</span><svg class="ic" viewBox="0 0 24 24"><path d="M4 7h16M9 7V4h6v3M6 7l1 13h10l1-13"/></svg></div><div class="crit-r"><span class="op">≥</span><span class="val">120 <i>°C</i></span></div></div>
-<div class="crit"><div class="crit-t"><span>Water vapour trans.</span><svg class="ic" viewBox="0 0 24 24"><path d="M4 7h16M9 7V4h6v3M6 7l1 13h10l1-13"/></svg></div><div class="crit-r"><span class="op">≤</span><span class="val">5.0 <i>g/m²·d</i></span></div></div>
-<div class="crit"><div class="crit-t"><span>Compliance</span><svg class="ic" viewBox="0 0 24 24"><path d="M4 7h16M9 7V4h6v3M6 7l1 13h10l1-13"/></svg></div><div class="crit-r"><span class="val">RoHS · REACH</span></div></div>
-</div>
-<div class="res-main">
-<div class="res-top"><span class="micro">Ranked results</span><span class="note">Ranked against your criteria</span></div>
-<table class="grid">
-<tr><th>Rank</th><th>Material</th><th>Evidence</th><th>Criteria met</th><th class="r">Tensile</th><th class="r">T max</th><th class="r">WVTR</th><th class="r">Match</th></tr>
-<tr><td class="rk">1</td><td><span class="matname">Polyamide 6, 30% glass fibre<span>AMP-4412 · 25038-54-4</span></span></td><td><span class="ev"><span class="dot dot-strong"></span>Strong</span></td><td><span class="met"><span class="seg"><i class="s"></i><i class="s"></i><i class="s"></i></span><span>3 of 3</span></span></td><td class="r n-ok">165</td><td class="r n-ok">150</td><td class="r n-ok">3.2<sup class="ai">AI</sup></td><td class="r n">94 %</td></tr>
-<tr><td class="rk">2</td><td><span class="matname">Polyamide 66, 35% glass fibre<span>AMP-4680 · 32131-17-2</span></span></td><td><span class="ev"><span class="dot dot-strong"></span>Strong</span></td><td><span class="met"><span class="seg"><i class="s"></i><i class="s"></i><i class="s"></i></span><span>3 of 3</span></span></td><td class="r n-ok">180</td><td class="r n-ok">160</td><td class="r n-ok">3.6</td><td class="r n">91 %</td></tr>
-<tr><td class="rk">3</td><td><span class="matname">Polybutylene terephthalate, 20% GF<span>AMP-3118 · 24968-12-5</span></span></td><td><span class="ev"><span class="dot dot-strong"></span>Strong</span></td><td><span class="met"><span class="seg"><i class="s"></i><i class="s"></i><i class="s"></i></span><span>3 of 3</span></span></td><td class="r n-ok">110</td><td class="r n-ok">140</td><td class="r n-ok">2.4</td><td class="r n">88 %</td></tr>
-<tr><td class="rk">4</td><td><span class="matname">Polyphenylene sulphide, 40% GF<span>AMP-5902 · 26125-40-6</span></span></td><td><span class="ev"><span class="dot dot-strong"></span>Strong</span></td><td><span class="met"><span class="seg"><i class="s"></i><i class="s"></i><i class="s"></i></span><span>3 of 3</span></span></td><td class="r n-ok">190</td><td class="r n-ok">220</td><td class="r n-ok">0.9</td><td class="r n">83 %</td></tr>
-<tr><td class="rk">5</td><td><span class="matname">Copolyester, high-clarity extrusion<span>AMP-1355 · 25038-59-9</span></span></td><td><span class="ev"><span class="dot dot-strong"></span>Strong</span></td><td><span class="met"><span class="seg"><i class="s"></i><i class="s"></i><i class="s"></i></span><span>3 of 3</span></span></td><td class="r n-ok">72</td><td class="r n-ok">120</td><td class="r n-ok">1.8</td><td class="r n">77 %</td></tr>
-<tr><td class="rk">6</td><td><span class="matname">Polycarbonate / ABS, flame-retardant<span>AMP-2207 · 25037-45-0</span></span></td><td><span class="ev"><span class="dot dot-limited"></span>Limited</span></td><td><span class="met"><span class="seg"><i class="l"></i><i class="l"></i><i></i></span><span>2 of 3</span></span></td><td class="r n-ok">62</td><td class="r n-ok">125</td><td class="r n-no">6.8<sup class="ai">AI</sup></td><td class="r n">86 %</td></tr>
-<tr><td class="rk">7</td><td><span class="matname">Polypropylene TPO impact copolymer<span>AMP-0914 · 9010-79-1</span></span></td><td><span class="ev"><span class="dot dot-limited"></span>Limited</span></td><td><span class="met"><span class="seg"><i class="w"></i><i></i><i></i></span><span>1 of 3</span></span></td><td class="r n-no">28</td><td class="r n-no">105</td><td class="r n-ok">1.1</td><td class="r n">74 %</td></tr>
-<tr><td class="rk">8</td><td><span class="matname">High-density polyethylene, injection<span>AMP-0271 · 9002-88-4</span></span></td><td><span class="ev"><span class="dot dot-strong"></span>Strong</span></td><td><span class="met"><span class="seg"><i class="w"></i><i></i><i></i></span><span>1 of 3</span></span></td><td class="r n-no">31</td><td class="r n-no">95</td><td class="r n-ok">0.4</td><td class="r n">68 %</td></tr>
-<tr><td class="rk">9</td><td><span class="matname">Thermoplastic polyurethane, aliphatic 95A<span>AMP-7741 · 9009-54-5</span></span></td><td><span class="ev"><span class="dot dot-limited"></span>Limited</span></td><td><span class="met"><span class="seg"><i></i><i></i><i></i></span><span>0 of 3</span></span></td><td class="r n-no">48</td><td class="r n-no">110</td><td class="r n-no">12.0<sup class="ai">AI</sup></td><td class="r n">79 %</td></tr>
-<tr><td class="rk">10</td><td><span class="matname">Polylactide / PBAT compound<span>AMP-6620 · 9051-89-2</span></span></td><td><span class="ev"><span class="dot dot-weak"></span>Weak</span></td><td><span class="met"><span class="seg"><i></i><i></i><i></i></span><span>0 of 3</span></span></td><td class="r n-no">45</td><td class="r n-no">65</td><td class="r n-no">22.0<sup class="ai">AI</sup></td><td class="r n">71 %</td></tr>
-</table>
-<div class="res-foot"><em>GREEN</em> MEETS THE CRITERION · <b>RED</b> MISSES IT · <sup class="ai">AI</sup> MODEL-GENERATED, NOT MEASURED</div>
-</div>
-</div></div>
-</div></div>
-        </div>
-        <div class="feat-txt">
-          <span class="micro">03</span>
-          <h3>Rank substitutes against every constraint at once</h3>
-          <p>State the constraint instead of hunting the catalogue: property floors, restricted-substance lists, end-use and industry. Every candidate comes back ranked with its trade-off stated, including which numbers are predicted rather than measured. Filtering by region is in development.</p>
-          <div class="out">A shortlist in an afternoon, not a month of datasheets.</div>
-          <div class="swipe">Swipe the panel to explore<svg class="ic" viewBox="0 0 24 24" style="width:12px;height:12px"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
-        </div>
-      </div>
-      <div class="feat feat-flip rv">
-        <div class="feat-shot">
-<div class="scaler"><div class="surface">
-<div class="appbar appbar-cw">
-<span class="cw-brand">Claude</span><span class="cw-sub">Cowork</span>
-<span class="appbar-right"><span class="chip-cw"><i></i>matterialis &#183; MCP</span></span>
-</div>
-<div class="screen-body cw">
-<div class="cw-msg cw-user">
-<span class="cw-who">You</span>
-<div class="cw-body"><p>We need to drop AMP-9140 from the barrier film. Has to hold 60 MPa tensile and 120 &#176;C, clear RoHS and REACH, and be sourceable in the UK. What are my options?</p></div>
-</div>
-<div class="cw-msg">
-<span class="cw-who">Claude</span>
-<div class="cw-body">
-<p class="cw-line">Checking the library rather than guessing. Calling the Matterialis server.</p>
-<div class="cw-tool">
-<div class="cw-tool-h"><svg class="ic" viewBox="0 0 24 24" style="width:11px;height:11px"><path d="M4 8l4 4-4 4"/><path d="M11 16h9"/></svg><b>matterialis</b><span>find_substitutes</span><span class="cw-ok">200</span></div>
-<table class="cw-args">
-<tr><td>Incumbent</td><td class="v">AMP-9140</td></tr>
-<tr><td>Tensile, min</td><td class="v">60 MPa</td></tr>
-<tr><td>Service temp, min</td><td class="v">120 &#176;C</td></tr>
-<tr><td>Compliance</td><td class="v">RoHS, REACH</td></tr>
-</table>
-</div>
-<div class="cw-res">
-<div class="cw-res-h"><span class="micro">3 candidates returned</span><span class="note">each with its evidence</span></div>
-<table class="grid">
-<tr><th>Grade</th><th>Evidence</th><th>Criteria</th><th class="r">Tensile</th><th class="r">T max</th><th class="r">Match</th></tr>
-<tr><td><span class="matname">Polyamide 6, 30% GF<span>AMP-4412</span></span></td><td><span class="ev"><span class="dot dot-strong"></span>Strong</span></td><td><span class="met"><span class="seg"><i class="s"></i><i class="s"></i><i class="s"></i></span><span>3 of 3</span></span></td><td class="r n-ok">165</td><td class="r n-ok">150</td><td class="r n">94 %</td></tr>
-<tr><td><span class="matname">PBT, 20% GF<span>AMP-3118</span></span></td><td><span class="ev"><span class="dot dot-strong"></span>Strong</span></td><td><span class="met"><span class="seg"><i class="s"></i><i class="s"></i><i class="s"></i></span><span>3 of 3</span></span></td><td class="r n-ok">110</td><td class="r n-ok">140</td><td class="r n">88 %</td></tr>
-<tr><td><span class="matname">PC / ABS, FR<span>AMP-2207</span></span></td><td><span class="ev"><span class="dot dot-limited"></span>Limited</span></td><td><span class="met"><span class="seg"><i class="l"></i><i class="l"></i><i></i></span><span>2 of 3</span></span></td><td class="r n-ok">62</td><td class="r n-ok">125<sup class="ai">AI</sup></td><td class="r n">86 %</td></tr>
-</table>
-</div>
-<p class="cw-line">Two clear it outright. <b>AMP-4412</b> has the most headroom on both. On <b>AMP-2207</b> the 125 &#176;C is model-generated, not measured, so I would not commit to it without a lab check.</p>
-<p class="cw-cite">Every value carries its status. Predictions stay marked <sup class="ai">AI</sup>.</p>
-</div>
-</div>
-<div class="cw-compose"><span>Ask a follow-up, or tell it which one to take to the lab</span><svg class="ic" viewBox="0 0 24 24" style="width:12px;height:12px"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
-</div>
-</div></div>
-        </div>
-        <div class="feat-txt">
-          <span class="micro">04</span>
-          <h3>Connect it to your own AI scientists</h3>
-          <p>An AI assistant is only as good as the data it can reach, and industrial chemistry is not in its training set. Matterialis exposes the same intelligence layer over an MCP server, so Claude and any other MCP client can query grades, properties and substitutes directly, with the evidence attached and every prediction still marked.</p>
-          <div class="out">Your agents stop guessing about materials and start looking them up.</div>
-          <div class="swipe">Swipe the panel to explore<svg class="ic" viewBox="0 0 24 24" style="width:12px;height:12px"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<hr class="rule">
 <!-- ================= USE CASES ================= -->
 <section class="sec" id="cases">
   <div class="wrap">
     <div class="sec-head rv">
-      <span class="micro">Customer cases</span>
+      <span class="micro">Start with the problem</span>
       <h2>Six problems customers brought us.</h2>
       <p class="lede">Every one of them starts with a constraint someone else set: a substance gets restricted, a supply route closes, a spec has to hold. The answer is somewhere in a few hundred datasheets, and nobody has time to read them. Open a case to see how we handle it.</p>
     </div>
@@ -1427,6 +1153,288 @@ footer{background:var(--chrome);border-top:1px solid var(--chrome-line);padding:
 </section>
 
 <hr class="rule">
+
+<!-- ================= PRODUCT ================= -->
+<section class="sec" id="product">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="micro">How it works</span>
+      <h2>Every one of those problems ends in a shortlist you can defend.</h2>
+      <p class="lede">A search box over what suppliers chose to publish cannot get you there. Four things do.</p>
+    </div>
+
+    <div class="feats">
+      <div class="feat rv">
+        <div class="feat-shot">
+<div class="scaler"><div class="surface">
+<div class="appbar"><span class="lg"><svg viewBox="0 0 577.6 82" role="img" aria-label="Matterialis"><use href="#mtl-logo"/></svg></span>
+<div class="tabs"><span class="tab">Search</span><span class="tab on">Results <b>10</b></span><span class="tab">Library <b>200,000+</b></span></div>
+<span class="appbar-right"><span class="chip-chrome">Under-bonnet bracket</span></span>
+</div>
+<div class="screen-body">
+<div class="mk-head">
+<div class="crumb">Ranked results / Polybutylene terephthalate, 20% glass fibre</div>
+<div class="mk-title">
+<div><h4>Polybutylene terephthalate, 20% glass fibre</h4>
+<div class="mk-sub">AMP-3118 · CAS 24968-12-5 · Chang Chun</div></div>
+<div class="figure"><div class="v">88<small>%</small></div><span class="micro">Match</span></div>
+</div>
+<div class="badges">
+<span class="badge badge-strong"><span class="dot dot-strong"></span>Strong evidence</span>
+<span class="badge">Polyester (PBT)</span>
+<span class="badge badge-ai">6 AI-generated values</span>
+
+</div>
+</div>
+<div class="split">
+<div class="split-main">
+<div class="reason"><svg viewBox="0 0 24 24"><path d="M12 2l1.7 5.4L19 9l-4.2 3.5 1.4 5.5L12 15.3 7.8 18l1.4-5.5L5 9l5.3-1.6z"/></svg><p>Lower moisture pickup than the incumbent and a tighter shrinkage window, but density sits above the stated ceiling.</p></div>
+<div class="strip"><span class="micro"><b>Properties · mechanical</b></span></div>
+<table class="ptab">
+<tr><td>Tensile strength</td><td class="v">110 MPa</td><td class="b"><span class="badge">Scraped</span></td></tr>
+<tr><td>Flexural modulus</td><td class="v">5940 MPa</td><td class="b"><span class="badge badge-ai">AI-generated</span></td></tr>
+<tr><td>Notched impact, 23 °C</td><td class="v">8.6 kJ/m²</td><td class="b"><span class="badge">Scraped</span></td></tr>
+<tr><td>Elongation at break</td><td class="v">2.9 %</td><td class="b"><span class="badge">Scraped</span></td></tr>
+</table>
+<div class="strip"><span class="micro"><b>Thermal</b></span></div>
+<table class="ptab">
+<tr><td>Heat deflection, 1.8 MPa</td><td class="v">140 °C</td><td class="b"><span class="badge">Scraped</span></td></tr>
+<tr><td>Glass transition</td><td class="v">48 °C</td><td class="b"><span class="badge badge-ai">AI-generated</span></td></tr>
+</table>
+<div class="strip"><span class="micro"><b>Barrier &amp; transport</b></span></div>
+<table class="ptab">
+<tr><td>Water vapour transmission rate</td><td class="v">2.4 g/m²·day</td><td class="b"><span class="badge badge-ai">AI-generated</span></td></tr>
+<tr><td>Moisture absorption</td><td class="v">0.28 %</td><td class="b"><span class="badge badge-ai">AI-generated</span></td></tr>
+</table>
+</div>
+<aside class="split-rail">
+<span class="micro">Classification</span>
+<dl>
+<div class="kv"><dt>Chemical family</dt><dd>Polyester (PBT)</dd></div>
+<div class="kv"><dt>Functional purpose</dt><dd>Structural reinforcement</dd></div>
+<div class="kv"><dt>Industry</dt><dd>Automotive</dd></div>
+<div class="kv"><dt>CAS</dt><dd>24968-12-5</dd></div>
+</dl>
+<span class="micro">Metadata</span>
+<dl>
+<div class="kv"><dt>Supplier</dt><dd>Chang Chun</dd></div>
+<div class="kv"><dt>Grade code</dt><dd>AMP-3118</dd></div>
+<div class="kv"><dt>Indexed</dt><dd>2026-06-30</dd></div>
+</dl>
+</aside>
+</div>
+</div>
+</div></div>
+        </div>
+        <div class="feat-txt">
+          <span class="micro">01</span>
+          <h3>The property that decides your part is missing from the sheet</h3>
+          <p>Suppliers publish what sells the grade. The value that decides your formulation is often left out. Matterialis predicts it from everything the sheet does say, marks it as predicted, and lets you filter on it beside the published values.</p>
+          <div class="out">You search the properties that matter, not the ones that happen to be printed.</div>
+          <div class="swipe">Swipe the panel to explore<svg class="ic" viewBox="0 0 24 24" style="width:12px;height:12px"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+        </div>
+      </div>
+      <div class="feat feat-flip rv">
+        <div class="feat-shot">
+<div class="scaler"><div class="surface">
+<div class="appbar"><span class="lg"><svg viewBox="0 0 577.6 82" role="img" aria-label="Matterialis"><use href="#mtl-logo"/></svg></span>
+<div class="tabs"><span class="tab on">Neighbourhood</span><span class="tab">Results <b>12</b></span><span class="tab">Library <b>200,000+</b></span></div>
+<span class="appbar-right"><span class="chip-chrome">Sector filter &#183; off</span></span>
+</div>
+<div class="screen-body">
+<div class="mk-head">
+<div class="crumb">Search / Nearest materials by behaviour</div>
+<div class="mk-title">
+<div><h4>Sorbitan monostearate, technical grade</h4><div class="mk-sub">AMP-8802 &#183; CAS 1338-41-6 &#183; query material</div></div>
+<div class="figure"><div class="v">12</div><span class="micro">Near neighbours</span></div>
+</div>
+<div class="badges"><span class="badge">Nonionic surfactant</span><span class="badge">HLB 4.7</span><span class="badge">Food &amp; beverage</span></div>
+</div>
+<div class="split">
+<div class="split-main col">
+<div class="reason"><svg viewBox="0 0 24 24"><path d="M12 2l1.7 5.4L19 9l-4.2 3.5 1.4 5.5L12 15.3 7.8 18l1.4-5.5L5 9l5.3-1.6z"/></svg><p>Five of the eight nearest grades are sold into a different industry. Distance from the centre is similarity, so a hollow dot close in is a cross-sector match worth reading.</p></div>
+<div class="mapwrap"><svg class="map" viewBox="0 0 820 300" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+<defs><pattern id="mgrid" width="41" height="41" patternUnits="userSpaceOnUse"><path d="M41 0H0V41" fill="none" stroke="var(--rule-soft)" stroke-width="1"/></pattern></defs>
+<rect x="0" y="0" width="820" height="300" fill="url(#mgrid)"/>
+<ellipse cx="410" cy="150" rx="65" ry="27" fill="none" stroke="var(--chart-5)" stroke-width="1" stroke-dasharray="3 4"/>
+<text x="410" y="135" class="mring" text-anchor="middle">90%</text>
+<ellipse cx="410" cy="150" rx="131" ry="53" fill="none" stroke="var(--chart-5)" stroke-width="1" stroke-dasharray="3 4"/>
+<text x="410" y="109" class="mring" text-anchor="middle">80%</text>
+<ellipse cx="410" cy="150" rx="196" ry="80" fill="none" stroke="var(--chart-5)" stroke-width="1" stroke-dasharray="3 4"/>
+<text x="410" y="82" class="mring" text-anchor="middle">70%</text>
+<circle cx="312" cy="103" r="2.5" fill="var(--chart-5)"/>
+<circle cx="488" cy="182" r="2.5" fill="var(--chart-5)"/>
+<circle cx="340" cy="199" r="2.5" fill="var(--chart-5)"/>
+<circle cx="506" cy="82" r="2.5" fill="var(--chart-5)"/>
+<circle cx="178" cy="170" r="2.5" fill="var(--chart-5)"/>
+<circle cx="677" cy="121" r="2.5" fill="var(--chart-5)"/>
+<circle cx="373" cy="258" r="2.5" fill="var(--chart-5)"/>
+<circle cx="342" cy="178" r="2.5" fill="var(--chart-5)"/>
+<circle cx="309" cy="72" r="2.5" fill="var(--chart-5)"/>
+<circle cx="678" cy="194" r="2.5" fill="var(--chart-5)"/>
+<circle cx="462" cy="49" r="2.5" fill="var(--chart-5)"/>
+<circle cx="457" cy="217" r="2.5" fill="var(--chart-5)"/>
+<line x1="410" y1="150" x2="440" y2="140" stroke="var(--chart-5)" stroke-width="1"/>
+<line x1="410" y1="150" x2="345" y2="162" stroke="var(--chart-5)" stroke-width="1"/>
+<line x1="410" y1="150" x2="314" y2="127" stroke="var(--chart-5)" stroke-width="1"/>
+<line x1="410" y1="150" x2="555" y2="166" stroke="var(--chart-5)" stroke-width="1"/>
+<line x1="410" y1="150" x2="377" y2="74" stroke="var(--chart-5)" stroke-width="1"/>
+<line x1="410" y1="150" x2="616" y2="116" stroke="var(--chart-5)" stroke-width="1"/>
+<line x1="410" y1="150" x2="161" y2="128" stroke="var(--chart-5)" stroke-width="1"/>
+<line x1="410" y1="150" x2="495" y2="257" stroke="var(--chart-5)" stroke-width="1"/>
+<circle cx="440" cy="140" r="6" fill="var(--chart-1)"/>
+<text x="453" y="143" class="mlab" text-anchor="start">1</text>
+<circle cx="345" cy="162" r="6" fill="var(--paper-raised)" stroke="var(--chart-2)" stroke-width="1.6"/>
+<text x="332" y="166" class="mlab" text-anchor="end">2</text>
+<circle cx="314" cy="127" r="6" fill="var(--paper-raised)" stroke="var(--chart-2)" stroke-width="1.6"/>
+<text x="301" y="131" class="mlab" text-anchor="end">3</text>
+<circle cx="555" cy="166" r="6" fill="var(--paper-raised)" stroke="var(--chart-2)" stroke-width="1.6"/>
+<text x="568" y="169" class="mlab" text-anchor="start">4</text>
+<circle cx="377" cy="74" r="6" fill="var(--paper-raised)" stroke="var(--chart-2)" stroke-width="1.6"/>
+<text x="364" y="77" class="mlab" text-anchor="end">5</text>
+<circle cx="616" cy="116" r="6" fill="var(--chart-1)"/>
+<text x="629" y="120" class="mlab" text-anchor="start">6</text>
+<circle cx="161" cy="128" r="6" fill="var(--paper-raised)" stroke="var(--chart-2)" stroke-width="1.6"/>
+<text x="148" y="132" class="mlab" text-anchor="end">7</text>
+<circle cx="495" cy="257" r="6" fill="var(--chart-1)"/>
+<text x="508" y="260" class="mlab" text-anchor="start">8</text>
+<ellipse cx="410" cy="150" rx="15" ry="13" fill="none" stroke="var(--brand-signal)" stroke-width="1.4"/>
+<circle cx="410" cy="150" r="5" fill="var(--brand-signal)"/>
+<text x="410" y="184" class="mq" text-anchor="middle">AMP-8802 &#183; QUERY</text>
+</svg></div>
+<div class="maplegend">
+<span class="mkey"><i class="k-same"></i>Your sector</span>
+<span class="mkey"><i class="k-other"></i>Another sector</span>
+<span class="mkey"><i class="k-q"></i>Query grade</span>
+<span class="mnote">RINGS ARE SIMILARITY, NOT DISTANCE IN ANY ONE PROPERTY</span>
+</div>
+</div>
+<aside class="split-rail">
+<span class="micro">Nearest by similarity</span>
+<dl>
+<div class="kv"><dt><b class="rk">1</b>Sorbitan ester, food grade</dt><dd>94 %</dd></div>
+<div class="kv"><dt><b class="rk">2</b>Polyglyceryl-4 laurate</dt><dd>89 %</dd></div>
+<div class="kv"><dt><b class="rk">3</b>Alkyl polyglucoside C8-10</dt><dd>83 %</dd></div>
+<div class="kv"><dt><b class="rk">4</b>Ethoxylated fatty alcohol</dt><dd>77 %</dd></div>
+<div class="kv"><dt><b class="rk">5</b>Sucrose stearate, HLB 15</dt><dd>71 %</dd></div>
+<div class="kv"><dt><b class="rk">6</b>Lecithin, deoiled</dt><dd>66 %</dd></div>
+<div class="kv"><dt><b class="rk">7</b>Methyl glucose sesquistearate</dt><dd>61 %</dd></div>
+<div class="kv"><dt><b class="rk">8</b>Glyceryl monostearate</dt><dd>58 %</dd></div>
+</dl>
+<span class="micro">Industries in view</span>
+<div class="src"><b>Cosmetics &#183; 3</b>Emulsifiers with the same HLB band.</div>
+<div class="src"><b>Home care &#183; 1</b>Alkyl polyglucoside, cost-competitive.</div>
+<div class="src"><b>Pharma &#183; 1</b>Excipient grade, tighter purity.</div>
+</aside>
+</div>
+</div>
+</div></div>
+        </div>
+        <div class="feat-txt">
+          <span class="micro">02</span>
+          <h3>The right material comes from an industry you have never bought from</h3>
+          <p>A keyword or a supplier catalogue only shows you what you already know. Matterialis moves through materials by how they behave, so neighbouring grades surface wherever they come from: a food-grade ester for a cosmetics problem, a packaging polymer for a membrane.</p>
+          <div class="out">You find the options your catalogue was never going to show you.</div>
+          <div class="swipe">Swipe the panel to explore<svg class="ic" viewBox="0 0 24 24" style="width:12px;height:12px"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+        </div>
+      </div>
+      <div class="feat rv">
+        <div class="feat-shot">
+<div class="scaler"><div class="surface">
+<div class="appbar"><span class="lg"><svg viewBox="0 0 577.6 82" role="img" aria-label="Matterialis"><use href="#mtl-logo"/></svg></span>
+<div class="tabs"><span class="tab">Search</span><span class="tab on">Results <b>10</b></span><span class="tab">Library <b>200,000+</b></span></div>
+<span class="appbar-right"><span class="chip-chrome">Under-bonnet bracket</span></span>
+</div>
+<div class="screen-body"><div class="res">
+<div class="res-filter">
+<div class="fh"><span class="micro">Property criteria</span><a>Reset</a></div>
+<div class="finput"><svg class="ic" viewBox="0 0 24 24" style="width:11px;height:11px"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>Search 500+ properties</div>
+<div class="crit"><div class="crit-t"><span>Tensile strength</span><svg class="ic" viewBox="0 0 24 24"><path d="M4 7h16M9 7V4h6v3M6 7l1 13h10l1-13"/></svg></div><div class="crit-r"><span class="op">≥</span><span class="val">60 <i>MPa</i></span></div></div>
+<div class="crit"><div class="crit-t"><span>Max service temp.</span><svg class="ic" viewBox="0 0 24 24"><path d="M4 7h16M9 7V4h6v3M6 7l1 13h10l1-13"/></svg></div><div class="crit-r"><span class="op">≥</span><span class="val">120 <i>°C</i></span></div></div>
+<div class="crit"><div class="crit-t"><span>Water vapour trans.</span><svg class="ic" viewBox="0 0 24 24"><path d="M4 7h16M9 7V4h6v3M6 7l1 13h10l1-13"/></svg></div><div class="crit-r"><span class="op">≤</span><span class="val">5.0 <i>g/m²·d</i></span></div></div>
+<div class="crit"><div class="crit-t"><span>Compliance</span><svg class="ic" viewBox="0 0 24 24"><path d="M4 7h16M9 7V4h6v3M6 7l1 13h10l1-13"/></svg></div><div class="crit-r"><span class="val">RoHS · REACH</span></div></div>
+</div>
+<div class="res-main">
+<div class="res-top"><span class="micro">Ranked results</span><span class="note">Ranked against your criteria</span></div>
+<table class="grid">
+<tr><th>Rank</th><th>Material</th><th>Evidence</th><th>Criteria met</th><th class="r">Tensile</th><th class="r">T max</th><th class="r">WVTR</th><th class="r">Match</th></tr>
+<tr><td class="rk">1</td><td><span class="matname">Polyamide 6, 30% glass fibre<span>AMP-4412 · 25038-54-4</span></span></td><td><span class="ev"><span class="dot dot-strong"></span>Strong</span></td><td><span class="met"><span class="seg"><i class="s"></i><i class="s"></i><i class="s"></i></span><span>3 of 3</span></span></td><td class="r n-ok">165</td><td class="r n-ok">150</td><td class="r n-ok">3.2<sup class="ai">AI</sup></td><td class="r n">94 %</td></tr>
+<tr><td class="rk">2</td><td><span class="matname">Polyamide 66, 35% glass fibre<span>AMP-4680 · 32131-17-2</span></span></td><td><span class="ev"><span class="dot dot-strong"></span>Strong</span></td><td><span class="met"><span class="seg"><i class="s"></i><i class="s"></i><i class="s"></i></span><span>3 of 3</span></span></td><td class="r n-ok">180</td><td class="r n-ok">160</td><td class="r n-ok">3.6</td><td class="r n">91 %</td></tr>
+<tr><td class="rk">3</td><td><span class="matname">Polybutylene terephthalate, 20% GF<span>AMP-3118 · 24968-12-5</span></span></td><td><span class="ev"><span class="dot dot-strong"></span>Strong</span></td><td><span class="met"><span class="seg"><i class="s"></i><i class="s"></i><i class="s"></i></span><span>3 of 3</span></span></td><td class="r n-ok">110</td><td class="r n-ok">140</td><td class="r n-ok">2.4</td><td class="r n">88 %</td></tr>
+<tr><td class="rk">4</td><td><span class="matname">Polyphenylene sulphide, 40% GF<span>AMP-5902 · 26125-40-6</span></span></td><td><span class="ev"><span class="dot dot-strong"></span>Strong</span></td><td><span class="met"><span class="seg"><i class="s"></i><i class="s"></i><i class="s"></i></span><span>3 of 3</span></span></td><td class="r n-ok">190</td><td class="r n-ok">220</td><td class="r n-ok">0.9</td><td class="r n">83 %</td></tr>
+<tr><td class="rk">5</td><td><span class="matname">Copolyester, high-clarity extrusion<span>AMP-1355 · 25038-59-9</span></span></td><td><span class="ev"><span class="dot dot-strong"></span>Strong</span></td><td><span class="met"><span class="seg"><i class="s"></i><i class="s"></i><i class="s"></i></span><span>3 of 3</span></span></td><td class="r n-ok">72</td><td class="r n-ok">120</td><td class="r n-ok">1.8</td><td class="r n">77 %</td></tr>
+<tr><td class="rk">6</td><td><span class="matname">Polycarbonate / ABS, flame-retardant<span>AMP-2207 · 25037-45-0</span></span></td><td><span class="ev"><span class="dot dot-limited"></span>Limited</span></td><td><span class="met"><span class="seg"><i class="l"></i><i class="l"></i><i></i></span><span>2 of 3</span></span></td><td class="r n-ok">62</td><td class="r n-ok">125</td><td class="r n-no">6.8<sup class="ai">AI</sup></td><td class="r n">86 %</td></tr>
+<tr><td class="rk">7</td><td><span class="matname">Polypropylene TPO impact copolymer<span>AMP-0914 · 9010-79-1</span></span></td><td><span class="ev"><span class="dot dot-limited"></span>Limited</span></td><td><span class="met"><span class="seg"><i class="w"></i><i></i><i></i></span><span>1 of 3</span></span></td><td class="r n-no">28</td><td class="r n-no">105</td><td class="r n-ok">1.1</td><td class="r n">74 %</td></tr>
+<tr><td class="rk">8</td><td><span class="matname">High-density polyethylene, injection<span>AMP-0271 · 9002-88-4</span></span></td><td><span class="ev"><span class="dot dot-strong"></span>Strong</span></td><td><span class="met"><span class="seg"><i class="w"></i><i></i><i></i></span><span>1 of 3</span></span></td><td class="r n-no">31</td><td class="r n-no">95</td><td class="r n-ok">0.4</td><td class="r n">68 %</td></tr>
+<tr><td class="rk">9</td><td><span class="matname">Thermoplastic polyurethane, aliphatic 95A<span>AMP-7741 · 9009-54-5</span></span></td><td><span class="ev"><span class="dot dot-limited"></span>Limited</span></td><td><span class="met"><span class="seg"><i></i><i></i><i></i></span><span>0 of 3</span></span></td><td class="r n-no">48</td><td class="r n-no">110</td><td class="r n-no">12.0<sup class="ai">AI</sup></td><td class="r n">79 %</td></tr>
+<tr><td class="rk">10</td><td><span class="matname">Polylactide / PBAT compound<span>AMP-6620 · 9051-89-2</span></span></td><td><span class="ev"><span class="dot dot-weak"></span>Weak</span></td><td><span class="met"><span class="seg"><i></i><i></i><i></i></span><span>0 of 3</span></span></td><td class="r n-no">45</td><td class="r n-no">65</td><td class="r n-no">22.0<sup class="ai">AI</sup></td><td class="r n">71 %</td></tr>
+</table>
+<div class="res-foot"><em>GREEN</em> MEETS THE CRITERION · <b>RED</b> MISSES IT · <sup class="ai">AI</sup> MODEL-GENERATED, NOT MEASURED</div>
+</div>
+</div></div>
+</div></div>
+        </div>
+        <div class="feat-txt">
+          <span class="micro">03</span>
+          <h3>You have six constraints and a commercial deadline</h3>
+          <p>State them all at once: property floors, restricted-substance lists, end use and industry. Every candidate comes back ranked with its trade-off stated, and with the predicted numbers marked apart from the measured ones. Filtering by region is in development.</p>
+          <div class="out">A shortlist in an afternoon, not a month of datasheets.</div>
+          <div class="swipe">Swipe the panel to explore<svg class="ic" viewBox="0 0 24 24" style="width:12px;height:12px"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+        </div>
+      </div>
+      <div class="feat feat-flip rv">
+        <div class="feat-shot">
+<div class="scaler"><div class="surface">
+<div class="appbar appbar-cw">
+<span class="cw-brand">Claude</span><span class="cw-sub">Cowork</span>
+<span class="appbar-right"><span class="chip-cw"><i></i>matterialis &#183; MCP</span></span>
+</div>
+<div class="screen-body cw">
+<div class="cw-msg cw-user">
+<span class="cw-who">You</span>
+<div class="cw-body"><p>We need to drop AMP-9140 from the barrier film. Has to hold 60 MPa tensile and 120 &#176;C, clear RoHS and REACH, and be sourceable in the UK. What are my options?</p></div>
+</div>
+<div class="cw-msg">
+<span class="cw-who">Claude</span>
+<div class="cw-body">
+<p class="cw-line">Checking the library rather than guessing. Calling the Matterialis server.</p>
+<div class="cw-tool">
+<div class="cw-tool-h"><svg class="ic" viewBox="0 0 24 24" style="width:11px;height:11px"><path d="M4 8l4 4-4 4"/><path d="M11 16h9"/></svg><b>matterialis</b><span>find_substitutes</span><span class="cw-ok">200</span></div>
+<table class="cw-args">
+<tr><td>Incumbent</td><td class="v">AMP-9140</td></tr>
+<tr><td>Tensile, min</td><td class="v">60 MPa</td></tr>
+<tr><td>Service temp, min</td><td class="v">120 &#176;C</td></tr>
+<tr><td>Compliance</td><td class="v">RoHS, REACH</td></tr>
+</table>
+</div>
+<div class="cw-res">
+<div class="cw-res-h"><span class="micro">3 candidates returned</span><span class="note">each with its evidence</span></div>
+<table class="grid">
+<tr><th>Grade</th><th>Evidence</th><th>Criteria</th><th class="r">Tensile</th><th class="r">T max</th><th class="r">Match</th></tr>
+<tr><td><span class="matname">Polyamide 6, 30% GF<span>AMP-4412</span></span></td><td><span class="ev"><span class="dot dot-strong"></span>Strong</span></td><td><span class="met"><span class="seg"><i class="s"></i><i class="s"></i><i class="s"></i></span><span>3 of 3</span></span></td><td class="r n-ok">165</td><td class="r n-ok">150</td><td class="r n">94 %</td></tr>
+<tr><td><span class="matname">PBT, 20% GF<span>AMP-3118</span></span></td><td><span class="ev"><span class="dot dot-strong"></span>Strong</span></td><td><span class="met"><span class="seg"><i class="s"></i><i class="s"></i><i class="s"></i></span><span>3 of 3</span></span></td><td class="r n-ok">110</td><td class="r n-ok">140</td><td class="r n">88 %</td></tr>
+<tr><td><span class="matname">PC / ABS, FR<span>AMP-2207</span></span></td><td><span class="ev"><span class="dot dot-limited"></span>Limited</span></td><td><span class="met"><span class="seg"><i class="l"></i><i class="l"></i><i></i></span><span>2 of 3</span></span></td><td class="r n-ok">62</td><td class="r n-ok">125<sup class="ai">AI</sup></td><td class="r n">86 %</td></tr>
+</table>
+</div>
+<p class="cw-line">Two clear it outright. <b>AMP-4412</b> has the most headroom on both. On <b>AMP-2207</b> the 125 &#176;C is model-generated, not measured, so I would not commit to it without a lab check.</p>
+<p class="cw-cite">Every value carries its status. Predictions stay marked <sup class="ai">AI</sup>.</p>
+</div>
+</div>
+<div class="cw-compose"><span>Ask a follow-up, or tell it which one to take to the lab</span><svg class="ic" viewBox="0 0 24 24" style="width:12px;height:12px"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+</div>
+</div></div>
+        </div>
+        <div class="feat-txt">
+          <span class="micro">04</span>
+          <h3>Your AI assistant does not know industrial chemistry</h3>
+          <p>Industrial chemistry is not in any general model's training set, so an assistant asked about materials guesses. Matterialis exposes the same intelligence over an MCP server, so Claude and any other MCP client can look up grades, properties and substitutes directly, with the evidence attached and every prediction still marked.</p>
+          <div class="out">Your agents stop guessing about materials and start looking them up.</div>
+          <div class="swipe">Swipe the panel to explore<svg class="ic" viewBox="0 0 24 24" style="width:12px;height:12px"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- ================= COMPARISON ================= -->
 <section class="sec" id="compare">
@@ -1640,10 +1648,10 @@ footer{background:var(--chrome);border-top:1px solid var(--chrome-line);padding:
   <div class="wrap foot">
     <svg viewBox="0 0 577.6 118.1" role="img" aria-label="Matterialis, by Amphico"><use href="#mtl-lockup"/></svg>
     <nav>
-      <a href="#product">Product</a>
+      <a href="#cases">Problems</a>
+      <a href="#product">How it works</a>
       <a href="#trust">Research</a>
       <a href="#faq">FAQ</a>
-      <a href="suppliers/" data-audience="suppliers">For suppliers</a>
     </nav>
   </div>
 </footer>
@@ -1819,7 +1827,7 @@ footer{background:var(--chrome);border-top:1px solid var(--chrome-line);padding:
   });
 
   /* nav section highlight */
-  var secs = ['product','cases','compare','trust','faq'];
+  var secs = ['cases','product','compare','trust','faq'];
   if('IntersectionObserver' in window){
     var no = new IntersectionObserver(function(es){
       es.forEach(function(e){
