@@ -8,12 +8,35 @@ favicon is embedded as a data URI and the logo is an inline SVG symbol, so the
 page works opened straight from disk.
 
 ```
-index.html      the whole site
-design.md       the design system: tokens, type, colour rules, voice
-ANALYTICS.md    what the page measures and how to verify it
-img/            use-case photography, credits, competitor and team logos
-CNAME           matterialis.com
+index.html            the formulator page (the home page)
+suppliers/index.html  the supplier page: the same product, sold to the seller
+inbound/index.html    the QR landing for the stand; printed, so never moved
+design.md             the design system: tokens, type, colour rules, voice
+ANALYTICS.md          what the pages measure and how to verify it
+img/                  use-case photography, credits, competitor and team logos
+CNAME                 matterialis.com
 ```
+
+## Two audiences
+
+The site speaks to two customers. **Formulators** (scientists who search for and
+substitute materials) land on `/`. **Suppliers and distributors** (who sell them,
+and whose buyers would use the website assistant) land on `/suppliers/`. A switch
+in the nav of both pages, a band above each footer and a footer link cross them
+over; the switch marks where you are with the accent, which is the one job the
+accent has on chrome.
+
+`/suppliers/` is assembled from `index.html` by the build step described in its
+own header comment: the `<head>`, both stylesheets and the logo sprite are copied
+from the home page verbatim, so tokens and tracking cannot drift. Shared changes go
+in `index.html` and are rebuilt into the supplier page; supplier copy and mocks live
+in the supplier body. The product mocks on both pages are drawn in HTML/CSS, not
+screenshots. The mocks on `/suppliers/` show the website assistant and the supplier
+dashboard with a fictional supplier, Northfield Specialty Polymers.
+
+The QR code printed for the stand resolves to `/inbound/`, which posts to Formspree
+and redirects to `/?c=fll-usa-26`. Neither file moves, and `index.html` keeps
+reading `?c=`, so a redesign of either page must not touch that flow.
 
 ## Preview
 

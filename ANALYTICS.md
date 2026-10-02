@@ -8,7 +8,7 @@ Everything the landing page records, where it goes, and how to check it works.
 | Project | **Matterialis**, id `105300` |
 | Project token | `phc_GnUG6LSAkfO92r5vN5asriOtooGLbGPx3V40gANPcBi` |
 | Ingestion host | `https://eu.i.posthog.com` — not yet proxied, see [Pending](#pending-the-first-party-proxy) |
-| Code | `index.html`, two blocks marked `ANALYTICS` |
+| Code | `index.html` and `suppliers/index.html`, two blocks marked `ANALYTICS` in each |
 
 The project token is **not a secret**. It is a write-only public key, it is
 already in the HTML served to every visitor, and it cannot read data back.
@@ -60,8 +60,14 @@ Custom events, on top of PostHog's own `$pageview` / `$pageleave` / autocapture:
 | `compare_scrolled` | the compare table is scrolled sideways | — |
 | `page_exit` | the tab is hidden or the page unloads | `last_section`, `section_path`, `read_*` per section, `max_depth_pct`, `total_engaged_seconds` |
 
-On **every** event: `visit_number`, `is_returning`, `days_since_first_visit`,
-and a campaign token when the visit came from a `?c=` link.
+| `audience_switch` | a link to the other audience's page is clicked | `to` (`suppliers` or `formulators`), `location` |
+
+On **every** event: `page` (`home` or `suppliers`), `visit_number`,
+`is_returning`, `days_since_first_visit`, and a campaign token when the visit came
+from a `?c=` link. Filter on `page` to chart the two audiences apart; `/suppliers/`
+has no use-case inspector, so it never sends `use_case_*` or `more_cases_clicked`,
+and its `section_read` names are `hero`, `proof`, `product`, `compare`, `trust`,
+`faq`, `cta`.
 
 Two things to know about the numbers:
 

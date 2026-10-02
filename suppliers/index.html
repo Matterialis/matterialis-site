@@ -3,12 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Matterialis — an AI that understands industrial materials</title>
-<meta name="description" content="A foundation model for industrial materials. Predict unreported properties, navigate chemical space, find substitutes under real constraints, and reformulate — across more than 200,000 material grades.">
+<title>Matterialis for suppliers — your datasheets, answering buyers on your website</title>
+<meta name="description" content="A private version of Matterialis over your own catalogue. Buyers describe what they need; the assistant checks every requirement against your datasheets, on your website. You see every request, and what you could not offer.">
 <link rel="icon" href="data:image/x-icon;base64,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">
 <!-- iOS home screen / Android. The favicon above is the same approved .ico
      from the logo kit, inlined so the page still works from disk. -->
-<link rel="apple-touch-icon" href="img/brand/apple-touch-icon.png">
+<link rel="apple-touch-icon" href="../img/brand/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;450;500;550;600;700&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -116,7 +116,7 @@ window.MTL_ANALYTICS = {
     try{ token = new URLSearchParams(location.search).get('c'); }catch(e){}
 
     posthog.register({
-      page: 'home',
+      page: 'suppliers',
       visit_number: visits,
       is_returning: visits > 1,
       days_since_first_visit: Math.floor((Date.now() - firstMs) / 864e5)
@@ -166,6 +166,18 @@ window.MTL_ANALYTICS = {
   }catch(e){}
 })();
 </script>
+
+
+<!-- ============================================================
+     /suppliers — Matterialis for suppliers and distributors.
+
+     The second audience of the site. Everything above this line
+     and the two stylesheets below are copied from ../index.html by
+     the build script that assembles this page, so tokens and
+     analytics cannot drift between the two. Edit index.html for
+     shared things; edit the supplier body for this page.
+     ============================================================ -->
+
 <style>
 /* ============================================================
    MATTERIALIS — marketing site   (one 't' — matches the logo)
@@ -592,11 +604,6 @@ sup.ai{font-family:var(--font-mono);font-size:7.5px;color:var(--brand-signal);ma
 .spark{width:70px;height:3px;background:var(--rule-soft);border-radius:var(--radius-indicator);flex:none;position:relative;overflow:hidden}
 .spark i{position:absolute;left:0;top:0;bottom:0;background:var(--chart-2);border-radius:var(--radius-indicator);display:block}
 </style>
-</head>
-<body>
-<!-- brand:sprite (generated by matterialis-brand/brand/make-brand.py from img/brand/matterialis-lockup-colour.svg; edit the master, not this) -->
-<svg width="0" height="0" aria-hidden="true" focusable="false" style="position:absolute"><symbol id="mtl-lockup" viewBox="0 0 577.6 118.1"><g style="fill:var(--logo-ink,#FFFFFF)"><defs><clipPath id="mtl-clippath"><path fill="none" d="M2.2,82c-2.2,0-2.9-1.5-1.5-3.7L63.7,2.9C65.2.7,66.6,0,69.6,0h19.8C91.5,0,92.3.7,92.3,2.9v38.1c.3.2.4-2.1,1.9-3.7L122.3,3.7C124.5,1.5,125.9,0,128.1,0h24.9C155.2,0,155.9.7,155.9,2.9v76.1c0,2.2-.7,2.9-2.9,2.9h-19c-2.2,0-2.9-.7-2.9-2.9v-43.9l-34.3,44.8c-1,1.2-1.7,2-2.3,2h-23.5c-2.2,0-2.9-.7-2.9-2.9v-43.2l-39.4,43.9c-1.5,1.5-2.9,2.2-5.1,2.2H2.2Z"/></clipPath></defs><path d="M155.9,2.9v76.1c0,2.2-.7,2.9-2.9,2.9h-19c-2.2,0-2.9-.7-2.9-2.9v-46.2l-33.7,46.2c-1.9,1.3-2.3,2.9-3.5,2.9h-22.9c-2.2,0-2.9-.7-2.9-2.9v-43.2l-39.5,43.9c-1.5,1.5-2.9,2.2-5.1,2.2H2.2c-2.2,0-2.9-1.5-1.5-3.7L63.7,2.9C65.2.7,66.6,0,69.6,0h19.8C91.6,0,92.3.7,92.3,2.9v39.7c0,1.5.7-.1,1.5-1.6L122.3,3.7C124.5,1.5,125.9,0,128.1,0h24.9C155.2,0,155.9.7,155.9,2.9Z"/><g clip-path="url(#mtl-clippath)"><path fill="#3678F3" d="M95.9,83.6l-35.1,1.3S123.6,0,125.3,0h30.1"/></g><path fill-rule="evenodd" d="M195.5,73.5c-.2,0-.4-.3-.4-.4s-.1-10.5-.2-23c-.1-30.3-.1-37.3,0-38.2.2-1.3,0-1.3,5.7-1.3s5.2,0,5.5.2c.4.1.6.4,1.2,1.6.4.8.8,1.6.8,1.8s.3.7.5,1.2.4,1,.5,1.2c0,.2.2.5.4.7.1.2.4.8.6,1.2s.4,1,.6,1.3.4.8.6,1.2c.2.4.4,1,.6,1.2s.3.5.4.7c.2.6,1.3,2.9,2,4.3.4.7.9,1.7,1.2,2.2s.8,1.5,1.3,2.4.8,1.5.8,1.6c0,0,1.6,3.7,2.7,6,.3.6.7,1.6,1.1,2.3.3.7.8,1.7,1,2.2s.5,1,.5,1.1.2.6.5,1.1.6,1.2.7,1.5.3.8.4,1,.4.7.5,1.1.3.8.4.9c.1,0,.3.5.5,1s.4,1,.6,1.2.4.6.4.9c.2.7,1,2.2,2.3,4.9.6,1.2,1.1,2.4,1.2,2.7.3.9,1.4,1,1.7.2.1-.4.8-1.8,2.7-5.8.3-.7.6-1.3.6-1.4s1.1-2.5,1.4-3c.1-.2.3-.7.5-1,.5-1.2,1.6-3.3,2.3-4.5,1.2-2.2,1.8-3.4,3-6.2.2-.4.6-1.3.8-2s.5-1.3.5-1.3l.4-1c.2-.5.5-1,.5-1.2.1-.4,2.2-4.7,2.5-5.2.1-.2.4-.7.5-1,.2-.4.5-1,.7-1.5.7-1.3,1.6-3.4,1.6-3.5s.3-.7.6-1.4.8-1.7,1.1-2.3c1.4-3,1.7-3.7,1.9-4.1.1-.2.4-.8.6-1.2.9-1.8,1.5-2.7,2-2.9.3-.1,2-.2,5.4-.2,6.2,0,5.6-.4,5.7,3,0,1.4.1,15.1.1,30.6,0,30.6,0,28.9-.8,29.3-.5.2-6.5,0-6.9-.2-.6-.3-.6-.5-.7-16,0-8.2-.1-17.5-.2-20.8,0-3.3-.1-7.2-.1-8.7,0-2.4,0-2.7-.2-2.8-.3-.1-.6.1-.9,1-.3.7-1.1,2.4-1.7,3.7-.2.3-.6,1.2-.9,1.9-1.3,2.8-2.8,6-3.3,6.8-.1.2-.5,1-.9,1.8s-.9,1.9-1.2,2.5-.5,1.1-.5,1.2c0,0-.2.6-.5,1.2-.3.6-.5,1.2-.5,1.3s-.2.5-.4.9-.5.9-.6,1.2-.4.9-.6,1.4c-.2.4-.7,1.4-1,2.1s-.9,1.8-1.2,2.5c-.3.6-.8,1.6-1,2.2-.9,1.9-1.6,3.4-4.1,8.5-1.4,2.8-2.6,5.3-2.7,5.5-.1.5-1.2,2.4-1.5,2.6-.2.2-1.2.2-5.2.2h-2.3l-.6-.6c-.4-.4-.7-.9-1-1.7-.5-1.4-1.5-3.8-1.8-4.4-.2-.5-1.6-3.3-2.2-4.5-.2-.4-.4-.9-.6-1.1-.4-.6-4-8-4.6-9.2s-.8-1.7-1-2.1c-.3-.5-1.6-3.3-2.1-4.4-.2-.6-.7-1.5-.9-2s-.7-1.5-1-2.2c-.3-.6-.7-1.4-.8-1.7s-.4-.9-.6-1.3c-.2-.4-.5-1-.6-1.2s-.4-.7-.5-1-.4-.9-.6-1.2c-.2-.3-.4-.8-.5-1.1s-.7-1.5-1.2-2.7c-1.4-3-1.8-3.7-2.1-4.8-.3-1-1.1-1.9-1.3-1.6-.3.3-.4,29.9-.2,42.5v5.8l-.3.3c-.4.2-.8.3-3.7.3s-3.4,0-3.6,0h0l-.3-.2Z"/><path fill-rule="evenodd" d="M286.2,74.8c-3.3-.4-7.2-2.3-9.8-4.6-3.2-3-4.8-8.5-3.7-12.9.2-.8.5-1.6.6-1.8,1.2-2.3,1.6-2.8,3.2-4.4,1.3-1.3,2.5-2.3,3.4-2.7.3-.2.8-.4,1-.5.7-.4,3.7-1.2,4.8-1.4.5,0,1.8-.3,2.8-.4,2.3-.4,6.7-.6,13-.6s5,0,5,0c.4-.3.5-.7.3-2.6-.2-2.6-.2-2.9-.9-4.1-1.3-2.5-2.7-3.8-5.3-5-1.4-.7-1.5-.7-3.5-.8-2.2-.2-5.3,0-6.6.4-4.2,1.1-6.4,2.2-9.6,5-1.4,1.2-2,1.4-2.6.7-.2-.2-.7-.7-1.2-1.1-2.6-2.4-2.8-2.8-1.4-4.3,3.2-3.3,5.5-4.6,10.1-5.7,4.5-1.1,5.1-1.2,8.3-1.3,3.3-.1,6.3.1,8,.6.7.2,1.6.4,2,.5.9.2,3.1,1.3,4.1,2,.7.5,2.2,2.1,3,3.1.9,1.2,2.5,4.3,2.8,5.5.1.4.3,1.2.5,1.7.4,1.1.5,7.4.5,23.1v10.1l-.3.4c-.3.3-1.4.4-3.4.4s-3.1,0-3.4-.2c-.6-.3-.8-1-.9-2.9-.1-2.4-.4-2.7-1.4-1.3-.6.8-2,2.1-3.1,2.8-1.9,1.2-5.9,2.5-8.5,2.8-1.5.2-6.6.2-8,0h0l.2-.4ZM295.9,67.8c5-1.3,8.2-3.9,10-8.2.6-1.4.8-2.4,1-5,.1-2,.1-2.2-.1-2.5l-.3-.4h-3.5c-10.7-.2-16.2.7-19.1,3-4.9,3.9-3.3,10.7,3.1,13,1.6.6,2,.6,4.7.6s2.7,0,4.2-.5h0Z"/><path fill-rule="evenodd" d="M336.2,74.3c-3.7-.9-5.4-1.8-7.3-3.8-2.7-3-3.5-4.9-3.8-9.1,0-1.1-.2-6-.2-11.1s-.1-10.7-.2-12.7v-3.6l-.4-.2c-.3,0-1.3-.2-3.5-.2s-3.2,0-3.4-.3c-.2-.2-.2-.8-.3-3v-2.7c-.1,0,.2-.2.2-.2.3-.2,1-.2,3.7-.3,3.1-.1,3.3-.1,3.6-.4.2-.3.3-.9.4-6v-5.7l.5-.3c.5-.4,1.9-.9,3.6-1.1.8,0,1.9-.2,2.5-.3,1.8-.3,1.7-.7,1.8,6.8,0,5.8.1,6.3.3,6.6.2.3.6.3,5.4.4,8.3.2,7.8,0,8,3.3.1,2.3.1,2.8-.3,3.1-.1,0-3.1.2-6.6.2-5.1,0-6.4,0-6.6.2-.3.3-.4,26.2,0,27.7.7,3.2,3,5.4,6.1,5.8,1.9.2,4.8,0,6.3-.6.8-.3,1.4-.2,1.6.2,0,.2.2,1.1.4,2.1s.3,2.1.4,2.4c.3,1-.3,1.6-2.2,2-.7.2-1.7.4-2.2.5-1.7.4-5.6.4-7.4,0h0l-.4.3Z"/><path fill-rule="evenodd" d="M359.6,74.3c-3.7-.9-5.4-1.8-7.3-3.8-2.7-3-3.5-4.9-3.8-9.1,0-1.1-.2-6-.2-11.1s-.1-10.7-.2-12.7v-3.6l-.4-.2c-.3,0-1.3-.2-3.5-.2s-3.2,0-3.4-.3c-.2-.2-.2-.8-.3-3v-2.7c-.1,0,.2-.2.2-.2.3-.2,1-.2,3.7-.3,3.1-.1,3.3-.1,3.6-.4.2-.3.3-.9.4-6v-5.7l.5-.3c.5-.4,1.9-.9,3.6-1.1.8,0,1.9-.2,2.5-.3,1.8-.3,1.7-.7,1.8,6.8,0,5.8.1,6.3.3,6.6.2.3.6.3,5.4.4,8.3.2,7.8,0,8,3.3.1,2.3.1,2.8-.3,3.1-.1,0-3.1.2-6.6.2-5.1,0-6.4,0-6.6.2-.3.3-.4,26.2,0,27.7.7,3.2,3,5.4,6.1,5.8,1.9.2,4.8,0,6.3-.6.8-.3,1.4-.2,1.6.2,0,.2.2,1.1.4,2.1s.3,2.1.4,2.4c.3,1-.3,1.6-2.2,2-.7.2-1.7.4-2.2.5-1.7.4-5.6.4-7.4,0h0l-.4.3Z"/><path fill-rule="evenodd" d="M391.7,74.9c-2.4-.2-6.6-1.6-8.7-2.8-5.4-3.4-8.9-7.3-9.9-11.1-.1-.5-.3-1.1-.5-1.4-.2-.5-.6-2.4-1.2-5.1-.3-1.4-.3-6.6,0-7.7,0-.4.3-1.6.5-2.6s.5-2.3.7-2.8.4-1.1.5-1.5c.3-1.1,1.7-3.5,2.9-5.1,3-4,6.4-6.5,10-7.4.7-.2,1.6-.5,1.9-.6,2.7-1,11.5-1,13.9,0,.4.1,1.1.4,1.7.6,3,.9,6.6,3.4,8.7,6.1,1.3,1.7,1.7,2.3,2,2.8.1.3.4.8.6,1.1s.4.8.5,1c0,.3.3.8.5,1.2s.5,1.2.6,1.9.4,1.5.5,1.8c.3.8.5,3,.6,5.7,0,2.1,0,2.2-.3,2.5l-.3.3h-18.2c-20.1,0-18.6,0-18.8,1-.1.6.9,5.4,1.3,6.2.2.4.4.8.4.9,0,.3,1.4,2.2,2.2,3,2,2,5.5,3.9,8.1,4.4,2.5.5,7.3.2,9.2-.6.5-.2,1.2-.4,1.6-.5,1.6-.4,4.8-2.8,6.3-4.8,1-1.3,1.5-1.6,2.4-1,.2.2.8.4,1.3.5.7.2,1.3.5,3,1.2.7.3.7.8,0,2-1.1,1.7-1.9,2.6-3.6,4.4-2.8,2.8-5.2,4.1-10,5.5-3,.8-6.6,1.2-10.3.9h-.1ZM408.7,45.2c.6-.3,0-2.5-1.5-5.3s-3.6-4.8-6.6-6.2c-2.2-1-2.5-1.1-5.7-1.1s-3.1,0-5.6.9c-3.4,1.2-6.1,3.5-7.4,6.3-.8,1.6-1.2,2.7-1.5,3.8-.4,1.3-.2,1.7.5,1.8.6,0,27.4,0,27.7-.2h.1Z"/><path fill-rule="evenodd" d="M422.9,73.4c-.3,0-.6-.2-.6-.2-.4,0-.5-10-.4-29.9v-15.5c.1,0,.5-.2.5-.2.3-.2.9-.2,3.6-.2,4.2,0,4,0,4,1.9s.4,3,1.2,1.8c.4-.6,2.4-2.4,3.3-3,1.1-.7,3.1-1.5,4.2-1.7,2.6-.5,7.5-.4,8.9.2.6.2,1,1,.9,1.5-.5,2.4-.6,2.7-1.2,4.1-.3.6-.5.7-2.5.5-2.7-.3-4.9,0-6.5.8-2.9,1.4-4.9,3.3-6,5.3-.2.4-.4.8-.5.9-.3.4-1.3,3.6-1.4,4.8,0,.6-.1,7-.2,14.9,0,13.5,0,13.8-.3,14-.4.3-6,.3-6.9,0h-.1Z"/><path fill-rule="evenodd" d="M453,73.4c-.7-.4-.7.6-.7-23.3v-22.4l.3-.2c.3-.2.9-.2,3.7-.2s3.4,0,3.7.4l.3.3v35.4c0,10.1.1,9.8-.8,10.1-.6.2-6.2.2-6.6,0h.1ZM455.4,18.6c-1.9-.4-2.9-1.1-3.7-2.7-1.2-2.2,0-5.5,2.4-6.3.9-.3,3.1-.3,4,0,1.1.3,2.4,1.5,2.9,2.5,1.6,3.5-1.7,7.4-5.5,6.6h0Z"/><path fill-rule="evenodd" d="M479.4,74.8c-2.8-.3-6.1-1.5-8.2-2.9-2.8-2-4.7-4.6-5.7-7.8-.5-1.5-.5-1.7-.5-3.9s.2-2.9.6-4c.3-.9.6-1.7.7-1.7,0,0,.3-.3.4-.7.6-1.2,2.6-3.4,4.3-4.7,1.9-1.4,6.2-2.8,11.1-3.4.6,0,4.5-.2,8.7-.2,7.4,0,7.6,0,8-.3l.4-.3v-2c0-1.8,0-2-.5-3.3s-1.3-2.6-2.2-3.6c-1.3-1.3-4.4-2.9-6.5-3.2-1.5-.2-5.8,0-7,.3-2.3.6-3.4,1-3.9,1.3-.3.2-.6.3-.7.3-.5,0-3,1.7-4.8,3.3-1.6,1.4-1.9,1.4-2.7.6-.4-.3-1.3-1.2-2-2-1.3-1.2-1.4-1.4-1.4-1.9,0-1.4,4.5-4.9,8.1-6.3.4-.2.9-.4,1.1-.5s1-.4,1.9-.6,1.8-.4,2-.5c2-.8,11-.7,13.6,0,.5.1,1.5.4,2.1.6,2.6.6,4.5,1.8,6.7,4,1.5,1.5,2.7,3.3,3.1,4.7.1.3.3.8.5,1.1.6,1.1.6,2.5.6,19.3s0,16.3-.1,16.4c0,0-.2.3-.3.4-.3.2-6.4.2-6.7,0-.4-.2-.6-.9-.6-2.6s0-2.5-1.8-.9c-1.9,1.7-4.4,3-7,3.7-.5,0-1.5.4-2.2.6-2,.6-6.3.9-9,.6h-.1ZM487.7,67.7c3-.7,6.1-2.5,7.8-4.5,1.2-1.5,1.4-1.7,2-2.9,1.1-2.1,2-7.2,1.4-8-.3-.4-1.2-.5-6.1-.5s-7.2,0-9.2.5c-3.1.6-4,.8-4.5,1.1-.4.2-.9.4-1.1.5-.7.3-2.2,1.3-2.9,2.1-3,3.2-1.9,8.2,2.2,10.7.8.5,3,1.3,4.1,1.5s4.6,0,6.3-.4h0Z"/><path fill-rule="evenodd" d="M515.9,73.5c-1.6,0-1.9,0-2.2-.4l-.3-.3v-31c0-22.1,0-31.1.2-31.3.3-.6.6-.7,3.8-.8,3.5-.1,3.8,0,4,.5s.3,61.6,0,62.5-.5,1-5.7.7h.1Z"/><path fill-rule="evenodd" d="M528.9,73.7c-.9-.2-.9,1.4-.9-22.9v-22.7c.2-.9.5-1,4-.9,3.2,0,3.7.2,4,.9.2.3.2,3.1,0,16.1,0,8.7,0,18.7,0,22.3v6.6l-.4.3c-.3.2-.6.3-2,.3h-4.7.1ZM530,18.7c-1.8-.5-3.3-2.2-3.7-4.2-.3-1.7,1.4-4.2,3.3-4.9.9-.3,3.6-.2,4.4.1,1.7.8,2.5,1.9,2.8,3.8.3,2.1-.5,3.7-2.6,4.7-1,.5-3,.7-4.2.4h0Z"/><path fill-rule="evenodd" d="M553.8,74.8c-1.5,0-5.4-1.1-6.8-1.7-1.1-.4-3.2-1.6-3.9-2.1-.2-.2-.5-.3-.6-.3s-1.2-.9-1.9-1.5c-.5-.5-.5-1.3.2-1.9.3-.2.7-.7.9-1.1.2-.3.5-.7.5-.7,0,0,.3-.3.4-.7.5-.9,1.1-1.6,1.6-1.6s.6.2.9.5c1.6,1.4,5.6,3.3,7.5,3.6.6,0,1.5.3,2.2.5,3.6,1,9.6-.2,12.2-2.3,1.5-1.2,2-2.3,2-4.4s-.6-3.3-2.1-4.5c-.7-.5-3.3-1.7-3.7-1.7s-1-.2-1.9-.5-2.9-.8-4.3-1.2c-4.1-1-4.3-1.1-5.8-1.5-2.8-.9-4.6-1.9-6.5-3.8-2.5-2.5-3.4-4.7-3.4-8.1s.4-4.7,2-7.1c2-3,6.5-5.5,11-6.3,3.6-.6,11.7-.4,13.5.4.4.2,1,.4,1.5.5,2.5.8,7.2,3.8,7.2,4.8s-.5,1.1-1.2,2c-.4.4-.9,1.1-1.2,1.6-.8,1.3-1.6,1.5-2.3.8-.3-.4-2.2-1.7-2.3-1.7s-.5-.2-.9-.5c-.5-.3-.9-.5-1.1-.5s-.6-.2-1.1-.4c-1.2-.6-4.1-1-6.7-1s-2,0-2.2,0-.7,0-1.2.2c-1.2.2-3.6,1.3-4.5,2.2-2.3,2.1-2.7,5.3-1,7.3.7.8,2.4,2,3,2.2.2,0,.7.2,1,.4s1,.4,1.5.5c.5,0,1.4.3,2,.5s1.8.5,2.7.6c.8,0,2,.4,2.6.6s1.6.5,2.2.6,1.3.4,1.6.5.9.4,1.3.5,1,.4,1.3.6c.3.2.6.3.7.3.2,0,2,1.2,3,2.1,1.7,1.4,2.9,3.6,3.4,5.8.4,1.9.2,5.5-.4,6.8-.2.4-.4,1-.5,1.4-.9,2.6-4.2,5.6-7.9,7.5-1.5.8-4.3,1.6-6,1.8-1.7.2-6.9.2-8.8,0h.3Z"/><path d="M496.6,101.2c-1.9-1.9-4.3-2.9-7-2.9s-5.1,1-7,2.9-2.9,4.3-2.9,7,1,5.1,2.9,7,4.3,2.9,7,2.9,5.1-1,7-2.9,2.9-4.3,2.9-7-1-5.1-2.9-7h0ZM489.8,108.4c.8-2.3,2-3.7,3.5-4.2,1.6-.6,3.2,0,4,.5-1.8.4-3.1,1.5-5,4.5-1.1,1.7-2.9,3.3-4.9,4.2-1.1.5-2.2.8-3.1.8,2.2-.3,4.2-2.4,5.4-5.7h.1ZM484.2,113.1c-1,0-1.8-.4-2.5-1.4-.1-.2-.3-.5-.4-.8-.5-1.7-.6-3.5,0-5.2,1.2-3.7,4.6-6.2,8.4-6.2s1.7,0,2.6.4c1.9.6,3.6,1.8,4.7,3.5-1.1-.4-2.5-.7-4-.2-1.8.6-3.2,2.3-4.1,4.9-1,2.8-2.8,4.8-4.5,5h-.2ZM493.2,109.8c1.7-2.8,2.8-3.7,4.4-4.1-.4,1.3-1.1,3.5-2.4,5.2-1.8,2.5-4.4,3.5-6.2,4-1.6.4-3,.4-3.9.2,2.7-.3,6.2-2.3,8.2-5.4h-.1ZM496.1,111.7c1-1.4,1.8-3.2,2.2-4.6.2,1.2,0,2.5-.3,3.7-.7,2.2-2.2,4.1-4.3,5.1-2.1,1.1-4.4,1.3-6.7.6-.1,0-.3,0-.5-.2,2.9,0,7.1-1.4,9.5-4.8h0v.2Z"/><path d="M557.7,108.5c0-3.2,2.1-5.1,5-5.1s4.5,1.6,4.6,4h-2.1c-.2-1.3-1.2-2.2-2.5-2.2s-2.7,1.2-2.7,3.2,1.2,3.3,2.8,3.3,2.2-.8,2.5-2.2h2.1c-.3,2.5-2,4.1-4.6,4.1s-5-2.3-5-5.2h0Z"/><path d="M567.7,108.4c0-3.2,2.1-5.1,5-5.1s5,2.2,5,5.1-2.1,5.2-5,5.2-5-2.2-5-5.2ZM575.4,108.4c0-1.9-1.1-3.2-2.8-3.2s-2.8,1.3-2.8,3.2,1.2,3.4,2.8,3.4,2.8-1.4,2.8-3.4Z"/><path d="M507,108.5c0-3,1.9-5.1,4.4-5.1s2.8.7,3.4,1.8l.2-1.5h1.7v9.7h-2.1v-1.3c-.6,1-1.7,1.6-3.1,1.6-2.6,0-4.5-2.1-4.5-5.2h0ZM514.6,108.5c0-1.9-1.1-3.3-2.7-3.3s-2.7,1.3-2.7,3.3,1.1,3.3,2.7,3.3,2.7-1.4,2.7-3.4h0Z"/><path d="M518,113.4v-9.7h1.7l.2,1.3c.6-.9,1.8-1.7,3.2-1.7s2.5.7,3,1.8c.5-1,1.8-1.8,3.3-1.8s3.3,1.4,3.3,3.5v6.5h-2.2v-6.3c0-1.1-.7-1.8-1.7-1.8-1.5,0-2.4,1-2.4,2.2v5.9h-2.2v-6.3c0-1.1-.7-1.8-1.7-1.8-1.5,0-2.4,1-2.4,2.2v5.9h-2.2.1Z"/><path d="M533.8,117v-13.3h1.7l.2,1.6c.6-1.1,1.9-1.9,3.4-1.9,2.6,0,4.4,2.1,4.4,5.1s-1.8,5.2-4.4,5.2-2.5-.6-3.2-1.6v5h-2.2,0ZM541.3,108.5c0-1.9-1.1-3.3-2.7-3.3s-2.7,1.3-2.7,3.2,1.1,3.4,2.7,3.4,2.7-1.4,2.7-3.3h0Z"/><path d="M544.6,113.4v-13.7h2.2v5.1c.7-.8,1.8-1.3,3-1.3,2.1,0,3.4,1.4,3.4,3.6v6.4h-2.2v-6.3c0-1.1-.7-1.8-1.9-1.8s-2.4,1-2.4,2.2v5.9h-2.2.1Z"/><path d="M554.3,101c0-.8.6-1.4,1.4-1.4s1.4.6,1.4,1.4-.6,1.4-1.4,1.4-1.4-.6-1.4-1.4ZM554.6,113.4v-9.7h2.2v9.7h-2.2Z"/><path d="M458.5,113.6c-.7,0-1.3,0-1.8-.4s-.9-.7-1.2-1.2v1.5h-1.9v-13h1.9v4.6c.3-.4.6-.8,1.1-1.1.5-.3,1.1-.5,1.8-.5s1.6.2,2.2.6,1.1,1,1.4,1.8.5,1.7.5,2.7-.2,1.9-.5,2.7-.8,1.3-1.4,1.8c-.6.4-1.4.6-2.2.6h.1ZM458.2,111.9c.7,0,1.3-.3,1.8-.9.4-.6.6-1.4.6-2.5s-.2-1.9-.6-2.5-1-.9-1.8-.9-1,0-1.4.4-.7.7-.9,1.2c-.2.5-.3,1.1-.3,1.8s.1,1.3.3,1.8c.2.5.5.9.9,1.2.4.3.8.4,1.4.4Z"/><path d="M464.4,116.1v-1.6h1.2c.3,0,.6,0,.7-.2.2,0,.3-.3.4-.5l.3-.8h-.6l-3.5-9.4h2.1l2.7,7.6,2.5-7.6h2.1l-3.9,10.8c-.2.6-.5,1-.9,1.2-.4.3-.9.4-1.6.4h-1.5Z"/></g></symbol><symbol id="mtl-logo" viewBox="0 0 577.6 82"><use href="#mtl-lockup" width="577.6" height="118.1"/></symbol></svg>
-<!-- /brand:sprite -->
 <style>
 /* ---- classification section ---- */
 .ont{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:44px}
@@ -906,24 +913,164 @@ footer{background:var(--chrome);border-top:1px solid var(--chrome-line);padding:
   .rv{opacity:1;transform:none}
 }
 </style>
+
+<style>
+/* ============================================================
+   SUPPLIERS PAGE — additions on top of the shared stylesheet.
+   Same tokens, same rules. Nothing here introduces a colour, a
+   radius or a type size that is not already a token above.
+   ============================================================ */
+
+/* the audience switch and the cross-link band are styled in the shared stylesheet */
+
+/* ---- hero: the buyer's view ----
+   A supplier's own product page, drawn deliberately plain, with the
+   assistant open in the corner. The host page is NOT our chrome: it has to
+   read as somebody else's website, or the claim "on your site" is lost. */
+.host{height:100%;display:flex;flex-direction:column;background:#F7F6F3;position:relative;overflow:hidden}
+.host-bar{height:52px;display:flex;align-items:center;gap:26px;padding:0 28px;background:#2E3A33;color:#EDEBE6;flex:none}
+.host-bar b{font-family:Georgia,"Times New Roman",serif;font-weight:400;font-size:17px;letter-spacing:.01em}
+.host-bar span{font-size:12px;color:#B7BEB9}
+.host-body{flex:1;padding:34px 28px;display:grid;grid-template-columns:minmax(0,1fr) 420px;gap:28px;align-items:start}
+.host-body h2{font-family:Georgia,"Times New Roman",serif;font-weight:400;font-size:30px;letter-spacing:0;line-height:1.15;color:#2B2F2C;max-width:560px}
+.host-body p{font-family:Georgia,"Times New Roman",serif;font-size:14.5px;line-height:1.6;color:#4C524E;margin-top:14px;max-width:560px}
+.host-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:22px;max-width:620px}
+.host-tile{background:#fff;border:1px solid #E4E1DA;padding:14px;font-family:Georgia,"Times New Roman",serif;color:#2B2F2C;font-size:13px;line-height:1.4}
+.host-tile small{display:block;color:#8A8F8B;font-size:11px;margin-top:5px}
+.host-note{position:absolute;left:28px;bottom:16px;font-family:var(--font-mono);font-size:var(--text-micro);letter-spacing:var(--tracking-micro);text-transform:uppercase;color:#8A8F8B}
+
+/* ---- the assistant, as the buyer sees it ----
+   Drawn from the product: chrome header, paper body, a card per product with
+   every requirement in one of four states. Evidence colours report the four
+   states and nothing else, exactly as on the formulator page. */
+.w{display:flex;flex-direction:column;background:var(--paper-raised);border:1px solid var(--rule);border-radius:var(--radius-frame);box-shadow:var(--shadow-frame);overflow:hidden}
+.w-head{background:var(--chrome);color:var(--chrome-fg);display:flex;align-items:center;gap:8px;padding:11px 14px}
+.w-head .t{font-size:var(--text-lg);font-weight:550;letter-spacing:var(--tracking-title)}
+.w-head .s{font-family:var(--font-mono);font-size:var(--text-micro);letter-spacing:var(--tracking-micro);text-transform:uppercase;color:var(--chrome-fg-dim);display:block;margin-top:1px}
+.w-head .x{margin-left:auto;color:var(--chrome-fg-dim);font-size:var(--text-sm)}
+.w-log{display:flex;flex-direction:column;gap:10px;padding:14px;background:var(--paper)}
+.w-msg{font-size:var(--text-md);line-height:1.5;color:#43464A}
+.w-buyer{align-self:flex-end;max-width:88%;background:var(--paper-sunken);border-radius:var(--radius-surface);padding:8px 11px;color:var(--ink)}
+.w-read{border-left:1px solid var(--brand-signal);padding-left:9px;color:var(--ink-muted);font-size:var(--text-sm);line-height:1.45}
+.w-card{background:var(--paper-raised);border:1px solid var(--rule);border-radius:var(--radius-surface);padding:11px 12px}
+.w-card .nm{font-weight:550;letter-spacing:var(--tracking-name);font-size:var(--text-md)}
+.w-card .fam{font-size:var(--text-xs);color:var(--ink-muted);margin-top:1px}
+.w-counts{display:flex;gap:9px;margin-top:7px;font-family:var(--font-mono);font-size:var(--text-2xs)}
+.w-counts .c-met{color:var(--evidence-strong)}.w-counts .c-miss{color:var(--evidence-weak)}
+.w-counts .c-unc{color:var(--evidence-limited)}.w-counts .c-ns{color:var(--ink-faint)}
+.w-crit{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:3px 12px;margin-top:7px;font-size:var(--text-sm)}
+.w-crit dt{color:var(--ink-muted)}
+.w-crit dd{margin:0;text-align:right;font-family:var(--font-mono);white-space:nowrap}
+.w-crit dd i{font-style:normal;font-size:var(--text-micro);letter-spacing:var(--tracking-micro);text-transform:uppercase;margin-left:6px}
+.s-met{color:var(--ink)}.s-miss{color:var(--evidence-weak)}.s-unc{color:var(--evidence-limited)}.s-ns{color:var(--ink-faint)}
+.w-reason{margin-top:7px;font-size:var(--text-xs);color:var(--ink-muted);line-height:1.45}
+.w-foot{display:flex;align-items:center;gap:8px;padding:10px 14px;border-top:1px solid var(--rule);background:var(--paper-raised)}
+.w-input{flex:1;border:1px solid var(--rule);border-radius:var(--radius-control);background:var(--paper-sunken);padding:7px 10px;font-size:var(--text-md);color:var(--ink-faint)}
+.w-send{height:30px;padding:0 12px;border-radius:var(--radius-control);background:var(--chrome);color:#fff;font-size:var(--text-sm);font-weight:500;display:flex;align-items:center}
+.w-legal{padding:6px 14px 9px;background:var(--paper-strip);font-family:var(--font-mono);font-size:var(--text-micro);letter-spacing:var(--tracking-micro);text-transform:uppercase;color:var(--ink-faint);display:flex;justify-content:space-between;gap:10px}
+.w-legal b{font-weight:400;color:var(--brand-signal)}
+/* the hero places the assistant over the host page like the real embed */
+.host .w{position:absolute;right:28px;top:22px;width:380px;max-height:calc(100% - 44px)}
+.host .w-log{max-height:430px;overflow:hidden}
+
+/* ---- mock 02: the conversation, large ---- */
+.conv{flex:1;min-height:0;display:grid;grid-template-columns:minmax(0,1fr) 380px}
+.conv-main{padding:18px 20px;overflow:hidden;display:flex;flex-direction:column;gap:12px;border-right:1px solid var(--rule-soft)}
+.conv-main .w-msg{font-size:14px}
+.conv-rail{background:var(--paper-strip);padding:14px 16px;overflow:hidden}
+.conv-rail .micro{margin-bottom:9px}
+.conv-rail .kv dd{max-width:60%;text-align:right;white-space:normal}
+
+/* ---- mock 03: the supplier's dashboard ---- */
+.dash{flex:1;min-height:0;padding:14px 16px;display:flex;flex-direction:column;gap:12px;overflow:hidden;background:var(--paper)}
+.kpis{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}
+.kpi{background:var(--paper-raised);border:1px solid var(--rule);border-radius:var(--radius-surface);padding:11px 13px}
+.kpi .micro{margin-bottom:6px}
+.kpi .v{font-family:var(--font-mono);font-size:24px;font-weight:500;letter-spacing:var(--tracking-figure);line-height:1}
+.kpi .v small{font-size:.5em;color:var(--ink-muted);font-weight:400;letter-spacing:0}
+.kpi .n{margin-top:6px;font-size:var(--text-xs);color:var(--ink-muted);line-height:1.35}
+.dash-grid{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:8px;flex:1;min-height:0}
+.dpanel{background:var(--paper-raised);border:1px solid var(--rule);border-radius:var(--radius-surface);overflow:hidden;display:flex;flex-direction:column;min-height:0}
+.dpanel-h{display:flex;align-items:baseline;justify-content:space-between;gap:10px;padding:10px 13px 9px;border-bottom:1px solid var(--rule-soft)}
+.dpanel-h h5{margin:0;font-size:var(--text-md);font-weight:550;letter-spacing:var(--tracking-name)}
+.dpanel-h span{font-size:var(--text-xs);color:var(--ink-faint)}
+.dtab{width:100%;border-collapse:collapse}
+.dtab th{font-family:var(--font-mono);font-size:var(--text-micro);letter-spacing:var(--tracking-micro);text-transform:uppercase;color:var(--ink-faint);font-weight:400;text-align:left;padding:7px 13px;border-bottom:1px solid var(--rule);background:var(--paper-strip)}
+.dtab td{padding:8px 13px;border-bottom:1px solid var(--rule-soft);font-size:var(--text-base);vertical-align:top}
+.dtab tr:last-child td{border-bottom:0}
+.dtab th.r,.dtab td.r{text-align:right;font-family:var(--font-mono);font-variant-numeric:tabular-nums}
+.dtab td.r.z{color:var(--ink-faint)}
+.dtab .want{font-family:var(--font-mono);font-size:var(--text-xs);white-space:nowrap}
+.dtab .var{display:block;font-family:var(--font-mono);font-size:var(--text-micro);color:var(--ink-faint);margin-top:2px}
+.unmet{padding:4px 13px}
+.unmet-i{padding:9px 0;border-bottom:1px solid var(--rule-soft)}
+.unmet-i:last-child{border-bottom:0}
+.unmet-i .q{font-size:var(--text-base);color:var(--ink);line-height:1.4}
+.unmet-i .why{margin-top:4px;border-left:2px solid var(--evidence-weak);padding-left:8px;font-size:var(--text-xs);color:var(--ink-muted);line-height:1.4}
+.unmet-i .tag{display:inline-block;font-family:var(--font-mono);font-size:var(--text-micro);letter-spacing:var(--tracking-micro);text-transform:uppercase;border:1px solid var(--rule);border-radius:var(--radius-indicator);padding:1px 5px;margin-bottom:5px}
+.tag-gap{color:var(--evidence-weak)}.tag-nofit{color:var(--evidence-weak)}.tag-doc{color:var(--evidence-limited)}
+
+/* ---- mock 01: the private catalogue ---- */
+.chip-chrome.on{color:var(--chrome-fg);border-color:var(--brand-signal)}
+
+/* ---- mock 04: the embed ---- */
+.embed{flex:1;min-height:0;display:grid;grid-template-columns:minmax(0,1fr) 380px}
+.embed-main{padding:22px 26px;display:flex;flex-direction:column;gap:16px;overflow:hidden;border-right:1px solid var(--rule-soft)}
+.snippet{background:var(--chrome);color:var(--chrome-fg-strong);border-radius:var(--radius-surface);padding:16px 18px;font-family:var(--font-mono);font-size:var(--text-md);line-height:1.6;overflow:hidden;white-space:pre-wrap;word-break:break-all}
+.snippet i{font-style:normal;color:var(--chrome-fg-dim)}
+.snippet b{font-weight:400;color:#fff}
+.steps{list-style:none;margin:0;padding:0;display:grid;gap:0;border:1px solid var(--rule);border-radius:var(--radius-surface);overflow:hidden}
+.steps li{display:grid;grid-template-columns:36px minmax(0,1fr) auto;gap:12px;align-items:baseline;padding:11px 14px;border-top:1px solid var(--rule-soft);font-size:var(--text-md);background:var(--paper-raised)}
+.steps li:first-child{border-top:0}
+.steps li b{font-family:var(--font-mono);font-size:var(--text-micro);color:var(--ink-faint);letter-spacing:var(--tracking-micro);font-weight:400}
+.steps li .st{font-family:var(--font-mono);font-size:var(--text-2xs);color:var(--ink-muted)}
+.steps li .st.ok{color:var(--evidence-strong)}
+.embed-rail{background:var(--paper-strip);padding:16px;overflow:hidden}
+.embed-rail .micro{margin-bottom:9px}
+.rule-list{list-style:none;margin:0 0 16px;padding:0}
+.rule-list li{display:flex;gap:9px;padding:7px 0;border-bottom:1px solid var(--rule-soft);font-size:var(--text-xs);color:var(--ink-muted);line-height:1.45}
+.rule-list li:last-child{border-bottom:0}
+.rule-list li svg{width:12px;height:12px;flex:none;margin-top:2px;stroke:var(--ink);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.rule-list li b{color:var(--ink);font-weight:500}
+
+/* ---- the one-line embed, in the copy column too ---- */
+.feat-txt .snippet{margin-top:14px;font-size:var(--text-sm);padding:12px 14px}
+
+@media (max-width:760px){
+  .kpis{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:1080px){
+  /* the hero mock keeps its 1180px inside a scroller like the product rows */
+  .hero-shot{aspect-ratio:auto;overflow-x:auto;overflow-y:hidden;-webkit-overflow-scrolling:touch;border:1px solid var(--rule);border-radius:var(--radius-frame);background:var(--paper-raised);box-shadow:var(--shadow-frame)}
+  .hero-shot .scaler{position:relative;transform:none!important}
+  .hero-shot .surface{border:0;border-radius:0;box-shadow:none}
+}
+.hero-shot{position:relative;width:100%;aspect-ratio:1180/664;margin-top:48px}
+.hero-shot .surface{height:100%;display:flex;flex-direction:column;box-shadow:var(--shadow-frame)}
+</style>
+
+</head>
+<body>
+<!-- brand:sprite (generated by matterialis-brand/brand/make-brand.py from img/brand/matterialis-lockup-colour.svg; edit the master, not this) -->
+<svg width="0" height="0" aria-hidden="true" focusable="false" style="position:absolute"><symbol id="mtl-lockup" viewBox="0 0 577.6 118.1"><g style="fill:var(--logo-ink,#FFFFFF)"><defs><clipPath id="mtl-clippath"><path fill="none" d="M2.2,82c-2.2,0-2.9-1.5-1.5-3.7L63.7,2.9C65.2.7,66.6,0,69.6,0h19.8C91.5,0,92.3.7,92.3,2.9v38.1c.3.2.4-2.1,1.9-3.7L122.3,3.7C124.5,1.5,125.9,0,128.1,0h24.9C155.2,0,155.9.7,155.9,2.9v76.1c0,2.2-.7,2.9-2.9,2.9h-19c-2.2,0-2.9-.7-2.9-2.9v-43.9l-34.3,44.8c-1,1.2-1.7,2-2.3,2h-23.5c-2.2,0-2.9-.7-2.9-2.9v-43.2l-39.4,43.9c-1.5,1.5-2.9,2.2-5.1,2.2H2.2Z"/></clipPath></defs><path d="M155.9,2.9v76.1c0,2.2-.7,2.9-2.9,2.9h-19c-2.2,0-2.9-.7-2.9-2.9v-46.2l-33.7,46.2c-1.9,1.3-2.3,2.9-3.5,2.9h-22.9c-2.2,0-2.9-.7-2.9-2.9v-43.2l-39.5,43.9c-1.5,1.5-2.9,2.2-5.1,2.2H2.2c-2.2,0-2.9-1.5-1.5-3.7L63.7,2.9C65.2.7,66.6,0,69.6,0h19.8C91.6,0,92.3.7,92.3,2.9v39.7c0,1.5.7-.1,1.5-1.6L122.3,3.7C124.5,1.5,125.9,0,128.1,0h24.9C155.2,0,155.9.7,155.9,2.9Z"/><g clip-path="url(#mtl-clippath)"><path fill="#3678F3" d="M95.9,83.6l-35.1,1.3S123.6,0,125.3,0h30.1"/></g><path fill-rule="evenodd" d="M195.5,73.5c-.2,0-.4-.3-.4-.4s-.1-10.5-.2-23c-.1-30.3-.1-37.3,0-38.2.2-1.3,0-1.3,5.7-1.3s5.2,0,5.5.2c.4.1.6.4,1.2,1.6.4.8.8,1.6.8,1.8s.3.7.5,1.2.4,1,.5,1.2c0,.2.2.5.4.7.1.2.4.8.6,1.2s.4,1,.6,1.3.4.8.6,1.2c.2.4.4,1,.6,1.2s.3.5.4.7c.2.6,1.3,2.9,2,4.3.4.7.9,1.7,1.2,2.2s.8,1.5,1.3,2.4.8,1.5.8,1.6c0,0,1.6,3.7,2.7,6,.3.6.7,1.6,1.1,2.3.3.7.8,1.7,1,2.2s.5,1,.5,1.1.2.6.5,1.1.6,1.2.7,1.5.3.8.4,1,.4.7.5,1.1.3.8.4.9c.1,0,.3.5.5,1s.4,1,.6,1.2.4.6.4.9c.2.7,1,2.2,2.3,4.9.6,1.2,1.1,2.4,1.2,2.7.3.9,1.4,1,1.7.2.1-.4.8-1.8,2.7-5.8.3-.7.6-1.3.6-1.4s1.1-2.5,1.4-3c.1-.2.3-.7.5-1,.5-1.2,1.6-3.3,2.3-4.5,1.2-2.2,1.8-3.4,3-6.2.2-.4.6-1.3.8-2s.5-1.3.5-1.3l.4-1c.2-.5.5-1,.5-1.2.1-.4,2.2-4.7,2.5-5.2.1-.2.4-.7.5-1,.2-.4.5-1,.7-1.5.7-1.3,1.6-3.4,1.6-3.5s.3-.7.6-1.4.8-1.7,1.1-2.3c1.4-3,1.7-3.7,1.9-4.1.1-.2.4-.8.6-1.2.9-1.8,1.5-2.7,2-2.9.3-.1,2-.2,5.4-.2,6.2,0,5.6-.4,5.7,3,0,1.4.1,15.1.1,30.6,0,30.6,0,28.9-.8,29.3-.5.2-6.5,0-6.9-.2-.6-.3-.6-.5-.7-16,0-8.2-.1-17.5-.2-20.8,0-3.3-.1-7.2-.1-8.7,0-2.4,0-2.7-.2-2.8-.3-.1-.6.1-.9,1-.3.7-1.1,2.4-1.7,3.7-.2.3-.6,1.2-.9,1.9-1.3,2.8-2.8,6-3.3,6.8-.1.2-.5,1-.9,1.8s-.9,1.9-1.2,2.5-.5,1.1-.5,1.2c0,0-.2.6-.5,1.2-.3.6-.5,1.2-.5,1.3s-.2.5-.4.9-.5.9-.6,1.2-.4.9-.6,1.4c-.2.4-.7,1.4-1,2.1s-.9,1.8-1.2,2.5c-.3.6-.8,1.6-1,2.2-.9,1.9-1.6,3.4-4.1,8.5-1.4,2.8-2.6,5.3-2.7,5.5-.1.5-1.2,2.4-1.5,2.6-.2.2-1.2.2-5.2.2h-2.3l-.6-.6c-.4-.4-.7-.9-1-1.7-.5-1.4-1.5-3.8-1.8-4.4-.2-.5-1.6-3.3-2.2-4.5-.2-.4-.4-.9-.6-1.1-.4-.6-4-8-4.6-9.2s-.8-1.7-1-2.1c-.3-.5-1.6-3.3-2.1-4.4-.2-.6-.7-1.5-.9-2s-.7-1.5-1-2.2c-.3-.6-.7-1.4-.8-1.7s-.4-.9-.6-1.3c-.2-.4-.5-1-.6-1.2s-.4-.7-.5-1-.4-.9-.6-1.2c-.2-.3-.4-.8-.5-1.1s-.7-1.5-1.2-2.7c-1.4-3-1.8-3.7-2.1-4.8-.3-1-1.1-1.9-1.3-1.6-.3.3-.4,29.9-.2,42.5v5.8l-.3.3c-.4.2-.8.3-3.7.3s-3.4,0-3.6,0h0l-.3-.2Z"/><path fill-rule="evenodd" d="M286.2,74.8c-3.3-.4-7.2-2.3-9.8-4.6-3.2-3-4.8-8.5-3.7-12.9.2-.8.5-1.6.6-1.8,1.2-2.3,1.6-2.8,3.2-4.4,1.3-1.3,2.5-2.3,3.4-2.7.3-.2.8-.4,1-.5.7-.4,3.7-1.2,4.8-1.4.5,0,1.8-.3,2.8-.4,2.3-.4,6.7-.6,13-.6s5,0,5,0c.4-.3.5-.7.3-2.6-.2-2.6-.2-2.9-.9-4.1-1.3-2.5-2.7-3.8-5.3-5-1.4-.7-1.5-.7-3.5-.8-2.2-.2-5.3,0-6.6.4-4.2,1.1-6.4,2.2-9.6,5-1.4,1.2-2,1.4-2.6.7-.2-.2-.7-.7-1.2-1.1-2.6-2.4-2.8-2.8-1.4-4.3,3.2-3.3,5.5-4.6,10.1-5.7,4.5-1.1,5.1-1.2,8.3-1.3,3.3-.1,6.3.1,8,.6.7.2,1.6.4,2,.5.9.2,3.1,1.3,4.1,2,.7.5,2.2,2.1,3,3.1.9,1.2,2.5,4.3,2.8,5.5.1.4.3,1.2.5,1.7.4,1.1.5,7.4.5,23.1v10.1l-.3.4c-.3.3-1.4.4-3.4.4s-3.1,0-3.4-.2c-.6-.3-.8-1-.9-2.9-.1-2.4-.4-2.7-1.4-1.3-.6.8-2,2.1-3.1,2.8-1.9,1.2-5.9,2.5-8.5,2.8-1.5.2-6.6.2-8,0h0l.2-.4ZM295.9,67.8c5-1.3,8.2-3.9,10-8.2.6-1.4.8-2.4,1-5,.1-2,.1-2.2-.1-2.5l-.3-.4h-3.5c-10.7-.2-16.2.7-19.1,3-4.9,3.9-3.3,10.7,3.1,13,1.6.6,2,.6,4.7.6s2.7,0,4.2-.5h0Z"/><path fill-rule="evenodd" d="M336.2,74.3c-3.7-.9-5.4-1.8-7.3-3.8-2.7-3-3.5-4.9-3.8-9.1,0-1.1-.2-6-.2-11.1s-.1-10.7-.2-12.7v-3.6l-.4-.2c-.3,0-1.3-.2-3.5-.2s-3.2,0-3.4-.3c-.2-.2-.2-.8-.3-3v-2.7c-.1,0,.2-.2.2-.2.3-.2,1-.2,3.7-.3,3.1-.1,3.3-.1,3.6-.4.2-.3.3-.9.4-6v-5.7l.5-.3c.5-.4,1.9-.9,3.6-1.1.8,0,1.9-.2,2.5-.3,1.8-.3,1.7-.7,1.8,6.8,0,5.8.1,6.3.3,6.6.2.3.6.3,5.4.4,8.3.2,7.8,0,8,3.3.1,2.3.1,2.8-.3,3.1-.1,0-3.1.2-6.6.2-5.1,0-6.4,0-6.6.2-.3.3-.4,26.2,0,27.7.7,3.2,3,5.4,6.1,5.8,1.9.2,4.8,0,6.3-.6.8-.3,1.4-.2,1.6.2,0,.2.2,1.1.4,2.1s.3,2.1.4,2.4c.3,1-.3,1.6-2.2,2-.7.2-1.7.4-2.2.5-1.7.4-5.6.4-7.4,0h0l-.4.3Z"/><path fill-rule="evenodd" d="M359.6,74.3c-3.7-.9-5.4-1.8-7.3-3.8-2.7-3-3.5-4.9-3.8-9.1,0-1.1-.2-6-.2-11.1s-.1-10.7-.2-12.7v-3.6l-.4-.2c-.3,0-1.3-.2-3.5-.2s-3.2,0-3.4-.3c-.2-.2-.2-.8-.3-3v-2.7c-.1,0,.2-.2.2-.2.3-.2,1-.2,3.7-.3,3.1-.1,3.3-.1,3.6-.4.2-.3.3-.9.4-6v-5.7l.5-.3c.5-.4,1.9-.9,3.6-1.1.8,0,1.9-.2,2.5-.3,1.8-.3,1.7-.7,1.8,6.8,0,5.8.1,6.3.3,6.6.2.3.6.3,5.4.4,8.3.2,7.8,0,8,3.3.1,2.3.1,2.8-.3,3.1-.1,0-3.1.2-6.6.2-5.1,0-6.4,0-6.6.2-.3.3-.4,26.2,0,27.7.7,3.2,3,5.4,6.1,5.8,1.9.2,4.8,0,6.3-.6.8-.3,1.4-.2,1.6.2,0,.2.2,1.1.4,2.1s.3,2.1.4,2.4c.3,1-.3,1.6-2.2,2-.7.2-1.7.4-2.2.5-1.7.4-5.6.4-7.4,0h0l-.4.3Z"/><path fill-rule="evenodd" d="M391.7,74.9c-2.4-.2-6.6-1.6-8.7-2.8-5.4-3.4-8.9-7.3-9.9-11.1-.1-.5-.3-1.1-.5-1.4-.2-.5-.6-2.4-1.2-5.1-.3-1.4-.3-6.6,0-7.7,0-.4.3-1.6.5-2.6s.5-2.3.7-2.8.4-1.1.5-1.5c.3-1.1,1.7-3.5,2.9-5.1,3-4,6.4-6.5,10-7.4.7-.2,1.6-.5,1.9-.6,2.7-1,11.5-1,13.9,0,.4.1,1.1.4,1.7.6,3,.9,6.6,3.4,8.7,6.1,1.3,1.7,1.7,2.3,2,2.8.1.3.4.8.6,1.1s.4.8.5,1c0,.3.3.8.5,1.2s.5,1.2.6,1.9.4,1.5.5,1.8c.3.8.5,3,.6,5.7,0,2.1,0,2.2-.3,2.5l-.3.3h-18.2c-20.1,0-18.6,0-18.8,1-.1.6.9,5.4,1.3,6.2.2.4.4.8.4.9,0,.3,1.4,2.2,2.2,3,2,2,5.5,3.9,8.1,4.4,2.5.5,7.3.2,9.2-.6.5-.2,1.2-.4,1.6-.5,1.6-.4,4.8-2.8,6.3-4.8,1-1.3,1.5-1.6,2.4-1,.2.2.8.4,1.3.5.7.2,1.3.5,3,1.2.7.3.7.8,0,2-1.1,1.7-1.9,2.6-3.6,4.4-2.8,2.8-5.2,4.1-10,5.5-3,.8-6.6,1.2-10.3.9h-.1ZM408.7,45.2c.6-.3,0-2.5-1.5-5.3s-3.6-4.8-6.6-6.2c-2.2-1-2.5-1.1-5.7-1.1s-3.1,0-5.6.9c-3.4,1.2-6.1,3.5-7.4,6.3-.8,1.6-1.2,2.7-1.5,3.8-.4,1.3-.2,1.7.5,1.8.6,0,27.4,0,27.7-.2h.1Z"/><path fill-rule="evenodd" d="M422.9,73.4c-.3,0-.6-.2-.6-.2-.4,0-.5-10-.4-29.9v-15.5c.1,0,.5-.2.5-.2.3-.2.9-.2,3.6-.2,4.2,0,4,0,4,1.9s.4,3,1.2,1.8c.4-.6,2.4-2.4,3.3-3,1.1-.7,3.1-1.5,4.2-1.7,2.6-.5,7.5-.4,8.9.2.6.2,1,1,.9,1.5-.5,2.4-.6,2.7-1.2,4.1-.3.6-.5.7-2.5.5-2.7-.3-4.9,0-6.5.8-2.9,1.4-4.9,3.3-6,5.3-.2.4-.4.8-.5.9-.3.4-1.3,3.6-1.4,4.8,0,.6-.1,7-.2,14.9,0,13.5,0,13.8-.3,14-.4.3-6,.3-6.9,0h-.1Z"/><path fill-rule="evenodd" d="M453,73.4c-.7-.4-.7.6-.7-23.3v-22.4l.3-.2c.3-.2.9-.2,3.7-.2s3.4,0,3.7.4l.3.3v35.4c0,10.1.1,9.8-.8,10.1-.6.2-6.2.2-6.6,0h.1ZM455.4,18.6c-1.9-.4-2.9-1.1-3.7-2.7-1.2-2.2,0-5.5,2.4-6.3.9-.3,3.1-.3,4,0,1.1.3,2.4,1.5,2.9,2.5,1.6,3.5-1.7,7.4-5.5,6.6h0Z"/><path fill-rule="evenodd" d="M479.4,74.8c-2.8-.3-6.1-1.5-8.2-2.9-2.8-2-4.7-4.6-5.7-7.8-.5-1.5-.5-1.7-.5-3.9s.2-2.9.6-4c.3-.9.6-1.7.7-1.7,0,0,.3-.3.4-.7.6-1.2,2.6-3.4,4.3-4.7,1.9-1.4,6.2-2.8,11.1-3.4.6,0,4.5-.2,8.7-.2,7.4,0,7.6,0,8-.3l.4-.3v-2c0-1.8,0-2-.5-3.3s-1.3-2.6-2.2-3.6c-1.3-1.3-4.4-2.9-6.5-3.2-1.5-.2-5.8,0-7,.3-2.3.6-3.4,1-3.9,1.3-.3.2-.6.3-.7.3-.5,0-3,1.7-4.8,3.3-1.6,1.4-1.9,1.4-2.7.6-.4-.3-1.3-1.2-2-2-1.3-1.2-1.4-1.4-1.4-1.9,0-1.4,4.5-4.9,8.1-6.3.4-.2.9-.4,1.1-.5s1-.4,1.9-.6,1.8-.4,2-.5c2-.8,11-.7,13.6,0,.5.1,1.5.4,2.1.6,2.6.6,4.5,1.8,6.7,4,1.5,1.5,2.7,3.3,3.1,4.7.1.3.3.8.5,1.1.6,1.1.6,2.5.6,19.3s0,16.3-.1,16.4c0,0-.2.3-.3.4-.3.2-6.4.2-6.7,0-.4-.2-.6-.9-.6-2.6s0-2.5-1.8-.9c-1.9,1.7-4.4,3-7,3.7-.5,0-1.5.4-2.2.6-2,.6-6.3.9-9,.6h-.1ZM487.7,67.7c3-.7,6.1-2.5,7.8-4.5,1.2-1.5,1.4-1.7,2-2.9,1.1-2.1,2-7.2,1.4-8-.3-.4-1.2-.5-6.1-.5s-7.2,0-9.2.5c-3.1.6-4,.8-4.5,1.1-.4.2-.9.4-1.1.5-.7.3-2.2,1.3-2.9,2.1-3,3.2-1.9,8.2,2.2,10.7.8.5,3,1.3,4.1,1.5s4.6,0,6.3-.4h0Z"/><path fill-rule="evenodd" d="M515.9,73.5c-1.6,0-1.9,0-2.2-.4l-.3-.3v-31c0-22.1,0-31.1.2-31.3.3-.6.6-.7,3.8-.8,3.5-.1,3.8,0,4,.5s.3,61.6,0,62.5-.5,1-5.7.7h.1Z"/><path fill-rule="evenodd" d="M528.9,73.7c-.9-.2-.9,1.4-.9-22.9v-22.7c.2-.9.5-1,4-.9,3.2,0,3.7.2,4,.9.2.3.2,3.1,0,16.1,0,8.7,0,18.7,0,22.3v6.6l-.4.3c-.3.2-.6.3-2,.3h-4.7.1ZM530,18.7c-1.8-.5-3.3-2.2-3.7-4.2-.3-1.7,1.4-4.2,3.3-4.9.9-.3,3.6-.2,4.4.1,1.7.8,2.5,1.9,2.8,3.8.3,2.1-.5,3.7-2.6,4.7-1,.5-3,.7-4.2.4h0Z"/><path fill-rule="evenodd" d="M553.8,74.8c-1.5,0-5.4-1.1-6.8-1.7-1.1-.4-3.2-1.6-3.9-2.1-.2-.2-.5-.3-.6-.3s-1.2-.9-1.9-1.5c-.5-.5-.5-1.3.2-1.9.3-.2.7-.7.9-1.1.2-.3.5-.7.5-.7,0,0,.3-.3.4-.7.5-.9,1.1-1.6,1.6-1.6s.6.2.9.5c1.6,1.4,5.6,3.3,7.5,3.6.6,0,1.5.3,2.2.5,3.6,1,9.6-.2,12.2-2.3,1.5-1.2,2-2.3,2-4.4s-.6-3.3-2.1-4.5c-.7-.5-3.3-1.7-3.7-1.7s-1-.2-1.9-.5-2.9-.8-4.3-1.2c-4.1-1-4.3-1.1-5.8-1.5-2.8-.9-4.6-1.9-6.5-3.8-2.5-2.5-3.4-4.7-3.4-8.1s.4-4.7,2-7.1c2-3,6.5-5.5,11-6.3,3.6-.6,11.7-.4,13.5.4.4.2,1,.4,1.5.5,2.5.8,7.2,3.8,7.2,4.8s-.5,1.1-1.2,2c-.4.4-.9,1.1-1.2,1.6-.8,1.3-1.6,1.5-2.3.8-.3-.4-2.2-1.7-2.3-1.7s-.5-.2-.9-.5c-.5-.3-.9-.5-1.1-.5s-.6-.2-1.1-.4c-1.2-.6-4.1-1-6.7-1s-2,0-2.2,0-.7,0-1.2.2c-1.2.2-3.6,1.3-4.5,2.2-2.3,2.1-2.7,5.3-1,7.3.7.8,2.4,2,3,2.2.2,0,.7.2,1,.4s1,.4,1.5.5c.5,0,1.4.3,2,.5s1.8.5,2.7.6c.8,0,2,.4,2.6.6s1.6.5,2.2.6,1.3.4,1.6.5.9.4,1.3.5,1,.4,1.3.6c.3.2.6.3.7.3.2,0,2,1.2,3,2.1,1.7,1.4,2.9,3.6,3.4,5.8.4,1.9.2,5.5-.4,6.8-.2.4-.4,1-.5,1.4-.9,2.6-4.2,5.6-7.9,7.5-1.5.8-4.3,1.6-6,1.8-1.7.2-6.9.2-8.8,0h.3Z"/><path d="M496.6,101.2c-1.9-1.9-4.3-2.9-7-2.9s-5.1,1-7,2.9-2.9,4.3-2.9,7,1,5.1,2.9,7,4.3,2.9,7,2.9,5.1-1,7-2.9,2.9-4.3,2.9-7-1-5.1-2.9-7h0ZM489.8,108.4c.8-2.3,2-3.7,3.5-4.2,1.6-.6,3.2,0,4,.5-1.8.4-3.1,1.5-5,4.5-1.1,1.7-2.9,3.3-4.9,4.2-1.1.5-2.2.8-3.1.8,2.2-.3,4.2-2.4,5.4-5.7h.1ZM484.2,113.1c-1,0-1.8-.4-2.5-1.4-.1-.2-.3-.5-.4-.8-.5-1.7-.6-3.5,0-5.2,1.2-3.7,4.6-6.2,8.4-6.2s1.7,0,2.6.4c1.9.6,3.6,1.8,4.7,3.5-1.1-.4-2.5-.7-4-.2-1.8.6-3.2,2.3-4.1,4.9-1,2.8-2.8,4.8-4.5,5h-.2ZM493.2,109.8c1.7-2.8,2.8-3.7,4.4-4.1-.4,1.3-1.1,3.5-2.4,5.2-1.8,2.5-4.4,3.5-6.2,4-1.6.4-3,.4-3.9.2,2.7-.3,6.2-2.3,8.2-5.4h-.1ZM496.1,111.7c1-1.4,1.8-3.2,2.2-4.6.2,1.2,0,2.5-.3,3.7-.7,2.2-2.2,4.1-4.3,5.1-2.1,1.1-4.4,1.3-6.7.6-.1,0-.3,0-.5-.2,2.9,0,7.1-1.4,9.5-4.8h0v.2Z"/><path d="M557.7,108.5c0-3.2,2.1-5.1,5-5.1s4.5,1.6,4.6,4h-2.1c-.2-1.3-1.2-2.2-2.5-2.2s-2.7,1.2-2.7,3.2,1.2,3.3,2.8,3.3,2.2-.8,2.5-2.2h2.1c-.3,2.5-2,4.1-4.6,4.1s-5-2.3-5-5.2h0Z"/><path d="M567.7,108.4c0-3.2,2.1-5.1,5-5.1s5,2.2,5,5.1-2.1,5.2-5,5.2-5-2.2-5-5.2ZM575.4,108.4c0-1.9-1.1-3.2-2.8-3.2s-2.8,1.3-2.8,3.2,1.2,3.4,2.8,3.4,2.8-1.4,2.8-3.4Z"/><path d="M507,108.5c0-3,1.9-5.1,4.4-5.1s2.8.7,3.4,1.8l.2-1.5h1.7v9.7h-2.1v-1.3c-.6,1-1.7,1.6-3.1,1.6-2.6,0-4.5-2.1-4.5-5.2h0ZM514.6,108.5c0-1.9-1.1-3.3-2.7-3.3s-2.7,1.3-2.7,3.3,1.1,3.3,2.7,3.3,2.7-1.4,2.7-3.4h0Z"/><path d="M518,113.4v-9.7h1.7l.2,1.3c.6-.9,1.8-1.7,3.2-1.7s2.5.7,3,1.8c.5-1,1.8-1.8,3.3-1.8s3.3,1.4,3.3,3.5v6.5h-2.2v-6.3c0-1.1-.7-1.8-1.7-1.8-1.5,0-2.4,1-2.4,2.2v5.9h-2.2v-6.3c0-1.1-.7-1.8-1.7-1.8-1.5,0-2.4,1-2.4,2.2v5.9h-2.2.1Z"/><path d="M533.8,117v-13.3h1.7l.2,1.6c.6-1.1,1.9-1.9,3.4-1.9,2.6,0,4.4,2.1,4.4,5.1s-1.8,5.2-4.4,5.2-2.5-.6-3.2-1.6v5h-2.2,0ZM541.3,108.5c0-1.9-1.1-3.3-2.7-3.3s-2.7,1.3-2.7,3.2,1.1,3.4,2.7,3.4,2.7-1.4,2.7-3.3h0Z"/><path d="M544.6,113.4v-13.7h2.2v5.1c.7-.8,1.8-1.3,3-1.3,2.1,0,3.4,1.4,3.4,3.6v6.4h-2.2v-6.3c0-1.1-.7-1.8-1.9-1.8s-2.4,1-2.4,2.2v5.9h-2.2.1Z"/><path d="M554.3,101c0-.8.6-1.4,1.4-1.4s1.4.6,1.4,1.4-.6,1.4-1.4,1.4-1.4-.6-1.4-1.4ZM554.6,113.4v-9.7h2.2v9.7h-2.2Z"/><path d="M458.5,113.6c-.7,0-1.3,0-1.8-.4s-.9-.7-1.2-1.2v1.5h-1.9v-13h1.9v4.6c.3-.4.6-.8,1.1-1.1.5-.3,1.1-.5,1.8-.5s1.6.2,2.2.6,1.1,1,1.4,1.8.5,1.7.5,2.7-.2,1.9-.5,2.7-.8,1.3-1.4,1.8c-.6.4-1.4.6-2.2.6h.1ZM458.2,111.9c.7,0,1.3-.3,1.8-.9.4-.6.6-1.4.6-2.5s-.2-1.9-.6-2.5-1-.9-1.8-.9-1,0-1.4.4-.7.7-.9,1.2c-.2.5-.3,1.1-.3,1.8s.1,1.3.3,1.8c.2.5.5.9.9,1.2.4.3.8.4,1.4.4Z"/><path d="M464.4,116.1v-1.6h1.2c.3,0,.6,0,.7-.2.2,0,.3-.3.4-.5l.3-.8h-.6l-3.5-9.4h2.1l2.7,7.6,2.5-7.6h2.1l-3.9,10.8c-.2.6-.5,1-.9,1.2-.4.3-.9.4-1.6.4h-1.5Z"/></g></symbol><symbol id="mtl-logo" viewBox="0 0 577.6 82"><use href="#mtl-lockup" width="577.6" height="118.1"/></symbol></svg>
+<!-- /brand:sprite -->
+
 <!-- ================= NAV ================= -->
 <nav class="nav">
   <div class="nav-in">
-    <a class="brand" href="#top" aria-label="Matterialis home"><svg viewBox="0 0 577.6 82" role="img" aria-label="Matterialis"><use href="#mtl-logo"/></svg></a>
+    <a class="brand" href="../" aria-label="Matterialis home"><svg viewBox="0 0 577.6 82" role="img" aria-label="Matterialis"><use href="#mtl-logo"/></svg></a>
     <div class="aud" aria-label="Who this page is for">
-      <a href="#top" class="on" aria-current="page">For formulators</a>
-      <a href="suppliers/" data-audience="suppliers">For suppliers</a>
+      <a href="../" data-audience="formulators">For formulators</a>
+      <a href="#top" class="on" aria-current="page">For suppliers</a>
     </div>
     <div class="nav-links">
       <a href="#product">Product</a>
-      <a href="#cases">Use cases</a>
       <a href="#compare">Compare</a>
-      <a href="#trust">Research</a>
+      <a href="#trust">Trust</a>
       <a href="#faq">FAQ</a>
-      <a href="suppliers/" class="nav-x" data-audience="suppliers">For suppliers</a>
+      <a href="../" class="nav-x" data-audience="formulators">For formulators</a>
     </div>
     <div class="nav-actions">
-      <!-- TODO: replace with the real Calendly link -->
       <a class="btn btn-on-chrome" href="https://calendar.app.google/LcwtFTNrrVFJnGiz9" target="_blank" rel="noopener">Book a demo</a>
       <a class="btn btn-ghost-chrome" href="#contact">Contact us</a>
       <button class="navtoggle" id="navtoggle" aria-label="Open menu">
@@ -936,47 +1083,60 @@ footer{background:var(--chrome);border-top:1px solid var(--chrome-line);padding:
 <!-- ================= HERO ================= -->
 <header class="hero" id="top">
   <div class="wrap hero-in">
-    <span class="eyebrow"><span class="dot dot-signal"></span>A foundation model for industrial materials</span>
-    <h1>An AI that understands industrial materials, <span class="soft">not just molecules.</span></h1>
-    <p class="lede">Molecular models do not know what a datasheet leaves out, how a grade is classified for your end use, or whether it clears REACH. Matterialis learns from the documents industry runs on. It predicts unreported properties, navigates chemical space, finds substitutes under real constraints, and proposes reformulations.</p>
+    <span class="eyebrow"><span class="dot dot-signal"></span>Matterialis for suppliers and distributors</span>
+    <h1>Your datasheets, answering buyers on your own website.</h1>
+    <p class="lede">A buyer describes the application and what it has to do. The assistant finds the products in your range that fit and checks every requirement against your own datasheets, line by line. You keep the conversation, the lead and the data. Nobody else's product is ever shown beside yours.</p>
     <div class="hero-cta">
       <a class="btn btn-primary btn-lg" href="https://calendar.app.google/LcwtFTNrrVFJnGiz9" target="_blank" rel="noopener">Book a demo</a>
       <a class="btn btn-secondary btn-lg" href="#product">See how it works</a>
-      <span class="hero-limit">It does not run your experiments. It decides which are worth running.</span>
+      <span class="hero-limit">One line of code on your site. Your datasheets do the rest.</span>
     </div>
   </div>
 
-  <div class="wrap" style="margin-top:48px">
-    <div class="surface surface-float rv">
-      <div class="appbar">
-        <span class="lg"><svg viewBox="0 0 577.6 82" role="img" aria-label="Matterialis"><use href="#mtl-logo"/></svg></span>
-        <div class="tabs">
-          <span class="tab on"><svg class="ic" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>Search</span>
-          <span class="tab">Results <b>10</b></span>
-          <span class="tab">Library <b>200,000+</b></span>
-        </div>
-        
-      </div>
-      <div class="console">
-        <h3>Find a better <span id="typed">non-ionic emulsifier</span><span class="caret"></span></h3>
-        <div class="field">
-          <div class="area">Paste S/TDS text, or describe what the material has to do</div>
-          <div class="bar">
-            <span class="btn btn-secondary"><svg class="ic" viewBox="0 0 24 24"><path d="M14 3v5h5M6 2h9l5 5v15H6z"/></svg>Attach S/TDS</span>
-            <span class="filetag">PA6-GF30-incumbent-TDS.pdf</span>
-            <span class="push">
-                            <span class="btn btn-primary"><svg class="ic ic-fill" viewBox="0 0 24 24"><path d="M12 2l1.7 5.4L19 9l-4.2 3.5 1.4 5.5L12 15.3 7.8 18l1.4-5.5L5 9l5.3-1.6z"/></svg>Search materials</span>
-            </span>
+  <div class="wrap">
+    <div class="hero-shot rv">
+      <div class="scaler"><div class="surface">
+        <div class="host">
+          <div class="host-bar"><b>Northfield Specialty Polymers</b><span>Products</span><span>Applications</span><span>Technical library</span><span>Contact</span></div>
+          <div class="host-body">
+            <div>
+              <h2>Adhesives and encapsulants for electronics assembly</h2>
+              <p>Die-attach pastes, underfills, conformal coatings and potting compounds for high-reliability assembly. Datasheets and safety data sheets for every grade are available in the technical library.</p>
+              <div class="host-grid">
+                <div class="host-tile">NF-6202 B-stageable die attach<small>Hybrid chemistry · heat cure</small></div>
+                <div class="host-tile">NF-7110 low-stress underfill<small>Epoxy · capillary flow</small></div>
+                <div class="host-tile">NF-3300 conformal coating<small>Acrylic · UV cure</small></div>
+                <div class="host-tile">NF-9020 thermal gap filler<small>Silicone · 3.2 W/m·K</small></div>
+                <div class="host-tile">NF-5500 potting compound<small>Polyurethane · two part</small></div>
+                <div class="host-tile">NF-4180 silver epoxy<small>Electrically conductive</small></div>
+              </div>
+            </div>
+          </div>
+          <span class="host-note">A supplier's own product page. The assistant is the only Matterialis element on it.</span>
+
+          <div class="w" aria-label="The assistant, as a buyer sees it">
+            <div class="w-head"><div><div class="t">Northfield Specialty Polymers</div><span class="s">Product assistant</span></div><span class="x">New &nbsp; ×</span></div>
+            <div class="w-log">
+              <div class="w-msg w-buyer">Die-attach adhesive we can stencil print. Viscosity under 30,000 mPa·s, Tg above 100 °C, thixotropic index at least 3.</div>
+              <div class="w-read">Reads as: a stencil-printable die-attach adhesive with a viscosity ceiling, a glass-transition floor and a thixotropy floor.</div>
+              <div class="w-card">
+                <div class="nm">NF-6202 B-stageable die attach</div>
+                <div class="fam">Hybrid chemistry · heat cure</div>
+                <div class="w-counts"><span class="c-met">1 met</span><span class="c-miss">1 missed</span><span class="c-unc">1 unclear</span><span class="c-ns">0 not stated</span></div>
+                <dl class="w-crit">
+                  <dt>Viscosity</dt><dd class="s-met">28 000 mPa·s<i>met</i></dd>
+                  <dt>Glass transition temperature</dt><dd class="s-miss">40 °C<i>missed</i></dd>
+                  <dt>Thixotropy</dt><dd class="s-unc">≥ 2.3<i>unclear</i></dd>
+                </dl>
+                <div class="w-reason">Meets viscosity at 28 000 mPa·s. Misses glass transition at 40 °C. The sheet states only a lower bound for thixotropy, so ≥ 3 cannot be settled.</div>
+              </div>
+              <div class="w-msg"><b>NF-6202</b> is the closest match in the range. If Tg above 100 °C is firm, the datasheet does not support it; please confirm with the applications team before specifying.</div>
+            </div>
+            <div class="w-foot"><span class="w-input">Describe your application and requirements</span><span class="w-send">Send</span></div>
+            <div class="w-legal"><span>Answers from Northfield's datasheets</span><b>Talk to a person</b></div>
           </div>
         </div>
-        <span class="micro" style="margin-top:26px">Functional purpose</span>
-        <div class="cardgrid" style="grid-template-columns:repeat(4,1fr)">
-          <div class="pcard"><div class="pcard-t"><span class="n">01</span><svg class="ic" viewBox="0 0 24 24"><path d="M12 2l9 5-9 5-9-5 9-5zM3 12l9 5 9-5M3 17l9 5 9-5"/></svg></div><h5>Structural &amp; mechanical</h5><div class="chips"><span class="chip">Reinforcement</span><span class="chip">Toughness</span><span class="chip">Fillers</span></div><div class="pcard-f">4,180 materials</div></div>
-          <div class="pcard"><div class="pcard-t"><span class="n">02</span><svg class="ic" viewBox="0 0 24 24"><path d="M12 22c4-2 6-5 6-9 0-5-6-11-6-11S6 8 6 13c0 4 2 7 6 9z"/></svg></div><h5>Thermal &amp; fire</h5><div class="chips"><span class="chip">Insulation</span><span class="chip">Flame retardancy</span></div><div class="pcard-f">2,640 materials</div></div>
-          <div class="pcard"><div class="pcard-t"><span class="n">03</span><svg class="ic" viewBox="0 0 24 24"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6z"/></svg></div><h5>Barrier &amp; protection</h5><div class="chips"><span class="chip">Moisture</span><span class="chip">Chemical</span><span class="chip">UV</span></div><div class="pcard-f">3,015 materials</div></div>
-          <div class="pcard"><div class="pcard-t"><span class="n">04</span><svg class="ic" viewBox="0 0 24 24"><path d="M13 2L5 14h6l-1 8 8-12h-6z"/></svg></div><h5>Electrical &amp; optical</h5><div class="chips"><span class="chip">Conductivity</span><span class="chip">Gloss</span></div><div class="pcard-f">1,922 materials</div></div>
-        </div>
-      </div>
+      </div></div>
     </div>
   </div>
 </header>
@@ -984,9 +1144,9 @@ footer{background:var(--chrome);border-top:1px solid var(--chrome-line);padding:
 <!-- ================= PROOF ================= -->
 <div class="proof">
   <div class="wrap"><div class="proof-grid">
-    <div class="stat"><span class="micro">Library</span><span class="v" data-count="200000">200,000</span><span class="l">material grades indexed from technical and safety datasheets.</span></div>
-    <div class="stat"><span class="micro">Property space</span><span class="v">500<span class="u">+</span></span><span class="l">properties, including values suppliers never published.</span></div>
-    <div class="stat"><span class="micro">Research</span><span class="v">NeurIPS</span><span class="l">a paper behind the method, under peer review, and a patent pending.</span></div>
+    <div class="stat"><span class="micro">Intelligence layer</span><span class="v">200,000<span class="u">+</span></span><span class="l">material grades already structured by the same pipeline that will read yours.</span></div>
+    <div class="stat"><span class="micro">Property space</span><span class="v">500<span class="u">+</span></span><span class="l">properties recognised across units, test methods and conditions.</span></div>
+    <div class="stat"><span class="micro">Install</span><span class="v">1<span class="u">&thinsp;line</span></span><span class="l">of code on your website. No plugin, no platform migration, no redesign.</span></div>
     <div class="stat"><span class="micro">Team</span><span class="v" style="font-size:clamp(19px,1.8vw,25px)">IBM&#8202;·&#8202;Cambridge</span><span class="l">machine learning research and materials science in one team.</span></div>
   </div></div>
 </div>
@@ -996,498 +1156,271 @@ footer{background:var(--chrome);border-top:1px solid var(--chrome-line);padding:
   <div class="wrap">
     <div class="sec-head rv">
       <span class="micro">The product</span>
-      <h2>Not a database. An intelligence layer over industrial chemistry.</h2>
-      <p class="lede">Everyone else gives you a search box over what suppliers chose to publish. Matterialis reasons about materials.</p>
+      <h2>A private version of Matterialis, over your catalogue alone.</h2>
+      <p class="lede">The same model, ontology and ranking that run the Matterialis platform, pointed at one supplier's datasheets. Your buyers get answers grounded in your documents. You get a structured catalogue you own, and a record of what the market asked you for.</p>
     </div>
 
     <div class="feats">
-      <div class="feat rv">
-        <div class="feat-shot">
-<div class="scaler"><div class="surface">
-<div class="appbar"><span class="lg"><svg viewBox="0 0 577.6 82" role="img" aria-label="Matterialis"><use href="#mtl-logo"/></svg></span>
-<div class="tabs"><span class="tab">Search</span><span class="tab on">Results <b>10</b></span><span class="tab">Library <b>200,000+</b></span></div>
-<span class="appbar-right"><span class="chip-chrome">Under-bonnet bracket</span></span>
-</div>
-<div class="screen-body">
-<div class="mk-head">
-<div class="crumb">Ranked results / Polybutylene terephthalate, 20% glass fibre</div>
-<div class="mk-title">
-<div><h4>Polybutylene terephthalate, 20% glass fibre</h4>
-<div class="mk-sub">AMP-3118 · CAS 24968-12-5 · Chang Chun</div></div>
-<div class="figure"><div class="v">88<small>%</small></div><span class="micro">Match</span></div>
-</div>
-<div class="badges">
-<span class="badge badge-strong"><span class="dot dot-strong"></span>Strong evidence</span>
-<span class="badge">Polyester (PBT)</span>
-<span class="badge badge-ai">6 AI-generated values</span>
 
-</div>
-</div>
-<div class="split">
-<div class="split-main">
-<div class="reason"><svg viewBox="0 0 24 24"><path d="M12 2l1.7 5.4L19 9l-4.2 3.5 1.4 5.5L12 15.3 7.8 18l1.4-5.5L5 9l5.3-1.6z"/></svg><p>Lower moisture pickup than the incumbent and a tighter shrinkage window, but density sits above the stated ceiling.</p></div>
-<div class="strip"><span class="micro"><b>Properties · mechanical</b></span></div>
-<table class="ptab">
-<tr><td>Tensile strength</td><td class="v">110 MPa</td><td class="b"><span class="badge">Scraped</span></td></tr>
-<tr><td>Flexural modulus</td><td class="v">5940 MPa</td><td class="b"><span class="badge badge-ai">AI-generated</span></td></tr>
-<tr><td>Notched impact, 23 °C</td><td class="v">8.6 kJ/m²</td><td class="b"><span class="badge">Scraped</span></td></tr>
-<tr><td>Elongation at break</td><td class="v">2.9 %</td><td class="b"><span class="badge">Scraped</span></td></tr>
-</table>
-<div class="strip"><span class="micro"><b>Thermal</b></span></div>
-<table class="ptab">
-<tr><td>Heat deflection, 1.8 MPa</td><td class="v">140 °C</td><td class="b"><span class="badge">Scraped</span></td></tr>
-<tr><td>Glass transition</td><td class="v">48 °C</td><td class="b"><span class="badge badge-ai">AI-generated</span></td></tr>
-</table>
-<div class="strip"><span class="micro"><b>Barrier &amp; transport</b></span></div>
-<table class="ptab">
-<tr><td>Water vapour transmission rate</td><td class="v">2.4 g/m²·day</td><td class="b"><span class="badge badge-ai">AI-generated</span></td></tr>
-<tr><td>Moisture absorption</td><td class="v">0.28 %</td><td class="b"><span class="badge badge-ai">AI-generated</span></td></tr>
-</table>
-</div>
-<aside class="split-rail">
-<span class="micro">Classification</span>
-<dl>
-<div class="kv"><dt>Chemical family</dt><dd>Polyester (PBT)</dd></div>
-<div class="kv"><dt>Functional purpose</dt><dd>Structural reinforcement</dd></div>
-<div class="kv"><dt>Industry</dt><dd>Automotive</dd></div>
-<div class="kv"><dt>CAS</dt><dd>24968-12-5</dd></div>
-</dl>
-<span class="micro">Metadata</span>
-<dl>
-<div class="kv"><dt>Supplier</dt><dd>Chang Chun</dd></div>
-<div class="kv"><dt>Grade code</dt><dd>AMP-3118</dd></div>
-<div class="kv"><dt>Indexed</dt><dd>2026-06-30</dd></div>
-</dl>
-</aside>
-</div>
-</div>
-</div></div>
-        </div>
-        <div class="feat-txt">
-          <span class="micro">01</span>
-          <h3>Search published and AI-predicted properties together</h3>
-          <p>Suppliers publish what sells the grade, not what decides your formulation. Matterialis predicts the missing values and lets you filter on them. Model-generated values are always marked.</p>
-          <div class="out">You search the properties that matter, not the ones that happen to be printed.</div>
-          <div class="swipe">Swipe the panel to explore<svg class="ic" viewBox="0 0 24 24" style="width:12px;height:12px"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
-        </div>
-      </div>
-      <div class="feat feat-flip rv">
-        <div class="feat-shot">
-<div class="scaler"><div class="surface">
-<div class="appbar"><span class="lg"><svg viewBox="0 0 577.6 82" role="img" aria-label="Matterialis"><use href="#mtl-logo"/></svg></span>
-<div class="tabs"><span class="tab on">Neighbourhood</span><span class="tab">Results <b>12</b></span><span class="tab">Library <b>200,000+</b></span></div>
-<span class="appbar-right"><span class="chip-chrome">Sector filter &#183; off</span></span>
-</div>
-<div class="screen-body">
-<div class="mk-head">
-<div class="crumb">Search / Nearest materials by behaviour</div>
-<div class="mk-title">
-<div><h4>Sorbitan monostearate, technical grade</h4><div class="mk-sub">AMP-8802 &#183; CAS 1338-41-6 &#183; query material</div></div>
-<div class="figure"><div class="v">12</div><span class="micro">Near neighbours</span></div>
-</div>
-<div class="badges"><span class="badge">Nonionic surfactant</span><span class="badge">HLB 4.7</span><span class="badge">Food &amp; beverage</span></div>
-</div>
-<div class="split">
-<div class="split-main col">
-<div class="reason"><svg viewBox="0 0 24 24"><path d="M12 2l1.7 5.4L19 9l-4.2 3.5 1.4 5.5L12 15.3 7.8 18l1.4-5.5L5 9l5.3-1.6z"/></svg><p>Five of the eight nearest grades are sold into a different industry. Distance from the centre is similarity, so a hollow dot close in is a cross-sector match worth reading.</p></div>
-<div class="mapwrap"><svg class="map" viewBox="0 0 820 300" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
-<defs><pattern id="mgrid" width="41" height="41" patternUnits="userSpaceOnUse"><path d="M41 0H0V41" fill="none" stroke="var(--rule-soft)" stroke-width="1"/></pattern></defs>
-<rect x="0" y="0" width="820" height="300" fill="url(#mgrid)"/>
-<ellipse cx="410" cy="150" rx="65" ry="27" fill="none" stroke="var(--chart-5)" stroke-width="1" stroke-dasharray="3 4"/>
-<text x="410" y="135" class="mring" text-anchor="middle">90%</text>
-<ellipse cx="410" cy="150" rx="131" ry="53" fill="none" stroke="var(--chart-5)" stroke-width="1" stroke-dasharray="3 4"/>
-<text x="410" y="109" class="mring" text-anchor="middle">80%</text>
-<ellipse cx="410" cy="150" rx="196" ry="80" fill="none" stroke="var(--chart-5)" stroke-width="1" stroke-dasharray="3 4"/>
-<text x="410" y="82" class="mring" text-anchor="middle">70%</text>
-<circle cx="312" cy="103" r="2.5" fill="var(--chart-5)"/>
-<circle cx="488" cy="182" r="2.5" fill="var(--chart-5)"/>
-<circle cx="340" cy="199" r="2.5" fill="var(--chart-5)"/>
-<circle cx="506" cy="82" r="2.5" fill="var(--chart-5)"/>
-<circle cx="178" cy="170" r="2.5" fill="var(--chart-5)"/>
-<circle cx="677" cy="121" r="2.5" fill="var(--chart-5)"/>
-<circle cx="373" cy="258" r="2.5" fill="var(--chart-5)"/>
-<circle cx="342" cy="178" r="2.5" fill="var(--chart-5)"/>
-<circle cx="309" cy="72" r="2.5" fill="var(--chart-5)"/>
-<circle cx="678" cy="194" r="2.5" fill="var(--chart-5)"/>
-<circle cx="462" cy="49" r="2.5" fill="var(--chart-5)"/>
-<circle cx="457" cy="217" r="2.5" fill="var(--chart-5)"/>
-<line x1="410" y1="150" x2="440" y2="140" stroke="var(--chart-5)" stroke-width="1"/>
-<line x1="410" y1="150" x2="345" y2="162" stroke="var(--chart-5)" stroke-width="1"/>
-<line x1="410" y1="150" x2="314" y2="127" stroke="var(--chart-5)" stroke-width="1"/>
-<line x1="410" y1="150" x2="555" y2="166" stroke="var(--chart-5)" stroke-width="1"/>
-<line x1="410" y1="150" x2="377" y2="74" stroke="var(--chart-5)" stroke-width="1"/>
-<line x1="410" y1="150" x2="616" y2="116" stroke="var(--chart-5)" stroke-width="1"/>
-<line x1="410" y1="150" x2="161" y2="128" stroke="var(--chart-5)" stroke-width="1"/>
-<line x1="410" y1="150" x2="495" y2="257" stroke="var(--chart-5)" stroke-width="1"/>
-<circle cx="440" cy="140" r="6" fill="var(--chart-1)"/>
-<text x="453" y="143" class="mlab" text-anchor="start">1</text>
-<circle cx="345" cy="162" r="6" fill="var(--paper-raised)" stroke="var(--chart-2)" stroke-width="1.6"/>
-<text x="332" y="166" class="mlab" text-anchor="end">2</text>
-<circle cx="314" cy="127" r="6" fill="var(--paper-raised)" stroke="var(--chart-2)" stroke-width="1.6"/>
-<text x="301" y="131" class="mlab" text-anchor="end">3</text>
-<circle cx="555" cy="166" r="6" fill="var(--paper-raised)" stroke="var(--chart-2)" stroke-width="1.6"/>
-<text x="568" y="169" class="mlab" text-anchor="start">4</text>
-<circle cx="377" cy="74" r="6" fill="var(--paper-raised)" stroke="var(--chart-2)" stroke-width="1.6"/>
-<text x="364" y="77" class="mlab" text-anchor="end">5</text>
-<circle cx="616" cy="116" r="6" fill="var(--chart-1)"/>
-<text x="629" y="120" class="mlab" text-anchor="start">6</text>
-<circle cx="161" cy="128" r="6" fill="var(--paper-raised)" stroke="var(--chart-2)" stroke-width="1.6"/>
-<text x="148" y="132" class="mlab" text-anchor="end">7</text>
-<circle cx="495" cy="257" r="6" fill="var(--chart-1)"/>
-<text x="508" y="260" class="mlab" text-anchor="start">8</text>
-<ellipse cx="410" cy="150" rx="15" ry="13" fill="none" stroke="var(--brand-signal)" stroke-width="1.4"/>
-<circle cx="410" cy="150" r="5" fill="var(--brand-signal)"/>
-<text x="410" y="184" class="mq" text-anchor="middle">AMP-8802 &#183; QUERY</text>
-</svg></div>
-<div class="maplegend">
-<span class="mkey"><i class="k-same"></i>Your sector</span>
-<span class="mkey"><i class="k-other"></i>Another sector</span>
-<span class="mkey"><i class="k-q"></i>Query grade</span>
-<span class="mnote">RINGS ARE SIMILARITY, NOT DISTANCE IN ANY ONE PROPERTY</span>
-</div>
-</div>
-<aside class="split-rail">
-<span class="micro">Nearest by similarity</span>
-<dl>
-<div class="kv"><dt><b class="rk">1</b>Sorbitan ester, food grade</dt><dd>94 %</dd></div>
-<div class="kv"><dt><b class="rk">2</b>Polyglyceryl-4 laurate</dt><dd>89 %</dd></div>
-<div class="kv"><dt><b class="rk">3</b>Alkyl polyglucoside C8-10</dt><dd>83 %</dd></div>
-<div class="kv"><dt><b class="rk">4</b>Ethoxylated fatty alcohol</dt><dd>77 %</dd></div>
-<div class="kv"><dt><b class="rk">5</b>Sucrose stearate, HLB 15</dt><dd>71 %</dd></div>
-<div class="kv"><dt><b class="rk">6</b>Lecithin, deoiled</dt><dd>66 %</dd></div>
-<div class="kv"><dt><b class="rk">7</b>Methyl glucose sesquistearate</dt><dd>61 %</dd></div>
-<div class="kv"><dt><b class="rk">8</b>Glyceryl monostearate</dt><dd>58 %</dd></div>
-</dl>
-<span class="micro">Industries in view</span>
-<div class="src"><b>Cosmetics &#183; 3</b>Emulsifiers with the same HLB band.</div>
-<div class="src"><b>Home care &#183; 1</b>Alkyl polyglucoside, cost-competitive.</div>
-<div class="src"><b>Pharma &#183; 1</b>Excipient grade, tighter purity.</div>
-</aside>
-</div>
-</div>
-</div></div>
-        </div>
-        <div class="feat-txt">
-          <span class="micro">02</span>
-          <h3>Move by chemistry, not by catalogue</h3>
-          <p>Move through materials by how they behave, not by keyword or supplier catalogue. Neighbouring grades surface even when they come from an industry you have never bought from: a food-grade ester for a cosmetics problem, a packaging polymer for a membrane.</p>
-          <div class="out">You find the options your catalogue was never going to show you.</div>
-          <div class="swipe">Swipe the panel to explore<svg class="ic" viewBox="0 0 24 24" style="width:12px;height:12px"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
-        </div>
-      </div>
+      <!-- 01 · your catalogue, structured -->
       <div class="feat rv">
         <div class="feat-shot">
 <div class="scaler"><div class="surface">
 <div class="appbar"><span class="lg"><svg viewBox="0 0 577.6 82" role="img" aria-label="Matterialis"><use href="#mtl-logo"/></svg></span>
-<div class="tabs"><span class="tab">Search</span><span class="tab on">Results <b>10</b></span><span class="tab">Library <b>200,000+</b></span></div>
-<span class="appbar-right"><span class="chip-chrome">Under-bonnet bracket</span></span>
+<div class="tabs"><span class="tab">Search</span><span class="tab on">Your range <b>1,240</b></span><span class="tab">Requests <b>412</b></span></div>
+<span class="appbar-right"><span class="chip-chrome on">Northfield Specialty Polymers</span><span class="chip-chrome">Private workspace</span></span>
 </div>
 <div class="screen-body"><div class="res">
 <div class="res-filter">
 <div class="fh"><span class="micro">Property criteria</span><a>Reset</a></div>
 <div class="finput"><svg class="ic" viewBox="0 0 24 24" style="width:11px;height:11px"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>Search 500+ properties</div>
-<div class="crit"><div class="crit-t"><span>Tensile strength</span><svg class="ic" viewBox="0 0 24 24"><path d="M4 7h16M9 7V4h6v3M6 7l1 13h10l1-13"/></svg></div><div class="crit-r"><span class="op">≥</span><span class="val">60 <i>MPa</i></span></div></div>
-<div class="crit"><div class="crit-t"><span>Max service temp.</span><svg class="ic" viewBox="0 0 24 24"><path d="M4 7h16M9 7V4h6v3M6 7l1 13h10l1-13"/></svg></div><div class="crit-r"><span class="op">≥</span><span class="val">120 <i>°C</i></span></div></div>
-<div class="crit"><div class="crit-t"><span>Water vapour trans.</span><svg class="ic" viewBox="0 0 24 24"><path d="M4 7h16M9 7V4h6v3M6 7l1 13h10l1-13"/></svg></div><div class="crit-r"><span class="op">≤</span><span class="val">5.0 <i>g/m²·d</i></span></div></div>
-<div class="crit"><div class="crit-t"><span>Compliance</span><svg class="ic" viewBox="0 0 24 24"><path d="M4 7h16M9 7V4h6v3M6 7l1 13h10l1-13"/></svg></div><div class="crit-r"><span class="val">RoHS · REACH</span></div></div>
+<div class="crit"><div class="crit-t"><span>Viscosity</span><svg class="ic" viewBox="0 0 24 24"><path d="M4 7h16M9 7V4h6v3M6 7l1 13h10l1-13"/></svg></div><div class="crit-r"><span class="op">≤</span><span class="val">30 000 <i>mPa·s</i></span></div></div>
+<div class="crit"><div class="crit-t"><span>Glass transition</span><svg class="ic" viewBox="0 0 24 24"><path d="M4 7h16M9 7V4h6v3M6 7l1 13h10l1-13"/></svg></div><div class="crit-r"><span class="op">≥</span><span class="val">100 <i>°C</i></span></div></div>
+<div class="crit"><div class="crit-t"><span>Die shear strength</span><svg class="ic" viewBox="0 0 24 24"><path d="M4 7h16M9 7V4h6v3M6 7l1 13h10l1-13"/></svg></div><div class="crit-r"><span class="op">≥</span><span class="val">8 <i>kg-f</i></span></div></div>
+<div class="crit"><div class="crit-t"><span>Claims</span><svg class="ic" viewBox="0 0 24 24"><path d="M4 7h16M9 7V4h6v3M6 7l1 13h10l1-13"/></svg></div><div class="crit-r"><span class="val">Halogen-free</span></div></div>
 </div>
 <div class="res-main">
-<div class="res-top"><span class="micro">Ranked results</span><span class="note">Ranked against your criteria</span></div>
+<div class="res-top"><span class="micro">Your grades, ranked</span><span class="note">Every row is a Northfield datasheet</span></div>
 <table class="grid">
-<tr><th>Rank</th><th>Material</th><th>Evidence</th><th>Criteria met</th><th class="r">Tensile</th><th class="r">T max</th><th class="r">WVTR</th><th class="r">Match</th></tr>
-<tr><td class="rk">1</td><td><span class="matname">Polyamide 6, 30% glass fibre<span>AMP-4412 · 25038-54-4</span></span></td><td><span class="ev"><span class="dot dot-strong"></span>Strong</span></td><td><span class="met"><span class="seg"><i class="s"></i><i class="s"></i><i class="s"></i></span><span>3 of 3</span></span></td><td class="r n-ok">165</td><td class="r n-ok">150</td><td class="r n-ok">3.2<sup class="ai">AI</sup></td><td class="r n">94 %</td></tr>
-<tr><td class="rk">2</td><td><span class="matname">Polyamide 66, 35% glass fibre<span>AMP-4680 · 32131-17-2</span></span></td><td><span class="ev"><span class="dot dot-strong"></span>Strong</span></td><td><span class="met"><span class="seg"><i class="s"></i><i class="s"></i><i class="s"></i></span><span>3 of 3</span></span></td><td class="r n-ok">180</td><td class="r n-ok">160</td><td class="r n-ok">3.6</td><td class="r n">91 %</td></tr>
-<tr><td class="rk">3</td><td><span class="matname">Polybutylene terephthalate, 20% GF<span>AMP-3118 · 24968-12-5</span></span></td><td><span class="ev"><span class="dot dot-strong"></span>Strong</span></td><td><span class="met"><span class="seg"><i class="s"></i><i class="s"></i><i class="s"></i></span><span>3 of 3</span></span></td><td class="r n-ok">110</td><td class="r n-ok">140</td><td class="r n-ok">2.4</td><td class="r n">88 %</td></tr>
-<tr><td class="rk">4</td><td><span class="matname">Polyphenylene sulphide, 40% GF<span>AMP-5902 · 26125-40-6</span></span></td><td><span class="ev"><span class="dot dot-strong"></span>Strong</span></td><td><span class="met"><span class="seg"><i class="s"></i><i class="s"></i><i class="s"></i></span><span>3 of 3</span></span></td><td class="r n-ok">190</td><td class="r n-ok">220</td><td class="r n-ok">0.9</td><td class="r n">83 %</td></tr>
-<tr><td class="rk">5</td><td><span class="matname">Copolyester, high-clarity extrusion<span>AMP-1355 · 25038-59-9</span></span></td><td><span class="ev"><span class="dot dot-strong"></span>Strong</span></td><td><span class="met"><span class="seg"><i class="s"></i><i class="s"></i><i class="s"></i></span><span>3 of 3</span></span></td><td class="r n-ok">72</td><td class="r n-ok">120</td><td class="r n-ok">1.8</td><td class="r n">77 %</td></tr>
-<tr><td class="rk">6</td><td><span class="matname">Polycarbonate / ABS, flame-retardant<span>AMP-2207 · 25037-45-0</span></span></td><td><span class="ev"><span class="dot dot-limited"></span>Limited</span></td><td><span class="met"><span class="seg"><i class="l"></i><i class="l"></i><i></i></span><span>2 of 3</span></span></td><td class="r n-ok">62</td><td class="r n-ok">125</td><td class="r n-no">6.8<sup class="ai">AI</sup></td><td class="r n">86 %</td></tr>
-<tr><td class="rk">7</td><td><span class="matname">Polypropylene TPO impact copolymer<span>AMP-0914 · 9010-79-1</span></span></td><td><span class="ev"><span class="dot dot-limited"></span>Limited</span></td><td><span class="met"><span class="seg"><i class="w"></i><i></i><i></i></span><span>1 of 3</span></span></td><td class="r n-no">28</td><td class="r n-no">105</td><td class="r n-ok">1.1</td><td class="r n">74 %</td></tr>
-<tr><td class="rk">8</td><td><span class="matname">High-density polyethylene, injection<span>AMP-0271 · 9002-88-4</span></span></td><td><span class="ev"><span class="dot dot-strong"></span>Strong</span></td><td><span class="met"><span class="seg"><i class="w"></i><i></i><i></i></span><span>1 of 3</span></span></td><td class="r n-no">31</td><td class="r n-no">95</td><td class="r n-ok">0.4</td><td class="r n">68 %</td></tr>
-<tr><td class="rk">9</td><td><span class="matname">Thermoplastic polyurethane, aliphatic 95A<span>AMP-7741 · 9009-54-5</span></span></td><td><span class="ev"><span class="dot dot-limited"></span>Limited</span></td><td><span class="met"><span class="seg"><i></i><i></i><i></i></span><span>0 of 3</span></span></td><td class="r n-no">48</td><td class="r n-no">110</td><td class="r n-no">12.0<sup class="ai">AI</sup></td><td class="r n">79 %</td></tr>
-<tr><td class="rk">10</td><td><span class="matname">Polylactide / PBAT compound<span>AMP-6620 · 9051-89-2</span></span></td><td><span class="ev"><span class="dot dot-weak"></span>Weak</span></td><td><span class="met"><span class="seg"><i></i><i></i><i></i></span><span>0 of 3</span></span></td><td class="r n-no">45</td><td class="r n-no">65</td><td class="r n-no">22.0<sup class="ai">AI</sup></td><td class="r n">71 %</td></tr>
+<tr><th>Rank</th><th>Grade</th><th>Evidence</th><th>Criteria met</th><th class="r">Viscosity</th><th class="r">Tg</th><th class="r">Die shear</th><th class="r">Halogen-free</th></tr>
+<tr><td class="rk">1</td><td><span class="matname">NF-6210 high-Tg die attach<span>TDS rev. 4 · 2026-03</span></span></td><td><span class="ev"><span class="dot dot-strong"></span>Strong</span></td><td><span class="met"><span class="seg"><i class="s"></i><i class="s"></i><i class="s"></i><i class="s"></i></span><span>4 of 4</span></span></td><td class="r n-ok">24 000</td><td class="r n-ok">135</td><td class="r n-ok">11.2</td><td class="r n-ok">Claimed</td></tr>
+<tr><td class="rk">2</td><td><span class="matname">NF-6202 B-stageable die attach<span>TDS rev. 7 · 2025-11</span></span></td><td><span class="ev"><span class="dot dot-strong"></span>Strong</span></td><td><span class="met"><span class="seg"><i class="s"></i><i class="w"></i><i class="s"></i><i class="s"></i></span><span>3 of 4</span></span></td><td class="r n-ok">28 000</td><td class="r n-no">40</td><td class="r n-ok">10.4</td><td class="r n-ok">Claimed</td></tr>
+<tr><td class="rk">3</td><td><span class="matname">NF-4180 silver epoxy<span>TDS rev. 2 · 2024-08</span></span></td><td><span class="ev"><span class="dot dot-limited"></span>Limited</span></td><td><span class="met"><span class="seg"><i class="s"></i><i class="s"></i><i></i><i></i></span><span>2 of 4</span></span></td><td class="r n-ok">18 500</td><td class="r n-ok">110<sup class="ai">AI</sup></td><td class="r n">—</td><td class="r n">—</td></tr>
+<tr><td class="rk">4</td><td><span class="matname">NF-7110 low-stress underfill<span>TDS rev. 5 · 2026-01</span></span></td><td><span class="ev"><span class="dot dot-strong"></span>Strong</span></td><td><span class="met"><span class="seg"><i class="s"></i><i class="w"></i><i></i><i class="s"></i></span><span>2 of 4</span></span></td><td class="r n-ok">9 800</td><td class="r n-no">85</td><td class="r n">—</td><td class="r n-ok">Claimed</td></tr>
+<tr><td class="rk">5</td><td><span class="matname">NF-5500 potting compound<span>TDS rev. 3 · 2025-06</span></span></td><td><span class="ev"><span class="dot dot-limited"></span>Limited</span></td><td><span class="met"><span class="seg"><i class="s"></i><i class="w"></i><i></i><i class="w"></i></span><span>1 of 4</span></span></td><td class="r n-ok">6 200</td><td class="r n-no">62<sup class="ai">AI</sup></td><td class="r n">—</td><td class="r n-no">Not claimed</td></tr>
+<tr><td class="rk">6</td><td><span class="matname">NF-9020 thermal gap filler<span>TDS rev. 1 · 2025-09</span></span></td><td><span class="ev"><span class="dot dot-weak"></span>Weak</span></td><td><span class="met"><span class="seg"><i class="w"></i><i></i><i></i><i></i></span><span>0 of 4</span></span></td><td class="r n-no">41 000</td><td class="r n">—</td><td class="r n">—</td><td class="r n">—</td></tr>
 </table>
-<div class="res-foot"><em>GREEN</em> MEETS THE CRITERION · <b>RED</b> MISSES IT · <sup class="ai">AI</sup> MODEL-GENERATED, NOT MEASURED</div>
+<div class="res-foot"><em>GREEN</em> MEETS THE CRITERION · <b>RED</b> MISSES IT · — NOT STATED ON THE SHEET · <sup class="ai">AI</sup> ESTIMATED, NOT MEASURED</div>
 </div>
+</div></div>
+</div></div>
+        </div>
+        <div class="feat-txt">
+          <span class="micro">01</span>
+          <h3>Your catalogue, structured once and owned by you</h3>
+          <p>We read your technical and safety datasheets with the pipeline that already structured 200,000 grades: every property with its unit, test method and conditions, every classification, every claim. The result is a database you can search by requirement, filter by property and reuse anywhere. It stays yours.</p>
+          <div class="out">A searchable catalogue in weeks, built from documents you already publish.</div>
+          <div class="swipe">Swipe the panel to explore<svg class="ic" viewBox="0 0 24 24" style="width:12px;height:12px"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+        </div>
+      </div>
+
+      <!-- 02 · the conversation -->
+      <div class="feat feat-flip rv">
+        <div class="feat-shot">
+<div class="scaler"><div class="surface">
+<div class="appbar"><span class="lg"><svg viewBox="0 0 577.6 82" role="img" aria-label="Matterialis"><use href="#mtl-logo"/></svg></span>
+<div class="tabs"><span class="tab on">Conversation</span><span class="tab">Requests <b>412</b></span><span class="tab">Your range <b>1,240</b></span></div>
+<span class="appbar-right"><span class="chip-chrome">northfield-polymers.com/adhesives</span></span>
+</div>
+<div class="screen-body"><div class="conv">
+<div class="conv-main">
+  <div class="w-msg w-buyer">We use a competitor's silver-filled epoxy today. Attached the datasheet. Need an equivalent with lower moisture absorption, under 0.5 wt%.</div>
+  <div class="w-read">Reads as: a replacement for an electrically conductive silver epoxy, with a moisture-absorption ceiling of 0.5 wt%.</div>
+  <div class="w-card">
+    <div class="nm">NF-4180 silver epoxy</div>
+    <div class="fam">Electrically conductive · heat cure</div>
+    <div class="w-counts"><span class="c-met">2 met</span><span class="c-miss">0 missed</span><span class="c-unc">0 unclear</span><span class="c-ns">1 not stated</span></div>
+    <dl class="w-crit">
+      <dt>Volume resistivity</dt><dd class="s-met">2 × 10⁻⁴ Ω·cm<i>met</i></dd>
+      <dt>Cure schedule</dt><dd class="s-met">150 °C · 30 min<i>met</i></dd>
+      <dt>Moisture absorption</dt><dd class="s-ns">—<i>not stated</i></dd>
+    </dl>
+    <div class="w-reason">Meets volume resistivity and cure schedule. No evidence for moisture absorption: the datasheet does not state it. That is a gap in the document, not a failure of the product.</div>
+  </div>
+  <div class="w-msg"><b>NF-4180</b> matches the incumbent on conductivity and cure. Your 0.5 wt% ceiling cannot be confirmed from the sheet; Northfield can supply the measured value on request. Shall I pass this on?</div>
+  <div class="w-foot" style="border:1px solid var(--rule);border-radius:var(--radius-surface);margin-top:auto"><span class="w-input">Yes, please. Also, what is the shelf life?</span><span class="w-send">Send</span></div>
+</div>
+<aside class="conv-rail">
+  <span class="micro">What the assistant may do</span>
+  <ul class="rule-list">
+    <li><svg viewBox="0 0 24 24"><path d="M4.5 12.5l5 5 10-11"/></svg><span><b>Answer from your datasheets</b> and nothing else. No value is quoted that a tool did not return.</span></li>
+    <li><svg viewBox="0 0 24 24"><path d="M4.5 12.5l5 5 10-11"/></svg><span><b>Show four states</b>, never two. Not stated is a documentation gap, never a miss.</span></li>
+    <li><svg viewBox="0 0 24 24"><path d="M4.5 12.5l5 5 10-11"/></svg><span><b>Hand over to a person</b> when the evidence runs out or the question is safety-critical.</span></li>
+    <li><svg viewBox="0 0 24 24"><path d="M6.5 6.5l11 11M17.5 6.5l-11 11"/></svg><span><b>Never name another supplier's product</b>, even when the buyer does.</span></li>
+    <li><svg viewBox="0 0 24 24"><path d="M6.5 6.5l11 11M17.5 6.5l-11 11"/></svg><span><b>Never invent</b> a price, a lead time or an approval.</span></li>
+  </ul>
+  <span class="micro">This conversation</span>
+  <dl>
+    <div class="kv"><dt>Attached</dt><dd>competitor-TDS.pdf</dd></div>
+    <div class="kv"><dt>Criteria asked</dt><dd>3</dd></div>
+    <div class="kv"><dt>Outcome</dt><dd>Not documented</dd></div>
+    <div class="kv"><dt>Hand-off</dt><dd>Requested</dd></div>
+  </dl>
+</aside>
+</div></div>
+</div></div>
+        </div>
+        <div class="feat-txt">
+          <span class="micro">02</span>
+          <h3>Buyers ask in their own words, and attach what they use today</h3>
+          <p>A buyer describes the application, or attaches the datasheet of the product they want to replace. The assistant turns that into criteria, searches your range, and shows each requirement as met, missed, unclear or not stated, with the value from your sheet beside it. When the sheet does not say, it says so, and offers a person.</p>
+          <div class="out">Every requirement verified against your own document, in the buyer's language.</div>
+          <div class="swipe">Swipe the panel to explore<svg class="ic" viewBox="0 0 24 24" style="width:12px;height:12px"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+        </div>
+      </div>
+
+      <!-- 03 · the dashboard -->
+      <div class="feat rv">
+        <div class="feat-shot">
+<div class="scaler"><div class="surface">
+<div class="appbar"><span class="lg"><svg viewBox="0 0 577.6 82" role="img" aria-label="Matterialis"><use href="#mtl-logo"/></svg></span>
+<div class="tabs"><span class="tab">Conversation</span><span class="tab on">Requests <b>412</b></span><span class="tab">Your range <b>1,240</b></span></div>
+<span class="appbar-right"><span class="chip-chrome on">Last 30 days</span><span class="chip-chrome">Export CSV</span></span>
+</div>
+<div class="screen-body"><div class="dash">
+  <div class="kpis">
+    <div class="kpi"><span class="micro">Conversations</span><div class="v">287</div><div class="n">412 requests answered</div></div>
+    <div class="kpi"><span class="micro">Matched</span><div class="v">61<small>%</small></div><div class="n">best product met every requirement</div></div>
+    <div class="kpi"><span class="micro">Unmet demand</span><div class="v">23<small>%</small></div><div class="n">no match, no fit, or a product gap</div></div>
+    <div class="kpi"><span class="micro">Product clicks</span><div class="v">196</div><div class="n">58 hand-offs to a person</div></div>
+    <div class="kpi"><span class="micro">Helpful</span><div class="v">142</div><div class="n">11 marked not helpful</div></div>
+  </div>
+  <div class="dash-grid">
+    <div class="dpanel">
+      <div class="dpanel-h"><h5>Demand by property</h5><span>how your best product answered what buyers asked for</span></div>
+      <table class="dtab">
+        <tr><th>Requirement</th><th class="r">Asked</th><th class="r">Met</th><th class="r">Missed</th><th class="r">Not stated</th><th>Buyers wanted</th></tr>
+        <tr><td>Glass transition temperature<span class="var">°C</span></td><td class="r">48</td><td class="r">19</td><td class="r"><span class="n-no">29</span></td><td class="r z">0</td><td class="want">≥ 100–150 °C</td></tr>
+        <tr><td>Viscosity<span class="var">mPa·s</span></td><td class="r">41</td><td class="r">36</td><td class="r"><span class="n-no">5</span></td><td class="r z">0</td><td class="want">≤ 15 000–30 000 mPa·s</td></tr>
+        <tr><td>Moisture absorption<span class="var">wt%</span></td><td class="r">22</td><td class="r">4</td><td class="r"><span class="n-no">6</span></td><td class="r">12</td><td class="want">≤ 0.3–0.5 wt%</td></tr>
+        <tr><td>Thermal conductivity<span class="var">W/m·K</span></td><td class="r">17</td><td class="r">11</td><td class="r"><span class="n-no">6</span></td><td class="r z">0</td><td class="want">≥ 2–5 W/m·K</td></tr>
+        <tr><td>Halogen-free<span class="var">claim</span></td><td class="r">15</td><td class="r">13</td><td class="r"><span class="n-no">2</span></td><td class="r z">0</td><td class="want">claimed</td></tr>
+        <tr><td>Die shear strength<span class="var">kg-f</span></td><td class="r">9</td><td class="r">2</td><td class="r z">0</td><td class="r">7</td><td class="want">≥ 5–8 kg-f</td></tr>
+      </table>
+    </div>
+    <div class="dpanel">
+      <div class="dpanel-h"><h5>Unmet demand</h5><span>what buyers asked for that the range could not offer</span></div>
+      <div class="unmet">
+        <div class="unmet-i"><span class="tag tag-gap">Product gap</span><div class="q">High-Tg die attach for automotive under-hood, Tg ≥ 150 °C</div><div class="why">Glass transition ≥ 150 °C asked. Best offered: NF-6210 at 135 °C.</div></div>
+        <div class="unmet-i"><span class="tag tag-nofit">No fit</span><div class="q">Low-outgassing epoxy for a satellite payload, ASTM E595</div><div class="why">Assistant: the range has no grade with an outgassing figure; buyer handed to a person.</div></div>
+        <div class="unmet-i"><span class="tag tag-doc">Not documented</span><div class="q">Silver epoxy with moisture absorption under 0.5 wt%</div><div class="why">NF-4180 leads but the sheet does not state moisture absorption. Twelve buyers asked this month.</div></div>
+        <div class="unmet-i"><span class="tag tag-gap">Product gap</span><div class="q">Gap filler above 5 W/m·K for a power module</div><div class="why">Thermal conductivity ≥ 5 W/m·K asked. Best offered: NF-9020 at 3.2 W/m·K.</div></div>
+      </div>
+    </div>
+  </div>
 </div></div>
 </div></div>
         </div>
         <div class="feat-txt">
           <span class="micro">03</span>
-          <h3>Rank substitutes against every constraint at once</h3>
-          <p>State the constraint instead of hunting the catalogue: property floors, restricted-substance lists, end-use and industry. Every candidate comes back ranked with its trade-off stated, including which numbers are predicted rather than measured. Filtering by region is in development.</p>
-          <div class="out">A shortlist in an afternoon, not a month of datasheets.</div>
+          <h3>See what the market asked you for, and what you could not offer</h3>
+          <p>Every conversation is yours to read. The dashboard counts them: which properties buyers ask for and at what thresholds, how often your best product met them, where it missed, and where your datasheet simply does not say. A column of misses is a product to develop. A column of not stated is a datasheet to finish, which is cheaper.</p>
+          <div class="out">Demand intelligence from your own website, counted from verdicts rather than guessed.</div>
           <div class="swipe">Swipe the panel to explore<svg class="ic" viewBox="0 0 24 24" style="width:12px;height:12px"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
         </div>
       </div>
+
+      <!-- 04 · the embed -->
       <div class="feat feat-flip rv">
         <div class="feat-shot">
 <div class="scaler"><div class="surface">
-<div class="appbar appbar-cw">
-<span class="cw-brand">Claude</span><span class="cw-sub">Cowork</span>
-<span class="appbar-right"><span class="chip-cw"><i></i>matterialis &#183; MCP</span></span>
+<div class="appbar"><span class="lg"><svg viewBox="0 0 577.6 82" role="img" aria-label="Matterialis"><use href="#mtl-logo"/></svg></span>
+<div class="tabs"><span class="tab">Conversation</span><span class="tab">Requests <b>412</b></span><span class="tab on">Install</span></div>
+<span class="appbar-right"><span class="chip-chrome">northfield-polymers.com</span></span>
 </div>
-<div class="screen-body cw">
-<div class="cw-msg cw-user">
-<span class="cw-who">You</span>
-<div class="cw-body"><p>We need to drop AMP-9140 from the barrier film. Has to hold 60 MPa tensile and 120 &#176;C, clear RoHS and REACH, and be sourceable in the UK. What are my options?</p></div>
+<div class="screen-body"><div class="embed">
+<div class="embed-main">
+  <div>
+    <span class="micro">Add to any page of your site</span>
+    <div class="snippet" style="margin-top:9px"><i>&lt;</i><b>script</b> <i>src=</i>"https://chat.matterialis.com/v1/embed.js"
+        <i>data-key=</i>"nf-8c21…" <i>async</i><i>&gt;&lt;/</i><b>script</b><i>&gt;</i></div>
+  </div>
+  <div>
+    <span class="micro">Onboarding</span>
+    <ol class="steps" style="margin-top:9px">
+      <li><b>01</b><span>Datasheets read from northfield-polymers.com/technical-library</span><span class="st ok">1,240 grades</span></li>
+      <li><b>02</b><span>Properties, classifications and claims structured and reviewed</span><span class="st ok">Done</span></li>
+      <li><b>03</b><span>Allowed origins set: northfield-polymers.com, shop.northfield-polymers.com</span><span class="st ok">Done</span></li>
+      <li><b>04</b><span>Greeting, suggested questions and hand-off contact configured</span><span class="st ok">Done</span></li>
+      <li><b>05</b><span>Script tag added to the product templates</span><span class="st">Your web team</span></li>
+    </ol>
+  </div>
 </div>
-<div class="cw-msg">
-<span class="cw-who">Claude</span>
-<div class="cw-body">
-<p class="cw-line">Checking the library rather than guessing. Calling the Matterialis server.</p>
-<div class="cw-tool">
-<div class="cw-tool-h"><svg class="ic" viewBox="0 0 24 24" style="width:11px;height:11px"><path d="M4 8l4 4-4 4"/><path d="M11 16h9"/></svg><b>matterialis</b><span>find_substitutes</span><span class="cw-ok">200</span></div>
-<table class="cw-args">
-<tr><td>Incumbent</td><td class="v">AMP-9140</td></tr>
-<tr><td>Tensile, min</td><td class="v">60 MPa</td></tr>
-<tr><td>Service temp, min</td><td class="v">120 &#176;C</td></tr>
-<tr><td>Compliance</td><td class="v">RoHS, REACH</td></tr>
-</table>
-</div>
-<div class="cw-res">
-<div class="cw-res-h"><span class="micro">3 candidates returned</span><span class="note">each with its evidence</span></div>
-<table class="grid">
-<tr><th>Grade</th><th>Evidence</th><th>Criteria</th><th class="r">Tensile</th><th class="r">T max</th><th class="r">Match</th></tr>
-<tr><td><span class="matname">Polyamide 6, 30% GF<span>AMP-4412</span></span></td><td><span class="ev"><span class="dot dot-strong"></span>Strong</span></td><td><span class="met"><span class="seg"><i class="s"></i><i class="s"></i><i class="s"></i></span><span>3 of 3</span></span></td><td class="r n-ok">165</td><td class="r n-ok">150</td><td class="r n">94 %</td></tr>
-<tr><td><span class="matname">PBT, 20% GF<span>AMP-3118</span></span></td><td><span class="ev"><span class="dot dot-strong"></span>Strong</span></td><td><span class="met"><span class="seg"><i class="s"></i><i class="s"></i><i class="s"></i></span><span>3 of 3</span></span></td><td class="r n-ok">110</td><td class="r n-ok">140</td><td class="r n">88 %</td></tr>
-<tr><td><span class="matname">PC / ABS, FR<span>AMP-2207</span></span></td><td><span class="ev"><span class="dot dot-limited"></span>Limited</span></td><td><span class="met"><span class="seg"><i class="l"></i><i class="l"></i><i></i></span><span>2 of 3</span></span></td><td class="r n-ok">62</td><td class="r n-ok">125<sup class="ai">AI</sup></td><td class="r n">86 %</td></tr>
-</table>
-</div>
-<p class="cw-line">Two clear it outright. <b>AMP-4412</b> has the most headroom on both. On <b>AMP-2207</b> the 125 &#176;C is model-generated, not measured, so I would not commit to it without a lab check.</p>
-<p class="cw-cite">Every value carries its status. Predictions stay marked <sup class="ai">AI</sup>.</p>
-</div>
-</div>
-<div class="cw-compose"><span>Ask a follow-up, or tell it which one to take to the lab</span><svg class="ic" viewBox="0 0 24 24" style="width:12px;height:12px"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
-</div>
+<aside class="embed-rail">
+  <span class="micro">What stays yours</span>
+  <ul class="rule-list">
+    <li><svg viewBox="0 0 24 24"><path d="M12 3l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V7z"/></svg><span><b>Your data.</b> The assistant answers from your documents. They are not used to train shared models.</span></li>
+    <li><svg viewBox="0 0 24 24"><path d="M3 12h18M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18"/></svg><span><b>Your site.</b> The assistant runs only on the web addresses you list. Nobody can embed your chat elsewhere.</span></li>
+    <li><svg viewBox="0 0 24 24"><path d="M4 4h16v16H4z"/><path d="M8 9h8M8 13h5"/></svg><span><b>Your conversations.</b> Every request, answer and click is visible to you and exportable.</span></li>
+    <li><svg viewBox="0 0 24 24"><path d="M12 22c4-2 6-5 6-9 0-5-6-11-6-11S6 8 6 13c0 4 2 7 6 9z"/></svg><span><b>Your look.</b> The assistant takes your brand colour from one line of CSS, and it never changes your page's styling.</span></li>
+  </ul>
+  <span class="micro">Buyers are told</span>
+  <p style="font-size:var(--text-xs);color:var(--ink-muted);line-height:1.5">that the supplier sees the conversation, before they type. No personal data is needed to ask.</p>
+</aside>
+</div></div>
 </div></div>
         </div>
         <div class="feat-txt">
           <span class="micro">04</span>
-          <h3>Connect it to your own AI scientists</h3>
-          <p>An AI assistant is only as good as the data it can reach, and industrial chemistry is not in its training set. Matterialis exposes the same intelligence layer over an MCP server, so Claude and any other MCP client can query grades, properties and substitutes directly, with the evidence attached and every prediction still marked.</p>
-          <div class="out">Your agents stop guessing about materials and start looking them up.</div>
+          <h3>Live on your website with one line of code</h3>
+          <p>We structure your datasheets, you add one script tag to your product pages. The assistant appears in the corner, in your brand colour, isolated from the rest of your page so nothing else changes. It runs only on the domains you allow, so nobody can lift it onto another site.</p>
+          <div class="out">No platform migration. Your website, your domain, your leads.</div>
           <div class="swipe">Swipe the panel to explore<svg class="ic" viewBox="0 0 24 24" style="width:12px;height:12px"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
         </div>
       </div>
+
     </div>
   </div>
 </section>
 
 <hr class="rule">
-<!-- ================= USE CASES ================= -->
-<section class="sec" id="cases">
-  <div class="wrap">
-    <div class="sec-head rv">
-      <span class="micro">Customer cases</span>
-      <h2>Six problems customers brought us.</h2>
-      <p class="lede">Every one of them starts with a constraint someone else set: a substance gets restricted, a supply route closes, a spec has to hold. The answer is somewhere in a few hundred datasheets, and nobody has time to read them. Open a case to see how we handle it.</p>
-    </div>
 
-    <div class="ucards">
-      <button class="uc rv" data-case="defence">
-        <span class="uc-media">
-          <span class="uc-plate" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M2 12h3M19 12h3M4.9 19.1L7 17M17 7l2.1-2.1"/></svg><span class="micro">Photography slot &#183; machined components</span></span>
-          <img src="img/defence.jpg" alt="" loading="lazy" decoding="async" onerror="this.remove()">
-        </span>
-        <span class="uc-body">
-          <span class="micro">Defence &#183; UK reshoring</span>
-          <h3>A component has to be made in the UK, and the material comes from Europe</h3>
-          <p>A defence manufacturer needs a cellulose nitrate grade equivalent to one it has bought from mainland Europe for decades.</p>
-          <span class="uc-foot"><span class="uc-open">Open case<svg class="ic" viewBox="0 0 24 24" style="width:12px;height:12px"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span><span class="badge">Reshoring</span></span>
-        </span>
-      </button>
-      <button class="uc self rv" data-case="membranes">
-        <span class="uc-media">
-          <span class="uc-plate" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 8h18M3 12h18M3 16h18" stroke-dasharray="3 3"/></svg><span class="micro on-chrome">Photography slot &#183; membrane macro</span></span>
-          <img src="img/membranes.jpg" alt="" loading="lazy" decoding="async" onerror="this.remove()">
-        </span>
-        <span class="uc-body">
-          <span class="micro">Technical textiles &#183; our own product</span>
-          <h3>A fossil-based polymer has to become bio-based</h3>
-          <p>Amphico builds PFAS-free waterproof membranes. Matterialis was built for this problem first.</p>
-          <span class="uc-foot"><span class="uc-open">Open case<svg class="ic" viewBox="0 0 24 24" style="width:12px;height:12px"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span><span class="badge">Customer zero</span></span>
-        </span>
-      </button>
-      <button class="uc rv" data-case="compounding">
-        <span class="uc-media">
-          <span class="uc-plate" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2l9 5-9 5-9-5 9-5zM3 12l9 5 9-5M3 17l9 5 9-5"/></svg><span class="micro">Photography slot &#183; polymer pellets</span></span>
-          <img src="img/compounding.jpg" alt="" loading="lazy" decoding="async" onerror="this.remove()">
-        </span>
-        <span class="uc-body">
-          <span class="micro">Polymer compounding</span>
-          <h3>The property that decides the part is not on the datasheet</h3>
-          <p>A compounder specifying for high-performance moulding, with no published heat deflection under load.</p>
-          <span class="uc-foot"><span class="uc-open">Open case<svg class="ic" viewBox="0 0 24 24" style="width:12px;height:12px"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span><span class="badge">Property gap</span></span>
-        </span>
-      </button>
-      <button class="uc rv" data-case="cosmetics">
-        <span class="uc-media">
-          <span class="uc-plate" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 3h6v5l3 6v7H6v-7l3-6z"/><path d="M6 16h12"/></svg><span class="micro">Photography slot &#183; gel sample dishes</span></span>
-          <img src="img/cosmetics.jpg" alt="" loading="lazy" decoding="async" onerror="this.remove()">
-        </span>
-        <span class="uc-body">
-          <span class="micro">Cosmetics</span>
-          <h3>The formulation does not clear in the market you want to enter</h3>
-          <p>A formulator holding sensory performance while the restricted-substance list changes.</p>
-          <span class="uc-foot"><span class="uc-open">Open case<svg class="ic" viewBox="0 0 24 24" style="width:12px;height:12px"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span><span class="badge">Market entry</span></span>
-        </span>
-      </button>
-      <button class="uc uc-hidden rv" data-case="food">
-        <span class="uc-media">
-          <span class="uc-plate" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3v18M3 8h18M5 8v11h14V8"/></svg><span class="micro">Photography slot &#183; powder blend</span></span>
-          <img src="img/food.jpg" alt="" loading="lazy" decoding="async" onerror="this.remove()">
-        </span>
-        <span class="uc-body">
-          <span class="micro">Food &amp; beverage</span>
-          <h3>An ingredient has to go, and the deadline is commercial</h3>
-          <p>A developer who needs a shortlist before the reformulation window closes.</p>
-          <span class="uc-foot"><span class="uc-open">Open case<svg class="ic" viewBox="0 0 24 24" style="width:12px;height:12px"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span><span class="badge">Speed</span></span>
-        </span>
-      </button>
-      <button class="uc uc-hidden rv" data-case="pharma">
-        <span class="uc-media">
-          <span class="uc-plate" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M10 3h4v6l4 6v6H6v-6l4-6z"/><path d="M8 15h8"/></svg><span class="micro">Photography slot &#183; sample vials</span></span>
-          <img src="img/pharma.jpg" alt="" loading="lazy" decoding="async" onerror="this.remove()">
-        </span>
-        <span class="uc-body">
-          <span class="micro">Pharmaceutical formulation</span>
-          <h3>The person who makes this call is retiring</h3>
-          <p>One specialist decides which grades reach the shortlist, and none of that reasoning is written down.</p>
-          <span class="uc-foot"><span class="uc-open">Open case<svg class="ic" viewBox="0 0 24 24" style="width:12px;height:12px"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span><span class="badge">Knowledge capture</span></span>
-        </span>
-      </button>
-    </div>
-    <div class="uc-more">
-      <button class="btn btn-secondary" id="morecases" aria-expanded="false">Show 2 more cases</button>
-    </div>
-    <p class="credit" id="credit" hidden>Photography: <span></span></p>
-  </div>
-
-  <!-- case detail source (read by the inspector) -->
-  <div hidden id="case-src">
-    <div data-c="defence" data-role="Defence manufacturing &#183; United Kingdom" data-title="A component has to be made in the UK, and the material comes from Europe">
-      <div data-k="problem"><p>A UK defence manufacturer is bringing component production back onshore. One of the materials is a cellulose nitrate grade it has bought from the same mainland European supplier for decades. It is specified by that supplier&#8217;s own designation rather than by properties, because nobody ever needed to describe it any other way.</p><p>To source it in the UK, someone first has to work out what the grade actually is: nitrogen content, viscosity grade, damping solvent, plasticiser compatibility. Then find who in the country makes something equivalent. Supplier catalogues are organised by supplier, so there is no way to ask that question directly.</p></div>
-      <div data-k="how"><ol><li><b>01</b>Paste the incumbent datasheet. The grade comes back described by what it is rather than by whose catalogue it sits in.</li><li><b>02</b>Set the binding constraints, nitrogen content and viscosity grade, and rank the field by how closely each grade matches. Filtering by region is in development, so for now you narrow the result to UK suppliers yourself.</li><li><b>03</b>The result is equivalent grades ranked by property match, each with the supplier that published it. Where a supplier publishes nothing on a critical property, the gap is named rather than guessed.</li></ol></div>
-      <div data-k="get"><p>A shortlist of grades that hold the specification, with the supplier for each, and a clear list of what still needs testing before qualification. The same query answers supply-risk and dual-sourcing questions, not only reshoring.</p></div>
-    </div>
-    <div data-c="compounding" data-role="Polymer compounder · high-performance moulding" data-title="The property that decides the part is not on the datasheet">
-      <div data-k="problem"><p>You are specifying a grade for a moulded part that has to survive under-bonnet temperatures under load. Tensile and melt flow are on the datasheet. Heat deflection at 1.8 MPa is not, and neither is the shrinkage window that determines whether the part holds tolerance.</p><p>So the options are to email the supplier and wait two weeks per grade, or to buy samples and measure it yourself. That only works once the field is narrowed, which was the problem in the first place.</p></div>
-      <div data-k="how"><ol><li><b>01</b>Paste the incumbent datasheet. The grade comes back described by its properties, its chemistry and its end use, rather than by the catalogue it sits in.</li><li><b>02</b>Set the floor on the property that actually governs the part, whether or not it was published. Predicted values are filterable and marked as predicted.</li><li><b>03</b>Read the shortlist by criteria met, then by similarity. Each candidate states which numbers are measured, which are model-generated, and which still need a lab.</li></ol></div>
-      <div data-k="get"><p>A ranked candidate set with the unknowns named, so the lab list is short and every entry on it is there for a reason.</p></div>
-    </div>
-
-    <div data-c="cosmetics" data-role="Cosmetics formulator · personal care" data-title="The formulation does not clear in the market you want to enter">
-      <div data-k="problem"><p>Commercial has a market. Compliance has a blocker. The usual sequence is that R&amp;D reformulates for performance, compliance reviews the result, something fails, and R&amp;D starts again. Each loop is weeks, and the number of loops is unpredictable because the compliance constraint was never inside the search.</p><p>Localisation compounds it: an ingredient that is compliant and available in Europe but unobtainable in the target region has not solved anything.</p></div>
-      <div data-k="how"><ol><li><b>01</b>Restricted-substance lists for the target market are applied as a hard filter before ranking, so compliance review checks a shortlist that already clears, instead of finding the blocker on the third loop.</li><li><b>02</b>Properties the supplier never published are predicted, so a candidate is not dropped just for leaving a blank on its datasheet.</li><li><b>03</b>Because ingredient lists overlap across a portfolio, the search targets substitutions that resolve several products at once.</li></ol></div>
-      <div data-k="get"><p>A shortlist where every candidate already clears the restricted-substance list for the market you are entering. Matterialis narrows the field; your regulatory function still owns the determination. Filtering by regional availability is in development.</p></div>
-    </div>
-
-    <div data-c="membranes" data-role="Amphico · PFAS-free waterproof membranes" data-title="A fossil-based polymer has to become bio-based">
-      <div data-k="problem"><p>Amphico makes PFAS-free waterproof membranes. Replacing the polyolefin compound in our own product with a bio-based alternative is constrained on three axes at once: it has to hold membrane performance, it has to be bio-based, and it has to be sourceable at volume by a company our size.</p><p>The useful candidates are not in the technical textile supply chain. They are in packaging and biomedical. Those suppliers have no reason to call us, and a membrane engineer has no reason to read their datasheets.</p></div>
-      <div data-k="how"><ol><li><b>01</b>The index is organised by what materials are and do, not by which industry's suppliers sell them, so a packaging polymer surfaces for a membrane problem when it fits.</li><li><b>02</b>Candidates are compared on how they behave, which is what lets a grade sold into packaging be read against a membrane requirement at all.</li><li><b>03</b>Cross-sector candidates carry what the transfer involves: different regulatory status in your application, different grades and purities, different supply structure.</li></ol></div>
-      <div data-k="get"><p>We built Matterialis because we needed it. This work is in progress and we will publish what we find, including what does not work.</p></div>
-    </div>
-
-    <div data-c="food" data-role="Food &amp; beverage · product development" data-title="An ingredient has to go, and the deadline is commercial">
-      <div data-k="problem"><p>An ingredient becomes unavailable, uneconomic, or unacceptable, and the replacement has to hold texture, stability and shelf life without changing the label more than it has to. Screening, before a single physical trial, takes weeks. It is reading a few hundred datasheets by hand.</p></div>
-      <div data-k="how"><ol><li><b>01</b>Screening moves to the index. Property filtering, including on values that were never reported, narrows the candidate set without downloading anything.</li><li><b>02</b>The output separates properties we can predict from properties genuinely unknown. That second list is the lab list.</li><li><b>03</b>Candidates that enter trial have already cleared the property and compliance constraints, so the trials test real uncertainty.</li></ol></div>
-      <div data-k="get"><p>A shortlist in days rather than weeks, and lab time spent on the questions data cannot settle. It does not replace the trial; it decides which trials are worth running.</p></div>
-    </div>
-
-    <div data-c="pharma" data-role="Pharmaceutical formulator · excipients and solid dose" data-title="The person who makes this call is retiring">
-      <div data-k="problem"><p>Excipient selection runs through one person, because only one person can actually do it. The procedure is documentable: build a matrix of target properties, filter a few hundred grades to six or eight, generate data on what nobody reported, then design the trials.</p><p>What is not documentable is which grades enter the matrix at all. That rests on inferences made without writing them down, and reconstructed after the decision, if at all. So a junior scientist learns the procedure and builds a defensible-looking matrix from the wrong candidate set.</p></div>
-      <div data-k="how"><ol><li><b>01</b>The inference layer becomes explicit: a predicted property is marked as predicted, so it can be inspected and disagreed with.</li><li><b>02</b>Constraints that used to be applied silently (qualification complexity, acceptable property trade-offs, prior familiarity with a supplier) become parameters you can review and reuse.</li><li><b>03</b>Every shortlist exports as a rationale: constraints applied, candidates rejected and why, values relied on and how confident, properties still to measure.</li></ol></div>
-      <div data-k="get"><p>A shortlist a junior scientist can defend in review, and a specialist who audits the reasoning rather than redoing the work. The judgement stays with your expert; it stops being the throughput limit.</p></div>
-    </div>
-  </div>
-
-  <!-- inspector -->
-  <div class="scrim" id="scrim"></div>
-  <aside class="insp" id="insp" role="dialog" aria-modal="true" aria-labelledby="insp-title" tabindex="-1">
-    <div class="insp-bar">
-      <span class="micro" id="insp-eyebrow">Business case</span>
-      <button class="insp-close" id="insp-close" aria-label="Close">
-        <svg class="ic" viewBox="0 0 24 24" style="width:13px;height:13px"><path d="M6 6l12 12M18 6L6 18"/></svg>
-      </button>
-    </div>
-    <div class="insp-scroll">
-      <div class="insp-hero">
-        <span class="micro" id="insp-role"></span>
-        <h2 id="insp-title"></h2>
-      </div>
-      <div class="insp-block"><span class="micro">The problem</span><div id="insp-problem"></div></div>
-      <div class="insp-block"><span class="micro">How Matterialis handles it</span><ol class="steplist" id="insp-how"></ol></div>
-      <div class="insp-block"><span class="micro">What you get</span><div id="insp-get"></div></div>
-    </div>
-    <div class="insp-foot">
-      <a class="btn btn-primary" href="https://calendar.app.google/LcwtFTNrrVFJnGiz9" target="_blank" rel="noopener">Book a demo</a>
-      <a class="btn btn-secondary" href="#contact">Contact us</a>
-    </div>
-  </aside>
-</section>
-
-<hr class="rule">
-
-<!-- ================= COMPARISON ================= -->
+<!-- ================= COMPARE ================= -->
 <section class="sec" id="compare">
   <div class="wrap">
     <div class="sec-head rv">
       <span class="micro">Where we differ</span>
-      <h2>They index datasheets. We model the material.</h2>
-      <p class="lede">That is the whole difference.</p>
+      <h2>A listing shows your product beside everyone else's. This answers on your site.</h2>
+      <p class="lede">Most suppliers reach buyers through a third-party database or marketplace, on its terms. Matterialis puts the same intelligence on your own website, over your catalogue alone.</p>
     </div>
 
     <div class="cmp-scroll rv">
       <div class="cmp">
         <div class="cmp-row cmp-head">
           <div class="cmp-cell cmp-what"><span class="micro">Capability</span></div>
-          <div class="cmp-cell cmp-us"><span class="cmp-logo"><svg viewBox="0 0 577.6 82" role="img" aria-label="Matterialis"><use href="#mtl-logo"/></svg></span><span class="micro">A model</span></div>
-          <div class="cmp-cell"><span class="cmp-logo l-ul"><img src="img/logos/ul-prospector.png" alt="UL Prospector"><span class="cmp-name">UL Prospector</span></span><span class="micro">An index</span></div>
-          <div class="cmp-cell"><span class="cmp-logo l-knowde"><img src="img/logos/knowde.png" alt="Knowde"><span class="cmp-name">Knowde</span></span><span class="micro">A marketplace</span></div>
-          <div class="cmp-cell"><span class="cmp-logo l-specialchem"><img src="img/logos/specialchem.png" alt="SpecialChem"><span class="cmp-name">SpecialChem</span></span><span class="micro">An index</span></div>
-          <div class="cmp-cell"><span class="cmp-logo l-matweb"><img src="img/logos/matweb.png" alt="MatWeb"><span class="cmp-name">MatWeb</span></span><span class="micro">A property database</span></div>
+          <div class="cmp-cell cmp-us"><span class="cmp-logo"><svg viewBox="0 0 577.6 82" role="img" aria-label="Matterialis"><use href="#mtl-logo"/></svg></span><span class="micro">On your site</span></div>
+          <div class="cmp-cell"><span class="cmp-name">Your website today</span><span class="micro">PDF library and a contact form</span></div>
+          <div class="cmp-cell"><span class="cmp-name">A marketplace listing</span><span class="micro">UL Prospector, Knowde, SpecialChem</span></div>
+          <div class="cmp-cell"><span class="cmp-name">A general chatbot</span><span class="micro">Added to your site</span></div>
         </div>
-
         <div class="cmp-row">
-          <div class="cmp-cell cmp-what"><h3>Properties nobody published</h3></div>
+          <div class="cmp-cell cmp-what"><h3>Buyers search by requirement, in their own words</h3></div>
+          <div class="cmp-cell cmp-us"><span class="mark full"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 12.5l5 5 10-11"/></svg><span class="vh">Yes</span></span></div>
+          <div class="cmp-cell"><span class="mark none"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 6.5l11 11M17.5 6.5l-11 11"/></svg><span class="vh">No</span></span></div>
+          <div class="cmp-cell"><span class="mark part"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/></svg><span class="vh">Partly</span></span></div>
+          <div class="cmp-cell"><span class="mark part"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/></svg><span class="vh">Partly</span></span></div>
+        </div>
+        <div class="cmp-row">
+          <div class="cmp-cell cmp-what"><h3>Every requirement checked against the datasheet, value shown</h3></div>
           <div class="cmp-cell cmp-us"><span class="mark full"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 12.5l5 5 10-11"/></svg><span class="vh">Yes</span></span></div>
           <div class="cmp-cell"><span class="mark none"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 6.5l11 11M17.5 6.5l-11 11"/></svg><span class="vh">No</span></span></div>
           <div class="cmp-cell"><span class="mark part"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/></svg><span class="vh">Partly</span></span></div>
           <div class="cmp-cell"><span class="mark none"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 6.5l11 11M17.5 6.5l-11 11"/></svg><span class="vh">No</span></span></div>
-          <div class="cmp-cell"><span class="mark none"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 6.5l11 11M17.5 6.5l-11 11"/></svg><span class="vh">No</span></span></div>
         </div>
-
         <div class="cmp-row">
-          <div class="cmp-cell cmp-what"><h3>Filtering by property value</h3></div>
+          <div class="cmp-cell cmp-what"><h3>Only your products are shown</h3></div>
           <div class="cmp-cell cmp-us"><span class="mark full"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 12.5l5 5 10-11"/></svg><span class="vh">Yes</span></span></div>
           <div class="cmp-cell"><span class="mark full"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 12.5l5 5 10-11"/></svg><span class="vh">Yes</span></span></div>
+          <div class="cmp-cell"><span class="mark none"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 6.5l11 11M17.5 6.5l-11 11"/></svg><span class="vh">No</span></span></div>
           <div class="cmp-cell"><span class="mark part"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/></svg><span class="vh">Partly</span></span></div>
-          <div class="cmp-cell"><span class="mark full"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 12.5l5 5 10-11"/></svg><span class="vh">Yes</span></span></div>
-          <div class="cmp-cell"><span class="mark full"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 12.5l5 5 10-11"/></svg><span class="vh">Yes</span></span></div>
         </div>
-
         <div class="cmp-row">
-          <div class="cmp-cell cmp-what"><h3>Substitutes ranked against your constraints</h3></div>
+          <div class="cmp-cell cmp-what"><h3>Says when the sheet does not state a value</h3></div>
           <div class="cmp-cell cmp-us"><span class="mark full"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 12.5l5 5 10-11"/></svg><span class="vh">Yes</span></span></div>
           <div class="cmp-cell"><span class="mark part"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/></svg><span class="vh">Partly</span></span></div>
           <div class="cmp-cell"><span class="mark part"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/></svg><span class="vh">Partly</span></span></div>
+          <div class="cmp-cell"><span class="mark none"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 6.5l11 11M17.5 6.5l-11 11"/></svg><span class="vh">No</span></span></div>
+        </div>
+        <div class="cmp-row">
+          <div class="cmp-cell cmp-what"><h3>You see every request, and what went unmet</h3></div>
+          <div class="cmp-cell cmp-us"><span class="mark full"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 12.5l5 5 10-11"/></svg><span class="vh">Yes</span></span></div>
+          <div class="cmp-cell"><span class="mark none"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 6.5l11 11M17.5 6.5l-11 11"/></svg><span class="vh">No</span></span></div>
           <div class="cmp-cell"><span class="mark part"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/></svg><span class="vh">Partly</span></span></div>
           <div class="cmp-cell"><span class="mark part"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/></svg><span class="vh">Partly</span></span></div>
         </div>
-
         <div class="cmp-row">
-          <div class="cmp-cell cmp-what"><h3>Equivalents from outside your sector</h3></div>
+          <div class="cmp-cell cmp-what"><h3>A structured catalogue you own and can reuse</h3></div>
           <div class="cmp-cell cmp-us"><span class="mark full"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 12.5l5 5 10-11"/></svg><span class="vh">Yes</span></span></div>
-          <div class="cmp-cell"><span class="mark none"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 6.5l11 11M17.5 6.5l-11 11"/></svg><span class="vh">No</span></span></div>
-          <div class="cmp-cell"><span class="mark none"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 6.5l11 11M17.5 6.5l-11 11"/></svg><span class="vh">No</span></span></div>
-          <div class="cmp-cell"><span class="mark none"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 6.5l11 11M17.5 6.5l-11 11"/></svg><span class="vh">No</span></span></div>
-          <div class="cmp-cell"><span class="mark none"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 6.5l11 11M17.5 6.5l-11 11"/></svg><span class="vh">No</span></span></div>
-        </div>
-
-        <div class="cmp-row">
-          <div class="cmp-cell cmp-what"><h3>An MCP server for your own AI agents</h3></div>
-          <div class="cmp-cell cmp-us"><span class="mark full"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 12.5l5 5 10-11"/></svg><span class="vh">Yes</span></span></div>
-          <div class="cmp-cell"><span class="mark none"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 6.5l11 11M17.5 6.5l-11 11"/></svg><span class="vh">No</span></span></div>
           <div class="cmp-cell"><span class="mark none"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 6.5l11 11M17.5 6.5l-11 11"/></svg><span class="vh">No</span></span></div>
           <div class="cmp-cell"><span class="mark none"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 6.5l11 11M17.5 6.5l-11 11"/></svg><span class="vh">No</span></span></div>
           <div class="cmp-cell"><span class="mark none"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 6.5l11 11M17.5 6.5l-11 11"/></svg><span class="vh">No</span></span></div>
@@ -1496,8 +1429,7 @@ footer{background:var(--chrome);border-top:1px solid var(--chrome-line);padding:
     </div>
 
     <p class="swipe cmp-swipe" id="cmpswipe" hidden>Swipe the table to compare<svg class="ic" viewBox="0 0 24 24" style="width:12px;height:12px"><path d="M5 12h14M13 6l6 6-6 6"/></svg></p>
-
-    <p class="cmp-note rv">From public product information, August 2026. We compare what each platform is built to do, not how well it does it. <a href="#contact">Tell us</a> if we have anything wrong.</p>
+    <p class="cmp-note rv">From public product information, October 2026. We compare what each route is built to do, not how well it does it. A marketplace listing and Matterialis on your site are not exclusive; many suppliers will want both. <a href="#contact">Tell us</a> if we have anything wrong.</p>
   </div>
 </section>
 
@@ -1508,32 +1440,32 @@ footer{background:var(--chrome);border-top:1px solid var(--chrome-line);padding:
   <div class="wrap">
     <div class="sec-head rv">
       <span class="micro">Trust</span>
-      <h2>Why you can trust it.</h2>
-      <p class="lede">Research behind the method, a team that does both halves of the problem, and a product of our own that depends on it.</p>
+      <h2>What your buyers hear is what your datasheets say.</h2>
+      <p class="lede">The same model and the same rules as the Matterialis platform, with one more: the assistant is scoped to your catalogue and to your website.</p>
     </div>
 
     <div class="tlist rv">
       <div class="trow">
         <div class="trow-k">
           <svg viewBox="0 0 24 24"><path d="M4 4h11l5 5v11H4z"/><path d="M15 4v5h5"/><path d="M8 13h8M8 17h5"/></svg>
-          <span class="micro">Research</span>
+          <span class="micro">Grounding</span>
         </div>
         <div>
-          <h3>The science is written up, and the method is patent pending.</h3>
-          <p>Our work on how to represent a material is under review at NeurIPS AI4Science, one of the main machine-learning research conferences, and the method is patent pending. We will publish the paper once it clears review, so your own technical people can read how it works rather than take a claim on trust. The corpus and the property models are ours.</p>
+          <h3>Four states, never a yes or no, and no value that is not on the sheet.</h3>
+          <p>Each requirement a buyer sets comes back met, missed, unclear or not stated, with the value from your datasheet beside it. A value the sheet does not give is reported as not stated, never as a failure and never filled in. Where a value is an estimate from similar products, it is marked as an estimate with its range. The products a buyer sees come from your catalogue and nowhere else.</p>
         </div>
       </div>
       <div class="trow">
         <div class="trow-k">
           <svg viewBox="0 0 24 24"><path d="M12 3l9 5-9 5-9-5 9-5z"/><path d="M21 12v5c0 1-4 3-9 3s-9-2-9-3v-5"/></svg>
-          <span class="micro">Team</span>
+          <span class="micro">Method</span>
         </div>
         <div>
-          <h3>Built by a team from IBM Research and the University of Cambridge.</h3>
-          <p>Machine learning research and materials science in the same building. The credibility sits in the team rather than in an advisory board.</p>
+          <h3>Built by a team from IBM Research and the University of Cambridge, and written up.</h3>
+          <p>The method behind the material representation is under review at NeurIPS AI4Science and is patent pending. The pipeline that reads your datasheets has already structured more than 200,000 grades from over 60 suppliers. We will publish the paper once it clears review, so your technical people can read how it works.</p>
           <div class="orglogos">
-            <span class="orglogo l-ibm"><img src="img/logos/ibm.png" alt="IBM"><span class="orgname">IBM Research</span></span>
-            <span class="orglogo l-camb"><img src="img/logos/cambridge.png" alt="University of Cambridge"><span class="orgname">University of Cambridge</span></span>
+            <span class="orglogo l-ibm"><img src="../img/logos/ibm.png" alt="IBM"><span class="orgname">IBM Research</span></span>
+            <span class="orglogo l-camb"><img src="../img/logos/cambridge.png" alt="University of Cambridge"><span class="orgname">University of Cambridge</span></span>
           </div>
         </div>
       </div>
@@ -1543,27 +1475,27 @@ footer{background:var(--chrome);border-top:1px solid var(--chrome-line);padding:
           <span class="micro">Origin</span>
         </div>
         <div>
-          <h3>We built it for our own product first.</h3>
-          <p>Amphico makes PFAS-free waterproof membranes. Matterialis exists because we had a reformulation problem and the available tools could not help with it. We still use it for that, which is why the limits are stated as plainly as the capabilities.</p>
+          <h3>We are a materials company, and we buy from suppliers like you.</h3>
+          <p>Amphico makes PFAS-free waterproof membranes. Matterialis started as the tool we needed to find and qualify materials. We know what a buyer asks a supplier, and what it costs when the answer is slow or wrong, because we have been on that side of the conversation.</p>
         </div>
       </div>
     </div>
 
     <div class="datapanel rv">
       <span class="micro">Your data</span>
-      <h3>You get value without giving us your proprietary data.</h3>
-      <p>By default, none of your proprietary data is required and none of it is stored. Matterialis is trained on public and licensed industrial documentation, so search, prediction and substitute ranking all work without you uploading a single internal document.</p>
+      <h3>Your documents, your domain, your conversations.</h3>
+      <p>The assistant is built from the datasheets you already publish, plus any files you choose to share. Your data is never used to train shared models and never shown on another supplier's site. Buyers are told that you can see the conversation before they type, and every conversation is yours to read, export and delete.</p>
       <span class="micro dtiers-label">Product offerings</span>
       <div class="dtiers">
         <div class="dtier">
-          <h4>Standard</h4>
-          <p class="dtier-line">You upload nothing.</p>
-          <p>Everything on this page works against the public index alone.</p>
+          <h4>Website assistant</h4>
+          <p class="dtier-line">Your public datasheets, on your site.</p>
+          <p>We structure what you publish. The assistant answers buyers on your website and the dashboard shows you every request.</p>
         </div>
         <div class="dtier">
-          <h4>Enterprise</h4>
-          <p class="dtier-line">Standard, plus your own data.</p>
-          <p>Add your formulations and historical results to gain intelligence from them too. Your workspace stays isolated and is never used to train shared models.</p>
+          <h4>Private catalogue</h4>
+          <p class="dtier-line">Website assistant, plus your internal data.</p>
+          <p>Add internal test data, approvals and application notes for your own sales and technical teams to search. That workspace stays isolated; nothing internal reaches the public assistant.</p>
         </div>
       </div>
     </div>
@@ -1575,37 +1507,37 @@ footer{background:var(--chrome);border-top:1px solid var(--chrome-line);padding:
 <!-- ================= FAQ ================= -->
 <section class="sec" id="faq">
   <div class="wrap">
-    <div class="sec-head rv"><span class="micro">FAQ</span><h2>The questions we get.</h2></div>
+    <div class="sec-head rv"><span class="micro">FAQ</span><h2>The questions suppliers ask.</h2></div>
     <div class="faq">
       <details open>
-        <summary>I already use ChatGPT to find materials. How is this better?</summary>
+        <summary>Will it ever recommend a competitor's product?</summary>
         <div class="a">
-          <p>For one project, with datasheets you have already downloaded, a general model reads and compares them well. Three things it cannot do: search grades you never downloaded, return a property value that appears in none of the source documents, or give you the same answer twice.</p>
-          <p>Matterialis is not a chat wrapper over a search index. It is a model trained on more than 200,000 material grades, with 500+ properties underneath every query. <strong>Predicted values arrive marked as predicted</strong>, and a general model has nothing to predict from.</p>
+          <p>No. Every product the assistant shows, links or counts comes from your catalogue, by construction: the search it runs can only return your grades. If a buyer names a competitor's product or attaches its datasheet, the assistant looks for the products in your range that meet the same requirements and presents those on their own merits.</p>
         </div>
       </details>
       <details>
-        <summary>How is this different from UL Prospector or a supplier database?</summary>
-        <div class="a"><p>Those are static databases: they return what suppliers chose to report. Matterialis is an intelligence layer built on that kind of data — predicting unreported properties, ranking by material relationship rather than keyword, and applied to reformulation, innovation and R&amp;D problems rather than lookups.</p></div>
+        <summary>What do we need to provide?</summary>
+        <div class="a"><p>Your datasheets. For most suppliers that means the technical and safety data sheets already on your website, which we read directly. If you have better data than you publish, such as measured values, approvals or application notes, you can share it and it will be used; nothing you share is used to train shared models. Then one script tag on your product pages, which your web team adds in minutes.</p></div>
       </details>
       <details>
-        <summary>What will it not do?</summary>
-        <div class="a">
-          <p>It will not run your experiments; it decides which are worth running. It will not tell you how a finished formulation performs, because it works at grade level. It will not replace design of experiments or the lab, only shorten the list going into both. And it will not hide uncertainty — predictions we are unsure of are marked as values to measure.</p>
-          <p>Interaction-order prediction is the harder problem and it is next. It is not today's claim.</p>
-        </div>
+        <summary>What happens when the datasheet does not answer the question?</summary>
+        <div class="a"><p>The assistant says so. The requirement is shown as not stated, the buyer is told it is a gap in the document, and they are offered a person to ask. You see the question in your dashboard under documentation gaps, which is often the cheapest product improvement available: a value measured once and added to the sheet answers every future buyer who asks.</p></div>
       </details>
       <details>
-        <summary>How do I know a predicted value is right?</summary>
-        <div class="a"><p>You do not take it on faith. Every predicted value is labelled as model-generated everywhere it appears. Measured and predicted numbers are never mixed silently.</p></div>
+        <summary>Can it make things up?</summary>
+        <div class="a"><p>The parts that matter are not generated. Which products are shown, each requirement's verdict and the value beside it are computed from your datasheets, never written by the model. The model turns the buyer's words into criteria and explains the result in prose, and it is held to the values the search returned. It never quotes a price, lead time or approval that is not in your documents. Estimated values from similar products are always marked as estimates.</p></div>
       </details>
       <details>
-        <summary>Is our data used to train your models?</summary>
-        <div class="a"><p>No. By default you upload nothing and we store nothing. On the Enterprise subscription you can add your own data to gain intelligence from it; that workspace stays isolated and is never used to train shared models.</p></div>
+        <summary>What do we learn from it?</summary>
+        <div class="a"><p>Every conversation, in full, and the counts across them: which properties buyers ask for and at what thresholds, how often your best product met them, where it missed, which products lead and which get clicked, and the requests that found nothing at all. Product gaps and documentation gaps are listed separately, because one needs development and the other needs a datasheet update.</p></div>
       </details>
       <details>
-        <summary>Who built it?</summary>
-        <div class="a"><p>A team from IBM Research and the University of Cambridge, inside Amphico. The method is under review for the NeurIPS AI4Science programme and patent pending.</p></div>
+        <summary>Does it work for distributors with several manufacturers' lines?</summary>
+        <div class="a"><p>Yes. The catalogue is scoped to the products you sell, whoever makes them, and the assistant presents them as your range. If a line has to be kept out of the public assistant, it is left out of the scope.</p></div>
+      </details>
+      <details>
+        <summary>Can our sales team use it internally?</summary>
+        <div class="a"><p>The private catalogue offering gives your sales and technical teams the same search over your range plus your internal data, so an inbound request gets a referenced answer in minutes. An assistant that drafts those answers for your reps is the next piece of this product; ask us about timing.</p></div>
       </details>
     </div>
   </div>
@@ -1615,24 +1547,24 @@ footer{background:var(--chrome);border-top:1px solid var(--chrome-line);padding:
 <section class="cta" id="contact">
   <div class="wrap">
     <span class="micro">Get started</span>
-    <h2>Bring us a problem you are working on.</h2>
-    <p class="lede">We will show you what the platform does with it. Three ways people start:</p>
+    <h2>See it on your own catalogue.</h2>
+    <p class="lede">Send us a link to your technical library and we will structure a sample of your range before we talk. Three ways suppliers start:</p>
     <div class="opts">
-      <div class="opt"><span class="opt-head"><svg class="opt-ic" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="13" rx="2"/><path d="M8 21h8M12 17v4"/><path d="m10 8 4 2.5-4 2.5z"/></svg><span class="micro">01</span></span><h4>A live demo</h4><p>Walked through on your own material class, not a canned example.</p></div>
-      <div class="opt"><span class="opt-head"><svg class="opt-ic" viewBox="0 0 24 24"><path d="M4 4h11l5 5v11H4z"/><path d="M15 4v5h5"/><path d="M8 14h3M8 17h6"/><path d="m8 11 1.5 1.5L13 9"/></svg><span class="micro">02</span></span><h4>A substitute report</h4><p>Ranked replacements for a specific constraint, with trade-offs stated. Bring one you have already solved and compare.</p></div>
-      <div class="opt"><span class="opt-head"><svg class="opt-ic" viewBox="0 0 24 24"><path d="M3 20V10M9 20V4M15 20v-7M21 20v-4"/><path d="M2 20h20"/></svg><span class="micro">03</span></span><h4>A property gap analysis</h4><p>What we can fill in for the grades you are already evaluating.</p></div>
+      <div class="opt"><span class="opt-head"><svg class="opt-ic" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="13" rx="2"/><path d="M8 21h8M12 17v4"/><path d="m10 8 4 2.5-4 2.5z"/></svg><span class="micro">01</span></span><h4>A demo on your range</h4><p>The assistant running over a sample of your own datasheets, answering the questions your buyers actually ask.</p></div>
+      <div class="opt"><span class="opt-head"><svg class="opt-ic" viewBox="0 0 24 24"><path d="M3 3h18v18H3z"/><path d="M3 9h18M9 21V9"/></svg><span class="micro">02</span></span><h4>A pilot on one product line</h4><p>Live on one section of your website, with the dashboard, so the value is measured before it is extended.</p></div>
+      <div class="opt"><span class="opt-head"><svg class="opt-ic" viewBox="0 0 24 24"><path d="M3 20V10M9 20V4M15 20v-7M21 20v-4"/><path d="M2 20h20"/></svg><span class="micro">03</span></span><h4>A documentation gap report</h4><p>Which properties your datasheets leave unstated that buyers in your market ask about, from the corpus we already hold.</p></div>
     </div>
     <div class="hero-cta">
       <a class="btn btn-on-chrome btn-lg" href="https://calendar.app.google/LcwtFTNrrVFJnGiz9" target="_blank" rel="noopener">Book a demo</a>
-      <a class="btn btn-ghost-chrome btn-lg" href="mailto:j.orri@amphico.uk">Contact us</a>
+      <a class="btn btn-ghost-chrome btn-lg" href="mailto:j.orri@amphico.uk?subject=Matterialis%20for%20suppliers">Contact us</a>
     </div>
   </div>
 </section>
 
 <div class="xlink">
   <div class="wrap">
-    <p><b>Do you sell materials rather than buy them?</b> The same intelligence, over your catalogue alone, answering buyers on your own website.</p>
-    <a class="btn btn-secondary" href="suppliers/" data-audience="suppliers">Matterialis for suppliers<svg class="ic" viewBox="0 0 24 24" style="width:12px;height:12px"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    <p><b>Looking for materials rather than selling them?</b> The Matterialis platform searches 200,000 grades across every supplier.</p>
+    <a class="btn btn-secondary" href="../" data-audience="formulators">Matterialis for formulators<svg class="ic" viewBox="0 0 24 24" style="width:12px;height:12px"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
   </div>
 </div>
 
@@ -1640,15 +1572,15 @@ footer{background:var(--chrome);border-top:1px solid var(--chrome-line);padding:
   <div class="wrap foot">
     <svg viewBox="0 0 577.6 118.1" role="img" aria-label="Matterialis, by Amphico"><use href="#mtl-lockup"/></svg>
     <nav>
+      <a href="../" data-audience="formulators">For formulators</a>
       <a href="#product">Product</a>
-      <a href="#trust">Research</a>
+      <a href="#trust">Trust</a>
       <a href="#faq">FAQ</a>
-      <a href="suppliers/" data-audience="suppliers">For suppliers</a>
     </nav>
   </div>
 </footer>
 
-<script src="img/credits.js" onerror="void 0"></script>
+
 <script>
 (function(){
   var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -1662,22 +1594,15 @@ footer{background:var(--chrome);border-top:1px solid var(--chrome-line);padding:
     rv.forEach(function(el){ ro.observe(el); });
   } else { rv.forEach(function(el){ el.classList.add('in'); }); }
 
-  /* ---- product section: scale each mock to its own column ----
-     Each mock is authored at a fixed 1180px and transform-scaled to whatever
-     width its row gives it. That is all that is left of what used to be here:
-     the pinned-mock version needed a scroll handler, a nearest-to-centre
-     chooser with a dead band, and a function that moved mocks between parents
-     on resize. Rows that sit next to their own copy need none of it.
-
-     Below 1080px the mocks are not scaled at all — they keep 1180px inside a
-     horizontal scroller, because a width-fit scale at phone widths lands
-     around 0.33 and the tables become unreadable. */
+  /* scale each 1180px mock to its column; below 1080px they scroll instead
+     (same rule as index.html, same reason: a width-fit scale on a phone is
+     unreadable) */
   function fit(){
     if(innerWidth <= 1080){
       document.querySelectorAll('.scaler').forEach(function(el){ el.style.transform = ''; });
       return;
     }
-    document.querySelectorAll('.feat-shot').forEach(function(shot){
+    document.querySelectorAll('.feat-shot, .hero-shot').forEach(function(shot){
       var w = shot.clientWidth; if(!w) return;
       var sc = shot.querySelector('.scaler');
       if(sc) sc.style.transform = 'scale(' + (w / 1180) + ')';
@@ -1685,100 +1610,21 @@ footer{background:var(--chrome);border-top:1px solid var(--chrome-line);padding:
   }
   fit();
   addEventListener('resize', fit);
-  /* the mock height depends on the scale, and the scale depends on a layout
-     that shifts once the webfonts land */
   if(document.fonts && document.fonts.ready) document.fonts.ready.then(fit);
 
-  /* Third-party logo slots — compare header and team credit — fall back to the
-     text name sitting beside the image. Both must read correctly whether or not
-     img/logos/ has been populated, so nothing here is load-bearing. */
+  /* third-party logo slots fall back to their text name */
   [].slice.call(document.querySelectorAll('.cmp-logo img, .orglogo img')).forEach(function(img){
-    function fail(){
-      var slot = img.parentNode;
-      if(slot) slot.classList.add('nologo');
-      img.remove();
-    }
+    function fail(){ var slot = img.parentNode; if(slot) slot.classList.add('nologo'); img.remove(); }
     img.addEventListener('error', fail);
-    /* this script is at the foot of the document, so a missing file has very
-       likely already errored by the time we get here and the event is long
-       gone. Catch that case explicitly rather than waiting for one that will
-       never fire. */
     if(img.complete && !img.naturalWidth) fail();
   });
 
-  /* the comparison table keeps its columns and scrolls; only offer the swipe
-     hint when it actually overflows */
   var cmpScroll = document.querySelector('.cmp-scroll'), cmpSwipe = document.getElementById('cmpswipe');
-  function cmpHint(){
-    if(!cmpScroll || !cmpSwipe) return;
-    cmpSwipe.hidden = cmpScroll.scrollWidth <= cmpScroll.clientWidth + 1;
-  }
+  function cmpHint(){ if(!cmpScroll || !cmpSwipe) return; cmpSwipe.hidden = cmpScroll.scrollWidth <= cmpScroll.clientWidth + 1; }
   cmpHint();
   addEventListener('resize', cmpHint);
 
-  /* library counter */
-  var c = document.querySelector('[data-count]');
-  if(c && 'IntersectionObserver' in window && !reduce){
-    var co = new IntersectionObserver(function(es){
-      es.forEach(function(e){
-        if(!e.isIntersecting) return;
-        var end = +c.getAttribute('data-count'), t0 = null;
-        function tick(t){
-          if(!t0) t0 = t;
-          var p = Math.min((t-t0)/1000,1), k = 1-Math.pow(1-p,3);
-          c.textContent = Math.round(end*k).toLocaleString('en-GB') + (p===1 ? '+' : '');
-          if(p<1) requestAnimationFrame(tick);
-        }
-        requestAnimationFrame(tick); co.unobserve(c);
-      });
-    },{threshold:.6});
-    co.observe(c);
-  } else if(c){ c.textContent = '200,000+'; }
-
-  /* hero query cycling */
-  var typed = document.getElementById('typed');
-  if(typed && !reduce){
-    var words = ['non-ionic emulsifier','bio-based membrane polymer','cadmium-free green pigment','low-VOC binder','PFAS-free repellent'];
-    var wi = 0, ci = words[0].length, dir = -1;
-    (function step(){
-      var w = words[wi];
-      ci += dir;
-      typed.textContent = w.slice(0, ci);
-      if(dir === -1 && ci === 0){ dir = 1; wi = (wi+1) % words.length; }
-      else if(dir === 1 && ci === words[wi].length){ dir = -1; return void setTimeout(step, 2400); }
-      setTimeout(step, dir === 1 ? 50 : 25);
-    })();
-  }
-
-  /* ---- inspector panel for business cases ---- */
-  var insp = document.getElementById('insp'), scrim = document.getElementById('scrim'),
-      src = document.getElementById('case-src'), lastFocus = null;
-  function open(key, trigger){
-    var node = src.querySelector('[data-c="' + key + '"]');
-    if(!node) return;
-    lastFocus = trigger || null;
-    document.getElementById('insp-role').textContent = node.getAttribute('data-role');
-    document.getElementById('insp-title').textContent = node.getAttribute('data-title');
-    document.getElementById('insp-problem').innerHTML = node.querySelector('[data-k="problem"]').innerHTML;
-    document.getElementById('insp-how').innerHTML = node.querySelector('[data-k="how"] ol').innerHTML;
-    document.getElementById('insp-get').innerHTML = node.querySelector('[data-k="get"]').innerHTML;
-    insp.classList.add('on'); scrim.classList.add('on');
-    document.body.style.overflow = 'hidden';
-    insp.focus();
-  }
-  function close(){
-    insp.classList.remove('on'); scrim.classList.remove('on');
-    document.body.style.overflow = '';
-    if(lastFocus) lastFocus.focus();
-  }
-  document.querySelectorAll('.uc').forEach(function(b){
-    b.addEventListener('click', function(){ open(b.getAttribute('data-case'), b); });
-  });
-  document.getElementById('insp-close').addEventListener('click', close);
-  scrim.addEventListener('click', close);
-  addEventListener('keydown', function(e){ if(e.key === 'Escape' && insp.classList.contains('on')) close(); });
-
-  /* FAQ — one open at a time */
+  /* FAQ, one open at a time */
   var dets = [].slice.call(document.querySelectorAll('.faq details'));
   dets.forEach(function(d){
     d.addEventListener('toggle', function(){
@@ -1786,29 +1632,6 @@ footer{background:var(--chrome);border-top:1px solid var(--chrome-line);padding:
       dets.forEach(function(o){ if(o !== d) o.open = false; });
     });
   });
-
-  /* use cases — reveal the rest */
-  var more = document.getElementById('morecases');
-  if(more) more.addEventListener('click', function(){
-    var open = more.getAttribute('aria-expanded') === 'true';
-    document.querySelectorAll('.uc-hidden').forEach(function(c){
-      c.classList.toggle('shown', !open);
-      if(!open) c.classList.add('in');
-    });
-    more.setAttribute('aria-expanded', String(!open));
-    more.textContent = open ? 'Show 2 more cases' : 'Show fewer cases';
-  });
-
-  /* photo credits — populated by img/credits.js once the images are in place */
-  if(window.MATTERIALIS_CREDITS && window.MATTERIALIS_CREDITS.length){
-    var cr = document.getElementById('credit');
-    if(cr){
-      cr.hidden = false;
-      cr.querySelector('span').innerHTML = window.MATTERIALIS_CREDITS.map(function(c){
-        return '<a href="' + c.photographer_url + '?utm_source=matterialis&utm_medium=referral" target="_blank" rel="noopener">' + c.photographer + '</a>';
-      }).join(', ') + ' on <a href="https://unsplash.com/?utm_source=matterialis&utm_medium=referral" target="_blank" rel="noopener">Unsplash</a>';
-    }
-  }
 
   /* mobile menu */
   var t = document.getElementById('navtoggle'), links = document.querySelector('.nav-links');
@@ -1819,7 +1642,7 @@ footer{background:var(--chrome);border-top:1px solid var(--chrome-line);padding:
   });
 
   /* nav section highlight */
-  var secs = ['product','cases','compare','trust','faq'];
+  var secs = ['product','compare','trust','faq'];
   if('IntersectionObserver' in window){
     var no = new IntersectionObserver(function(es){
       es.forEach(function(e){
@@ -1834,11 +1657,12 @@ footer{background:var(--chrome);border-top:1px solid var(--chrome-line);padding:
 })();
 </script>
 
-<!-- ================= ANALYTICS — page instrumentation =================
-     Reading depth, product-claim dwell, intent clicks, exit point.
-     Deliberately self-contained: it reads the DOM and listens, and the
-     behaviour script above knows nothing about it. Delete this block and the
-     page is byte-for-byte unchanged in behaviour. -->
+<!-- ============================================================
+     ANALYTICS — instrumentation (see ANALYTICS.md). The same shape
+     as the homepage block, minus the use-case inspector this page
+     does not have. Every event carries page:'suppliers' from the
+     register() call in <head>, so the two pages chart apart.
+     ============================================================ -->
 <script>
 (function(){
   var t = window.mtl; if(!t) return;
@@ -1848,15 +1672,8 @@ footer{background:var(--chrome);border-top:1px solid var(--chrome-line);padding:
     return pairs.map(function(p){ return {name:p[0], el:document.querySelector(p[1])}; })
                 .filter(function(s){ return s.el; });
   }
-
-  /* Top-level sections, plus the four product claims as a second, finer
-     track. Exactly one entry in each list owns the viewport centre at any
-     moment, so engaged time sums cleanly instead of double-counting the
-     overlaps. Nearest-to-centre rather than an IntersectionObserver, for the
-     same reason the product rail used to avoid one: a narrow band can miss a
-     section outright on a fast scroll. */
   var SECTIONS = list([
-    ['hero','#top'], ['proof','.proof'], ['product','#product'], ['cases','#cases'],
+    ['hero','#top'], ['proof','.proof'], ['product','#product'],
     ['compare','#compare'], ['trust','#trust'], ['faq','#faq'], ['cta','#contact']
   ]);
   var FEATS = [].slice.call(document.querySelectorAll('#product .feat')).map(function(el, i){
@@ -1866,9 +1683,7 @@ footer{background:var(--chrome);border-top:1px solid var(--chrome-line);padding:
 
   var read = {}, claim = {}, hit = {}, path = [];
   var cur = null, curClaim = null, mark = Date.now(), act = Date.now(), depth = 0;
-
   function awake(){ return !document.hidden && (Date.now() - act) < IDLE; }
-
   function owner(items){
     var mid = innerHeight / 2, best = null, bestD = Infinity;
     for(var i = 0; i < items.length; i++){
@@ -1879,44 +1694,28 @@ footer{background:var(--chrome);border-top:1px solid var(--chrome-line);padding:
     }
     return best;
   }
-
   function sample(){
     var now = Date.now(), dt = (now - mark) / 1000;
     mark = now;
-    /* dt is capped as well as gated: a laptop waking from sleep hands back a
-       gap of hours that was never reading time */
     if(awake() && dt > 0 && dt < 30){
       if(cur){
         read[cur] = (read[cur] || 0) + dt;
-        /* one live event per section as it crosses 10s. Sent now rather than
-           at exit because unload delivery is best-effort, and this is the
-           signal worth being certain of. */
-        if(read[cur] >= 10 && !hit[cur]){
-          hit[cur] = 1;
-          t.track('section_read', { section:cur, engaged_seconds:Math.round(read[cur]) });
-        }
+        if(read[cur] >= 10 && !hit[cur]){ hit[cur] = 1; t.track('section_read', { section:cur, engaged_seconds:Math.round(read[cur]) }); }
       }
       if(curClaim){
         var n = curClaim.name;
         claim[n] = (claim[n] || 0) + dt;
-        if(claim[n] >= 8 && !hit[n]){
-          hit[n] = 1;
-          t.track('product_claim_read', {
-            claim:n, title:curClaim.title, engaged_seconds:Math.round(claim[n])
-          });
-        }
+        if(claim[n] >= 8 && !hit[n]){ hit[n] = 1; t.track('product_claim_read', { claim:n, title:curClaim.title, engaged_seconds:Math.round(claim[n]) }); }
       }
     }
     var s = owner(SECTIONS);
     cur = s ? s.name : null;
     if(cur && path[path.length - 1] !== cur) path.push(cur);
     curClaim = (cur === 'product' && FEATS.length) ? owner(FEATS) : null;
-
     var sh = document.documentElement.scrollHeight || 1;
     var d = Math.min(100, Math.round((pageYOffset + innerHeight) / sh * 100));
     if(d > depth) depth = d;
   }
-
   var ticking = false;
   addEventListener('scroll', function(){
     act = Date.now();
@@ -1927,43 +1726,9 @@ footer{background:var(--chrome);border-top:1px solid var(--chrome-line);padding:
   ['pointerdown','pointermove','keydown','touchstart'].forEach(function(e){
     addEventListener(e, function(){ act = Date.now(); }, {passive:true});
   });
-  /* time has to accrue while someone reads without scrolling, too */
   setInterval(sample, 1000);
   sample();
 
-  /* ---- use-case inspector ----
-     Watched rather than hooked: the panel closes four different ways (button,
-     scrim, Escape, and whatever gets added next) and the class is the one
-     thing all of them change. */
-  var insp = document.getElementById('insp');
-  var caseKey = null, caseAt = 0;
-  document.addEventListener('click', function(e){
-    var b = e.target.closest && e.target.closest('.uc[data-case]');
-    if(b) caseKey = b.getAttribute('data-case');
-  }, true);
-  if(insp && window.MutationObserver){
-    var wasOpen = false;
-    new MutationObserver(function(){
-      var open = insp.classList.contains('on');
-      if(open === wasOpen) return;
-      wasOpen = open;
-      if(open){
-        caseAt = Date.now();
-        t.track('use_case_opened', { case:caseKey || 'unknown' });
-      } else if(caseAt){
-        t.track('use_case_closed', {
-          case:caseKey || 'unknown',
-          seconds_open:Math.round((Date.now() - caseAt) / 1000)
-        });
-        caseAt = 0;
-      }
-    }).observe(insp, {attributes:true, attributeFilter:['class']});
-  }
-
-  /* ---- objections ----
-     Which question they open says more about the deal than anything else on
-     the page: the data-and-training question means a security review is
-     coming, "who built it" means they are still deciding if we are real. */
   [].slice.call(document.querySelectorAll('.faq details')).forEach(function(d){
     d.addEventListener('toggle', function(){
       if(!d.open) return;
@@ -1972,15 +1737,6 @@ footer{background:var(--chrome);border-top:1px solid var(--chrome-line);padding:
     });
   });
 
-  var more = document.getElementById('morecases');
-  if(more) more.addEventListener('click', function(){
-    /* capture phase, so aria-expanded is still the pre-click state */
-    t.track('more_cases_clicked', { expanded:more.getAttribute('aria-expanded') !== 'true' });
-  }, true);
-
-  /* Where a CTA was clicked matters more than what it said: the same "Book a
-     demo" in the nav and at the foot of the page are different levels of
-     conviction. */
   function place(el){
     var s = el.closest ? el.closest('section[id], header[id], footer, nav') : null;
     return s ? (s.id || s.tagName.toLowerCase()) : 'unknown';
@@ -1989,28 +1745,17 @@ footer{background:var(--chrome);border-top:1px solid var(--chrome-line);padding:
     var a = e.target.closest && e.target.closest('a[href]');
     if(!a) return;
     var href = a.getAttribute('href') || '';
-    /* Booking runs on a Google Calendar appointment page. Match the host
-       explicitly: this test is the only thing that turns a "Book a demo"
-       click into a cta_click, so changing the booking provider without
-       adding its host here loses every demo click, silently. Calendly is
-       kept in the list so a switch back cannot break it either. */
     var booking = /calendar\.app\.google|calendly\.com/i;
     if(/^mailto:/i.test(href) || booking.test(href)){
-      t.track('cta_click', {
-        kind:/^mailto:/i.test(href) ? 'contact' : 'demo',
-        location:place(a),
-        label:(a.textContent || '').trim().slice(0, 40)
-      });
+      t.track('cta_click', { kind:/^mailto:/i.test(href) ? 'contact' : 'demo', location:place(a), label:(a.textContent || '').trim().slice(0, 40) });
     } else if(a.hasAttribute('data-audience')){
-      /* a formulator-page visitor crossing to the supplier story (or back):
-         which audience the page is actually drawing */
+      /* someone crossing from the supplier story to the formulator one, or back */
       t.track('audience_switch', { to:a.getAttribute('data-audience'), location:place(a) });
     } else if(href.charAt(0) === '#' && href.length > 1){
       t.track('nav_click', { to:href.slice(1), location:place(a) });
     }
   }, true);
 
-  /* did they read across the competitor columns, or only ours */
   var cmp = document.querySelector('.cmp-scroll');
   if(cmp){
     var swiped = false;
@@ -2021,27 +1766,17 @@ footer{background:var(--chrome);border-top:1px solid var(--chrome-line);padding:
     }, {passive:true});
   }
 
-  /* ---- the exit point ----
-     visibilitychange, not unload: pagehide and unload drop silently on mobile
-     Safari, and sendBeacon survives the page going away. Per-section seconds
-     go out as flat properties so they chart without unpacking anything. */
   var sent = false;
   function exit(){
     if(sent) return;
     sent = true;
     sample();
     var total = 0, deepest = null, most = 0;
-    Object.keys(read).forEach(function(k){
-      total += read[k];
-      if(read[k] > most){ most = read[k]; deepest = k; }
-    });
+    Object.keys(read).forEach(function(k){ total += read[k]; if(read[k] > most){ most = read[k]; deepest = k; } });
     var p = {
-      last_section:cur,
-      most_read_section:deepest,
-      section_path:path.join(' > '),
+      last_section:cur, most_read_section:deepest, section_path:path.join(' > '),
       sections_read:Object.keys(read).filter(function(k){ return read[k] >= 3; }).length,
-      max_depth_pct:depth,
-      total_engaged_seconds:Math.round(total)
+      max_depth_pct:depth, total_engaged_seconds:Math.round(total)
     };
     SECTIONS.forEach(function(s){ p['read_' + s.name] = Math.round(read[s.name] || 0); });
     FEATS.forEach(function(f){ p['read_' + f.name] = Math.round(claim[f.name] || 0); });
