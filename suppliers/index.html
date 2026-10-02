@@ -352,6 +352,13 @@ p{margin:0}
 
 /* ---- hero ---- */
 .hero{padding:82px 0 0}
+/* the first thing a seller sees: their own door, top right under the nav */
+.seller-wrap{position:relative;height:0}
+.seller-cta{position:absolute;right:var(--gutter);top:-54px}
+@media (max-width:760px){
+  .seller-wrap{height:auto;display:flex;justify-content:flex-end;margin-bottom:22px}
+  .seller-cta{position:static}
+}
 .hero-in{max-width:900px}
 .eyebrow{
   display:inline-flex;align-items:center;gap:8px;border:1px solid var(--rule);
@@ -993,6 +1000,15 @@ footer{background:var(--chrome);border-top:1px solid var(--chrome-line);padding:
    three words. Shown beneath the open panel in the mock so both states read. */
 .w-launch{position:absolute;display:inline-flex;align-items:center;gap:9px;height:44px;padding:0 16px 0 10px;border-radius:var(--radius-surface);background:var(--chrome);color:#fff;box-shadow:var(--shadow-overlay);font-size:var(--text-lg);font-weight:500;letter-spacing:-.005em}
 .w-launch svg{height:22px;width:auto}
+/* the launcher is a real button in the hero mock */
+button.w-launch{border:0;font-family:inherit;cursor:pointer;transition:transform var(--dur-fast) var(--ease),background var(--dur-fast) var(--ease)}
+button.w-launch:hover{background:var(--chrome-raised)}
+button.w-launch.press{transform:scale(.93)}
+/* closed until opened: the panel grows in from the launcher's corner */
+.host-live .w{opacity:0;transform:translateY(14px) scale(.97);transform-origin:bottom right;pointer-events:none;
+              transition:opacity var(--dur-slow) var(--ease-out),transform var(--dur-slow) var(--ease-out)}
+.host-live.open .w{opacity:1;transform:none;pointer-events:auto}
+@media (prefers-reduced-motion:reduce){.host-live .w{transition:none}}
 /* placement in the hero mock */
 .host .w{position:absolute;right:28px;top:16px;width:400px}
 .host .w-log{max-height:470px;overflow:hidden}
@@ -1152,8 +1168,10 @@ footer{background:var(--chrome);border-top:1px solid var(--chrome-line);padding:
   <div class="wrap">
     <div class="hero-shot rv">
       <div class="scaler"><div class="surface">
-        <div class="host">
-          <!-- a supplier's website, generic and out of focus: the assistant is the only sharp thing -->
+        <div class="host host-live">
+          <!-- a supplier's website, generic and out of focus: the assistant is the only sharp thing.
+               The assistant starts closed; the launcher presses itself once the hero is in view,
+               and from then on the visitor opens and closes it. -->
           <div class="host-page" aria-hidden="true">
             <div class="host-nav"><span class="lg"></span><span class="lk"></span><span class="lk"></span><span class="lk"></span><span class="lk"></span><span class="cta"></span></div>
             <div class="host-hero"><div class="copy"><div class="h"></div><div class="h w2"></div><div class="p"></div><div class="p w2"></div><div class="p w3"></div><div class="b"></div></div></div>
@@ -1167,7 +1185,7 @@ footer{background:var(--chrome);border-top:1px solid var(--chrome-line);padding:
           </div>
           <span class="host-note">A supplier's own website. The assistant is the only Matterialis element on it.</span>
 
-          <div class="w" aria-label="The assistant, as a buyer sees it">
+          <div class="w" id="hero-assistant" aria-label="The assistant, as a buyer sees it">
             <div class="w-head"><div><div class="t">Northfield Specialty Polymers</div><span class="s">Product assistant</span></div><span class="x">New &nbsp; ×</span></div>
             <div class="w-log">
               <div class="w-msg w-buyer">Die-attach adhesive we can stencil print. Viscosity under 30,000 mPa·s, Tg above 100 °C, thixotropic index at least 3.</div>
@@ -1189,7 +1207,7 @@ footer{background:var(--chrome);border-top:1px solid var(--chrome-line);padding:
             <div class="w-legal"><span>Answers from Northfield's datasheets</span><b>Talk to a person</b></div>
           </div>
 
-          <span class="w-launch" aria-hidden="true"><svg viewBox="0 0 577.6 82"><use href="#mtl-logo"/></svg>Ask about our products</span>
+          <button type="button" class="w-launch" aria-expanded="false" aria-controls="hero-assistant"><svg viewBox="0 0 577.6 82" aria-hidden="true"><use href="#mtl-logo"/></svg>Ask about our products</button>
         </div>
       </div></div>
     </div>
@@ -1621,6 +1639,29 @@ footer{background:var(--chrome);border-top:1px solid var(--chrome-line);padding:
       dets.forEach(function(o){ if(o !== d) o.open = false; });
     });
   });
+
+  /* the hero assistant: closed on arrival, presses its own launcher once the
+     hero is in view, then opens and closes on click */
+  var live = document.querySelector('.host-live');
+  if(live){
+    var launch = live.querySelector('.w-launch'), played = false;
+    function setOpen(o){ live.classList.toggle('open', o); launch.setAttribute('aria-expanded', o ? 'true' : 'false'); }
+    launch.addEventListener('click', function(){ played = true; setOpen(!live.classList.contains('open')); });
+    function play(){
+      if(played) return; played = true;
+      if(reduce){ setOpen(true); return; }
+      setTimeout(function(){
+        launch.classList.add('press');
+        setTimeout(function(){ launch.classList.remove('press'); setOpen(true); }, 170);
+      }, 900);
+    }
+    if('IntersectionObserver' in window){
+      /* watch the frame, not the 1180px mock: on a phone the mock is wider than
+         the screen and its visible share never reaches a high threshold */
+      var lo = new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ play(); lo.disconnect(); } }); },{threshold:.15});
+      lo.observe(live.closest('.hero-shot') || live);
+    } else { play(); }
+  }
 
   /* mobile menu */
   var t = document.getElementById('navtoggle'), links = document.querySelector('.nav-links');

@@ -340,6 +340,13 @@ p{margin:0}
 
 /* ---- hero ---- */
 .hero{padding:82px 0 0}
+/* the first thing a seller sees: their own door, top right under the nav */
+.seller-wrap{position:relative;height:0}
+.seller-cta{position:absolute;right:var(--gutter);top:-54px}
+@media (max-width:760px){
+  .seller-wrap{height:auto;display:flex;justify-content:flex-end;margin-bottom:22px}
+  .seller-cta{position:static}
+}
 .hero-in{max-width:900px}
 .eyebrow{
   display:inline-flex;align-items:center;gap:8px;border:1px solid var(--rule);
@@ -944,6 +951,9 @@ footer{background:var(--chrome);border-top:1px solid var(--chrome-line);padding:
 
 <!-- ================= HERO ================= -->
 <header class="hero" id="top">
+  <div class="wrap seller-wrap">
+    <a class="btn btn-primary seller-cta" href="suppliers/" data-audience="suppliers">Are you a seller? Click here<svg class="ic" viewBox="0 0 24 24" style="width:12px;height:12px"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+  </div>
   <div class="wrap hero-in">
     <span class="eyebrow"><span class="dot dot-signal"></span>For formulators, R&amp;D and sourcing teams</span>
     <h1>The right material exists. <span class="soft">Finding it is the problem.</span></h1>
