@@ -10,6 +10,7 @@ page works opened straight from disk.
 ```
 index.html            the formulator page (the home page)
 suppliers/index.html  the supplier page: the same product, sold to the seller
+about/index.html      the About page: how Matterialis grew out of Amphico's R&D
 inbound/index.html    the QR landing for the stand; printed, so never moved
 design.md             the design system: tokens, type, colour rules, voice
 ANALYTICS.md          what the pages measure and how to verify it
