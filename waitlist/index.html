@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Matterialis — Join the waitlist</title>
+<meta name="description" content="A foundation model for industrial materials. Enriches datasheets with properties nobody published, and ranks substitute grades against every constraint.">
+<!-- /waitlist is the SITE's waitlist page: every "Join the waitlist" button on
+     matterialis.com points here. It is a copy of /inbound (the booth QR page)
+     with its own attribution, so booth scans and site sign-ups stay separable.
+     Keep the two in step by hand. noindex: the home page is the landing page. -->
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="/img/brand/matterialis-favicon.ico">
+<link rel="apple-touch-icon" href="/img/brand/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@500&display=swap" rel="stylesheet">
+
+<!-- ============================================================
+     ANALYTICS — PostHog (EU), project "Matterialis" · id 105300
+     https://eu.posthog.com/project/105300
+
+     Deliberately smaller than the homepage block. This page has to
+     answer three questions and no others:
+
+       scans         $pageview
+       real humans   inbound_engaged
+       leads         inbound_submitted
+
+     The number the panel is judged on is abandonment, and that is
+     inbound_engaged minus inbound_submitted. There is no event for it
+     because subtracting two honest numbers beats inventing a third.
+     Same shape as the homepage's $pageview minus visit_engaged.
+
+     The email address is NOT sent here. Only its domain, which names
+     the company without naming the person — the line ANALYTICS.md
+     already draws for outreach tokens. The address itself lives in
+     Formspree and in the inbox, and nowhere else.
+
+     No replay, no autocapture, no pageleave: a ten-second form page
+     needs none of them and each costs weight on a bad connection.
+
+     outreach_token is registered as the same value the redirect hands
+     the homepage, so one scan reads as one person across both pages.
+
+     This block plus ONE guarded line in the form script is the whole
+     of it. Delete both and the page behaves identically — the gate
+     must never depend on analytics being reachable.
+     ============================================================ -->
+<script>
+!function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init capture register register_once register_for_session unregister unregister_for_session getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on reset onFeatureFlags onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey getNextSurveyStep identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty createPersonProfile opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing debug".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+</script>
+<script>
+(function(){
+  /* no-ops if posthog is absent, blocked by a corporate proxy, or opted out.
+     Nothing on this page may break because analytics did. */
+  window.mtl = {
+    track: function(name, props, beacon){
+      try{
+        if(window.posthog && posthog.capture){
+          posthog.capture(name, props || {}, beacon ? {transport:'sendBeacon'} : undefined);
+        }
+      }catch(e){}
+    }
+  };
+
+  try{
+    posthog.init('phc_GnUG6LSAkfO92r5vN5asriOtooGLbGPx3V40gANPcBi', {
+      api_host: 'https://eu.i.posthog.com',
+      ui_host:  'https://eu.posthog.com',
+      person_profiles: 'always',
+      /* fired by hand below, once the show properties are registered */
+      capture_pageview: false,
+      capture_pageleave: false,
+      autocapture: false,
+      /* a one-field form page has nothing to learn from web vitals or a
+         heatmap, and both cost payload on the connection this page exists
+         for. The homepage keeps them; this one does not need them. */
+      capture_performance: false,
+      capture_heatmaps: false,
+      disable_session_recording: true,
+      persistence: 'localStorage+cookie'
+    });
+
+    /* #internal keeps our own stand tests out of the numbers — at booth
+       volume a morning of us demoing the QR would drown the real scans. */
+    var h = location.hash;
+    if(h === '#internal' || h === '#do-not-track'){ posthog.opt_out_capturing(); return; }
+    if(h === '#track-me') posthog.opt_in_capturing();
+
+    posthog.register({
+      outreach_token: 'waitlist',
+      source: 'site'
+    });
+    posthog.capture('$pageview');
+
+    /* --- the human gate ---
+       Something that fetches and renders without touching anything is not a
+       scan. Keeping it out of inbound_engaged leaves the prefetch share
+       visible as a subtraction rather than silently inflating the scans. */
+    var engaged = false, visibleMs = 0, poll = null;
+    var SIGNALS = ['pointermove','pointerdown','keydown','touchstart','wheel','scroll'];
+    function engage(){
+      if(engaged) return;
+      engaged = true;
+      if(poll) clearInterval(poll);
+      SIGNALS.forEach(function(s){ removeEventListener(s, engage, true); });
+      window.mtl.track('inbound_engaged');
+    }
+    SIGNALS.forEach(function(s){ addEventListener(s, engage, true); });
+    /* someone who reads the pill and the headline without moving anything */
+    poll = setInterval(function(){
+      if(!document.hidden) visibleMs += 500;
+      if(visibleMs >= 3000) engage();
+    }, 500);
+  }catch(e){}
+})();
+</script>
+
+<!-- ============================================================
+     /waitlist — the site's waitlist page (copy of /inbound, own attribution)
+
+     Reached by scanning the QR on the printed panel and nothing else.
+     The URL is burned into the printed code and cannot be changed.
+
+     Built for convention-centre wifi, so: one file, inline CSS, no
+     third-party script, no iframe. The gate must never depend on
+     somebody else's CDN being up.
+
+     Tokens below are COPIED from index.html :root, not imported —
+     same portability trade the main page makes. If a token changes
+     there, it changes here too. Nothing enforces the match.
+     ============================================================ -->
+<style>
+:root{
+  --chrome:#141618; --chrome-line:#2A2C2E; --chrome-fg-dim:#8A9297;
+  --brand-signal:#0E6B72;
+  --paper:#FDFDFC; --paper-raised:#FFFFFF; --paper-sunken:#F5F6F6;
+  --rule:#E8EAEC; --rule-soft:#F2F3F4;
+  --ink:#17191B; --ink-muted:#6C7276; --ink-faint:#9CA1A5;
+  --font-sans:Geist,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
+  --font-mono:"Geist Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+  --text-2xs:10.5px; --text-sm:12px; --text-md:13px;
+  --tracking-micro:.09em;
+  --radius-indicator:2px; --radius-control:3px; --radius-surface:6px;
+  --dur-fast:130ms; --ease:cubic-bezier(.4,0,.2,1);
+}
+*{box-sizing:border-box}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:var(--font-sans);font-size:16px;line-height:1.5;font-weight:400;
+  -webkit-font-smoothing:antialiased;font-variant-numeric:tabular-nums;
+  min-height:100vh;display:flex;flex-direction:column;
+}
+svg{display:block}
+:focus-visible{outline:none;box-shadow:0 0 0 1px var(--brand-signal);border-radius:var(--radius-control)}
+
+/* graphite band — same treatment as the site nav and footer, and the
+   closest thing on screen to the panel they just scanned */
+.band{background:var(--chrome);border-bottom:1px solid var(--chrome-line);flex:none}
+.band-in{max-width:560px;margin:0 auto;padding:0 24px;height:56px;display:flex;align-items:center}
+.band svg{height:18px;width:auto}
+
+main{flex:1;max-width:560px;width:100%;margin:0 auto;padding:44px 24px 40px}
+
+.eyebrow{
+  /* the label is long enough to wrap at phone widths, so the dot aligns to the
+     first line rather than to the centre of a two-line block */
+  display:inline-flex;align-items:flex-start;gap:8px;border:1px solid var(--rule);
+  background:var(--paper-raised);border-radius:var(--radius-control);padding:4px 9px;
+  font-family:var(--font-mono);font-size:var(--text-2xs);font-weight:500;
+  letter-spacing:var(--tracking-micro);text-transform:uppercase;color:var(--ink-muted);
+}
+.eyebrow .dot{width:5px;height:5px;margin-top:.42em;border-radius:var(--radius-indicator);flex:none;display:block;background:var(--brand-signal)}
+
+h1{
+  margin:22px 0 0;font-size:clamp(29px,7.4vw,38px);font-weight:600;
+  letter-spacing:-.032em;line-height:1.08;
+}
+h1 .soft{color:var(--ink-muted)}
+.lede{margin:18px 0 0;font-size:17px;line-height:1.55;color:#3B3E41;letter-spacing:-.008em}
+
+form{margin-top:32px;padding-top:28px;border-top:1px solid var(--rule)}
+label{display:block;font-family:var(--font-mono);font-size:var(--text-2xs);font-weight:500;
+  letter-spacing:var(--tracking-micro);text-transform:uppercase;color:var(--ink-faint);margin-bottom:9px}
+input[type=email]{
+  display:block;width:100%;height:50px;padding:0 13px;
+  border:1px solid var(--rule);border-radius:var(--radius-surface);background:var(--paper-raised);
+  font-family:var(--font-sans);font-size:16px;color:var(--ink);
+  transition:border-color var(--dur-fast) var(--ease);
+}
+input[type=email]::placeholder{color:var(--ink-faint)}
+input[type=email]:focus{outline:none;border-color:var(--brand-signal);box-shadow:0 0 0 1px var(--brand-signal)}
+button{
+  display:flex;align-items:center;justify-content:center;width:100%;height:50px;margin-top:10px;
+  border:1px solid transparent;border-radius:var(--radius-control);background:var(--chrome);color:#fff;
+  font-family:var(--font-sans);font-size:15px;font-weight:500;letter-spacing:-.005em;cursor:pointer;
+  transition:background var(--dur-fast) var(--ease);
+}
+button:hover{background:#1E2022}
+button[disabled]{background:#3A3D40;cursor:default}
+.consent{margin:14px 0 0;font-size:var(--text-md);line-height:1.5;color:var(--ink-muted)}
+
+.foot{max-width:560px;width:100%;margin:0 auto;padding:0 24px 34px;
+  font-family:var(--font-mono);font-size:var(--text-2xs);font-weight:500;
+  letter-spacing:var(--tracking-micro);text-transform:uppercase;color:var(--ink-faint)}
+
+@media (min-width:600px){
+  main{padding-top:64px}
+  button{width:auto;min-width:180px;margin-top:12px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+<!-- brand:sprite (generated by matterialis-brand/brand/make-brand.py from img/brand/matterialis-lockup-colour.svg; edit the master, not this) -->
+<svg width="0" height="0" aria-hidden="true" focusable="false" style="position:absolute"><symbol id="mtl-lockup" viewBox="0 0 577.6 118.1"><g style="fill:var(--logo-ink,#FFFFFF)"><defs><clipPath id="mtl-clippath"><path fill="none" d="M2.2,82c-2.2,0-2.9-1.5-1.5-3.7L63.7,2.9C65.2.7,66.6,0,69.6,0h19.8C91.5,0,92.3.7,92.3,2.9v38.1c.3.2.4-2.1,1.9-3.7L122.3,3.7C124.5,1.5,125.9,0,128.1,0h24.9C155.2,0,155.9.7,155.9,2.9v76.1c0,2.2-.7,2.9-2.9,2.9h-19c-2.2,0-2.9-.7-2.9-2.9v-43.9l-34.3,44.8c-1,1.2-1.7,2-2.3,2h-23.5c-2.2,0-2.9-.7-2.9-2.9v-43.2l-39.4,43.9c-1.5,1.5-2.9,2.2-5.1,2.2H2.2Z"/></clipPath></defs><path d="M155.9,2.9v76.1c0,2.2-.7,2.9-2.9,2.9h-19c-2.2,0-2.9-.7-2.9-2.9v-46.2l-33.7,46.2c-1.9,1.3-2.3,2.9-3.5,2.9h-22.9c-2.2,0-2.9-.7-2.9-2.9v-43.2l-39.5,43.9c-1.5,1.5-2.9,2.2-5.1,2.2H2.2c-2.2,0-2.9-1.5-1.5-3.7L63.7,2.9C65.2.7,66.6,0,69.6,0h19.8C91.6,0,92.3.7,92.3,2.9v39.7c0,1.5.7-.1,1.5-1.6L122.3,3.7C124.5,1.5,125.9,0,128.1,0h24.9C155.2,0,155.9.7,155.9,2.9Z"/><g clip-path="url(#mtl-clippath)"><path fill="#3678F3" d="M95.9,83.6l-35.1,1.3S123.6,0,125.3,0h30.1"/></g><path fill-rule="evenodd" d="M195.5,73.5c-.2,0-.4-.3-.4-.4s-.1-10.5-.2-23c-.1-30.3-.1-37.3,0-38.2.2-1.3,0-1.3,5.7-1.3s5.2,0,5.5.2c.4.1.6.4,1.2,1.6.4.8.8,1.6.8,1.8s.3.7.5,1.2.4,1,.5,1.2c0,.2.2.5.4.7.1.2.4.8.6,1.2s.4,1,.6,1.3.4.8.6,1.2c.2.4.4,1,.6,1.2s.3.5.4.7c.2.6,1.3,2.9,2,4.3.4.7.9,1.7,1.2,2.2s.8,1.5,1.3,2.4.8,1.5.8,1.6c0,0,1.6,3.7,2.7,6,.3.6.7,1.6,1.1,2.3.3.7.8,1.7,1,2.2s.5,1,.5,1.1.2.6.5,1.1.6,1.2.7,1.5.3.8.4,1,.4.7.5,1.1.3.8.4.9c.1,0,.3.5.5,1s.4,1,.6,1.2.4.6.4.9c.2.7,1,2.2,2.3,4.9.6,1.2,1.1,2.4,1.2,2.7.3.9,1.4,1,1.7.2.1-.4.8-1.8,2.7-5.8.3-.7.6-1.3.6-1.4s1.1-2.5,1.4-3c.1-.2.3-.7.5-1,.5-1.2,1.6-3.3,2.3-4.5,1.2-2.2,1.8-3.4,3-6.2.2-.4.6-1.3.8-2s.5-1.3.5-1.3l.4-1c.2-.5.5-1,.5-1.2.1-.4,2.2-4.7,2.5-5.2.1-.2.4-.7.5-1,.2-.4.5-1,.7-1.5.7-1.3,1.6-3.4,1.6-3.5s.3-.7.6-1.4.8-1.7,1.1-2.3c1.4-3,1.7-3.7,1.9-4.1.1-.2.4-.8.6-1.2.9-1.8,1.5-2.7,2-2.9.3-.1,2-.2,5.4-.2,6.2,0,5.6-.4,5.7,3,0,1.4.1,15.1.1,30.6,0,30.6,0,28.9-.8,29.3-.5.2-6.5,0-6.9-.2-.6-.3-.6-.5-.7-16,0-8.2-.1-17.5-.2-20.8,0-3.3-.1-7.2-.1-8.7,0-2.4,0-2.7-.2-2.8-.3-.1-.6.1-.9,1-.3.7-1.1,2.4-1.7,3.7-.2.3-.6,1.2-.9,1.9-1.3,2.8-2.8,6-3.3,6.8-.1.2-.5,1-.9,1.8s-.9,1.9-1.2,2.5-.5,1.1-.5,1.2c0,0-.2.6-.5,1.2-.3.6-.5,1.2-.5,1.3s-.2.5-.4.9-.5.9-.6,1.2-.4.9-.6,1.4c-.2.4-.7,1.4-1,2.1s-.9,1.8-1.2,2.5c-.3.6-.8,1.6-1,2.2-.9,1.9-1.6,3.4-4.1,8.5-1.4,2.8-2.6,5.3-2.7,5.5-.1.5-1.2,2.4-1.5,2.6-.2.2-1.2.2-5.2.2h-2.3l-.6-.6c-.4-.4-.7-.9-1-1.7-.5-1.4-1.5-3.8-1.8-4.4-.2-.5-1.6-3.3-2.2-4.5-.2-.4-.4-.9-.6-1.1-.4-.6-4-8-4.6-9.2s-.8-1.7-1-2.1c-.3-.5-1.6-3.3-2.1-4.4-.2-.6-.7-1.5-.9-2s-.7-1.5-1-2.2c-.3-.6-.7-1.4-.8-1.7s-.4-.9-.6-1.3c-.2-.4-.5-1-.6-1.2s-.4-.7-.5-1-.4-.9-.6-1.2c-.2-.3-.4-.8-.5-1.1s-.7-1.5-1.2-2.7c-1.4-3-1.8-3.7-2.1-4.8-.3-1-1.1-1.9-1.3-1.6-.3.3-.4,29.9-.2,42.5v5.8l-.3.3c-.4.2-.8.3-3.7.3s-3.4,0-3.6,0h0l-.3-.2Z"/><path fill-rule="evenodd" d="M286.2,74.8c-3.3-.4-7.2-2.3-9.8-4.6-3.2-3-4.8-8.5-3.7-12.9.2-.8.5-1.6.6-1.8,1.2-2.3,1.6-2.8,3.2-4.4,1.3-1.3,2.5-2.3,3.4-2.7.3-.2.8-.4,1-.5.7-.4,3.7-1.2,4.8-1.4.5,0,1.8-.3,2.8-.4,2.3-.4,6.7-.6,13-.6s5,0,5,0c.4-.3.5-.7.3-2.6-.2-2.6-.2-2.9-.9-4.1-1.3-2.5-2.7-3.8-5.3-5-1.4-.7-1.5-.7-3.5-.8-2.2-.2-5.3,0-6.6.4-4.2,1.1-6.4,2.2-9.6,5-1.4,1.2-2,1.4-2.6.7-.2-.2-.7-.7-1.2-1.1-2.6-2.4-2.8-2.8-1.4-4.3,3.2-3.3,5.5-4.6,10.1-5.7,4.5-1.1,5.1-1.2,8.3-1.3,3.3-.1,6.3.1,8,.6.7.2,1.6.4,2,.5.9.2,3.1,1.3,4.1,2,.7.5,2.2,2.1,3,3.1.9,1.2,2.5,4.3,2.8,5.5.1.4.3,1.2.5,1.7.4,1.1.5,7.4.5,23.1v10.1l-.3.4c-.3.3-1.4.4-3.4.4s-3.1,0-3.4-.2c-.6-.3-.8-1-.9-2.9-.1-2.4-.4-2.7-1.4-1.3-.6.8-2,2.1-3.1,2.8-1.9,1.2-5.9,2.5-8.5,2.8-1.5.2-6.6.2-8,0h0l.2-.4ZM295.9,67.8c5-1.3,8.2-3.9,10-8.2.6-1.4.8-2.4,1-5,.1-2,.1-2.2-.1-2.5l-.3-.4h-3.5c-10.7-.2-16.2.7-19.1,3-4.9,3.9-3.3,10.7,3.1,13,1.6.6,2,.6,4.7.6s2.7,0,4.2-.5h0Z"/><path fill-rule="evenodd" d="M336.2,74.3c-3.7-.9-5.4-1.8-7.3-3.8-2.7-3-3.5-4.9-3.8-9.1,0-1.1-.2-6-.2-11.1s-.1-10.7-.2-12.7v-3.6l-.4-.2c-.3,0-1.3-.2-3.5-.2s-3.2,0-3.4-.3c-.2-.2-.2-.8-.3-3v-2.7c-.1,0,.2-.2.2-.2.3-.2,1-.2,3.7-.3,3.1-.1,3.3-.1,3.6-.4.2-.3.3-.9.4-6v-5.7l.5-.3c.5-.4,1.9-.9,3.6-1.1.8,0,1.9-.2,2.5-.3,1.8-.3,1.7-.7,1.8,6.8,0,5.8.1,6.3.3,6.6.2.3.6.3,5.4.4,8.3.2,7.8,0,8,3.3.1,2.3.1,2.8-.3,3.1-.1,0-3.1.2-6.6.2-5.1,0-6.4,0-6.6.2-.3.3-.4,26.2,0,27.7.7,3.2,3,5.4,6.1,5.8,1.9.2,4.8,0,6.3-.6.8-.3,1.4-.2,1.6.2,0,.2.2,1.1.4,2.1s.3,2.1.4,2.4c.3,1-.3,1.6-2.2,2-.7.2-1.7.4-2.2.5-1.7.4-5.6.4-7.4,0h0l-.4.3Z"/><path fill-rule="evenodd" d="M359.6,74.3c-3.7-.9-5.4-1.8-7.3-3.8-2.7-3-3.5-4.9-3.8-9.1,0-1.1-.2-6-.2-11.1s-.1-10.7-.2-12.7v-3.6l-.4-.2c-.3,0-1.3-.2-3.5-.2s-3.2,0-3.4-.3c-.2-.2-.2-.8-.3-3v-2.7c-.1,0,.2-.2.2-.2.3-.2,1-.2,3.7-.3,3.1-.1,3.3-.1,3.6-.4.2-.3.3-.9.4-6v-5.7l.5-.3c.5-.4,1.9-.9,3.6-1.1.8,0,1.9-.2,2.5-.3,1.8-.3,1.7-.7,1.8,6.8,0,5.8.1,6.3.3,6.6.2.3.6.3,5.4.4,8.3.2,7.8,0,8,3.3.1,2.3.1,2.8-.3,3.1-.1,0-3.1.2-6.6.2-5.1,0-6.4,0-6.6.2-.3.3-.4,26.2,0,27.7.7,3.2,3,5.4,6.1,5.8,1.9.2,4.8,0,6.3-.6.8-.3,1.4-.2,1.6.2,0,.2.2,1.1.4,2.1s.3,2.1.4,2.4c.3,1-.3,1.6-2.2,2-.7.2-1.7.4-2.2.5-1.7.4-5.6.4-7.4,0h0l-.4.3Z"/><path fill-rule="evenodd" d="M391.7,74.9c-2.4-.2-6.6-1.6-8.7-2.8-5.4-3.4-8.9-7.3-9.9-11.1-.1-.5-.3-1.1-.5-1.4-.2-.5-.6-2.4-1.2-5.1-.3-1.4-.3-6.6,0-7.7,0-.4.3-1.6.5-2.6s.5-2.3.7-2.8.4-1.1.5-1.5c.3-1.1,1.7-3.5,2.9-5.1,3-4,6.4-6.5,10-7.4.7-.2,1.6-.5,1.9-.6,2.7-1,11.5-1,13.9,0,.4.1,1.1.4,1.7.6,3,.9,6.6,3.4,8.7,6.1,1.3,1.7,1.7,2.3,2,2.8.1.3.4.8.6,1.1s.4.8.5,1c0,.3.3.8.5,1.2s.5,1.2.6,1.9.4,1.5.5,1.8c.3.8.5,3,.6,5.7,0,2.1,0,2.2-.3,2.5l-.3.3h-18.2c-20.1,0-18.6,0-18.8,1-.1.6.9,5.4,1.3,6.2.2.4.4.8.4.9,0,.3,1.4,2.2,2.2,3,2,2,5.5,3.9,8.1,4.4,2.5.5,7.3.2,9.2-.6.5-.2,1.2-.4,1.6-.5,1.6-.4,4.8-2.8,6.3-4.8,1-1.3,1.5-1.6,2.4-1,.2.2.8.4,1.3.5.7.2,1.3.5,3,1.2.7.3.7.8,0,2-1.1,1.7-1.9,2.6-3.6,4.4-2.8,2.8-5.2,4.1-10,5.5-3,.8-6.6,1.2-10.3.9h-.1ZM408.7,45.2c.6-.3,0-2.5-1.5-5.3s-3.6-4.8-6.6-6.2c-2.2-1-2.5-1.1-5.7-1.1s-3.1,0-5.6.9c-3.4,1.2-6.1,3.5-7.4,6.3-.8,1.6-1.2,2.7-1.5,3.8-.4,1.3-.2,1.7.5,1.8.6,0,27.4,0,27.7-.2h.1Z"/><path fill-rule="evenodd" d="M422.9,73.4c-.3,0-.6-.2-.6-.2-.4,0-.5-10-.4-29.9v-15.5c.1,0,.5-.2.5-.2.3-.2.9-.2,3.6-.2,4.2,0,4,0,4,1.9s.4,3,1.2,1.8c.4-.6,2.4-2.4,3.3-3,1.1-.7,3.1-1.5,4.2-1.7,2.6-.5,7.5-.4,8.9.2.6.2,1,1,.9,1.5-.5,2.4-.6,2.7-1.2,4.1-.3.6-.5.7-2.5.5-2.7-.3-4.9,0-6.5.8-2.9,1.4-4.9,3.3-6,5.3-.2.4-.4.8-.5.9-.3.4-1.3,3.6-1.4,4.8,0,.6-.1,7-.2,14.9,0,13.5,0,13.8-.3,14-.4.3-6,.3-6.9,0h-.1Z"/><path fill-rule="evenodd" d="M453,73.4c-.7-.4-.7.6-.7-23.3v-22.4l.3-.2c.3-.2.9-.2,3.7-.2s3.4,0,3.7.4l.3.3v35.4c0,10.1.1,9.8-.8,10.1-.6.2-6.2.2-6.6,0h.1ZM455.4,18.6c-1.9-.4-2.9-1.1-3.7-2.7-1.2-2.2,0-5.5,2.4-6.3.9-.3,3.1-.3,4,0,1.1.3,2.4,1.5,2.9,2.5,1.6,3.5-1.7,7.4-5.5,6.6h0Z"/><path fill-rule="evenodd" d="M479.4,74.8c-2.8-.3-6.1-1.5-8.2-2.9-2.8-2-4.7-4.6-5.7-7.8-.5-1.5-.5-1.7-.5-3.9s.2-2.9.6-4c.3-.9.6-1.7.7-1.7,0,0,.3-.3.4-.7.6-1.2,2.6-3.4,4.3-4.7,1.9-1.4,6.2-2.8,11.1-3.4.6,0,4.5-.2,8.7-.2,7.4,0,7.6,0,8-.3l.4-.3v-2c0-1.8,0-2-.5-3.3s-1.3-2.6-2.2-3.6c-1.3-1.3-4.4-2.9-6.5-3.2-1.5-.2-5.8,0-7,.3-2.3.6-3.4,1-3.9,1.3-.3.2-.6.3-.7.3-.5,0-3,1.7-4.8,3.3-1.6,1.4-1.9,1.4-2.7.6-.4-.3-1.3-1.2-2-2-1.3-1.2-1.4-1.4-1.4-1.9,0-1.4,4.5-4.9,8.1-6.3.4-.2.9-.4,1.1-.5s1-.4,1.9-.6,1.8-.4,2-.5c2-.8,11-.7,13.6,0,.5.1,1.5.4,2.1.6,2.6.6,4.5,1.8,6.7,4,1.5,1.5,2.7,3.3,3.1,4.7.1.3.3.8.5,1.1.6,1.1.6,2.5.6,19.3s0,16.3-.1,16.4c0,0-.2.3-.3.4-.3.2-6.4.2-6.7,0-.4-.2-.6-.9-.6-2.6s0-2.5-1.8-.9c-1.9,1.7-4.4,3-7,3.7-.5,0-1.5.4-2.2.6-2,.6-6.3.9-9,.6h-.1ZM487.7,67.7c3-.7,6.1-2.5,7.8-4.5,1.2-1.5,1.4-1.7,2-2.9,1.1-2.1,2-7.2,1.4-8-.3-.4-1.2-.5-6.1-.5s-7.2,0-9.2.5c-3.1.6-4,.8-4.5,1.1-.4.2-.9.4-1.1.5-.7.3-2.2,1.3-2.9,2.1-3,3.2-1.9,8.2,2.2,10.7.8.5,3,1.3,4.1,1.5s4.6,0,6.3-.4h0Z"/><path fill-rule="evenodd" d="M515.9,73.5c-1.6,0-1.9,0-2.2-.4l-.3-.3v-31c0-22.1,0-31.1.2-31.3.3-.6.6-.7,3.8-.8,3.5-.1,3.8,0,4,.5s.3,61.6,0,62.5-.5,1-5.7.7h.1Z"/><path fill-rule="evenodd" d="M528.9,73.7c-.9-.2-.9,1.4-.9-22.9v-22.7c.2-.9.5-1,4-.9,3.2,0,3.7.2,4,.9.2.3.2,3.1,0,16.1,0,8.7,0,18.7,0,22.3v6.6l-.4.3c-.3.2-.6.3-2,.3h-4.7.1ZM530,18.7c-1.8-.5-3.3-2.2-3.7-4.2-.3-1.7,1.4-4.2,3.3-4.9.9-.3,3.6-.2,4.4.1,1.7.8,2.5,1.9,2.8,3.8.3,2.1-.5,3.7-2.6,4.7-1,.5-3,.7-4.2.4h0Z"/><path fill-rule="evenodd" d="M553.8,74.8c-1.5,0-5.4-1.1-6.8-1.7-1.1-.4-3.2-1.6-3.9-2.1-.2-.2-.5-.3-.6-.3s-1.2-.9-1.9-1.5c-.5-.5-.5-1.3.2-1.9.3-.2.7-.7.9-1.1.2-.3.5-.7.5-.7,0,0,.3-.3.4-.7.5-.9,1.1-1.6,1.6-1.6s.6.2.9.5c1.6,1.4,5.6,3.3,7.5,3.6.6,0,1.5.3,2.2.5,3.6,1,9.6-.2,12.2-2.3,1.5-1.2,2-2.3,2-4.4s-.6-3.3-2.1-4.5c-.7-.5-3.3-1.7-3.7-1.7s-1-.2-1.9-.5-2.9-.8-4.3-1.2c-4.1-1-4.3-1.1-5.8-1.5-2.8-.9-4.6-1.9-6.5-3.8-2.5-2.5-3.4-4.7-3.4-8.1s.4-4.7,2-7.1c2-3,6.5-5.5,11-6.3,3.6-.6,11.7-.4,13.5.4.4.2,1,.4,1.5.5,2.5.8,7.2,3.8,7.2,4.8s-.5,1.1-1.2,2c-.4.4-.9,1.1-1.2,1.6-.8,1.3-1.6,1.5-2.3.8-.3-.4-2.2-1.7-2.3-1.7s-.5-.2-.9-.5c-.5-.3-.9-.5-1.1-.5s-.6-.2-1.1-.4c-1.2-.6-4.1-1-6.7-1s-2,0-2.2,0-.7,0-1.2.2c-1.2.2-3.6,1.3-4.5,2.2-2.3,2.1-2.7,5.3-1,7.3.7.8,2.4,2,3,2.2.2,0,.7.2,1,.4s1,.4,1.5.5c.5,0,1.4.3,2,.5s1.8.5,2.7.6c.8,0,2,.4,2.6.6s1.6.5,2.2.6,1.3.4,1.6.5.9.4,1.3.5,1,.4,1.3.6c.3.2.6.3.7.3.2,0,2,1.2,3,2.1,1.7,1.4,2.9,3.6,3.4,5.8.4,1.9.2,5.5-.4,6.8-.2.4-.4,1-.5,1.4-.9,2.6-4.2,5.6-7.9,7.5-1.5.8-4.3,1.6-6,1.8-1.7.2-6.9.2-8.8,0h.3Z"/><path d="M496.6,101.2c-1.9-1.9-4.3-2.9-7-2.9s-5.1,1-7,2.9-2.9,4.3-2.9,7,1,5.1,2.9,7,4.3,2.9,7,2.9,5.1-1,7-2.9,2.9-4.3,2.9-7-1-5.1-2.9-7h0ZM489.8,108.4c.8-2.3,2-3.7,3.5-4.2,1.6-.6,3.2,0,4,.5-1.8.4-3.1,1.5-5,4.5-1.1,1.7-2.9,3.3-4.9,4.2-1.1.5-2.2.8-3.1.8,2.2-.3,4.2-2.4,5.4-5.7h.1ZM484.2,113.1c-1,0-1.8-.4-2.5-1.4-.1-.2-.3-.5-.4-.8-.5-1.7-.6-3.5,0-5.2,1.2-3.7,4.6-6.2,8.4-6.2s1.7,0,2.6.4c1.9.6,3.6,1.8,4.7,3.5-1.1-.4-2.5-.7-4-.2-1.8.6-3.2,2.3-4.1,4.9-1,2.8-2.8,4.8-4.5,5h-.2ZM493.2,109.8c1.7-2.8,2.8-3.7,4.4-4.1-.4,1.3-1.1,3.5-2.4,5.2-1.8,2.5-4.4,3.5-6.2,4-1.6.4-3,.4-3.9.2,2.7-.3,6.2-2.3,8.2-5.4h-.1ZM496.1,111.7c1-1.4,1.8-3.2,2.2-4.6.2,1.2,0,2.5-.3,3.7-.7,2.2-2.2,4.1-4.3,5.1-2.1,1.1-4.4,1.3-6.7.6-.1,0-.3,0-.5-.2,2.9,0,7.1-1.4,9.5-4.8h0v.2Z"/><path d="M557.7,108.5c0-3.2,2.1-5.1,5-5.1s4.5,1.6,4.6,4h-2.1c-.2-1.3-1.2-2.2-2.5-2.2s-2.7,1.2-2.7,3.2,1.2,3.3,2.8,3.3,2.2-.8,2.5-2.2h2.1c-.3,2.5-2,4.1-4.6,4.1s-5-2.3-5-5.2h0Z"/><path d="M567.7,108.4c0-3.2,2.1-5.1,5-5.1s5,2.2,5,5.1-2.1,5.2-5,5.2-5-2.2-5-5.2ZM575.4,108.4c0-1.9-1.1-3.2-2.8-3.2s-2.8,1.3-2.8,3.2,1.2,3.4,2.8,3.4,2.8-1.4,2.8-3.4Z"/><path d="M507,108.5c0-3,1.9-5.1,4.4-5.1s2.8.7,3.4,1.8l.2-1.5h1.7v9.7h-2.1v-1.3c-.6,1-1.7,1.6-3.1,1.6-2.6,0-4.5-2.1-4.5-5.2h0ZM514.6,108.5c0-1.9-1.1-3.3-2.7-3.3s-2.7,1.3-2.7,3.3,1.1,3.3,2.7,3.3,2.7-1.4,2.7-3.4h0Z"/><path d="M518,113.4v-9.7h1.7l.2,1.3c.6-.9,1.8-1.7,3.2-1.7s2.5.7,3,1.8c.5-1,1.8-1.8,3.3-1.8s3.3,1.4,3.3,3.5v6.5h-2.2v-6.3c0-1.1-.7-1.8-1.7-1.8-1.5,0-2.4,1-2.4,2.2v5.9h-2.2v-6.3c0-1.1-.7-1.8-1.7-1.8-1.5,0-2.4,1-2.4,2.2v5.9h-2.2.1Z"/><path d="M533.8,117v-13.3h1.7l.2,1.6c.6-1.1,1.9-1.9,3.4-1.9,2.6,0,4.4,2.1,4.4,5.1s-1.8,5.2-4.4,5.2-2.5-.6-3.2-1.6v5h-2.2,0ZM541.3,108.5c0-1.9-1.1-3.3-2.7-3.3s-2.7,1.3-2.7,3.2,1.1,3.4,2.7,3.4,2.7-1.4,2.7-3.3h0Z"/><path d="M544.6,113.4v-13.7h2.2v5.1c.7-.8,1.8-1.3,3-1.3,2.1,0,3.4,1.4,3.4,3.6v6.4h-2.2v-6.3c0-1.1-.7-1.8-1.9-1.8s-2.4,1-2.4,2.2v5.9h-2.2.1Z"/><path d="M554.3,101c0-.8.6-1.4,1.4-1.4s1.4.6,1.4,1.4-.6,1.4-1.4,1.4-1.4-.6-1.4-1.4ZM554.6,113.4v-9.7h2.2v9.7h-2.2Z"/><path d="M458.5,113.6c-.7,0-1.3,0-1.8-.4s-.9-.7-1.2-1.2v1.5h-1.9v-13h1.9v4.6c.3-.4.6-.8,1.1-1.1.5-.3,1.1-.5,1.8-.5s1.6.2,2.2.6,1.1,1,1.4,1.8.5,1.7.5,2.7-.2,1.9-.5,2.7-.8,1.3-1.4,1.8c-.6.4-1.4.6-2.2.6h.1ZM458.2,111.9c.7,0,1.3-.3,1.8-.9.4-.6.6-1.4.6-2.5s-.2-1.9-.6-2.5-1-.9-1.8-.9-1,0-1.4.4-.7.7-.9,1.2c-.2.5-.3,1.1-.3,1.8s.1,1.3.3,1.8c.2.5.5.9.9,1.2.4.3.8.4,1.4.4Z"/><path d="M464.4,116.1v-1.6h1.2c.3,0,.6,0,.7-.2.2,0,.3-.3.4-.5l.3-.8h-.6l-3.5-9.4h2.1l2.7,7.6,2.5-7.6h2.1l-3.9,10.8c-.2.6-.5,1-.9,1.2-.4.3-.9.4-1.6.4h-1.5Z"/></g></symbol><symbol id="mtl-logo" viewBox="0 0 577.6 82"><use href="#mtl-lockup" width="577.6" height="118.1"/></symbol></svg>
+<!-- /brand:sprite -->
+
+<div class="band"><div class="band-in">
+  <svg viewBox="0 0 577.6 82" role="img" aria-label="Matterialis"><use href="#mtl-logo"/></svg>
+</div></div>
+
+<main>
+  <span class="eyebrow"><span class="dot"></span>Closed beta</span>
+
+  <h1>Join the waitlist.</h1>
+
+  <p class="lede">Matterialis is in closed beta. Leave your work email and we will let you in as seats open.</p>
+
+  <!-- Plain HTML POST. With JavaScript off this still works end to end: the
+       browser posts, Formspree redirects to _next. The script at the foot only
+       makes it faster, it is not what makes it work. -->
+  <form id="gate" action="https://formspree.io/f/xjyvvany" method="POST">
+    <input type="hidden" name="_subject" value="Matterialis — waitlist signup">
+    <input type="hidden" name="source" value="matterialis.com · waitlist">
+    <input type="hidden" name="_next" value="https://matterialis.com/?c=waitlist">
+    <!-- honeypot: Formspree drops anything that fills this in -->
+    <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px">
+
+    <label for="email">Work email</label>
+    <input id="email" type="email" name="email" required
+           inputmode="email" autocomplete="email" autocapitalize="off"
+           autocorrect="off" spellcheck="false" placeholder="you@company.com">
+    <button type="submit">Join the waitlist</button>
+    <p class="consent">We use this to tell you when you can get in, and for nothing else. Amphico is the data controller; reply to any message to be removed.</p>
+  </form>
+</main>
+
+<div class="foot">Matterialis, by Amphico</div>
+
+<script>
+/* The redirect must never wait on the network. Post with keepalive so the
+   request outlives the navigation, then leave on whichever comes first: the
+   response, or 1.2s. A lost confirmation is cheap; a lost lead is not.
+   FormData + Accept are CORS-safelisted, so there is no preflight round trip. */
+(function(){
+  var f = document.getElementById('gate');
+  if(!f || !window.fetch || !window.FormData) return;   /* native POST already covers this */
+
+  f.addEventListener('submit', function(e){
+    if(f.checkValidity && !f.checkValidity()) return;   /* let the browser say so itself */
+    e.preventDefault();
+
+    var next = f.elements._next.value;   /* read now, so it is always the value being posted */
+
+    var btn = f.querySelector('button');
+    if(btn){ btn.disabled = true; btn.textContent = 'One moment'; }
+
+    var data = new FormData(f), gone = false;
+    function go(){ if(gone) return; gone = true; location.href = next; }
+    setTimeout(go, 1200);
+
+    /* The company, not the person: the domain goes to PostHog, the address
+       does not. Beacon, so it survives the navigation a few hundred ms later.
+       Guarded, so deleting the analytics block leaves this a no-op.
+       A no-JS submit never reaches here — Formspree still gets that lead, it
+       just will not appear in inbound_submitted. */
+    if(window.mtl){
+      var addr = String(f.elements.email.value || ''), at = addr.lastIndexOf('@');
+      window.mtl.track('inbound_submitted',
+        { email_domain: at > -1 ? addr.slice(at + 1).toLowerCase() : null }, true);
+    }
+
+    try{
+      fetch(f.action, {
+        method:'POST', body:data, headers:{Accept:'application/json'}, keepalive:true
+      }).then(go, go);
+    }catch(err){
+      try{ navigator.sendBeacon(f.action, data); }catch(e2){}
+      go();
+    }
+  });
+})();
+</script>
+</body>
+</html>

@@ -937,11 +937,11 @@ footer{background:var(--chrome);border-top:1px solid var(--chrome-line);padding:
       <a href="#trust">Research</a>
       <a href="#faq">FAQ</a>
       <a href="/about/">About</a>
-      <a class="menu-only" href="https://calendar.app.google/LcwtFTNrrVFJnGiz9" target="_blank" rel="noopener">Book a demo</a>
+      <a class="menu-only" href="/waitlist/">Join the waitlist</a>
     </div>
     <div class="nav-actions">
       <!-- TODO: replace with the real Calendly link -->
-      <a class="btn btn-on-chrome" href="https://calendar.app.google/LcwtFTNrrVFJnGiz9" target="_blank" rel="noopener">Book a demo</a>
+      <a class="btn btn-on-chrome" href="/waitlist/">Join the waitlist</a>
       <a class="btn btn-ghost-chrome" href="#contact">Contact us</a>
       <button class="navtoggle" id="navtoggle" aria-label="Open menu">
         <svg class="ic" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
@@ -960,7 +960,7 @@ footer{background:var(--chrome);border-top:1px solid var(--chrome-line);padding:
     <h1>The right material exists. <span class="soft">Finding it is the problem.</span></h1>
     <p class="lede">Matterialis reads every supplier's datasheet, predicts the properties manufacturers leave out, and ranks the candidates against your constraints, with the evidence beside each number.</p>
     <div class="hero-cta">
-      <a class="btn btn-primary btn-lg" href="https://calendar.app.google/LcwtFTNrrVFJnGiz9" target="_blank" rel="noopener">Book a demo</a>
+      <a class="btn btn-primary btn-lg" href="/waitlist/">Join the waitlist</a>
       <a class="btn btn-secondary btn-lg" href="#cases">See six real problems</a>
       <span class="hero-limit">It does not run your experiments. It decides which are worth running.</span>
     </div>
@@ -1157,7 +1157,7 @@ footer{background:var(--chrome);border-top:1px solid var(--chrome-line);padding:
       <div class="insp-block"><span class="micro">What you get</span><div id="insp-get"></div></div>
     </div>
     <div class="insp-foot">
-      <a class="btn btn-primary" href="https://calendar.app.google/LcwtFTNrrVFJnGiz9" target="_blank" rel="noopener">Book a demo</a>
+      <a class="btn btn-primary" href="/waitlist/">Join the waitlist</a>
       <a class="btn btn-secondary" href="#contact">Contact us</a>
     </div>
   </aside>
@@ -1633,7 +1633,7 @@ footer{background:var(--chrome);border-top:1px solid var(--chrome-line);padding:
 <!-- ================= CTA ================= -->
 <section class="cta" id="contact">
   <div class="wrap">
-    <span class="micro">Get started</span>
+    <span class="micro">Next steps</span>
     <h2>Bring us a problem you are working on.</h2>
     <p class="lede">We will show you what the platform does with it. Three ways people start:</p>
     <div class="opts">
@@ -1642,6 +1642,7 @@ footer{background:var(--chrome);border-top:1px solid var(--chrome-line);padding:
       <div class="opt"><span class="opt-head"><svg class="opt-ic" viewBox="0 0 24 24"><path d="M3 20V10M9 20V4M15 20v-7M21 20v-4"/><path d="M2 20h20"/></svg><span class="micro">03</span></span><h4>A property gap analysis</h4><p>What we can fill in for the grades you are already evaluating.</p></div>
     </div>
     <div class="hero-cta">
+      <a class="btn btn-on-chrome btn-lg" href="/waitlist/">Join the waitlist</a>
       <a class="btn btn-on-chrome btn-lg" href="https://calendar.app.google/LcwtFTNrrVFJnGiz9" target="_blank" rel="noopener">Book a demo</a>
       <a class="btn btn-ghost-chrome btn-lg" href="mailto:j.orri@amphico.uk">Contact us</a>
     </div>
@@ -2015,9 +2016,10 @@ footer{background:var(--chrome);border-top:1px solid var(--chrome-line);padding:
        adding its host here loses every demo click, silently. Calendly is
        kept in the list so a switch back cannot break it either. */
     var booking = /calendar\.app\.google|calendly\.com/i;
-    if(/^mailto:/i.test(href) || booking.test(href)){
+    var waitlist = /^\/waitlist\/?$/i;
+    if(/^mailto:/i.test(href) || booking.test(href) || waitlist.test(href)){
       t.track('cta_click', {
-        kind:/^mailto:/i.test(href) ? 'contact' : 'demo',
+        kind:/^mailto:/i.test(href) ? 'contact' : (waitlist.test(href) ? 'waitlist' : 'demo'),
         location:place(a),
         label:(a.textContent || '').trim().slice(0, 40)
       });
