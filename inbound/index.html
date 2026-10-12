@@ -182,7 +182,7 @@ h1 .soft{color:var(--ink-muted)}
 .lede{margin:18px 0 0;font-size:17px;line-height:1.55;color:#3B3E41;letter-spacing:-.008em}
 
 form{margin-top:32px;padding-top:28px;border-top:1px solid var(--rule)}
-label{display:block;font-family:var(--font-mono);font-size:var(--text-2xs);font-weight:500;
+label:not(.seg label){display:block;font-family:var(--font-mono);font-size:var(--text-2xs);font-weight:500;
   letter-spacing:var(--tracking-micro);text-transform:uppercase;color:var(--ink-faint);margin-bottom:9px}
 input[type=email]{
   display:block;width:100%;height:50px;padding:0 13px;
@@ -201,6 +201,18 @@ button{
 button:hover{background:#1E2022}
 button[disabled]{background:#3A3D40;cursor:default}
 .consent{margin:14px 0 0;font-size:var(--text-md);line-height:1.5;color:var(--ink-muted)}
+/* "I am a" — a two-way segmented control. Real radio inputs, so the choice
+   posts with the form (field "audience") with JavaScript off; the script only
+   prefills it from ?a=supplier. Formulator is the default. */
+.seg{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--rule);
+  border-radius:var(--radius-control);background:var(--paper-raised);padding:3px;margin-bottom:16px}
+.seg input{position:absolute;opacity:0;width:0;height:0}
+.seg label{display:block;margin:0}
+.seg span{display:block;text-align:center;padding:9px 10px;border-radius:2px;
+  font-size:var(--text-md);font-weight:500;color:var(--ink-muted);cursor:pointer;user-select:none;
+  transition:background var(--dur-fast) var(--ease),color var(--dur-fast) var(--ease)}
+.seg input:checked + span{background:var(--chrome);color:#fff}
+.seg input:focus-visible + span{box-shadow:0 0 0 1px var(--brand-signal)}
 
 .foot{max-width:560px;width:100%;margin:0 auto;padding:0 24px 34px;
   font-family:var(--font-mono);font-size:var(--text-2xs);font-weight:500;
@@ -239,6 +251,11 @@ button[disabled]{background:#3A3D40;cursor:default}
     <!-- honeypot: Formspree drops anything that fills this in -->
     <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px">
 
+    <label id="who-l">I am a</label>
+    <div class="seg" role="radiogroup" aria-labelledby="who-l">
+      <label><input type="radio" name="audience" value="formulator" checked><span>Formulator or researcher</span></label>
+      <label><input type="radio" name="audience" value="supplier"><span>Supplier or manufacturer</span></label>
+    </div>
     <label for="email">Work email</label>
     <input id="email" type="email" name="email" required
            inputmode="email" autocomplete="email" autocapitalize="off"
@@ -257,6 +274,13 @@ button[disabled]{background:#3A3D40;cursor:default}
    FormData + Accept are CORS-safelisted, so there is no preflight round trip. */
 (function(){
   var f = document.getElementById('gate');
+  /* Prefill "I am a" from the link that brought them here: the suppliers page
+     links with ?a=supplier. Anything else, including a QR scan, is a formulator. */
+  try{
+    var who = new URLSearchParams(location.search).get('a');
+    var r = f && f.querySelector('input[name=audience][value="' + (who === 'supplier' ? 'supplier' : 'formulator') + '"]');
+    if(r) r.checked = true;
+  }catch(e0){}
   if(!f || !window.fetch || !window.FormData) return;   /* native POST already covers this */
 
   f.addEventListener('submit', function(e){
@@ -279,8 +303,9 @@ button[disabled]{background:#3A3D40;cursor:default}
        just will not appear in inbound_submitted. */
     if(window.mtl){
       var addr = String(f.elements.email.value || ''), at = addr.lastIndexOf('@');
+      var who2 = (f.querySelector('input[name=audience]:checked') || {}).value || 'formulator';
       window.mtl.track('inbound_submitted',
-        { email_domain: at > -1 ? addr.slice(at + 1).toLowerCase() : null }, true);
+        { email_domain: at > -1 ? addr.slice(at + 1).toLowerCase() : null, audience: who2 }, true);
     }
 
     try{
