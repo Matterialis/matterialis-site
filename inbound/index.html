@@ -135,7 +135,7 @@
 <style>
 :root{
   --chrome:#141618; --chrome-line:#2A2C2E; --chrome-fg-dim:#8A9297;
-  --brand-signal:#0E6B72;
+  --brand-signal:#0E6B72; --evidence-strong:#186B4F; --evidence-weak:#A63A29;
   --paper:#FDFDFC; --paper-raised:#FFFFFF; --paper-sunken:#F5F6F6;
   --rule:#E8EAEC; --rule-soft:#F2F3F4;
   --ink:#17191B; --ink-muted:#6C7276; --ink-faint:#9CA1A5;
@@ -201,6 +201,19 @@ button{
 button:hover{background:#1E2022}
 button[disabled]{background:#3A3D40;cursor:default}
 .consent{margin:14px 0 0;font-size:var(--text-md);line-height:1.5;color:var(--ink-muted)}
+/* Validation the user can see. :user-invalid only fires after they have
+   interacted, so the page does not open with a red field. Hairline, not a glow. */
+input[type=email]:user-invalid{border-color:var(--evidence-weak);box-shadow:0 0 0 1px var(--evidence-weak)}
+input[type=email]:user-valid{border-color:var(--evidence-strong);box-shadow:0 0 0 1px var(--evidence-strong)}
+form.sent input[type=email]{border-color:var(--evidence-strong);box-shadow:0 0 0 1px var(--evidence-strong)}
+.hint{display:none;margin:8px 0 0;font-size:var(--text-md);color:var(--evidence-weak)}
+input[type=email]:user-invalid ~ .hint{display:block}
+/* what happened after submit: shown by the script, one line, no modal */
+.status{display:none;margin:14px 0 0;padding:12px 14px;border-radius:var(--radius-control);
+  font-size:var(--text-md);line-height:1.5;border:1px solid var(--rule);background:var(--paper-raised)}
+.status.ok{display:block;border-color:var(--evidence-strong);color:var(--evidence-strong)}
+.status.err{display:block;border-color:var(--evidence-weak);color:var(--ink)}
+.status a{color:inherit;font-weight:500}
 /* "I am a" — a two-way segmented control. Real radio inputs, so the choice
    posts with the form (field "audience") with JavaScript off; the script only
    prefills it from ?a=supplier. Formulator is the default. */
@@ -260,7 +273,9 @@ button[disabled]{background:#3A3D40;cursor:default}
     <input id="email" type="email" name="email" required
            inputmode="email" autocomplete="email" autocapitalize="off"
            autocorrect="off" spellcheck="false" placeholder="you@company.com">
+    <p class="hint">That does not look like an email address.</p>
     <button type="submit">Join the waitlist</button>
+    <p class="status" id="status" role="status" aria-live="polite"></p>
     <p class="consent">We use this to tell you when you can get in, and for nothing else. Amphico is the data controller; reply to any message to be removed.</p>
   </form>
 </main>
@@ -284,37 +299,59 @@ button[disabled]{background:#3A3D40;cursor:default}
   if(!f || !window.fetch || !window.FormData) return;   /* native POST already covers this */
 
   f.addEventListener('submit', function(e){
-    if(f.checkValidity && !f.checkValidity()) return;   /* let the browser say so itself */
+    if(f.checkValidity && !f.checkValidity()) return;   /* the browser shows the field itself */
     e.preventDefault();
 
     var next = f.elements._next.value;   /* read now, so it is always the value being posted */
+    var btn = f.querySelector('button'), st = document.getElementById('status');
+    var addr = String(f.elements.email.value || ''), at = addr.lastIndexOf('@');
+    var who = (f.querySelector('input[name=audience]:checked') || {}).value || 'formulator';
+    var data = new FormData(f), done = false;
 
-    var btn = f.querySelector('button');
-    if(btn){ btn.disabled = true; btn.textContent = 'One moment'; }
+    function show(kind, html){ if(st){ st.className = 'status ' + kind; st.innerHTML = html; } }
+    btn.disabled = true; btn.textContent = 'Sending\u2026';
+    show('', '');
 
-    var data = new FormData(f), gone = false;
-    function go(){ if(gone) return; gone = true; location.href = next; }
-    setTimeout(go, 1200);
-
-    /* The company, not the person: the domain goes to PostHog, the address
-       does not. Beacon, so it survives the navigation a few hundred ms later.
-       Guarded, so deleting the analytics block leaves this a no-op.
-       A no-JS submit never reaches here — Formspree still gets that lead, it
-       just will not appear in inbound_submitted. */
-    if(window.mtl){
-      var addr = String(f.elements.email.value || ''), at = addr.lastIndexOf('@');
-      var who2 = (f.querySelector('input[name=audience]:checked') || {}).value || 'formulator';
-      window.mtl.track('inbound_submitted',
-        { email_domain: at > -1 ? addr.slice(at + 1).toLowerCase() : null, audience: who2 }, true);
+    /* Success: say so, then leave. Failure: say so, keep everything they typed,
+       and give them a way that cannot fail (a mailto with the details filled in).
+       A lead must never disappear quietly. */
+    function ok(){
+      if(done) return; done = true;
+      f.className = 'sent';
+      btn.textContent = 'You are on the list';
+      show('ok', 'Thank you. We will email you when you can get in. Taking you to matterialis.com\u2026');
+      if(window.mtl){
+        window.mtl.track('inbound_submitted',
+          { email_domain: at > -1 ? addr.slice(at + 1).toLowerCase() : null, audience: who }, true);
+      }
+      setTimeout(function(){ location.href = next; }, 1800);
+    }
+    function fail(reason){
+      if(done) return; done = true;
+      btn.disabled = false; btn.textContent = 'Try again';
+      var mail = 'mailto:j.orri@amphico.uk?subject=' + encodeURIComponent('Matterialis waitlist') +
+                 '&body=' + encodeURIComponent('Please add me to the waitlist.\nEmail: ' + addr + '\nI am a: ' + who);
+      show('err', 'That did not send (' + reason + '). Try again, or <a href="' + mail + '">email us</a> and we will add you by hand.');
+      if(window.mtl){
+        window.mtl.track('inbound_failed',
+          { reason: reason, email_domain: at > -1 ? addr.slice(at + 1).toLowerCase() : null, audience: who }, true);
+      }
     }
 
+    /* Hall wifi can stall. 8 s is long enough for a slow POST, short enough
+       that nobody walks away from a spinning button. */
+    var ctrl = window.AbortController ? new AbortController() : null;
+    var timer = setTimeout(function(){ if(ctrl) ctrl.abort(); fail('timed out'); }, 8000);
     try{
       fetch(f.action, {
-        method:'POST', body:data, headers:{Accept:'application/json'}, keepalive:true
-      }).then(go, go);
+        method:'POST', body:data, headers:{Accept:'application/json'}, keepalive:true,
+        signal: ctrl ? ctrl.signal : undefined
+      }).then(function(r){
+        clearTimeout(timer);
+        if(r.ok) ok(); else fail('server said ' + r.status);
+      }, function(){ clearTimeout(timer); fail('no connection'); });
     }catch(err){
-      try{ navigator.sendBeacon(f.action, data); }catch(e2){}
-      go();
+      clearTimeout(timer); fail('no connection');
     }
   });
 })();
