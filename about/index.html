@@ -60,7 +60,7 @@ p{margin:0}
 .nav-in{max-width:var(--wrap);margin:0 auto;padding:0 var(--gutter);display:flex;align-items:center;height:56px;gap:30px}
 .brand{display:flex;align-items:center;height:100%} .brand svg{height:19px;width:auto}
 .nav-links{display:flex;align-items:center;gap:24px;height:100%;margin-left:6px}
-.nav-links a{display:flex;align-items:center;height:100%;font-size:var(--text-base);font-weight:450;color:var(--chrome-fg-muted);border-bottom:2px solid transparent;transition:color var(--dur-fast) var(--ease),border-color var(--dur-fast) var(--ease)}
+.nav-links a{display:flex;align-items:center;height:100%;font-size:var(--text-base);font-weight:450;color:var(--chrome-fg-muted);border-bottom:2px solid transparent;white-space:nowrap;transition:color var(--dur-fast) var(--ease),border-color var(--dur-fast) var(--ease)}
 .nav-links a:hover,.nav-links a.on{color:var(--chrome-fg);border-bottom-color:var(--brand-signal)}
 .nav-actions{margin-left:auto;display:flex;align-items:center;gap:8px}
 .navtoggle{display:none;background:none;border:1px solid var(--chrome-line);border-radius:var(--radius-control);color:var(--chrome-fg-muted);height:30px;width:32px;align-items:center;justify-content:center;cursor:pointer}
@@ -70,9 +70,9 @@ p{margin:0}
 .aud a:hover{color:var(--chrome-fg-muted)}
 .aud a.on{background:var(--chrome-raised);color:var(--chrome-fg)}
 .nav-links .menu-only{display:none}
-@media (max-width:1080px){.nav-in{gap:18px}.nav-links{display:none}.nav-links .menu-only{display:flex}.navtoggle{display:flex}.nav-actions .btn-ghost-chrome{display:none}}
+@media (max-width:1180px){.nav-in{gap:18px}.nav-links{display:none}.nav-links .menu-only{display:flex}.navtoggle{display:flex}.nav-actions .btn-ghost-chrome{display:none}}
 @media (max-width:760px){.nav-in{gap:14px}.brand svg{height:17px}.aud a{padding:0 8px}.nav-actions .btn-on-chrome{display:none}}
-@media (max-width:400px){.aud a{padding:0 7px;font-size:var(--text-xs)}}
+@media (max-width:520px){.nav-in{flex-wrap:wrap;row-gap:0;height:auto}.brand{height:50px}.aud{order:3;flex:1 0 100%;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));margin-bottom:8px}.aud a{justify-content:center;height:28px;padding:0 6px}}
 footer{background:var(--chrome);border-top:1px solid var(--chrome-line);padding:30px 0}
 .foot{display:flex;align-items:center;gap:22px;flex-wrap:wrap}
 .foot svg{height:36px;width:auto}
@@ -130,9 +130,10 @@ footer{background:var(--chrome);border-top:1px solid var(--chrome-line);padding:
 <nav class="nav">
   <div class="nav-in">
     <a class="brand" href="/" aria-label="Matterialis home"><svg viewBox="0 0 577.6 82" role="img" aria-label="Matterialis"><use href="#mtl-logo"/></svg></a>
-    <div class="aud" aria-label="Who this page is for">
+    <div class="aud" role="group" aria-label="Who this page is for">
       <a href="/" data-audience="formulators">Formulators</a>
       <a href="/suppliers/" data-audience="suppliers">Suppliers</a>
+      <a href="/ai-platforms/" data-audience="ai-platforms">AI platforms</a>
     </div>
     <div class="nav-links">
       <a href="/#cases">Problems</a>
@@ -195,7 +196,7 @@ footer{background:var(--chrome);border-top:1px solid var(--chrome-line);padding:
 <script>
 (function(){
   var t=document.getElementById('navtoggle'),links=document.querySelector('.nav-links');
-  if(t)t.addEventListener('click',function(){var open=links.style.display==='flex';links.style.display=open?'':'flex';links.style.cssText+=open?'':'position:absolute;top:56px;left:0;right:0;background:var(--chrome);flex-direction:column;align-items:flex-start;gap:0;padding:6px 20px 12px;border-bottom:1px solid var(--chrome-line);height:auto';});
+  if(t)t.addEventListener('click',function(){var open=links.style.display==='flex';links.style.display=open?'':'flex';links.style.cssText+=open?'':'position:absolute;top:100%;left:0;right:0;background:var(--chrome);flex-direction:column;align-items:flex-start;gap:0;padding:6px 20px 12px;border-bottom:1px solid var(--chrome-line);height:auto';});
 })();
 </script>
 

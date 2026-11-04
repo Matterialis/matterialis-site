@@ -305,7 +305,7 @@ p{margin:0}
 .nav-links{display:flex;align-items:center;gap:24px;height:100%;margin-left:6px}
 .nav-links a{
   display:flex;align-items:center;height:100%;font-size:var(--text-base);font-weight:450;
-  color:var(--chrome-fg-muted);border-bottom:2px solid transparent;
+  color:var(--chrome-fg-muted);border-bottom:2px solid transparent;white-space:nowrap;
   transition:color var(--dur-fast) var(--ease),border-color var(--dur-fast) var(--ease);
 }
 .nav-links a:hover,.nav-links a.on{color:var(--chrome-fg);border-bottom-color:var(--brand-signal)}
@@ -313,11 +313,12 @@ p{margin:0}
 .navtoggle{display:none;background:none;border:1px solid var(--chrome-line);border-radius:var(--radius-control);color:var(--chrome-fg-muted);height:30px;width:32px;align-items:center;justify-content:center;cursor:pointer}
 
 /* ---- audience switch ----
-   Two words beside the logo, in the body face: the story this page tells and
-   the other one, a click away. A raised segment marks where you are, so the
-   accent keeps its one job on chrome, the active section link. Mirrored in
-   /suppliers/. Below 1080px the section links fold into the menu to make room
-   for it; below 760px the bar keeps the logo, the switch and the menu. */
+   Three words beside the logo, in the body face: the story this page tells and
+   the other two, a click away. A raised segment marks where you are, so the
+   accent keeps its one job on chrome, the active section link. Mirrored by hand
+   in /suppliers/, /ai-platforms/ and /about/. Below 1180px the section links
+   fold into the menu to make room for it; below 760px the bar keeps the logo,
+   the switch and the menu; below 520px the switch takes its own row. */
 .aud{display:inline-flex;align-items:center;gap:2px;padding:2px;border:1px solid var(--chrome-line);border-radius:var(--radius-control);flex-shrink:0}
 .aud a{
   display:flex;align-items:center;height:24px;padding:0 10px;border-radius:var(--radius-indicator);
@@ -327,7 +328,7 @@ p{margin:0}
 .aud a:hover{color:var(--chrome-fg-muted)}
 .aud a.on{background:var(--chrome-raised);color:var(--chrome-fg)}
 .nav-links .menu-only{display:none}
-@media (max-width:1080px){
+@media (max-width:1180px){
   .nav-in{gap:18px}
   .nav-links{display:none}
   .nav-links .menu-only{display:flex}
@@ -340,15 +341,27 @@ p{margin:0}
   .aud a{padding:0 8px}
   .nav-actions .btn-on-chrome{display:none}
 }
+@media (max-width:520px){
+  .nav-in{flex-wrap:wrap;row-gap:0;height:auto}
+  .brand{height:50px}
+  .aud{order:3;flex:1 0 100%;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));margin-bottom:8px}
+  .aud a{justify-content:center;height:28px;padding:0 6px}
+}
 @media (max-width:400px){
   .brand svg{height:15px}
-  .aud a{padding:0 7px;font-size:var(--text-xs)}
 }
-/* the band that sends a supplier to the other story, above the footer */
+/* the band that sends a visitor to the other two stories, above the footer */
 .xlink{border-top:1px solid var(--rule);background:var(--paper-raised)}
-.xlink .wrap{display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap;padding-top:22px;padding-bottom:22px}
-.xlink p{font-size:var(--text-md);color:var(--ink-muted)}
+.xlink .wrap{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}
+.xl{display:flex;flex-direction:column;align-items:flex-start;gap:12px;padding:24px 28px 26px 0}
+.xl+.xl{border-left:1px solid var(--rule-soft);padding-left:28px}
+.xlink p{font-size:var(--text-md);color:var(--ink-muted);max-width:52ch}
 .xlink p b{color:var(--ink);font-weight:550}
+@media (max-width:760px){
+  .xlink .wrap{grid-template-columns:minmax(0,1fr)}
+  .xl{padding-right:0}
+  .xl+.xl{border-left:0;border-top:1px solid var(--rule-soft);padding-left:0}
+}
 
 /* ---- hero ---- */
 .hero{padding:82px 0 0}
@@ -1131,9 +1144,10 @@ button.w-launch.press{transform:scale(.93)}
 <nav class="nav">
   <div class="nav-in">
     <a class="brand" href="../" aria-label="Matterialis home"><svg viewBox="0 0 577.6 82" role="img" aria-label="Matterialis"><use href="#mtl-logo"/></svg></a>
-    <div class="aud" aria-label="Who this page is for">
+    <div class="aud" role="group" aria-label="Who this page is for">
       <a href="../" data-audience="formulators">Formulators</a>
       <a href="#top" class="on" aria-current="page">Suppliers</a>
+      <a href="../ai-platforms/" data-audience="ai-platforms">AI platforms</a>
     </div>
     <div class="nav-links">
       <a href="#product">How it works</a>
@@ -1570,10 +1584,16 @@ button.w-launch.press{transform:scale(.93)}
   </div>
 </section>
 
-<div class="xlink">
+<div class="xlink" id="xlink">
   <div class="wrap">
-    <p><b>Looking for materials rather than selling them?</b> The Matterialis platform searches 200,000 grades across every supplier.</p>
-    <a class="btn btn-secondary" href="../" data-audience="formulators">Matterialis for formulators<svg class="ic" viewBox="0 0 24 24" style="width:12px;height:12px"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    <div class="xl">
+      <p><b>Looking for materials rather than selling them?</b> The Matterialis platform searches 200,000+ grades across every supplier.</p>
+      <a class="btn btn-secondary" href="../" data-audience="formulators">Matterialis for formulators<svg class="ic" viewBox="0 0 24 24" style="width:12px;height:12px"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+    <div class="xl">
+      <p><b>Building AI agents for the lab?</b> The same library of supplier grades, behind an MCP server your agent can call.</p>
+      <a class="btn btn-secondary" href="../ai-platforms/" data-audience="ai-platforms">Matterialis for AI platforms<svg class="ic" viewBox="0 0 24 24" style="width:12px;height:12px"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
   </div>
 </div>
 
@@ -1670,7 +1690,7 @@ button.w-launch.press{transform:scale(.93)}
   if(t) t.addEventListener('click', function(){
     var open = links.style.display === 'flex';
     links.style.display = open ? '' : 'flex';
-    links.style.cssText += open ? '' : 'position:absolute;top:56px;left:0;right:0;background:var(--chrome);flex-direction:column;align-items:flex-start;gap:0;padding:6px 20px 12px;border-bottom:1px solid var(--chrome-line);height:auto';
+    links.style.cssText += open ? '' : 'position:absolute;top:100%;left:0;right:0;background:var(--chrome);flex-direction:column;align-items:flex-start;gap:0;padding:6px 20px 12px;border-bottom:1px solid var(--chrome-line);height:auto';
   });
 
   /* nav section highlight */
@@ -1770,7 +1790,7 @@ button.w-launch.press{transform:scale(.93)}
   });
 
   function place(el){
-    var s = el.closest ? el.closest('section[id], header[id], footer, nav') : null;
+    var s = el.closest ? el.closest('section[id], header[id], footer, nav, #xlink') : null;
     return s ? (s.id || s.tagName.toLowerCase()) : 'unknown';
   }
   document.addEventListener('click', function(e){
@@ -1778,10 +1798,11 @@ button.w-launch.press{transform:scale(.93)}
     if(!a) return;
     var href = a.getAttribute('href') || '';
     var booking = /calendar\.app\.google|calendly\.com/i;
-    if(/^mailto:/i.test(href) || booking.test(href)){
-      t.track('cta_click', { kind:/^mailto:/i.test(href) ? 'contact' : 'demo', location:place(a), label:(a.textContent || '').trim().slice(0, 40) });
+    var waitlist = /^\/waitlist\/?(\?.*)?$/i;
+    if(/^mailto:/i.test(href) || booking.test(href) || waitlist.test(href)){
+      t.track('cta_click', { kind:/^mailto:/i.test(href) ? 'contact' : (waitlist.test(href) ? 'waitlist' : 'demo'), location:place(a), label:(a.textContent || '').trim().slice(0, 40) });
     } else if(a.hasAttribute('data-audience')){
-      /* someone crossing from the supplier story to the formulator one, or back */
+      /* someone crossing from the supplier story to one of the other two */
       t.track('audience_switch', { to:a.getAttribute('data-audience'), location:place(a) });
     } else if(href.charAt(0) === '#' && href.length > 1){
       t.track('nav_click', { to:href.slice(1), location:place(a) });

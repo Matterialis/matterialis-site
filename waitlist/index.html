@@ -213,18 +213,23 @@ input[type=email]:user-invalid ~ .hint{display:block}
 .status.ok{display:block;border-color:var(--evidence-strong);color:var(--evidence-strong)}
 .status.err{display:block;border-color:var(--evidence-weak);color:var(--ink)}
 .status a{color:inherit;font-weight:500}
-/* "I am a" — a two-way segmented control. Real radio inputs, so the choice
+/* "I am a": a three-way segmented control. Real radio inputs, so the choice
    posts with the form (field "audience") with JavaScript off; the script only
-   prefills it from ?a=supplier. Formulator is the default. */
-.seg{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--rule);
+   prefills it from ?a=supplier or ?a=platform. Formulator is the default.
+   Below 480px it stacks, because thirds of a phone are too narrow to read. */
+.seg{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;border:1px solid var(--rule);
   border-radius:var(--radius-control);background:var(--paper-raised);padding:3px;margin-bottom:16px}
 .seg input{position:absolute;opacity:0;width:0;height:0}
-.seg label{display:block;margin:0}
-.seg span{display:block;text-align:center;padding:9px 10px;border-radius:2px;
+.seg label{display:flex;margin:0}
+.seg span{display:flex;align-items:center;justify-content:center;flex:1;text-align:center;text-wrap:balance;padding:9px 10px;border-radius:2px;
   font-size:var(--text-md);font-weight:500;color:var(--ink-muted);cursor:pointer;user-select:none;
   transition:background var(--dur-fast) var(--ease),color var(--dur-fast) var(--ease)}
 .seg input:checked + span{background:var(--chrome);color:#fff}
 .seg input:focus-visible + span{box-shadow:0 0 0 1px var(--brand-signal)}
+@media (max-width:480px){
+  .seg{grid-template-columns:minmax(0,1fr)}
+  .seg span{justify-content:flex-start;text-align:left}
+}
 
 .foot{max-width:560px;width:100%;margin:0 auto;padding:0 24px 34px;
   font-family:var(--font-mono);font-size:var(--text-2xs);font-weight:500;
@@ -267,6 +272,7 @@ input[type=email]:user-invalid ~ .hint{display:block}
     <div class="seg" role="radiogroup" aria-labelledby="who-l">
       <label><input type="radio" name="audience" value="formulator" checked><span>Formulator or researcher</span></label>
       <label><input type="radio" name="audience" value="supplier"><span>Supplier or manufacturer</span></label>
+      <label><input type="radio" name="audience" value="platform"><span>AI platform or agentic lab</span></label>
     </div>
     <label for="email">Work email</label>
     <input id="email" type="email" name="email" required
@@ -289,10 +295,11 @@ input[type=email]:user-invalid ~ .hint{display:block}
 (function(){
   var f = document.getElementById('gate');
   /* Prefill "I am a" from the link that brought them here: the suppliers page
-     links with ?a=supplier. Anything else, including a QR scan, is a formulator. */
+     links with ?a=supplier, the AI platforms page with ?a=platform. Anything
+     else, including a QR scan, is a formulator. */
   try{
     var who = new URLSearchParams(location.search).get('a');
-    var r = f && f.querySelector('input[name=audience][value="' + (who === 'supplier' ? 'supplier' : 'formulator') + '"]');
+    var r = f && f.querySelector('input[name=audience][value="' + (who === 'supplier' || who === 'platform' ? who : 'formulator') + '"]');
     if(r) r.checked = true;
   }catch(e0){}
   if(!f || !window.fetch || !window.FormData) return;   /* native POST already covers this */

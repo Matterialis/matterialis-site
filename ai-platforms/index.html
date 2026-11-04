@@ -1,0 +1,1758 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Matterialis for AI platforms: real, purchasable materials as a tool for your agent</title>
+<meta name="description" content="An MCP server that gives your agent grade search, property lookup, substitute ranking and nearest-neighbour queries over 200,000+ supplier grades and 500+ properties, with every value marked measured or predicted. In beta.">
+<link rel="icon" href="data:image/x-icon;base64,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">
+<!-- iOS home screen / Android. The favicon above is the same approved .ico
+     from the logo kit, inlined so the page still works from disk. -->
+<link rel="apple-touch-icon" href="../img/brand/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;450;500;550;600;700&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<!-- ============================================================
+     ANALYTICS — PostHog (EU), project "Matterialis" · id 105300
+     https://eu.posthog.com/project/105300
+
+     See ANALYTICS.md. Two things to know before changing any of
+     it:
+
+     · Email security scanners (Defender Safe Links, Mimecast,
+       Proofpoint) prefetch every URL in every message they scan.
+       They render headlessly and leave, and at this volume they
+       outnumber real visitors, so no replay starts until a human
+       signal arrives — see the gate at the foot of this block.
+       $pageview still fires on every arrival, so the scanner
+       share stays measurable as $pageview minus visit_engaged
+       instead of being silently mixed into the real numbers.
+     · host must become the first-party proxy before any real
+       campaign. Corporate proxies blocklist *.posthog.com, and
+       that loss is biased toward the enterprise visitors this
+       page exists for. DNS only, no build step.
+
+     Replay masks every input, and #do-not-track opts a visitor
+     out permanently.
+     ============================================================ -->
+<script>
+window.MTL_ANALYTICS = {
+  token:  'phc_GnUG6LSAkfO92r5vN5asriOtooGLbGPx3V40gANPcBi',
+  /* TODO: once CNAME e.matterialis.com -> PostHog is verified, swap these two
+     lines. Nothing else changes — the loader reads its static assets from
+     whatever host is set here. */
+  host:   'https://eu.i.posthog.com',
+  /* host: 'https://e.matterialis.com', */
+  uiHost: 'https://eu.posthog.com',
+  /* the engaged-time clock stops after this long with no scroll, pointer or
+     key — otherwise an abandoned tab reads as a long, careful read */
+  idleMs: 30000
+};
+</script>
+<!-- posthog-js loader, verbatim from the vendor snippet. It queues every call
+     made before the library lands, so nothing below has to wait on it. -->
+<script>
+!function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init capture register register_once register_for_session unregister unregister_for_session getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on reset onFeatureFlags onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey getNextSurveyStep identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty createPersonProfile opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing debug".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+</script>
+<script>
+(function(){
+  var C = window.MTL_ANALYTICS;
+
+  /* Everything on this page reports through mtl.track, which no-ops if
+     posthog is absent, blocked by a corporate proxy, or opted out. The page
+     must never break because analytics did. */
+  window.mtl = {
+    track: function(name, props, beacon){
+      try{
+        if(window.posthog && posthog.capture){
+          posthog.capture(name, props || {}, beacon ? {transport:'sendBeacon'} : undefined);
+        }
+      }catch(e){}
+    }
+  };
+
+  try{
+    posthog.init(C.token, {
+      api_host: C.host,
+      ui_host: C.uiHost,
+      person_profiles: 'always',
+      /* fired by hand below, once the outreach token and visit count are
+         registered — otherwise the first and most useful event of the visit
+         is the one event missing them */
+      capture_pageview: false,
+      capture_pageleave: true,
+      autocapture: true,
+      /* replay starts at the human gate, not here — see the scanner note */
+      disable_session_recording: true,
+      session_recording: { maskAllInputs: true },
+      persistence: 'localStorage+cookie'
+    });
+
+    /* --- opt-outs, in place of a banner ---
+       #internal is for us: at outreach volume the team browsing its own site
+       would outnumber the prospects. Both choices stick. */
+    var h = location.hash;
+    if(h === '#internal' || h === '#do-not-track'){ posthog.opt_out_capturing(); return; }
+    if(h === '#track-me') posthog.opt_in_capturing();
+
+    /* --- who, and how many times ---
+       Returning visitors matter more here than on most sites: a prospect who
+       comes back and goes straight to Compare is a different lead. */
+    function ls(k, v){
+      try{
+        if(v === undefined) return localStorage.getItem(k);
+        localStorage.setItem(k, v);
+      }catch(e){}
+      return null;
+    }
+    var visits = (parseInt(ls('mtl_visits') || '0', 10) || 0) + 1;
+    ls('mtl_visits', String(visits));
+    var first = ls('mtl_first');
+    if(!first){ first = String(Date.now()); ls('mtl_first', first); }
+    var firstMs = parseInt(first, 10) || Date.now();
+
+    var token = null;
+    try{ token = new URLSearchParams(location.search).get('c'); }catch(e){}
+
+    posthog.register({
+      page: 'ai-platforms',
+      visit_number: visits,
+      is_returning: visits > 1,
+      days_since_first_visit: Math.floor((Date.now() - firstMs) / 864e5)
+    });
+    if(token) posthog.register({ outreach_token: token });
+
+    posthog.capture('$pageview');
+
+    /* Drop the token from the address bar now the pageview has recorded it:
+       the URL stays clean if the page is screen-shared, and the token stops
+       riding along in the referrer on outbound clicks. */
+    if(token && history.replaceState){
+      try{
+        var u = new URL(location.href);
+        u.searchParams.delete('c');
+        history.replaceState(null, '', u.pathname + (u.search || '') + u.hash);
+      }catch(e){}
+    }
+
+    /* --- the human gate ---
+       A scanner fetches, renders and leaves without touching anything. Until
+       one of these fires this visit is an arrival, not a read: no identify,
+       no replay, nothing pinned to a named prospect. */
+    var engaged = false, visibleMs = 0, poll = null;
+    var SIGNALS = ['pointermove','pointerdown','keydown','touchstart','wheel','scroll'];
+    function engage(){
+      if(engaged) return;
+      engaged = true;
+      if(poll) clearInterval(poll);
+      SIGNALS.forEach(function(s){ removeEventListener(s, engage, true); });
+      try{
+        if(token){
+          posthog.identify(token,
+            { outreach_token: token, last_visit_at: new Date().toISOString() },
+            { first_visit_at: new Date(firstMs).toISOString() });
+        }
+        posthog.startSessionRecording();
+        window.mtl.track('visit_engaged', { visit_number: visits, from_outreach: !!token });
+      }catch(e){}
+    }
+    SIGNALS.forEach(function(s){ addEventListener(s, engage, true); });
+    /* fallback for someone who reads the hero without moving anything */
+    poll = setInterval(function(){
+      if(!document.hidden) visibleMs += 500;
+      if(visibleMs >= 3000) engage();
+    }, 500);
+  }catch(e){}
+})();
+</script>
+
+<!-- ============================================================
+     /ai-platforms — Matterialis for agentic labs and AI-scientist
+     platforms.
+
+     The third audience of the site. Everything above this line
+     and the two stylesheets below are copied from ../index.html,
+     so tokens and analytics cannot drift between the pages. The
+     four product mocks in the body are verbatim copies of
+     index.html's (re-copy them if they change there; build.py
+     never reads this page). Edit index.html for shared things;
+     edit the AI platforms body for this page.
+     ============================================================ -->
+
+<style>
+/* ============================================================
+   MATTERIALIS — marketing site   (one 't' — matches the logo)
+   Built on the Matterialis Design System (tokens verbatim).
+   Rules observed:
+     · Chrome graphite #141618; paper #FDFDFC; rules do the work.
+     · Teal #0E6B72 is RESERVED — active nav marker, focus ring,
+       AI provenance only. Never on data, never a large fill,
+       never a gradient.
+     · Evidence hues report evidence strength only.
+     · Radius: 2 indicator / 3 control / 6 panel / 10 frame.
+     · Geist for UI, Geist Mono for every measured value.
+     · 9.5px mono uppercase micro-labels at 0.09em.
+     · Sentence case. No emoji. No gradients outside the logo.
+     · Motion 130/180/260ms, nothing bounces or loops.
+   ============================================================ */
+
+:root{
+  /* chrome */
+  --chrome:#141618; --chrome-raised:#1E2022; --chrome-line:#2A2C2E;
+  --chrome-fg:#FFFFFF; --chrome-fg-muted:#AEB5BA; --chrome-fg-dim:#8A9297; --chrome-fg-strong:#D5D9DC;
+  /* evidence */
+  --evidence-strong:#186B4F; --evidence-limited:#8F6209; --evidence-weak:#A63A29; --evidence-neutral:#6C7276;
+  /* accent — reserved */
+  --brand-signal:#0E6B72; --brand-signal-tint:#F2F7F7; --brand-signal-line:#CFE2E3;
+  /* paper */
+  --paper:#FDFDFC; --paper-raised:#FFFFFF; --paper-sunken:#F5F6F6; --paper-strip:#FBFBFA;
+  --rule:#E8EAEC; --rule-soft:#F2F3F4;
+  /* ink */
+  --ink:#17191B; --ink-muted:#6C7276; --ink-faint:#9CA1A5;
+  /* neutral data ramp — data never borrows the accent */
+  --chart-1:#141618; --chart-2:#4A5054; --chart-3:#7C8287; --chart-4:#AFB4B8; --chart-5:#D8DBDD;
+  /* type */
+  --font-sans:Geist,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
+  --font-mono:"Geist Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+  --text-micro:9.5px; --text-2xs:10.5px; --text-xs:11.5px; --text-sm:12px;
+  --text-base:12.5px; --text-md:13px; --text-lg:14px; --text-xl:15px;
+  --tracking-micro:.09em; --tracking-title:-.022em; --tracking-name:-.015em; --tracking-figure:-.03em;
+  /* shape */
+  --radius-indicator:2px; --radius-control:3px; --radius-surface:6px; --radius-frame:10px;
+  /* motion */
+  --dur-instant:75ms; --dur-fast:130ms; --dur-medium:180ms; --dur-slow:260ms;
+  --ease:cubic-bezier(.4,0,.2,1); --ease-out:cubic-bezier(0,0,.2,1);
+  /* elevation */
+  --shadow-menu:0 4px 10px -2px rgb(20 22 24 / .10),0 1px 3px rgb(20 22 24 / .06);
+  --shadow-overlay:0 20px 44px -14px rgb(20 22 24 / .20);
+  --shadow-frame:0 1px 2px rgb(20 22 24 / .04),0 12px 32px -16px rgb(20 22 24 / .15);
+  --wrap:1240px; --gutter:32px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:var(--font-sans);font-size:16px;line-height:1.5;font-weight:400;
+  -webkit-font-smoothing:antialiased;font-variant-numeric:tabular-nums;
+}
+svg{display:block}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:none;box-shadow:0 0 0 1px var(--brand-signal);border-radius:var(--radius-control)}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 var(--gutter)}
+hr.rule{height:1px;background:var(--rule);border:0;margin:0}
+
+/* ---- type ---- */
+h1,h2,h3,h4{margin:0;font-weight:600;letter-spacing:var(--tracking-title);line-height:1.12}
+h1{font-size:clamp(34px,4.4vw,58px);letter-spacing:-.032em;font-weight:600;line-height:1.06}
+h2{font-size:clamp(29px,3.5vw,47px);letter-spacing:-.028em}
+h3{font-size:21px}
+h4{font-size:var(--text-lg)}
+p{margin:0}
+.lede{font-size:clamp(16px,1.25vw,19px);line-height:1.55;color:#3B3E41;letter-spacing:-.008em}
+.body{font-size:14px;line-height:1.6;color:#43464A}
+.micro{
+  font-family:var(--font-mono);font-size:var(--text-micro);text-transform:uppercase;
+  letter-spacing:var(--tracking-micro);color:var(--ink-faint);font-weight:400;display:block;
+}
+.micro.on-chrome{color:var(--chrome-fg-dim)}
+.mono{font-family:var(--font-mono);font-variant-numeric:tabular-nums}
+
+/* ---- buttons ---- */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:7px;
+  height:30px;padding:0 12px;border:1px solid transparent;border-radius:var(--radius-control);
+  font-family:var(--font-sans);font-size:var(--text-sm);font-weight:500;letter-spacing:-.005em;
+  cursor:pointer;transition:background var(--dur-fast) var(--ease),border-color var(--dur-fast) var(--ease),color var(--dur-fast) var(--ease);
+  white-space:nowrap;
+}
+.btn-lg{height:34px;padding:0 15px;font-size:var(--text-md)}
+.btn-primary{background:var(--chrome);color:#fff}
+.btn-primary:hover{background:var(--chrome-raised)}
+.btn-secondary{background:var(--paper-raised);color:var(--ink);border-color:var(--rule)}
+.btn-secondary:hover{background:var(--paper-sunken);border-color:#DCDFE1}
+.btn-on-chrome{background:#fff;color:var(--chrome)}
+.btn-on-chrome:hover{background:var(--chrome-fg-strong)}
+.btn-ghost-chrome{background:transparent;color:var(--chrome-fg-strong);border-color:var(--chrome-line)}
+.btn-ghost-chrome:hover{background:var(--chrome-raised);border-color:#3A3D40}
+.ic{width:14px;height:14px;flex:none;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.ic-16{width:16px;height:16px}
+.ic-20{width:20px;height:20px}
+.ic-fill{fill:currentColor;stroke:none}
+
+/* ---- badges / dots ---- */
+.badge{
+  display:inline-flex;align-items:center;gap:5px;font-family:var(--font-mono);
+  font-size:var(--text-2xs);border:1px solid var(--rule);border-radius:var(--radius-indicator);
+  padding:2px 6px;color:var(--ink-muted);background:var(--paper-raised);white-space:nowrap;
+}
+.badge-strong{color:var(--evidence-strong);border-color:#CFE2D9;background:#F4F9F6}
+.badge-limited{color:var(--evidence-limited);border-color:#E7DCC0;background:#FBF8F0}
+.badge-weak{color:var(--evidence-weak);border-color:#E8CFCA;background:#FBF4F2}
+.badge-ai{color:var(--brand-signal);border-color:var(--brand-signal-line);background:var(--brand-signal-tint)}
+.dot{width:5px;height:5px;border-radius:var(--radius-indicator);flex:none;display:block}
+.dot-strong{background:var(--evidence-strong)}.dot-limited{background:var(--evidence-limited)}
+/* the accent, for the one dot in the hero pill. Kept apart from the evidence
+   ramp above on purpose: that ramp reports evidence strength about a material
+   and must never be spent on decoration. */
+.dot-signal{background:var(--brand-signal)}
+.dot-weak{background:var(--evidence-weak)}.dot-neutral{background:var(--evidence-neutral)}
+
+/* ---- top nav ---- */
+.nav{position:sticky;top:0;z-index:80;background:var(--chrome);border-bottom:1px solid var(--chrome-line)}
+.nav-in{max-width:var(--wrap);margin:0 auto;padding:0 var(--gutter);display:flex;align-items:center;height:56px;gap:30px}
+.brand{display:flex;align-items:center;height:100%}
+.brand svg{height:19px;width:auto}
+.nav-links{display:flex;align-items:center;gap:24px;height:100%;margin-left:6px}
+.nav-links a{
+  display:flex;align-items:center;height:100%;font-size:var(--text-base);font-weight:450;
+  color:var(--chrome-fg-muted);border-bottom:2px solid transparent;white-space:nowrap;
+  transition:color var(--dur-fast) var(--ease),border-color var(--dur-fast) var(--ease);
+}
+.nav-links a:hover,.nav-links a.on{color:var(--chrome-fg);border-bottom-color:var(--brand-signal)}
+.nav-actions{margin-left:auto;display:flex;align-items:center;gap:8px}
+.navtoggle{display:none;background:none;border:1px solid var(--chrome-line);border-radius:var(--radius-control);color:var(--chrome-fg-muted);height:30px;width:32px;align-items:center;justify-content:center;cursor:pointer}
+
+/* ---- audience switch ----
+   Three words beside the logo, in the body face: the story this page tells and
+   the other two, a click away. A raised segment marks where you are, so the
+   accent keeps its one job on chrome, the active section link. Mirrored by hand
+   in /suppliers/, /ai-platforms/ and /about/. Below 1180px the section links
+   fold into the menu to make room for it; below 760px the bar keeps the logo,
+   the switch and the menu; below 520px the switch takes its own row. */
+.aud{display:inline-flex;align-items:center;gap:2px;padding:2px;border:1px solid var(--chrome-line);border-radius:var(--radius-control);flex-shrink:0}
+.aud a{
+  display:flex;align-items:center;height:24px;padding:0 10px;border-radius:var(--radius-indicator);
+  font-size:var(--text-sm);font-weight:450;letter-spacing:-.005em;color:var(--chrome-fg-dim);white-space:nowrap;
+  transition:color var(--dur-fast) var(--ease),background-color var(--dur-fast) var(--ease);
+}
+.aud a:hover{color:var(--chrome-fg-muted)}
+.aud a.on{background:var(--chrome-raised);color:var(--chrome-fg)}
+.nav-links .menu-only{display:none}
+@media (max-width:1180px){
+  .nav-in{gap:18px}
+  .nav-links{display:none}
+  .nav-links .menu-only{display:flex}
+  .navtoggle{display:flex}
+  .nav-actions .btn-ghost-chrome{display:none}
+}
+@media (max-width:760px){
+  .nav-in{gap:14px}
+  .brand svg{height:17px}
+  .aud a{padding:0 8px}
+  .nav-actions .btn-on-chrome{display:none}
+}
+@media (max-width:520px){
+  .nav-in{flex-wrap:wrap;row-gap:0;height:auto}
+  .brand{height:50px}
+  .aud{order:3;flex:1 0 100%;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));margin-bottom:8px}
+  .aud a{justify-content:center;height:28px;padding:0 6px}
+}
+@media (max-width:400px){
+  .brand svg{height:15px}
+}
+/* the band that sends a visitor to the other two stories, above the footer */
+.xlink{border-top:1px solid var(--rule);background:var(--paper-raised)}
+.xlink .wrap{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}
+.xl{display:flex;flex-direction:column;align-items:flex-start;gap:12px;padding:24px 28px 26px 0}
+.xl+.xl{border-left:1px solid var(--rule-soft);padding-left:28px}
+.xlink p{font-size:var(--text-md);color:var(--ink-muted);max-width:52ch}
+.xlink p b{color:var(--ink);font-weight:550}
+/* home feature 04 only: a quiet text door to /ai-platforms/ */
+.xl-inline{display:inline-block;margin-top:12px;font-size:var(--text-md);color:var(--ink-muted);border-bottom:1px solid var(--rule)}
+.xl-inline:hover{color:var(--ink);border-bottom-color:var(--ink-faint)}
+@media (max-width:760px){
+  .xlink .wrap{grid-template-columns:minmax(0,1fr)}
+  .xl{padding-right:0}
+  .xl+.xl{border-left:0;border-top:1px solid var(--rule-soft);padding-left:0}
+}
+
+/* ---- hero ---- */
+.hero{padding:82px 0 0}
+/* the first thing a seller sees: their own door, top right under the nav */
+.seller-wrap{position:relative;height:0}
+.seller-cta{position:absolute;right:var(--gutter);top:-54px}
+@media (max-width:760px){
+  .seller-wrap{height:auto;display:flex;justify-content:flex-end;margin-bottom:22px}
+  .seller-cta{position:static}
+}
+.hero-in{max-width:900px}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:8px;border:1px solid var(--rule);
+  background:var(--paper-raised);border-radius:var(--radius-control);padding:4px 9px;
+  font-family:var(--font-mono);font-size:var(--text-2xs);letter-spacing:.04em;color:var(--ink-muted);
+  margin-bottom:24px;
+}
+h1 .soft{color:var(--ink-muted)}
+.hero p.lede{margin-top:22px;max-width:680px}
+.hero-cta{display:flex;flex-wrap:wrap;gap:9px;align-items:center;margin-top:28px}
+.hero-limit{font-family:var(--font-mono);font-size:var(--text-xs);color:var(--ink-faint);letter-spacing:.01em}
+
+/* ---- product surface (shared app chrome) ---- */
+.surface{background:var(--paper-raised);border:1px solid var(--rule);border-radius:var(--radius-frame);overflow:hidden}
+.surface-float{box-shadow:var(--shadow-frame)}
+.appbar{background:var(--chrome);display:flex;align-items:center;gap:22px;padding:0 14px;height:46px;flex:none}
+.appbar .lg svg{height:15px;width:auto}
+.tabs{display:flex;height:100%;gap:18px;align-items:stretch}
+.tab{
+  display:flex;align-items:center;gap:6px;font-family:var(--font-mono);font-size:var(--text-xs);
+  color:var(--chrome-fg-dim);border-bottom:2px solid transparent;
+}
+.tab b{font-weight:400;color:var(--chrome-fg-muted)}
+.tab.on{color:var(--chrome-fg);border-bottom-color:var(--brand-signal)}
+.tab.on b{color:#fff}
+.appbar-right{margin-left:auto;display:flex;gap:7px;align-items:center}
+.chip-chrome{
+  font-family:var(--font-mono);font-size:var(--text-2xs);color:var(--chrome-fg-muted);
+  border:1px solid var(--chrome-line);border-radius:var(--radius-indicator);padding:2px 6px;
+}
+/* console */
+.console{padding:36px 34px 32px;background:var(--paper-raised)}
+.console h3{font-size:clamp(20px,2.1vw,28px);letter-spacing:-.028em;margin-bottom:18px}
+.caret{display:inline-block;width:2px;height:.95em;background:var(--brand-signal);vertical-align:-.1em;margin-left:2px;animation:blink 1.1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+.field{border:1px solid var(--rule);border-radius:var(--radius-surface);background:var(--paper-raised)}
+.field .area{padding:14px 15px;color:var(--ink-faint);font-size:var(--text-md);min-height:66px}
+.field .bar{display:flex;align-items:center;gap:8px;padding:9px 11px;border-top:1px solid var(--rule-soft);flex-wrap:wrap}
+.filetag{font-family:var(--font-mono);font-size:var(--text-2xs);color:var(--ink-muted);background:var(--paper-sunken);border:1px solid var(--rule-soft);border-radius:var(--radius-indicator);padding:4px 7px}
+.field .bar .push{margin-left:auto;display:flex;align-items:center;gap:10px}
+
+/* ---- proof strip ---- */
+.proof{border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);background:var(--paper-raised);margin-top:84px}
+.proof-grid{display:grid;grid-template-columns:repeat(4,1fr)}
+.stat{padding:28px 26px;border-right:1px solid var(--rule-soft)}
+.stat:last-child{border-right:0}
+.stat .v{font-family:var(--font-mono);font-size:clamp(24px,2.4vw,32px);font-weight:500;letter-spacing:var(--tracking-figure);line-height:1;display:block}
+.stat .v .u{font-size:.5em;color:var(--ink-muted);font-weight:400;letter-spacing:0}
+.stat .l{margin-top:10px;font-size:var(--text-md);color:var(--ink-muted);line-height:1.45;max-width:220px}
+.stat .micro{margin-bottom:12px}
+
+/* ---- sections ---- */
+.sec{padding:92px 0}
+.sec-head{max-width:800px}
+.sec-head .micro,.datapanel>.micro,.cta>.wrap>.micro{font-size:var(--text-sm);color:var(--ink-muted);font-weight:500;letter-spacing:.1em}
+.cta>.wrap>.micro{color:var(--chrome-fg-dim)}
+.datapanel>.micro{color:var(--chrome-fg-dim)}
+.cmp-head .micro,.opt .micro{font-size:var(--text-2xs)}
+.sec-head h2{margin-top:16px}
+.sec-head .lede{margin-top:18px}
+
+/* ---- product: four alternating feature rows ----
+   Was a pinned mock driven by a scroll handler. The mock is now beside its own
+   copy and the row order alternates, so nothing has to be measured against the
+   viewport and there is no dead band to tune. All that survives is fit(),
+   which scales each mock to its own column. */
+.feats{margin-top:52px}
+.feat{display:grid;grid-template-columns:minmax(0,1.32fr) minmax(300px,.85fr);gap:52px;
+      align-items:center;padding:60px 0;border-top:1px solid var(--rule)}
+.feat>*{min-width:0}
+.feat:first-child{border-top:0;padding-top:8px}
+.feat:last-child{padding-bottom:8px}
+/* Odd rows put the mock on the right. Placing it explicitly, and mirroring the
+   column widths, because `order` alone moves the mock into the NARROW column and
+   quietly shrinks every other screenshot to 440px. The DOM order never changes. */
+.feat-flip{grid-template-columns:minmax(300px,.85fr) minmax(0,1.32fr)}
+.feat-flip .feat-shot{grid-column:2;grid-row:1}
+.feat-flip .feat-txt{grid-column:1;grid-row:1}
+.feat-shot{position:relative;width:100%;aspect-ratio:1180/664}
+.scaler{position:absolute;top:0;left:0;width:1180px;height:664px;transform-origin:top left;will-change:transform}
+.feat-shot .surface{height:100%;display:flex;flex-direction:column;box-shadow:var(--shadow-frame)}
+.screen-body{flex:1;min-height:0;overflow:hidden;background:var(--paper-raised);display:flex;flex-direction:column}
+.feat-txt .micro{color:var(--ink-faint)}
+.feat-txt h3{font-size:clamp(21px,1.9vw,27px);letter-spacing:-.026em;margin-top:10px}
+.feat-txt p{margin-top:13px;font-size:14.5px;line-height:1.62;color:#43464A}
+.feat-txt .out{margin-top:16px;border-left:1px solid var(--rule);padding-left:13px;
+               font-size:14px;font-weight:500;letter-spacing:-.008em}
+
+/* ---- app mock internals ---- */
+.mk-head{padding:14px 16px;border-bottom:1px solid var(--rule-soft);flex:none}
+.crumb{font-family:var(--font-mono);font-size:var(--text-2xs);color:var(--ink-faint);margin-bottom:10px}
+.mk-title{display:flex;align-items:flex-start;gap:16px}
+.mk-title h4{font-size:17px;letter-spacing:-.026em;line-height:1.18;font-weight:600}
+.mk-sub{font-family:var(--font-mono);font-size:var(--text-2xs);color:var(--ink-muted);margin-top:6px}
+.figure{margin-left:auto;text-align:right;flex:none}
+.figure .v{font-family:var(--font-mono);font-size:28px;font-weight:500;letter-spacing:var(--tracking-figure);line-height:1}
+.figure .v small{font-size:.42em;color:var(--ink-muted);font-weight:400;letter-spacing:0}
+.figure .micro{margin-top:4px}
+.badges{display:flex;gap:5px;margin-top:11px;flex-wrap:wrap}
+.strip{padding:9px 16px 7px;background:var(--paper-strip);border-bottom:1px solid var(--rule-soft);display:flex;gap:8px;align-items:baseline}
+.strip .micro{display:inline}
+.strip .micro b{color:var(--ink);font-weight:500}
+.split{display:grid;grid-template-columns:minmax(0,1fr) 300px;flex:1;min-height:0}
+.split-main{min-width:0;overflow:hidden}
+/* the map has to absorb the leftover height, and `flex:1` on a child of a
+   block parent does nothing — so this one column becomes a flex column */
+.split-main.col{display:flex;flex-direction:column}
+.split-rail{border-left:1px solid var(--rule-soft);background:var(--paper-strip);padding:13px 15px;overflow:hidden}
+.split-rail .micro{margin-bottom:9px}
+.kv{display:flex;justify-content:space-between;gap:12px;padding:5px 0;border-bottom:1px solid var(--rule-soft);font-size:var(--text-xs)}
+.kv:last-of-type{border-bottom:0}
+.kv dt{color:var(--ink-muted)}
+.kv dd{margin:0;font-family:var(--font-mono);font-size:var(--text-2xs);text-align:right}
+.split-rail dl{margin:0 0 16px}
+.src{font-size:var(--text-xs);color:var(--ink-muted);line-height:1.4;border-left:1px solid var(--rule);padding-left:9px;margin-bottom:8px}
+.src b{display:block;font-family:var(--font-mono);font-size:var(--text-2xs);font-weight:400;color:var(--ink);margin-bottom:2px}
+.ptab{width:100%;border-collapse:collapse}
+.ptab td{padding:8px 16px;border-bottom:1px solid var(--rule-soft);font-size:var(--text-base)}
+.ptab tr:last-child td{border-bottom:0}
+.ptab td.v{text-align:right;font-family:var(--font-mono);white-space:nowrap}
+.ptab td.b{width:1%;text-align:right;white-space:nowrap}
+.ptab td.s{width:1%;text-align:right;white-space:nowrap;font-family:var(--font-mono);font-size:var(--text-micro);color:var(--ink-faint);letter-spacing:var(--tracking-micro)}
+/* reasoning — subordinate to the measurement, per the provenance rule */
+.reason{margin:11px 16px 6px;border-left:1px solid var(--brand-signal);padding:2px 0 2px 11px;display:flex;gap:8px;align-items:flex-start}
+.reason svg{width:12px;height:12px;flex:none;margin-top:2px;color:var(--brand-signal);fill:currentColor;stroke:none}
+.reason p{font-size:var(--text-xs);color:var(--ink-muted);line-height:1.45}
+/* results */
+.res{display:grid;grid-template-columns:196px minmax(0,1fr);flex:1;min-height:0}
+.res-filter{border-right:1px solid var(--rule-soft);background:var(--paper-strip);padding:12px;overflow:hidden}
+.fh{display:flex;justify-content:space-between;align-items:center;margin-bottom:11px}
+.fh a{font-family:var(--font-mono);font-size:var(--text-2xs);color:var(--brand-signal)}
+.finput{border:1px solid var(--rule);border-radius:var(--radius-control);background:var(--paper-raised);padding:6px 8px;display:flex;gap:6px;align-items:center;font-size:var(--text-xs);color:var(--ink-faint);margin-bottom:13px}
+.crit{margin-bottom:11px}
+.crit-t{display:flex;align-items:center;justify-content:space-between;font-size:var(--text-xs);margin-bottom:5px}
+.crit-t svg{width:12px;height:12px;color:var(--ink-faint)}
+.crit-r{display:flex;gap:4px}
+.crit-r .op,.crit-r .val{border:1px solid var(--rule);border-radius:var(--radius-control);background:var(--paper-raised);font-family:var(--font-mono);font-size:var(--text-2xs);padding:4px 6px}
+.crit-r .val{flex:1;display:flex;justify-content:space-between;gap:6px}
+.crit-r .val i{font-style:normal;color:var(--ink-faint);font-size:var(--text-micro)}
+.res-main{display:flex;flex-direction:column;min-width:0}
+.res-top{padding:9px 14px;border-bottom:1px solid var(--rule-soft);display:flex;align-items:center;justify-content:space-between;background:var(--paper-strip)}
+.res-top .note{font-size:var(--text-xs);color:var(--ink-faint)}
+.grid{width:100%;border-collapse:collapse}
+.grid th{
+  font-family:var(--font-mono);font-size:var(--text-micro);letter-spacing:var(--tracking-micro);
+  text-transform:uppercase;color:var(--ink-faint);font-weight:400;text-align:left;
+  padding:8px 7px;border-bottom:1px solid var(--rule);background:var(--paper-strip);height:29px;
+}
+.grid th.r,.grid td.r{text-align:right}
+.grid td{padding:7px;border-bottom:1px solid var(--rule-soft);font-size:var(--text-base);vertical-align:middle}
+.grid tr:last-child td{border-bottom:0}
+.grid td:first-child,.grid th:first-child{padding-left:14px}
+.grid td:last-child,.grid th:last-child{padding-right:14px}
+.rk{font-family:var(--font-mono);font-size:var(--text-2xs);color:var(--ink-faint)}
+.matname{font-weight:550;letter-spacing:var(--tracking-name);font-size:var(--text-base);line-height:1.2;display:block}
+.matname span{display:block;font-family:var(--font-mono);font-weight:400;font-size:var(--text-micro);color:var(--ink-faint);margin-top:3px;letter-spacing:0}
+.ev{display:flex;align-items:center;gap:6px;font-size:var(--text-xs);white-space:nowrap}
+.met{display:flex;align-items:center;gap:7px;white-space:nowrap}
+.seg{display:flex;gap:2px}
+.seg i{width:8px;height:3px;border-radius:var(--radius-indicator);background:var(--rule);display:block}
+.seg i.s{background:var(--evidence-strong)}.seg i.l{background:var(--evidence-limited)}.seg i.w{background:var(--evidence-weak)}
+.met span{font-family:var(--font-mono);font-size:var(--text-2xs);color:var(--ink-muted)}
+.n-ok{font-family:var(--font-mono);color:var(--evidence-strong)}
+.n-no{font-family:var(--font-mono);color:var(--evidence-weak)}
+.n{font-family:var(--font-mono);color:var(--ink)}
+sup.ai{font-family:var(--font-mono);font-size:7.5px;color:var(--brand-signal);margin-left:2px;letter-spacing:.04em}
+.res-foot{padding:8px 14px;border-top:1px solid var(--rule-soft);background:var(--paper-strip);font-size:var(--text-micro);font-family:var(--font-mono);letter-spacing:.04em;color:var(--ink-faint)}
+.res-foot em{font-style:normal;color:var(--evidence-strong)}
+
+/* ---- mock 02: the neighbourhood map ----
+   The one screen that is not a table. Distance from the centre IS similarity —
+   the rings are the scale — so a cross-sector grade sitting close in is
+   readable at a glance, which is the whole claim of this step. Dots use the
+   neutral ramp; the ONLY accent is the query grade itself, which is the active
+   selection and therefore allowed it. */
+.mapwrap{flex:1;min-height:0;padding:4px 14px 0;display:flex;align-items:center;justify-content:center}
+.map{width:100%;height:100%;overflow:visible}
+.map .mring{font-family:var(--font-mono);font-size:9px;fill:var(--ink-faint);letter-spacing:.05em}
+.map .mlab{font-family:var(--font-mono);font-size:10px;fill:var(--ink-muted)}
+.map .mq{font-family:var(--font-mono);font-size:9.5px;fill:var(--brand-signal);letter-spacing:.07em}
+.maplegend{display:flex;align-items:center;gap:16px;padding:8px 14px;border-top:1px solid var(--rule-soft);background:var(--paper-strip)}
+.mkey{display:flex;align-items:center;gap:6px;font-family:var(--font-mono);font-size:var(--text-micro);
+      text-transform:uppercase;letter-spacing:var(--tracking-micro);color:var(--ink-faint)}
+.mkey i{width:8px;height:8px;border-radius:50%;display:block;flex:none}
+.mkey .k-same{background:var(--chart-1)}
+.mkey .k-other{background:var(--paper-raised);box-shadow:inset 0 0 0 1.5px var(--chart-2)}
+.mkey .k-q{background:var(--brand-signal)}
+.mnote{margin-left:auto;font-family:var(--font-mono);font-size:var(--text-micro);
+       letter-spacing:.04em;color:var(--chart-4)}
+.split-rail .kv dt{display:flex;gap:7px;align-items:baseline;min-width:0}
+.split-rail .kv dt .rk{font-family:var(--font-mono);font-size:var(--text-micro);color:var(--ink-faint);
+                       font-weight:400;flex:none;width:9px}
+
+/* ---- mock 04: Claude Cowork calling the MCP server ----
+   Deliberately not our app chrome. This screen is somebody else's client, so it
+   gets a light bar and a chat column instead of the graphite appbar and a data
+   grid — otherwise it reads as a fifth Matterialis screen. */
+.appbar-cw{background:var(--paper-sunken);border-bottom:1px solid var(--rule);gap:9px}
+.cw-brand{font-size:var(--text-lg);font-weight:600;letter-spacing:-.02em;color:var(--ink)}
+.cw-sub{font-family:var(--font-mono);font-size:var(--text-2xs);color:var(--ink-faint);
+        text-transform:uppercase;letter-spacing:var(--tracking-micro)}
+.chip-cw{display:flex;align-items:center;gap:6px;font-family:var(--font-mono);font-size:var(--text-2xs);
+         color:var(--ink-muted);border:1px solid var(--rule);border-radius:var(--radius-indicator);
+         padding:3px 8px;background:var(--paper-raised)}
+.chip-cw i{width:5px;height:5px;border-radius:50%;background:var(--evidence-strong);display:block;flex:none}
+.cw{padding:14px 20px 15px;gap:10px;overflow:hidden}
+.cw-msg{display:flex;gap:12px;min-width:0}
+.cw-who{font-family:var(--font-mono);font-size:var(--text-2xs);color:var(--ink-faint);
+        text-transform:uppercase;letter-spacing:var(--tracking-micro);width:52px;flex:none;padding-top:3px}
+.cw-msg .cw-body{min-width:0;flex:1}
+.cw-user .cw-body{background:var(--paper-sunken);border:1px solid var(--rule-soft);
+                  border-radius:10px;padding:10px 13px}
+.cw-body p{font-size:var(--text-md);line-height:1.55;color:#43464A}
+.cw-line{margin-bottom:8px}
+.cw-line:last-of-type{margin-bottom:0}
+.cw-line b{font-weight:550;color:var(--ink)}
+.cw-tool{border:1px solid var(--rule);border-radius:8px;overflow:hidden;margin-bottom:9px}
+.cw-tool-h{display:flex;align-items:center;gap:9px;padding:7px 11px;background:var(--paper-strip);
+           border-bottom:1px solid var(--rule-soft);font-family:var(--font-mono);font-size:var(--text-2xs);
+           color:var(--ink-muted)}
+.cw-tool-h b{font-weight:400;color:var(--ink)}
+.cw-tool-h .ic{color:var(--ink-faint);stroke:currentColor;fill:none;stroke-width:1.6}
+.cw-ok{margin-left:auto;color:var(--evidence-strong)}
+.cw-args{width:100%;border-collapse:collapse}
+.cw-args td{padding:4px 11px;font-size:var(--text-base);border-bottom:1px solid var(--rule-soft);
+            font-family:var(--font-mono);color:var(--ink-muted)}
+.cw-args tr:last-child td{border-bottom:0}
+.cw-args td.v{text-align:right;color:var(--ink);white-space:nowrap}
+.cw-res{border:1px solid var(--rule);border-radius:8px;overflow:hidden;margin-bottom:10px}
+.cw-res-h{display:flex;align-items:center;justify-content:space-between;padding:7px 12px;
+          background:var(--paper-strip);border-bottom:1px solid var(--rule-soft)}
+.cw-res-h .note{font-size:var(--text-xs);color:var(--ink-faint)}
+.cw-cite{display:flex;align-items:center;gap:7px;margin-top:10px;font-family:var(--font-mono);
+         font-size:var(--text-micro);letter-spacing:.03em;color:var(--ink-faint)}
+/* a chat with no composer leaves the panel bottom visibly empty */
+.cw-compose{margin-top:auto;display:flex;align-items:center;gap:10px;padding:10px 14px;
+            border:1px solid var(--rule);border-radius:9px;background:var(--paper-raised);
+            font-size:var(--text-md);color:var(--ink-faint)}
+.cw-compose .ic{margin-left:auto;color:var(--ink-faint);stroke:currentColor;fill:none;stroke-width:1.8;flex:none}
+.cw-cite .ic{stroke:currentColor;fill:none;stroke-width:1.6;flex:none}
+.res-foot b{font-weight:400;color:var(--evidence-weak)}
+/* classification map screen */
+.map{display:grid;grid-template-columns:minmax(0,1fr) 356px;flex:1;min-height:0}
+.map-main{padding:14px;min-width:0;overflow:hidden}
+.map-rail{border-left:1px solid var(--rule-soft);background:var(--paper-strip);padding:14px;overflow:hidden;display:flex;flex-direction:column}
+.cardgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-top:9px}
+.pcard{border:1px solid var(--rule);border-radius:var(--radius-surface);background:var(--paper-raised);padding:10px 11px 9px;display:flex;flex-direction:column;gap:7px;min-height:112px}
+.pcard-t{display:flex;align-items:center;justify-content:space-between}
+.pcard-t .n{font-family:var(--font-mono);font-size:var(--text-micro);color:var(--ink-faint)}
+.pcard-t svg{width:13px;height:13px;color:var(--ink-faint)}
+.pcard h5{margin:0;font-size:var(--text-md);font-weight:550;letter-spacing:var(--tracking-name)}
+.chips{display:flex;flex-wrap:wrap;gap:3px}
+.chip{font-family:var(--font-mono);font-size:var(--text-micro);color:var(--ink-muted);border:1px solid var(--rule);border-radius:var(--radius-indicator);padding:2px 5px;background:var(--paper-raised)}
+.pcard-f{margin-top:auto;padding-top:8px;border-top:1px solid var(--rule-soft);font-family:var(--font-mono);font-size:var(--text-micro);color:var(--ink-muted);letter-spacing:.04em}
+.nbr{display:flex;align-items:center;gap:9px;padding:7px 0;border-bottom:1px solid var(--rule-soft)}
+.nbr:last-child{border-bottom:0}
+.nbr .nm{flex:1;min-width:0;font-size:var(--text-xs);letter-spacing:var(--tracking-name);line-height:1.25}
+.nbr .nm em{display:block;font-style:normal;font-family:var(--font-mono);font-size:var(--text-micro);color:var(--ink-faint);letter-spacing:var(--tracking-micro);margin-top:2px;text-transform:uppercase}
+.nbr .pc{font-family:var(--font-mono);font-size:var(--text-2xs);width:32px;text-align:right;flex:none}
+.spark{width:70px;height:3px;background:var(--rule-soft);border-radius:var(--radius-indicator);flex:none;position:relative;overflow:hidden}
+.spark i{position:absolute;left:0;top:0;bottom:0;background:var(--chart-2);border-radius:var(--radius-indicator);display:block}
+</style>
+<style>
+/* ---- classification section ---- */
+.ont{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:44px}
+.panel{background:var(--paper-raised);border:1px solid var(--rule);border-radius:var(--radius-surface);padding:22px}
+.panel-head{display:flex;align-items:baseline;justify-content:space-between;gap:14px;margin-bottom:16px}
+.panel-head h3{font-size:17px;letter-spacing:-.024em}
+.count{font-family:var(--font-mono);font-size:var(--text-2xs);color:var(--ink-muted);white-space:nowrap}
+.axis{border-top:1px solid var(--rule-soft);padding:13px 0}
+.axis:first-of-type{border-top:0;padding-top:0}
+.axis-t{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin-bottom:8px}
+.axis-t h4{font-size:var(--text-lg);font-weight:550;letter-spacing:var(--tracking-name)}
+.ont-note{margin-top:20px;font-size:var(--text-md);color:var(--ink-muted);line-height:1.5}
+.famgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;border:1px solid var(--rule);border-radius:var(--radius-surface);overflow:hidden;margin-top:14px}
+.fam{padding:13px 14px;border-right:1px solid var(--rule-soft);border-bottom:1px solid var(--rule-soft);background:var(--paper-raised)}
+.fam h5{margin:0 0 7px;font-size:var(--text-md);font-weight:550;letter-spacing:var(--tracking-name)}
+.fam .micro{margin-bottom:6px}
+
+/* ---- use cases ---- */
+.ucards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:44px}
+.uc{
+  background:var(--paper-raised);border:1px solid var(--rule);border-radius:var(--radius-surface);
+  padding:0;text-align:left;font:inherit;color:inherit;cursor:pointer;display:flex;flex-direction:column;
+  transition:border-color var(--dur-fast) var(--ease),background var(--dur-fast) var(--ease);
+}
+.uc:hover{border-color:#D6D9DB;background:var(--paper-strip)}
+.uc-plate{
+  aspect-ratio:16/9;background:var(--paper-sunken);border-bottom:1px solid var(--rule-soft);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:9px;color:var(--ink-faint);
+}
+.uc-plate svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.uc-body{padding:16px 17px 15px;display:flex;flex-direction:column;gap:9px;flex:1}
+.uc-body h3{font-size:var(--text-xl);letter-spacing:-.022em;line-height:1.28;font-weight:600}
+.uc-body p{font-size:var(--text-md);color:var(--ink-muted);line-height:1.5}
+.uc-foot{margin-top:auto;padding-top:13px;border-top:1px solid var(--rule-soft);display:flex;align-items:center;justify-content:space-between;gap:10px}
+.uc-open{display:inline-flex;align-items:center;gap:6px;font-size:var(--text-xs);font-weight:500;color:var(--ink)}
+.uc.self .uc-plate{background:var(--chrome);color:var(--chrome-fg-dim);border-bottom-color:var(--chrome-line)}
+
+/* ---- inspector panel ---- */
+.scrim{position:fixed;inset:0;background:rgb(20 22 24 / .45);opacity:0;pointer-events:none;transition:opacity var(--dur-medium) var(--ease);z-index:90}
+.scrim.on{opacity:1;pointer-events:auto}
+.insp{
+  position:fixed;top:0;right:0;bottom:0;width:min(520px,100%);background:var(--paper-raised);
+  border-left:1px solid var(--rule);z-index:95;transform:translateX(100%);
+  transition:transform var(--dur-slow) var(--ease-out);display:flex;flex-direction:column;
+  box-shadow:var(--shadow-overlay);
+}
+.insp.on{transform:none}
+.insp-bar{height:46px;flex:none;display:flex;align-items:center;gap:10px;padding:0 14px;background:var(--chrome);color:var(--chrome-fg)}
+.insp-bar .micro{color:var(--chrome-fg-dim);flex:1}
+.insp-close{background:transparent;border:1px solid var(--chrome-line);border-radius:var(--radius-control);height:26px;width:26px;display:flex;align-items:center;justify-content:center;color:var(--chrome-fg-muted);cursor:pointer;transition:background var(--dur-fast) var(--ease)}
+.insp-close:hover{background:var(--chrome-raised)}
+.insp-scroll{flex:1;overflow-y:auto}
+.insp-hero{padding:22px 24px 20px;border-bottom:1px solid var(--rule)}
+.insp-hero h2{font-size:24px;letter-spacing:-.026em;line-height:1.15;margin-top:12px}
+.insp-hero .role{font-family:var(--font-mono);font-size:var(--text-2xs);color:var(--ink-muted);margin-top:10px;letter-spacing:.03em}
+.insp-block{padding:20px 24px;border-bottom:1px solid var(--rule-soft)}
+.insp-block:last-child{border-bottom:0}
+.insp-block .micro{margin-bottom:10px}
+.insp-block p{font-size:var(--text-md);line-height:1.6;color:#43464A}
+.insp-block p+p{margin-top:10px}
+.steplist{list-style:none;margin:0;padding:0}
+.steplist li{display:flex;gap:11px;padding:9px 0;border-bottom:1px solid var(--rule-soft);font-size:var(--text-md);line-height:1.5;color:#43464A}
+.steplist li:last-child{border-bottom:0}
+.steplist b{font-family:var(--font-mono);font-size:var(--text-micro);color:var(--ink-faint);letter-spacing:var(--tracking-micro);flex:none;padding-top:3px;width:16px}
+.insp-foot{flex:none;border-top:1px solid var(--rule);padding:12px 24px;display:flex;gap:8px;background:var(--paper-strip)}
+
+/* ---- trust ---- */
+.trust{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:44px}
+.tcard{background:var(--paper-raised);border:1px solid var(--rule);border-radius:var(--radius-surface);padding:22px;display:flex;flex-direction:column;gap:10px}
+.tcard svg{width:16px;height:16px;color:var(--ink-muted);stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;margin-bottom:4px}
+.tcard h3{font-size:var(--text-xl);letter-spacing:-.022em;line-height:1.3}
+.tcard p{font-size:var(--text-md);color:var(--ink-muted);line-height:1.55}
+.datapanel{margin-top:14px;max-width:1020px;background:var(--chrome);border-radius:var(--radius-surface);padding:26px 28px;color:var(--chrome-fg-strong)}
+.datapanel h3{color:#fff;font-size:22px;letter-spacing:-.024em;margin:12px 0 14px;max-width:620px}
+.datapanel p{font-size:var(--text-md);line-height:1.6;color:var(--chrome-fg-muted);max-width:660px}
+.datapanel p+p{margin-top:11px}
+.datapanel .micro{color:var(--chrome-fg-dim)}
+.dtiers{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:var(--chrome-line);border:1px solid var(--chrome-line);border-radius:var(--radius-control);overflow:hidden;margin-top:20px}
+.dtier{background:var(--chrome);padding:16px 18px}
+.dtier h4{color:#fff;font-size:var(--text-lg);font-weight:550;letter-spacing:var(--tracking-name);margin-bottom:7px}
+.dtier p{font-size:var(--text-xs);color:var(--chrome-fg-dim);line-height:1.5;max-width:none}
+.dtiers-label{margin-top:22px;color:var(--chrome-fg-dim);font-size:var(--text-2xs)}
+.dtiers{margin-top:10px}
+.dtier h4{margin-bottom:4px}
+.dtier .dtier-line{color:var(--chrome-fg-strong);font-size:var(--text-md);margin-bottom:7px}
+
+/* ---- comparison: rule-separated grid, never cards ----
+   The three-state mark uses the NEUTRAL data ramp on purpose. Evidence colour
+   (green / amber / red) reports evidence strength about a material and must not
+   be borrowed to score a competitor. The accent stays out of here too. */
+.cmp-scroll{margin-top:44px;overflow-x:auto;-webkit-overflow-scrolling:touch}
+.cmp{min-width:980px;border:1px solid var(--rule);border-radius:var(--radius-surface);background:var(--paper-raised);overflow:hidden}
+.cmp-row{display:grid;grid-template-columns:minmax(0,1.15fr) repeat(5,minmax(0,1fr));border-top:1px solid var(--rule)}
+.cmp-row:first-child{border-top:0}
+.cmp-cell{padding:17px 18px;border-left:1px solid var(--rule-soft);min-width:0}
+.cmp-cell:first-child{border-left:0}
+.cmp-head{background:var(--paper-strip)}
+.cmp-head .cmp-cell{padding-top:14px;padding-bottom:14px}
+.cmp-name{display:block;font-size:var(--text-lg);font-weight:550;letter-spacing:var(--tracking-name);margin-bottom:5px}
+/* competitor logo slots. Held at a shared optical height so differing aspect
+   ratios do not shift the descriptor below, and GREYSCALED on purpose: the
+   three marks are red, teal and green, and this table sits inches from the
+   green/red/amber evidence ramp. Full colour here would read as evidence.
+   Square marks get a nudge — they read small at a shared height. If a file is
+   missing the wordmark text takes over (see the .cmp-logo loop in the JS). */
+/* Slot is sized for the tallest lockup, which is UL's stacked one. Everything
+   else centres inside it, so swapping a logo does not shift the row. */
+.cmp-logo{display:flex;align-items:center;justify-content:center;height:34px;margin-bottom:8px}
+/* ONE INK FOR EVERY THIRD-PARTY LOGO ON THE PAGE. Both the compare header and
+   the team credit go through this, so a logo added to either looks like it
+   belongs to the same page. Greyscale alone is not enough: UL's red drops to a
+   dark grey while SpecialChem's green lands pale and Cambridge's heraldry turns
+   to mud, so the row reads as several different treatments — and SpecialChem's
+   own two-tone logotype splits into black plus pale grey, which looks like a
+   rendering fault. The brightness knock pulls the mid-greys onto the same
+   density as the body ink. Do NOT swap it for brightness(0): these marks have
+   interior detail — UL's counters, the SpecialChem pupil, the Cambridge shield —
+   that a silhouette destroys. */
+.cmp-logo img,.orglogo img{filter:grayscale(1) brightness(.66) contrast(1.06)}
+.cmp-logo img{width:auto;max-width:142px;object-fit:contain}
+.cmp-logo svg{height:18px;width:auto}
+/* Heights are per-logo and optical, NOT shared: these three lockups put wildly
+   different amounts of their box height into the part you actually read. UL is
+   all mark, so its box height IS its cap height; Knowde and SpecialChem carry a
+   full-height mark next to a much shorter logotype, so matching box heights
+   would leave their names half the size of UL's ring. Re-tune by eye against
+   the row labels if a logo is ever re-exported. */
+.cmp-logo.l-ul img{height:31px}       /* stacked lockup: ring over wordmark */
+.cmp-logo.l-knowde img{height:22px}
+.cmp-logo.l-specialchem img{height:22px}
+.cmp-logo.l-matweb img{height:23px}
+.cmp-logo .cmp-name{display:none}
+.cmp-logo.nologo .cmp-name{display:block;margin-bottom:0}
+/* team credit marks, same ink as the compare header. Heights are per-logo and
+   optical for the same reason: IBM is a wordmark whose cap height IS its box,
+   Cambridge is a shield stacked over two lines of type. Matched on width (both
+   land near 50px) rather than height, which is what makes them read as equals.
+   Cambridge is kept whole rather than reduced to the shield — at 44px the
+   wordmark is legible, and the shield alone would drop the institution's name
+   out of its own credit. */
+.orglogos{display:flex;align-items:flex-end;gap:26px;margin-top:20px}
+.orglogo{display:flex;align-items:flex-end;height:54px}
+.orglogo img{width:auto;max-width:150px;object-fit:contain}
+.orglogo.l-ibm img{height:27px}
+.orglogo.l-camb img{height:52px}
+.orglogo .orgname{display:none;font-size:var(--text-md);color:var(--ink-muted)}
+.orglogo.nologo .orgname{display:block}
+/* our column is highlighted with the chrome surface — the same graphite the
+   app chrome uses. NOT the accent: it is reserved for the active state and the
+   reasoning rail, and never a fill behind body text. */
+.cmp-us{background:var(--chrome);border-left-color:var(--chrome);border-right:1px solid var(--chrome)}
+.cmp-us .cmp-name{color:#fff}
+.cmp-us .micro{color:var(--chrome-fg-dim)}
+.cmp-us p{color:var(--chrome-fg-muted)}
+.cmp-head .cmp-us{border-top:2px solid var(--brand-signal)}
+.cmp-head .cmp-us .cmp-name{font-weight:600}
+.cmp-what h3{font-size:16px;letter-spacing:-.02em;line-height:1.3}
+.cmp-what{display:flex;align-items:center}
+.cmp-cell p{font-size:var(--text-xs);color:var(--ink-muted);line-height:1.55}
+/* The four product columns centre their contents — logo, descriptor and mark
+   all on one axis. The row label keeps its left edge. With the marks reduced to
+   a glyph, left-aligning them left each one stranded against a wide cell. */
+.cmp-cell:not(.cmp-what){display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+/* Tick / dash / cross, drawn rather than spelled out. Colour rides on
+   `currentColor`, so the chrome column needs ONE override for all three states
+   instead of a per-state one — the old boxed version needed
+   `.cmp-us .mark.full i` specificity or the marks vanished into the graphite.
+   The ramp is the neutral data ramp, NOT evidence colour: a green tick and a
+   red cross here would be scoring a competitor with the vocabulary reserved for
+   evidence strength about a material. */
+.mark{display:flex;align-items:center;justify-content:center}
+.mark svg{width:17px;height:17px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.mark.full{color:var(--chart-1)}
+.mark.full svg{stroke-width:2.5}
+.mark.part{color:var(--chart-3)}
+.mark.none{color:var(--chart-4)}
+.cmp-us .mark{color:#fff}
+/* icon-only cells still need a name for anyone not looking at them */
+.vh{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+.cmp-swipe{display:none;margin-top:12px}
+.cmp-swipe:not([hidden]){display:flex}
+.cmp-note{margin-top:16px;max-width:820px;font-size:var(--text-md);line-height:1.6;color:var(--ink-faint)}
+.cmp-note a{color:var(--ink-muted);border-bottom:1px solid var(--rule)}
+
+/* ---- faq ---- */
+.faq{max-width:880px;margin-top:40px}
+details{border-bottom:1px solid var(--rule)}
+details:first-of-type{border-top:1px solid var(--rule)}
+summary{list-style:none;cursor:pointer;padding:19px 40px 19px 0;position:relative;font-size:var(--text-xl);font-weight:550;letter-spacing:-.018em}
+summary::-webkit-details-marker{display:none}
+summary:after{content:"";position:absolute;right:6px;top:50%;width:8px;height:8px;border-right:1.5px solid var(--ink-muted);border-bottom:1.5px solid var(--ink-muted);transform:translateY(-72%) rotate(45deg);transition:transform var(--dur-fast) var(--ease)}
+details[open] summary:after{transform:translateY(-28%) rotate(225deg)}
+details .a{padding:0 56px 22px 0;font-size:var(--text-md);line-height:1.65;color:#43464A}
+details .a p+p{margin-top:11px}
+details .a strong{font-weight:550;color:var(--ink)}
+
+/* ---- cta ---- */
+.cta{background:var(--chrome);color:var(--chrome-fg-strong);padding:92px 0}
+.cta h2{color:#fff;max-width:760px;margin-top:16px}
+.cta .lede{color:var(--chrome-fg-muted);margin-top:18px;max-width:600px}
+.opts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:40px 0 32px}
+.opt{border:1px solid var(--chrome-line);border-radius:var(--radius-surface);padding:18px;background:#17191B}
+.opt-head{display:flex;align-items:center;gap:9px;margin-bottom:14px}
+.opt-ic{width:18px;height:18px;flex:none;stroke:var(--chrome-fg-muted);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.opt .micro{color:var(--chrome-fg-dim);display:inline-block}
+.opt h4{color:#fff;font-size:var(--text-xl);letter-spacing:-.02em;margin-bottom:7px;line-height:1.3}
+.opt p{font-size:var(--text-md);color:var(--chrome-fg-dim);line-height:1.5}
+
+/* ---- footer ---- */
+footer{background:var(--chrome);border-top:1px solid var(--chrome-line);padding:30px 0}
+.foot{display:flex;align-items:center;gap:22px;flex-wrap:wrap}
+.foot svg{height:36px;width:auto}
+.foot nav{margin-left:auto;display:flex;gap:20px;font-size:var(--text-base)}
+.foot nav a{color:var(--chrome-fg-muted)}
+.foot nav a:hover{color:#fff}
+
+/* ---- reveal ---- */
+.rv{opacity:0;transform:translateY(8px);transition:opacity var(--dur-slow) var(--ease-out),transform var(--dur-slow) var(--ease-out)}
+.rv.in{opacity:1;transform:none}
+
+
+/* ---- use-case cards (v3: horizontal, real photography) ---- */
+.ucards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:44px}
+.uc{
+  display:grid;grid-template-columns:190px minmax(0,1fr);background:var(--paper-raised);
+  border:1px solid var(--rule);border-radius:var(--radius-surface);overflow:hidden;
+  text-align:left;font:inherit;color:inherit;cursor:pointer;padding:0;
+  transition:border-color var(--dur-fast) var(--ease),background var(--dur-fast) var(--ease);
+}
+.uc:hover{border-color:#D3D7D9;background:var(--paper-strip)}
+.uc-media{position:relative;background:var(--paper-sunken);border-right:1px solid var(--rule-soft);overflow:hidden;min-height:186px}
+.uc-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.02)}
+.uc-plate{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;color:var(--ink-faint);padding:14px;text-align:center}
+.uc-plate svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.uc-body{padding:16px 18px 15px;display:flex;flex-direction:column;gap:8px;min-width:0}
+.uc-body h3{font-size:var(--text-xl);letter-spacing:-.022em;line-height:1.3;font-weight:600}
+.uc-body p{font-size:var(--text-md);color:var(--ink-muted);line-height:1.5}
+.uc-foot{margin-top:auto;padding-top:13px;display:flex;align-items:center;justify-content:space-between;gap:10px}
+.uc-open{display:inline-flex;align-items:center;gap:6px;font-size:var(--text-xs);font-weight:500}
+.uc.self .uc-media{background:var(--chrome)}
+.uc.self .uc-plate{color:var(--chrome-fg-dim)}
+.uc-more{display:flex;justify-content:center;margin-top:18px}
+.uc-hidden{display:none}
+.uc-hidden.shown{display:grid}
+.credit{margin-top:22px;font-family:var(--font-mono);font-size:var(--text-micro);letter-spacing:.05em;text-transform:uppercase;color:var(--ink-faint)}
+.credit a{border-bottom:1px solid var(--rule)}
+
+/* ---- trust (v3: rule-separated rows, no cards) ---- */
+.tlist{border:1px solid var(--rule);border-radius:var(--radius-surface);background:var(--paper-raised);margin-top:40px;max-width:1020px}
+.trow{display:grid;grid-template-columns:168px minmax(0,1fr);gap:24px;padding:24px 26px;border-top:1px solid var(--rule-soft);align-items:start}
+.trow:first-child{border-top:0}
+.trow-k{display:flex;flex-direction:column;gap:9px}
+.trow-k svg{width:16px;height:16px;color:var(--ink-faint);stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.trow h3{font-size:17px;letter-spacing:-.02em;line-height:1.35;margin-bottom:7px;max-width:56ch}
+.trow p{font-size:var(--text-md);line-height:1.6;color:var(--ink-muted);max-width:82ch}
+
+/* ---- mobile: one mock per step ---- */
+
+@media (max-width:1080px){
+  .ucards{grid-template-columns:minmax(0,1fr)}
+  .trow{grid-template-columns:minmax(0,1fr);gap:12px;padding:20px}
+}
+@media (max-width:760px){
+  .uc{grid-template-columns:minmax(0,1fr)}
+  .uc-media{min-height:0;aspect-ratio:16/9;border-right:0;border-bottom:1px solid var(--rule-soft)}
+}
+
+/* ---- responsive ---- */
+@media (max-width:1080px){
+  /* One column, copy first, and the mock keeps its real size inside a
+     horizontal scroller rather than being scaled into illegibility — at 390px
+     a width-fit scale would be 0.33 and the tables would be 4px tall. The
+     alternating order collapses: every row reads copy-then-mock. */
+  .feat,.feat-flip{grid-template-columns:minmax(0,1fr);gap:22px;padding:38px 0}
+  .feat-flip .feat-shot,.feat-flip .feat-txt{grid-column:1;grid-row:auto}
+  .feat-shot{order:2;aspect-ratio:auto;height:auto;overflow-x:auto;overflow-y:hidden;
+             -webkit-overflow-scrolling:touch;border:1px solid var(--rule);
+             border-radius:var(--radius-frame);background:var(--paper-raised);box-shadow:var(--shadow-frame)}
+  .feat-shot .scaler{position:relative;transform:none!important;width:1180px;height:620px}
+  .feat-shot .surface{border:0;border-radius:0;box-shadow:none}
+  .feat-txt{order:1}
+  .feat-txt .swipe{display:flex}
+  .ont,.ucards,.trust,.opts,.dtiers{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .famgrid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .proof-grid{grid-template-columns:repeat(2,1fr)}
+  .stat{border-bottom:1px solid var(--rule-soft)}
+  .stat:nth-child(2){border-right:0}
+  .cardgrid{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:760px){
+  :root{--gutter:20px}
+  .nav-links{display:none}
+  .navtoggle{display:flex}
+  .nav-actions .btn-ghost-chrome{display:none}
+  .hero{padding-top:52px}
+  .sec{padding:64px 0}
+  .console{padding:22px 18px}
+  .ont,.ucards,.trust,.opts,.dtiers,.famgrid,.proof-grid{grid-template-columns:minmax(0,1fr)}
+  .stat{border-right:0}
+  .insp{width:100%}
+  .foot nav{margin-left:0;width:100%}
+}
+.swipe{display:none;align-items:center;gap:7px;margin-top:10px;font-family:var(--font-mono);font-size:var(--text-micro);text-transform:uppercase;letter-spacing:var(--tracking-micro);color:var(--ink-faint)}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  .rv{opacity:1;transform:none}
+}
+</style>
+
+<style>
+/* ============================================================
+   AI PLATFORMS PAGE: additions on top of the shared stylesheet.
+   Same tokens, same rules. Nothing here introduces a colour, a
+   radius or a type size that is not already a token above.
+   ============================================================ */
+
+/* ---- hero: somebody else's client calling us (MOCK4), copied from /suppliers/ ---- */
+.hero-shot{position:relative;width:100%;aspect-ratio:1180/664;margin-top:48px}
+.hero-shot .surface{height:100%;display:flex;flex-direction:column;box-shadow:var(--shadow-frame)}
+@media (max-width:1080px){
+  .hero-shot{aspect-ratio:auto;overflow-x:auto;overflow-y:hidden;-webkit-overflow-scrolling:touch;border:1px solid var(--rule);border-radius:var(--radius-frame);background:var(--paper-raised);box-shadow:var(--shadow-frame)}
+  .hero-shot .scaler{position:relative;transform:none!important;width:1180px;height:664px}
+  .hero-shot .surface{border:0;border-radius:0;box-shadow:none}
+}
+
+/* ---- status tag: said once, beside the call ---- */
+.statustag{display:inline-flex;align-items:center;gap:7px;font-family:var(--font-mono);font-size:var(--text-2xs);
+  letter-spacing:.04em;color:var(--ink-muted);border:1px solid var(--rule);border-radius:var(--radius-indicator);
+  padding:2px 7px;background:var(--paper-raised);white-space:nowrap}
+.statustag i{width:5px;height:5px;border-radius:var(--radius-indicator);background:var(--chart-3);display:block;flex:none}
+
+/* ---- row 01: the call, written out. A rule-separated definition grid, never a card stack ---- */
+.feat-spec{align-self:center;min-width:0}
+.callspec{border:1px solid var(--rule);border-radius:var(--radius-surface);background:var(--paper-raised);overflow:hidden}
+.callspec-h{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 16px;
+  background:var(--paper-strip);border-bottom:1px solid var(--rule)}
+.callspec dl{margin:0;display:grid;grid-template-columns:150px minmax(0,1fr)}
+.callspec dt,.callspec dd{margin:0;padding:13px 16px;border-bottom:1px solid var(--rule-soft)}
+.callspec dt{font-family:var(--font-mono);font-size:var(--text-2xs);text-transform:uppercase;
+  letter-spacing:var(--tracking-micro);color:var(--ink-faint);padding-top:15px}
+.callspec dd{font-size:var(--text-md);line-height:1.5;color:var(--ink)}
+.callspec dt:last-of-type,.callspec dd:last-of-type{border-bottom:0}
+@media (max-width:1080px){ .feat-spec{order:2} }
+@media (max-width:520px){
+  .callspec dl{grid-template-columns:minmax(0,1fr)}
+  .callspec dt{padding-bottom:0;border-bottom:0}
+  .callspec dd{padding-top:4px}
+}
+
+/* ---- where it fits: three columns, hairlines, our column marked in chrome ---- */
+.fit3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));margin-top:44px;
+  border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+.fit3>div{padding:26px 26px 30px;border-right:1px solid var(--rule-soft)}
+.fit3>div:first-child{padding-left:0}
+.fit3>div:last-child{border-right:0;padding-right:0}
+.fit3 .us{position:relative;background:var(--paper-raised);padding-left:26px;padding-right:26px}
+.fit3 .us::before{content:"";position:absolute;left:0;right:0;top:-1px;height:2px;background:var(--chrome)}
+.fit3 h3{font-size:18px;letter-spacing:-.02em;margin-top:12px}
+.fit3 p{margin-top:10px;font-size:14px;line-height:1.6;color:#43464A}
+@media (max-width:1080px){
+  .fit3{grid-template-columns:minmax(0,1fr)}
+  .fit3>div,.fit3>div:first-child,.fit3>div:last-child{padding:22px 0;border-right:0;border-bottom:1px solid var(--rule-soft)}
+  .fit3>div:last-child{border-bottom:0}
+  .fit3 .us{padding-left:18px;padding-right:18px}
+}
+.trow p{max-width:70ch}
+</style>
+
+</head>
+<body>
+<!-- brand:sprite (generated by matterialis-brand/brand/make-brand.py from img/brand/matterialis-lockup-colour.svg; edit the master, not this) -->
+<svg width="0" height="0" aria-hidden="true" focusable="false" style="position:absolute"><symbol id="mtl-lockup" viewBox="0 0 577.6 118.1"><g style="fill:var(--logo-ink,#FFFFFF)"><defs><clipPath id="mtl-clippath"><path fill="none" d="M2.2,82c-2.2,0-2.9-1.5-1.5-3.7L63.7,2.9C65.2.7,66.6,0,69.6,0h19.8C91.5,0,92.3.7,92.3,2.9v38.1c.3.2.4-2.1,1.9-3.7L122.3,3.7C124.5,1.5,125.9,0,128.1,0h24.9C155.2,0,155.9.7,155.9,2.9v76.1c0,2.2-.7,2.9-2.9,2.9h-19c-2.2,0-2.9-.7-2.9-2.9v-43.9l-34.3,44.8c-1,1.2-1.7,2-2.3,2h-23.5c-2.2,0-2.9-.7-2.9-2.9v-43.2l-39.4,43.9c-1.5,1.5-2.9,2.2-5.1,2.2H2.2Z"/></clipPath></defs><path d="M155.9,2.9v76.1c0,2.2-.7,2.9-2.9,2.9h-19c-2.2,0-2.9-.7-2.9-2.9v-46.2l-33.7,46.2c-1.9,1.3-2.3,2.9-3.5,2.9h-22.9c-2.2,0-2.9-.7-2.9-2.9v-43.2l-39.5,43.9c-1.5,1.5-2.9,2.2-5.1,2.2H2.2c-2.2,0-2.9-1.5-1.5-3.7L63.7,2.9C65.2.7,66.6,0,69.6,0h19.8C91.6,0,92.3.7,92.3,2.9v39.7c0,1.5.7-.1,1.5-1.6L122.3,3.7C124.5,1.5,125.9,0,128.1,0h24.9C155.2,0,155.9.7,155.9,2.9Z"/><g clip-path="url(#mtl-clippath)"><path fill="#3678F3" d="M95.9,83.6l-35.1,1.3S123.6,0,125.3,0h30.1"/></g><path fill-rule="evenodd" d="M195.5,73.5c-.2,0-.4-.3-.4-.4s-.1-10.5-.2-23c-.1-30.3-.1-37.3,0-38.2.2-1.3,0-1.3,5.7-1.3s5.2,0,5.5.2c.4.1.6.4,1.2,1.6.4.8.8,1.6.8,1.8s.3.7.5,1.2.4,1,.5,1.2c0,.2.2.5.4.7.1.2.4.8.6,1.2s.4,1,.6,1.3.4.8.6,1.2c.2.4.4,1,.6,1.2s.3.5.4.7c.2.6,1.3,2.9,2,4.3.4.7.9,1.7,1.2,2.2s.8,1.5,1.3,2.4.8,1.5.8,1.6c0,0,1.6,3.7,2.7,6,.3.6.7,1.6,1.1,2.3.3.7.8,1.7,1,2.2s.5,1,.5,1.1.2.6.5,1.1.6,1.2.7,1.5.3.8.4,1,.4.7.5,1.1.3.8.4.9c.1,0,.3.5.5,1s.4,1,.6,1.2.4.6.4.9c.2.7,1,2.2,2.3,4.9.6,1.2,1.1,2.4,1.2,2.7.3.9,1.4,1,1.7.2.1-.4.8-1.8,2.7-5.8.3-.7.6-1.3.6-1.4s1.1-2.5,1.4-3c.1-.2.3-.7.5-1,.5-1.2,1.6-3.3,2.3-4.5,1.2-2.2,1.8-3.4,3-6.2.2-.4.6-1.3.8-2s.5-1.3.5-1.3l.4-1c.2-.5.5-1,.5-1.2.1-.4,2.2-4.7,2.5-5.2.1-.2.4-.7.5-1,.2-.4.5-1,.7-1.5.7-1.3,1.6-3.4,1.6-3.5s.3-.7.6-1.4.8-1.7,1.1-2.3c1.4-3,1.7-3.7,1.9-4.1.1-.2.4-.8.6-1.2.9-1.8,1.5-2.7,2-2.9.3-.1,2-.2,5.4-.2,6.2,0,5.6-.4,5.7,3,0,1.4.1,15.1.1,30.6,0,30.6,0,28.9-.8,29.3-.5.2-6.5,0-6.9-.2-.6-.3-.6-.5-.7-16,0-8.2-.1-17.5-.2-20.8,0-3.3-.1-7.2-.1-8.7,0-2.4,0-2.7-.2-2.8-.3-.1-.6.1-.9,1-.3.7-1.1,2.4-1.7,3.7-.2.3-.6,1.2-.9,1.9-1.3,2.8-2.8,6-3.3,6.8-.1.2-.5,1-.9,1.8s-.9,1.9-1.2,2.5-.5,1.1-.5,1.2c0,0-.2.6-.5,1.2-.3.6-.5,1.2-.5,1.3s-.2.5-.4.9-.5.9-.6,1.2-.4.9-.6,1.4c-.2.4-.7,1.4-1,2.1s-.9,1.8-1.2,2.5c-.3.6-.8,1.6-1,2.2-.9,1.9-1.6,3.4-4.1,8.5-1.4,2.8-2.6,5.3-2.7,5.5-.1.5-1.2,2.4-1.5,2.6-.2.2-1.2.2-5.2.2h-2.3l-.6-.6c-.4-.4-.7-.9-1-1.7-.5-1.4-1.5-3.8-1.8-4.4-.2-.5-1.6-3.3-2.2-4.5-.2-.4-.4-.9-.6-1.1-.4-.6-4-8-4.6-9.2s-.8-1.7-1-2.1c-.3-.5-1.6-3.3-2.1-4.4-.2-.6-.7-1.5-.9-2s-.7-1.5-1-2.2c-.3-.6-.7-1.4-.8-1.7s-.4-.9-.6-1.3c-.2-.4-.5-1-.6-1.2s-.4-.7-.5-1-.4-.9-.6-1.2c-.2-.3-.4-.8-.5-1.1s-.7-1.5-1.2-2.7c-1.4-3-1.8-3.7-2.1-4.8-.3-1-1.1-1.9-1.3-1.6-.3.3-.4,29.9-.2,42.5v5.8l-.3.3c-.4.2-.8.3-3.7.3s-3.4,0-3.6,0h0l-.3-.2Z"/><path fill-rule="evenodd" d="M286.2,74.8c-3.3-.4-7.2-2.3-9.8-4.6-3.2-3-4.8-8.5-3.7-12.9.2-.8.5-1.6.6-1.8,1.2-2.3,1.6-2.8,3.2-4.4,1.3-1.3,2.5-2.3,3.4-2.7.3-.2.8-.4,1-.5.7-.4,3.7-1.2,4.8-1.4.5,0,1.8-.3,2.8-.4,2.3-.4,6.7-.6,13-.6s5,0,5,0c.4-.3.5-.7.3-2.6-.2-2.6-.2-2.9-.9-4.1-1.3-2.5-2.7-3.8-5.3-5-1.4-.7-1.5-.7-3.5-.8-2.2-.2-5.3,0-6.6.4-4.2,1.1-6.4,2.2-9.6,5-1.4,1.2-2,1.4-2.6.7-.2-.2-.7-.7-1.2-1.1-2.6-2.4-2.8-2.8-1.4-4.3,3.2-3.3,5.5-4.6,10.1-5.7,4.5-1.1,5.1-1.2,8.3-1.3,3.3-.1,6.3.1,8,.6.7.2,1.6.4,2,.5.9.2,3.1,1.3,4.1,2,.7.5,2.2,2.1,3,3.1.9,1.2,2.5,4.3,2.8,5.5.1.4.3,1.2.5,1.7.4,1.1.5,7.4.5,23.1v10.1l-.3.4c-.3.3-1.4.4-3.4.4s-3.1,0-3.4-.2c-.6-.3-.8-1-.9-2.9-.1-2.4-.4-2.7-1.4-1.3-.6.8-2,2.1-3.1,2.8-1.9,1.2-5.9,2.5-8.5,2.8-1.5.2-6.6.2-8,0h0l.2-.4ZM295.9,67.8c5-1.3,8.2-3.9,10-8.2.6-1.4.8-2.4,1-5,.1-2,.1-2.2-.1-2.5l-.3-.4h-3.5c-10.7-.2-16.2.7-19.1,3-4.9,3.9-3.3,10.7,3.1,13,1.6.6,2,.6,4.7.6s2.7,0,4.2-.5h0Z"/><path fill-rule="evenodd" d="M336.2,74.3c-3.7-.9-5.4-1.8-7.3-3.8-2.7-3-3.5-4.9-3.8-9.1,0-1.1-.2-6-.2-11.1s-.1-10.7-.2-12.7v-3.6l-.4-.2c-.3,0-1.3-.2-3.5-.2s-3.2,0-3.4-.3c-.2-.2-.2-.8-.3-3v-2.7c-.1,0,.2-.2.2-.2.3-.2,1-.2,3.7-.3,3.1-.1,3.3-.1,3.6-.4.2-.3.3-.9.4-6v-5.7l.5-.3c.5-.4,1.9-.9,3.6-1.1.8,0,1.9-.2,2.5-.3,1.8-.3,1.7-.7,1.8,6.8,0,5.8.1,6.3.3,6.6.2.3.6.3,5.4.4,8.3.2,7.8,0,8,3.3.1,2.3.1,2.8-.3,3.1-.1,0-3.1.2-6.6.2-5.1,0-6.4,0-6.6.2-.3.3-.4,26.2,0,27.7.7,3.2,3,5.4,6.1,5.8,1.9.2,4.8,0,6.3-.6.8-.3,1.4-.2,1.6.2,0,.2.2,1.1.4,2.1s.3,2.1.4,2.4c.3,1-.3,1.6-2.2,2-.7.2-1.7.4-2.2.5-1.7.4-5.6.4-7.4,0h0l-.4.3Z"/><path fill-rule="evenodd" d="M359.6,74.3c-3.7-.9-5.4-1.8-7.3-3.8-2.7-3-3.5-4.9-3.8-9.1,0-1.1-.2-6-.2-11.1s-.1-10.7-.2-12.7v-3.6l-.4-.2c-.3,0-1.3-.2-3.5-.2s-3.2,0-3.4-.3c-.2-.2-.2-.8-.3-3v-2.7c-.1,0,.2-.2.2-.2.3-.2,1-.2,3.7-.3,3.1-.1,3.3-.1,3.6-.4.2-.3.3-.9.4-6v-5.7l.5-.3c.5-.4,1.9-.9,3.6-1.1.8,0,1.9-.2,2.5-.3,1.8-.3,1.7-.7,1.8,6.8,0,5.8.1,6.3.3,6.6.2.3.6.3,5.4.4,8.3.2,7.8,0,8,3.3.1,2.3.1,2.8-.3,3.1-.1,0-3.1.2-6.6.2-5.1,0-6.4,0-6.6.2-.3.3-.4,26.2,0,27.7.7,3.2,3,5.4,6.1,5.8,1.9.2,4.8,0,6.3-.6.8-.3,1.4-.2,1.6.2,0,.2.2,1.1.4,2.1s.3,2.1.4,2.4c.3,1-.3,1.6-2.2,2-.7.2-1.7.4-2.2.5-1.7.4-5.6.4-7.4,0h0l-.4.3Z"/><path fill-rule="evenodd" d="M391.7,74.9c-2.4-.2-6.6-1.6-8.7-2.8-5.4-3.4-8.9-7.3-9.9-11.1-.1-.5-.3-1.1-.5-1.4-.2-.5-.6-2.4-1.2-5.1-.3-1.4-.3-6.6,0-7.7,0-.4.3-1.6.5-2.6s.5-2.3.7-2.8.4-1.1.5-1.5c.3-1.1,1.7-3.5,2.9-5.1,3-4,6.4-6.5,10-7.4.7-.2,1.6-.5,1.9-.6,2.7-1,11.5-1,13.9,0,.4.1,1.1.4,1.7.6,3,.9,6.6,3.4,8.7,6.1,1.3,1.7,1.7,2.3,2,2.8.1.3.4.8.6,1.1s.4.8.5,1c0,.3.3.8.5,1.2s.5,1.2.6,1.9.4,1.5.5,1.8c.3.8.5,3,.6,5.7,0,2.1,0,2.2-.3,2.5l-.3.3h-18.2c-20.1,0-18.6,0-18.8,1-.1.6.9,5.4,1.3,6.2.2.4.4.8.4.9,0,.3,1.4,2.2,2.2,3,2,2,5.5,3.9,8.1,4.4,2.5.5,7.3.2,9.2-.6.5-.2,1.2-.4,1.6-.5,1.6-.4,4.8-2.8,6.3-4.8,1-1.3,1.5-1.6,2.4-1,.2.2.8.4,1.3.5.7.2,1.3.5,3,1.2.7.3.7.8,0,2-1.1,1.7-1.9,2.6-3.6,4.4-2.8,2.8-5.2,4.1-10,5.5-3,.8-6.6,1.2-10.3.9h-.1ZM408.7,45.2c.6-.3,0-2.5-1.5-5.3s-3.6-4.8-6.6-6.2c-2.2-1-2.5-1.1-5.7-1.1s-3.1,0-5.6.9c-3.4,1.2-6.1,3.5-7.4,6.3-.8,1.6-1.2,2.7-1.5,3.8-.4,1.3-.2,1.7.5,1.8.6,0,27.4,0,27.7-.2h.1Z"/><path fill-rule="evenodd" d="M422.9,73.4c-.3,0-.6-.2-.6-.2-.4,0-.5-10-.4-29.9v-15.5c.1,0,.5-.2.5-.2.3-.2.9-.2,3.6-.2,4.2,0,4,0,4,1.9s.4,3,1.2,1.8c.4-.6,2.4-2.4,3.3-3,1.1-.7,3.1-1.5,4.2-1.7,2.6-.5,7.5-.4,8.9.2.6.2,1,1,.9,1.5-.5,2.4-.6,2.7-1.2,4.1-.3.6-.5.7-2.5.5-2.7-.3-4.9,0-6.5.8-2.9,1.4-4.9,3.3-6,5.3-.2.4-.4.8-.5.9-.3.4-1.3,3.6-1.4,4.8,0,.6-.1,7-.2,14.9,0,13.5,0,13.8-.3,14-.4.3-6,.3-6.9,0h-.1Z"/><path fill-rule="evenodd" d="M453,73.4c-.7-.4-.7.6-.7-23.3v-22.4l.3-.2c.3-.2.9-.2,3.7-.2s3.4,0,3.7.4l.3.3v35.4c0,10.1.1,9.8-.8,10.1-.6.2-6.2.2-6.6,0h.1ZM455.4,18.6c-1.9-.4-2.9-1.1-3.7-2.7-1.2-2.2,0-5.5,2.4-6.3.9-.3,3.1-.3,4,0,1.1.3,2.4,1.5,2.9,2.5,1.6,3.5-1.7,7.4-5.5,6.6h0Z"/><path fill-rule="evenodd" d="M479.4,74.8c-2.8-.3-6.1-1.5-8.2-2.9-2.8-2-4.7-4.6-5.7-7.8-.5-1.5-.5-1.7-.5-3.9s.2-2.9.6-4c.3-.9.6-1.7.7-1.7,0,0,.3-.3.4-.7.6-1.2,2.6-3.4,4.3-4.7,1.9-1.4,6.2-2.8,11.1-3.4.6,0,4.5-.2,8.7-.2,7.4,0,7.6,0,8-.3l.4-.3v-2c0-1.8,0-2-.5-3.3s-1.3-2.6-2.2-3.6c-1.3-1.3-4.4-2.9-6.5-3.2-1.5-.2-5.8,0-7,.3-2.3.6-3.4,1-3.9,1.3-.3.2-.6.3-.7.3-.5,0-3,1.7-4.8,3.3-1.6,1.4-1.9,1.4-2.7.6-.4-.3-1.3-1.2-2-2-1.3-1.2-1.4-1.4-1.4-1.9,0-1.4,4.5-4.9,8.1-6.3.4-.2.9-.4,1.1-.5s1-.4,1.9-.6,1.8-.4,2-.5c2-.8,11-.7,13.6,0,.5.1,1.5.4,2.1.6,2.6.6,4.5,1.8,6.7,4,1.5,1.5,2.7,3.3,3.1,4.7.1.3.3.8.5,1.1.6,1.1.6,2.5.6,19.3s0,16.3-.1,16.4c0,0-.2.3-.3.4-.3.2-6.4.2-6.7,0-.4-.2-.6-.9-.6-2.6s0-2.5-1.8-.9c-1.9,1.7-4.4,3-7,3.7-.5,0-1.5.4-2.2.6-2,.6-6.3.9-9,.6h-.1ZM487.7,67.7c3-.7,6.1-2.5,7.8-4.5,1.2-1.5,1.4-1.7,2-2.9,1.1-2.1,2-7.2,1.4-8-.3-.4-1.2-.5-6.1-.5s-7.2,0-9.2.5c-3.1.6-4,.8-4.5,1.1-.4.2-.9.4-1.1.5-.7.3-2.2,1.3-2.9,2.1-3,3.2-1.9,8.2,2.2,10.7.8.5,3,1.3,4.1,1.5s4.6,0,6.3-.4h0Z"/><path fill-rule="evenodd" d="M515.9,73.5c-1.6,0-1.9,0-2.2-.4l-.3-.3v-31c0-22.1,0-31.1.2-31.3.3-.6.6-.7,3.8-.8,3.5-.1,3.8,0,4,.5s.3,61.6,0,62.5-.5,1-5.7.7h.1Z"/><path fill-rule="evenodd" d="M528.9,73.7c-.9-.2-.9,1.4-.9-22.9v-22.7c.2-.9.5-1,4-.9,3.2,0,3.7.2,4,.9.2.3.2,3.1,0,16.1,0,8.7,0,18.7,0,22.3v6.6l-.4.3c-.3.2-.6.3-2,.3h-4.7.1ZM530,18.7c-1.8-.5-3.3-2.2-3.7-4.2-.3-1.7,1.4-4.2,3.3-4.9.9-.3,3.6-.2,4.4.1,1.7.8,2.5,1.9,2.8,3.8.3,2.1-.5,3.7-2.6,4.7-1,.5-3,.7-4.2.4h0Z"/><path fill-rule="evenodd" d="M553.8,74.8c-1.5,0-5.4-1.1-6.8-1.7-1.1-.4-3.2-1.6-3.9-2.1-.2-.2-.5-.3-.6-.3s-1.2-.9-1.9-1.5c-.5-.5-.5-1.3.2-1.9.3-.2.7-.7.9-1.1.2-.3.5-.7.5-.7,0,0,.3-.3.4-.7.5-.9,1.1-1.6,1.6-1.6s.6.2.9.5c1.6,1.4,5.6,3.3,7.5,3.6.6,0,1.5.3,2.2.5,3.6,1,9.6-.2,12.2-2.3,1.5-1.2,2-2.3,2-4.4s-.6-3.3-2.1-4.5c-.7-.5-3.3-1.7-3.7-1.7s-1-.2-1.9-.5-2.9-.8-4.3-1.2c-4.1-1-4.3-1.1-5.8-1.5-2.8-.9-4.6-1.9-6.5-3.8-2.5-2.5-3.4-4.7-3.4-8.1s.4-4.7,2-7.1c2-3,6.5-5.5,11-6.3,3.6-.6,11.7-.4,13.5.4.4.2,1,.4,1.5.5,2.5.8,7.2,3.8,7.2,4.8s-.5,1.1-1.2,2c-.4.4-.9,1.1-1.2,1.6-.8,1.3-1.6,1.5-2.3.8-.3-.4-2.2-1.7-2.3-1.7s-.5-.2-.9-.5c-.5-.3-.9-.5-1.1-.5s-.6-.2-1.1-.4c-1.2-.6-4.1-1-6.7-1s-2,0-2.2,0-.7,0-1.2.2c-1.2.2-3.6,1.3-4.5,2.2-2.3,2.1-2.7,5.3-1,7.3.7.8,2.4,2,3,2.2.2,0,.7.2,1,.4s1,.4,1.5.5c.5,0,1.4.3,2,.5s1.8.5,2.7.6c.8,0,2,.4,2.6.6s1.6.5,2.2.6,1.3.4,1.6.5.9.4,1.3.5,1,.4,1.3.6c.3.2.6.3.7.3.2,0,2,1.2,3,2.1,1.7,1.4,2.9,3.6,3.4,5.8.4,1.9.2,5.5-.4,6.8-.2.4-.4,1-.5,1.4-.9,2.6-4.2,5.6-7.9,7.5-1.5.8-4.3,1.6-6,1.8-1.7.2-6.9.2-8.8,0h.3Z"/><path d="M496.6,101.2c-1.9-1.9-4.3-2.9-7-2.9s-5.1,1-7,2.9-2.9,4.3-2.9,7,1,5.1,2.9,7,4.3,2.9,7,2.9,5.1-1,7-2.9,2.9-4.3,2.9-7-1-5.1-2.9-7h0ZM489.8,108.4c.8-2.3,2-3.7,3.5-4.2,1.6-.6,3.2,0,4,.5-1.8.4-3.1,1.5-5,4.5-1.1,1.7-2.9,3.3-4.9,4.2-1.1.5-2.2.8-3.1.8,2.2-.3,4.2-2.4,5.4-5.7h.1ZM484.2,113.1c-1,0-1.8-.4-2.5-1.4-.1-.2-.3-.5-.4-.8-.5-1.7-.6-3.5,0-5.2,1.2-3.7,4.6-6.2,8.4-6.2s1.7,0,2.6.4c1.9.6,3.6,1.8,4.7,3.5-1.1-.4-2.5-.7-4-.2-1.8.6-3.2,2.3-4.1,4.9-1,2.8-2.8,4.8-4.5,5h-.2ZM493.2,109.8c1.7-2.8,2.8-3.7,4.4-4.1-.4,1.3-1.1,3.5-2.4,5.2-1.8,2.5-4.4,3.5-6.2,4-1.6.4-3,.4-3.9.2,2.7-.3,6.2-2.3,8.2-5.4h-.1ZM496.1,111.7c1-1.4,1.8-3.2,2.2-4.6.2,1.2,0,2.5-.3,3.7-.7,2.2-2.2,4.1-4.3,5.1-2.1,1.1-4.4,1.3-6.7.6-.1,0-.3,0-.5-.2,2.9,0,7.1-1.4,9.5-4.8h0v.2Z"/><path d="M557.7,108.5c0-3.2,2.1-5.1,5-5.1s4.5,1.6,4.6,4h-2.1c-.2-1.3-1.2-2.2-2.5-2.2s-2.7,1.2-2.7,3.2,1.2,3.3,2.8,3.3,2.2-.8,2.5-2.2h2.1c-.3,2.5-2,4.1-4.6,4.1s-5-2.3-5-5.2h0Z"/><path d="M567.7,108.4c0-3.2,2.1-5.1,5-5.1s5,2.2,5,5.1-2.1,5.2-5,5.2-5-2.2-5-5.2ZM575.4,108.4c0-1.9-1.1-3.2-2.8-3.2s-2.8,1.3-2.8,3.2,1.2,3.4,2.8,3.4,2.8-1.4,2.8-3.4Z"/><path d="M507,108.5c0-3,1.9-5.1,4.4-5.1s2.8.7,3.4,1.8l.2-1.5h1.7v9.7h-2.1v-1.3c-.6,1-1.7,1.6-3.1,1.6-2.6,0-4.5-2.1-4.5-5.2h0ZM514.6,108.5c0-1.9-1.1-3.3-2.7-3.3s-2.7,1.3-2.7,3.3,1.1,3.3,2.7,3.3,2.7-1.4,2.7-3.4h0Z"/><path d="M518,113.4v-9.7h1.7l.2,1.3c.6-.9,1.8-1.7,3.2-1.7s2.5.7,3,1.8c.5-1,1.8-1.8,3.3-1.8s3.3,1.4,3.3,3.5v6.5h-2.2v-6.3c0-1.1-.7-1.8-1.7-1.8-1.5,0-2.4,1-2.4,2.2v5.9h-2.2v-6.3c0-1.1-.7-1.8-1.7-1.8-1.5,0-2.4,1-2.4,2.2v5.9h-2.2.1Z"/><path d="M533.8,117v-13.3h1.7l.2,1.6c.6-1.1,1.9-1.9,3.4-1.9,2.6,0,4.4,2.1,4.4,5.1s-1.8,5.2-4.4,5.2-2.5-.6-3.2-1.6v5h-2.2,0ZM541.3,108.5c0-1.9-1.1-3.3-2.7-3.3s-2.7,1.3-2.7,3.2,1.1,3.4,2.7,3.4,2.7-1.4,2.7-3.3h0Z"/><path d="M544.6,113.4v-13.7h2.2v5.1c.7-.8,1.8-1.3,3-1.3,2.1,0,3.4,1.4,3.4,3.6v6.4h-2.2v-6.3c0-1.1-.7-1.8-1.9-1.8s-2.4,1-2.4,2.2v5.9h-2.2.1Z"/><path d="M554.3,101c0-.8.6-1.4,1.4-1.4s1.4.6,1.4,1.4-.6,1.4-1.4,1.4-1.4-.6-1.4-1.4ZM554.6,113.4v-9.7h2.2v9.7h-2.2Z"/><path d="M458.5,113.6c-.7,0-1.3,0-1.8-.4s-.9-.7-1.2-1.2v1.5h-1.9v-13h1.9v4.6c.3-.4.6-.8,1.1-1.1.5-.3,1.1-.5,1.8-.5s1.6.2,2.2.6,1.1,1,1.4,1.8.5,1.7.5,2.7-.2,1.9-.5,2.7-.8,1.3-1.4,1.8c-.6.4-1.4.6-2.2.6h.1ZM458.2,111.9c.7,0,1.3-.3,1.8-.9.4-.6.6-1.4.6-2.5s-.2-1.9-.6-2.5-1-.9-1.8-.9-1,0-1.4.4-.7.7-.9,1.2c-.2.5-.3,1.1-.3,1.8s.1,1.3.3,1.8c.2.5.5.9.9,1.2.4.3.8.4,1.4.4Z"/><path d="M464.4,116.1v-1.6h1.2c.3,0,.6,0,.7-.2.2,0,.3-.3.4-.5l.3-.8h-.6l-3.5-9.4h2.1l2.7,7.6,2.5-7.6h2.1l-3.9,10.8c-.2.6-.5,1-.9,1.2-.4.3-.9.4-1.6.4h-1.5Z"/></g></symbol><symbol id="mtl-logo" viewBox="0 0 577.6 82"><use href="#mtl-lockup" width="577.6" height="118.1"/></symbol></svg>
+<!-- /brand:sprite -->
+
+<!-- ================= NAV ================= -->
+<nav class="nav">
+  <div class="nav-in">
+    <a class="brand" href="../" aria-label="Matterialis home"><svg viewBox="0 0 577.6 82" role="img" aria-label="Matterialis"><use href="#mtl-logo"/></svg></a>
+    <div class="aud" role="group" aria-label="Who this page is for">
+      <a href="../" data-audience="formulators">Formulators</a>
+      <a href="../suppliers/" data-audience="suppliers">Suppliers</a>
+      <a href="#top" class="on" aria-current="page">AI platforms</a>
+    </div>
+    <div class="nav-links">
+      <a href="#product">How it works</a>
+      <a href="#fit">Where it fits</a>
+      <a href="#trust">Trust</a>
+      <a href="#faq">FAQ</a>
+      <a href="/about/">About</a>
+      <a class="menu-only" href="/waitlist/?a=platform">Join the waitlist</a>
+    </div>
+    <div class="nav-actions">
+      <a class="btn btn-on-chrome" href="/waitlist/?a=platform">Join the waitlist</a>
+      <a class="btn btn-ghost-chrome" href="#contact">Contact us</a>
+      <button class="navtoggle" id="navtoggle" aria-label="Open menu">
+        <svg class="ic" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- ================= HERO ================= -->
+<header class="hero" id="top">
+  <div class="wrap hero-in">
+    <span class="eyebrow"><span class="dot dot-signal"></span>Matterialis for agentic labs and AI-scientist platforms</span>
+    <h1>Your agent can reason about chemistry. <span class="soft">It cannot look up a material.</span></h1>
+    <p class="lede">Matterialis plugs real, purchasable materials into your agent the way search plugs into a language model: 200,000+ supplier grades, 500+ properties, substitutes ranked against constraints, and every value marked measured or predicted. Your agent calls it over an MCP server.</p>
+    <div class="hero-cta">
+      <a class="btn btn-primary btn-lg" href="mailto:j.orri@amphico.uk?subject=Matterialis%20MCP%20beta">Request beta access</a>
+      <a class="btn btn-secondary btn-lg" href="https://calendar.app.google/LcwtFTNrrVFJnGiz9" target="_blank" rel="noopener">Book a technical call</a>
+      <span class="hero-limit">MCP server: beta, in development. Onboarding partner platforms now.</span>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="hero-shot rv">
+<div class="scaler"><div class="surface">
+<div class="appbar appbar-cw">
+<span class="cw-brand">Claude</span><span class="cw-sub">Cowork</span>
+<span class="appbar-right"><span class="chip-cw"><i></i>matterialis &#183; MCP</span></span>
+</div>
+<div class="screen-body cw">
+<div class="cw-msg cw-user">
+<span class="cw-who">You</span>
+<div class="cw-body"><p>We need to drop AMP-9140 from the barrier film. Has to hold 60 MPa tensile and 120 &#176;C, clear RoHS and REACH, and be sourceable in the UK. What are my options?</p></div>
+</div>
+<div class="cw-msg">
+<span class="cw-who">Claude</span>
+<div class="cw-body">
+<p class="cw-line">Checking the library rather than guessing. Calling the Matterialis server.</p>
+<div class="cw-tool">
+<div class="cw-tool-h"><svg class="ic" viewBox="0 0 24 24" style="width:11px;height:11px"><path d="M4 8l4 4-4 4"/><path d="M11 16h9"/></svg><b>matterialis</b><span>find_substitutes</span><span class="cw-ok">200</span></div>
+<table class="cw-args">
+<tr><td>Incumbent</td><td class="v">AMP-9140</td></tr>
+<tr><td>Tensile, min</td><td class="v">60 MPa</td></tr>
+<tr><td>Service temp, min</td><td class="v">120 &#176;C</td></tr>
+<tr><td>Compliance</td><td class="v">RoHS, REACH</td></tr>
+</table>
+</div>
+<div class="cw-res">
+<div class="cw-res-h"><span class="micro">3 candidates returned</span><span class="note">each with its evidence</span></div>
+<table class="grid">
+<tr><th>Grade</th><th>Evidence</th><th>Criteria</th><th class="r">Tensile</th><th class="r">T max</th><th class="r">Match</th></tr>
+<tr><td><span class="matname">Polyamide 6, 30% GF<span>AMP-4412</span></span></td><td><span class="ev"><span class="dot dot-strong"></span>Strong</span></td><td><span class="met"><span class="seg"><i class="s"></i><i class="s"></i><i class="s"></i></span><span>3 of 3</span></span></td><td class="r n-ok">165</td><td class="r n-ok">150</td><td class="r n">94 %</td></tr>
+<tr><td><span class="matname">PBT, 20% GF<span>AMP-3118</span></span></td><td><span class="ev"><span class="dot dot-strong"></span>Strong</span></td><td><span class="met"><span class="seg"><i class="s"></i><i class="s"></i><i class="s"></i></span><span>3 of 3</span></span></td><td class="r n-ok">110</td><td class="r n-ok">140</td><td class="r n">88 %</td></tr>
+<tr><td><span class="matname">PC / ABS, FR<span>AMP-2207</span></span></td><td><span class="ev"><span class="dot dot-limited"></span>Limited</span></td><td><span class="met"><span class="seg"><i class="l"></i><i class="l"></i><i></i></span><span>2 of 3</span></span></td><td class="r n-ok">62</td><td class="r n-ok">125<sup class="ai">AI</sup></td><td class="r n">86 %</td></tr>
+</table>
+</div>
+<p class="cw-line">Two clear it outright. <b>AMP-4412</b> has the most headroom on both. On <b>AMP-2207</b> the 125 &#176;C is model-generated, not measured, so I would not commit to it without a lab check.</p>
+<p class="cw-cite">Every value carries its status. Predictions stay marked <sup class="ai">AI</sup>.</p>
+</div>
+</div>
+<div class="cw-compose"><span>Ask a follow-up, or tell it which one to take to the lab</span><svg class="ic" viewBox="0 0 24 24" style="width:12px;height:12px"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+</div>
+</div></div>
+    </div>
+  </div>
+</header>
+
+<!-- ================= PROOF ================= -->
+<div class="proof">
+  <div class="wrap"><div class="proof-grid">
+    <div class="stat"><span class="micro">Library</span><span class="v" data-count="200000">200,000+</span><span class="l">supplier grades, indexed from technical and safety datasheets.</span></div>
+    <div class="stat"><span class="micro">Property space</span><span class="v">500<span class="u">+</span></span><span class="l">properties per grade, each value marked measured or predicted.</span></div>
+    <div class="stat"><span class="micro">Interface</span><span class="v">MCP</span><span class="l">one server that Claude and any other MCP client can call. In beta.</span></div>
+    <div class="stat"><span class="micro">Research</span><span class="v">NeurIPS</span><span class="l">the method behind it, accepted at the AI4Mat workshop, NeurIPS 2026.</span></div>
+  </div></div>
+</div>
+
+<!-- ================= PRODUCT ================= -->
+<section class="sec" id="product">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="micro">How it works</span>
+      <h2>A materials library your agent can call, with the evidence attached.</h2>
+      <p class="lede">Grade search, property lookup, substitute ranking and nearest-neighbour queries, all behind one MCP server. Every result comes back structured, so your agent can reason over it and cite it.</p>
+    </div>
+
+    <div class="feats">
+
+      <!-- 01 · the tool call (deck slide 2). The call, written out; the screen is in the hero. -->
+      <div class="feat rv">
+        <div class="feat-spec">
+          <div class="callspec">
+            <div class="callspec-h"><span class="micro">One call</span><span class="statustag"><i></i>MCP server &middot; beta, in development</span></div>
+            <dl>
+              <dt>Asks for</dt><dd>A grade to replace, a grade to find neighbours of, or the properties of a named grade</dd>
+              <dt>Constraints</dt><dd>Property floors and ceilings, restricted-substance lists, end use and industry, all in the same call</dd>
+              <dt>Returns</dt><dd>Real supplier grades, ranked by criteria met and then by similarity</dd>
+              <dt>Per candidate</dt><dd>Its supplier, the criteria it meets and misses, and the trade-off stated</dd>
+              <dt>Per value</dt><dd>Marked measured or predicted, every time</dd>
+              <dt>Called from</dt><dd>Claude, or any other MCP client</dd>
+            </dl>
+          </div>
+        </div>
+        <div class="feat-txt">
+          <span class="micro">01</span>
+          <h3>One tool call returns real grades your agent can cite</h3>
+          <p>Industrial chemistry is not in any general model's training set. Ask an agent for a material and it guesses: no library behind it, no values it can cite, and a different answer each run. Matterialis exposes grade search, property lookup and substitute ranking over an MCP server. Claude and any other MCP client call it like any other tool, and the results come back structured: each candidate with its supplier, the criteria it meets, and the status of every value.</p>
+          <div class="out">Your agent stops guessing about materials and starts looking them up.</div>
+        </div>
+      </div>
+
+      <!-- 02 · constraints (deck slide 3) -->
+      <div class="feat feat-flip rv">
+        <div class="feat-shot">
+<div class="scaler"><div class="surface">
+<div class="appbar"><span class="lg"><svg viewBox="0 0 577.6 82" role="img" aria-label="Matterialis"><use href="#mtl-logo"/></svg></span>
+<div class="tabs"><span class="tab">Search</span><span class="tab on">Results <b>10</b></span><span class="tab">Library <b>200,000+</b></span></div>
+<span class="appbar-right"><span class="chip-chrome">Under-bonnet bracket</span></span>
+</div>
+<div class="screen-body"><div class="res">
+<div class="res-filter">
+<div class="fh"><span class="micro">Property criteria</span><a>Reset</a></div>
+<div class="finput"><svg class="ic" viewBox="0 0 24 24" style="width:11px;height:11px"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>Search 500+ properties</div>
+<div class="crit"><div class="crit-t"><span>Tensile strength</span><svg class="ic" viewBox="0 0 24 24"><path d="M4 7h16M9 7V4h6v3M6 7l1 13h10l1-13"/></svg></div><div class="crit-r"><span class="op">≥</span><span class="val">60 <i>MPa</i></span></div></div>
+<div class="crit"><div class="crit-t"><span>Max service temp.</span><svg class="ic" viewBox="0 0 24 24"><path d="M4 7h16M9 7V4h6v3M6 7l1 13h10l1-13"/></svg></div><div class="crit-r"><span class="op">≥</span><span class="val">120 <i>°C</i></span></div></div>
+<div class="crit"><div class="crit-t"><span>Water vapour trans.</span><svg class="ic" viewBox="0 0 24 24"><path d="M4 7h16M9 7V4h6v3M6 7l1 13h10l1-13"/></svg></div><div class="crit-r"><span class="op">≤</span><span class="val">5.0 <i>g/m²·d</i></span></div></div>
+<div class="crit"><div class="crit-t"><span>Compliance</span><svg class="ic" viewBox="0 0 24 24"><path d="M4 7h16M9 7V4h6v3M6 7l1 13h10l1-13"/></svg></div><div class="crit-r"><span class="val">RoHS · REACH</span></div></div>
+</div>
+<div class="res-main">
+<div class="res-top"><span class="micro">Ranked results</span><span class="note">Ranked against your criteria</span></div>
+<table class="grid">
+<tr><th>Rank</th><th>Material</th><th>Evidence</th><th>Criteria met</th><th class="r">Tensile</th><th class="r">T max</th><th class="r">WVTR</th><th class="r">Match</th></tr>
+<tr><td class="rk">1</td><td><span class="matname">Polyamide 6, 30% glass fibre<span>AMP-4412 · 25038-54-4</span></span></td><td><span class="ev"><span class="dot dot-strong"></span>Strong</span></td><td><span class="met"><span class="seg"><i class="s"></i><i class="s"></i><i class="s"></i></span><span>3 of 3</span></span></td><td class="r n-ok">165</td><td class="r n-ok">150</td><td class="r n-ok">3.2<sup class="ai">AI</sup></td><td class="r n">94 %</td></tr>
+<tr><td class="rk">2</td><td><span class="matname">Polyamide 66, 35% glass fibre<span>AMP-4680 · 32131-17-2</span></span></td><td><span class="ev"><span class="dot dot-strong"></span>Strong</span></td><td><span class="met"><span class="seg"><i class="s"></i><i class="s"></i><i class="s"></i></span><span>3 of 3</span></span></td><td class="r n-ok">180</td><td class="r n-ok">160</td><td class="r n-ok">3.6</td><td class="r n">91 %</td></tr>
+<tr><td class="rk">3</td><td><span class="matname">Polybutylene terephthalate, 20% GF<span>AMP-3118 · 24968-12-5</span></span></td><td><span class="ev"><span class="dot dot-strong"></span>Strong</span></td><td><span class="met"><span class="seg"><i class="s"></i><i class="s"></i><i class="s"></i></span><span>3 of 3</span></span></td><td class="r n-ok">110</td><td class="r n-ok">140</td><td class="r n-ok">2.4</td><td class="r n">88 %</td></tr>
+<tr><td class="rk">4</td><td><span class="matname">Polyphenylene sulphide, 40% GF<span>AMP-5902 · 26125-40-6</span></span></td><td><span class="ev"><span class="dot dot-strong"></span>Strong</span></td><td><span class="met"><span class="seg"><i class="s"></i><i class="s"></i><i class="s"></i></span><span>3 of 3</span></span></td><td class="r n-ok">190</td><td class="r n-ok">220</td><td class="r n-ok">0.9</td><td class="r n">83 %</td></tr>
+<tr><td class="rk">5</td><td><span class="matname">Copolyester, high-clarity extrusion<span>AMP-1355 · 25038-59-9</span></span></td><td><span class="ev"><span class="dot dot-strong"></span>Strong</span></td><td><span class="met"><span class="seg"><i class="s"></i><i class="s"></i><i class="s"></i></span><span>3 of 3</span></span></td><td class="r n-ok">72</td><td class="r n-ok">120</td><td class="r n-ok">1.8</td><td class="r n">77 %</td></tr>
+<tr><td class="rk">6</td><td><span class="matname">Polycarbonate / ABS, flame-retardant<span>AMP-2207 · 25037-45-0</span></span></td><td><span class="ev"><span class="dot dot-limited"></span>Limited</span></td><td><span class="met"><span class="seg"><i class="l"></i><i class="l"></i><i></i></span><span>2 of 3</span></span></td><td class="r n-ok">62</td><td class="r n-ok">125</td><td class="r n-no">6.8<sup class="ai">AI</sup></td><td class="r n">86 %</td></tr>
+<tr><td class="rk">7</td><td><span class="matname">Polypropylene TPO impact copolymer<span>AMP-0914 · 9010-79-1</span></span></td><td><span class="ev"><span class="dot dot-limited"></span>Limited</span></td><td><span class="met"><span class="seg"><i class="w"></i><i></i><i></i></span><span>1 of 3</span></span></td><td class="r n-no">28</td><td class="r n-no">105</td><td class="r n-ok">1.1</td><td class="r n">74 %</td></tr>
+<tr><td class="rk">8</td><td><span class="matname">High-density polyethylene, injection<span>AMP-0271 · 9002-88-4</span></span></td><td><span class="ev"><span class="dot dot-strong"></span>Strong</span></td><td><span class="met"><span class="seg"><i class="w"></i><i></i><i></i></span><span>1 of 3</span></span></td><td class="r n-no">31</td><td class="r n-no">95</td><td class="r n-ok">0.4</td><td class="r n">68 %</td></tr>
+<tr><td class="rk">9</td><td><span class="matname">Thermoplastic polyurethane, aliphatic 95A<span>AMP-7741 · 9009-54-5</span></span></td><td><span class="ev"><span class="dot dot-limited"></span>Limited</span></td><td><span class="met"><span class="seg"><i></i><i></i><i></i></span><span>0 of 3</span></span></td><td class="r n-no">48</td><td class="r n-no">110</td><td class="r n-no">12.0<sup class="ai">AI</sup></td><td class="r n">79 %</td></tr>
+<tr><td class="rk">10</td><td><span class="matname">Polylactide / PBAT compound<span>AMP-6620 · 9051-89-2</span></span></td><td><span class="ev"><span class="dot dot-weak"></span>Weak</span></td><td><span class="met"><span class="seg"><i></i><i></i><i></i></span><span>0 of 3</span></span></td><td class="r n-no">45</td><td class="r n-no">65</td><td class="r n-no">22.0<sup class="ai">AI</sup></td><td class="r n">71 %</td></tr>
+</table>
+<div class="res-foot"><em>GREEN</em> MEETS THE CRITERION · <b>RED</b> MISSES IT · <sup class="ai">AI</sup> MODEL-GENERATED, NOT MEASURED</div>
+</div>
+</div></div>
+</div></div>
+        </div>
+        <div class="feat-txt">
+          <span class="micro">02</span>
+          <h3>Constraints in, a ranked shortlist out</h3>
+          <p>A real materials task carries several constraints at once: property floors, restricted-substance lists, end use and industry. An agent that searches a catalogue one keyword at a time cannot hold them together. Your agent passes them all in one call. Candidates come back ranked by criteria met and then by similarity, with the trade-off stated, so the agent reasons over a short, structured list. Filtering by region is in development.</p>
+          <div class="out">A shortlist your agent can act on, in one round trip.</div>
+          <div class="swipe">Swipe the panel to explore<svg class="ic" viewBox="0 0 24 24" style="width:12px;height:12px"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+        </div>
+      </div>
+
+      <!-- 03 · provenance (deck slide 4) -->
+      <div class="feat rv">
+        <div class="feat-shot">
+<div class="scaler"><div class="surface">
+<div class="appbar"><span class="lg"><svg viewBox="0 0 577.6 82" role="img" aria-label="Matterialis"><use href="#mtl-logo"/></svg></span>
+<div class="tabs"><span class="tab">Search</span><span class="tab on">Results <b>10</b></span><span class="tab">Library <b>200,000+</b></span></div>
+<span class="appbar-right"><span class="chip-chrome">Under-bonnet bracket</span></span>
+</div>
+<div class="screen-body">
+<div class="mk-head">
+<div class="crumb">Ranked results / Polybutylene terephthalate, 20% glass fibre</div>
+<div class="mk-title">
+<div><h4>Polybutylene terephthalate, 20% glass fibre</h4>
+<div class="mk-sub">AMP-3118 · CAS 24968-12-5 · Chang Chun</div></div>
+<div class="figure"><div class="v">88<small>%</small></div><span class="micro">Match</span></div>
+</div>
+<div class="badges">
+<span class="badge badge-strong"><span class="dot dot-strong"></span>Strong evidence</span>
+<span class="badge">Polyester (PBT)</span>
+<span class="badge badge-ai">6 AI-generated values</span>
+
+</div>
+</div>
+<div class="split">
+<div class="split-main">
+<div class="reason"><svg viewBox="0 0 24 24"><path d="M12 2l1.7 5.4L19 9l-4.2 3.5 1.4 5.5L12 15.3 7.8 18l1.4-5.5L5 9l5.3-1.6z"/></svg><p>Lower moisture pickup than the incumbent and a tighter shrinkage window, but density sits above the stated ceiling.</p></div>
+<div class="strip"><span class="micro"><b>Properties · mechanical</b></span></div>
+<table class="ptab">
+<tr><td>Tensile strength</td><td class="v">110 MPa</td><td class="b"><span class="badge">Scraped</span></td></tr>
+<tr><td>Flexural modulus</td><td class="v">5940 MPa</td><td class="b"><span class="badge badge-ai">AI-generated</span></td></tr>
+<tr><td>Notched impact, 23 °C</td><td class="v">8.6 kJ/m²</td><td class="b"><span class="badge">Scraped</span></td></tr>
+<tr><td>Elongation at break</td><td class="v">2.9 %</td><td class="b"><span class="badge">Scraped</span></td></tr>
+</table>
+<div class="strip"><span class="micro"><b>Thermal</b></span></div>
+<table class="ptab">
+<tr><td>Heat deflection, 1.8 MPa</td><td class="v">140 °C</td><td class="b"><span class="badge">Scraped</span></td></tr>
+<tr><td>Glass transition</td><td class="v">48 °C</td><td class="b"><span class="badge badge-ai">AI-generated</span></td></tr>
+</table>
+<div class="strip"><span class="micro"><b>Barrier &amp; transport</b></span></div>
+<table class="ptab">
+<tr><td>Water vapour transmission rate</td><td class="v">2.4 g/m²·day</td><td class="b"><span class="badge badge-ai">AI-generated</span></td></tr>
+<tr><td>Moisture absorption</td><td class="v">0.28 %</td><td class="b"><span class="badge badge-ai">AI-generated</span></td></tr>
+</table>
+</div>
+<aside class="split-rail">
+<span class="micro">Classification</span>
+<dl>
+<div class="kv"><dt>Chemical family</dt><dd>Polyester (PBT)</dd></div>
+<div class="kv"><dt>Functional purpose</dt><dd>Structural reinforcement</dd></div>
+<div class="kv"><dt>Industry</dt><dd>Automotive</dd></div>
+<div class="kv"><dt>CAS</dt><dd>24968-12-5</dd></div>
+</dl>
+<span class="micro">Metadata</span>
+<dl>
+<div class="kv"><dt>Supplier</dt><dd>Chang Chun</dd></div>
+<div class="kv"><dt>Grade code</dt><dd>AMP-3118</dd></div>
+<div class="kv"><dt>Indexed</dt><dd>2026-06-30</dd></div>
+</dl>
+</aside>
+</div>
+</div>
+</div></div>
+        </div>
+        <div class="feat-txt">
+          <span class="micro">03</span>
+          <h3>Every value carries its provenance, so your agent knows what to measure</h3>
+          <p>The property that decides the experiment is often missing from the datasheet. An agent that cannot tell a measured value from a guess either stalls or commits to a number nobody stands behind. Matterialis predicts the unpublished properties from everything the sheet does say, and marks each one as predicted beside the measured values. Your agent gets both, labelled, and can route the uncertain ones to the lab.</p>
+          <div class="out">It narrows the list to the experiments worth running.</div>
+          <div class="swipe">Swipe the panel to explore<svg class="ic" viewBox="0 0 24 24" style="width:12px;height:12px"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+        </div>
+      </div>
+
+      <!-- 04 · neighbours (deck slide 5) -->
+      <div class="feat feat-flip rv">
+        <div class="feat-shot">
+<div class="scaler"><div class="surface">
+<div class="appbar"><span class="lg"><svg viewBox="0 0 577.6 82" role="img" aria-label="Matterialis"><use href="#mtl-logo"/></svg></span>
+<div class="tabs"><span class="tab on">Neighbourhood</span><span class="tab">Results <b>12</b></span><span class="tab">Library <b>200,000+</b></span></div>
+<span class="appbar-right"><span class="chip-chrome">Sector filter &#183; off</span></span>
+</div>
+<div class="screen-body">
+<div class="mk-head">
+<div class="crumb">Search / Nearest materials by behaviour</div>
+<div class="mk-title">
+<div><h4>Sorbitan monostearate, technical grade</h4><div class="mk-sub">AMP-8802 &#183; CAS 1338-41-6 &#183; query material</div></div>
+<div class="figure"><div class="v">12</div><span class="micro">Near neighbours</span></div>
+</div>
+<div class="badges"><span class="badge">Nonionic surfactant</span><span class="badge">HLB 4.7</span><span class="badge">Food &amp; beverage</span></div>
+</div>
+<div class="split">
+<div class="split-main col">
+<div class="reason"><svg viewBox="0 0 24 24"><path d="M12 2l1.7 5.4L19 9l-4.2 3.5 1.4 5.5L12 15.3 7.8 18l1.4-5.5L5 9l5.3-1.6z"/></svg><p>Five of the eight nearest grades are sold into a different industry. Distance from the centre is similarity, so a hollow dot close in is a cross-sector match worth reading.</p></div>
+<div class="mapwrap"><svg class="map" viewBox="0 0 820 300" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+<defs><pattern id="mgrid" width="41" height="41" patternUnits="userSpaceOnUse"><path d="M41 0H0V41" fill="none" stroke="var(--rule-soft)" stroke-width="1"/></pattern></defs>
+<rect x="0" y="0" width="820" height="300" fill="url(#mgrid)"/>
+<ellipse cx="410" cy="150" rx="65" ry="27" fill="none" stroke="var(--chart-5)" stroke-width="1" stroke-dasharray="3 4"/>
+<text x="410" y="135" class="mring" text-anchor="middle">90%</text>
+<ellipse cx="410" cy="150" rx="131" ry="53" fill="none" stroke="var(--chart-5)" stroke-width="1" stroke-dasharray="3 4"/>
+<text x="410" y="109" class="mring" text-anchor="middle">80%</text>
+<ellipse cx="410" cy="150" rx="196" ry="80" fill="none" stroke="var(--chart-5)" stroke-width="1" stroke-dasharray="3 4"/>
+<text x="410" y="82" class="mring" text-anchor="middle">70%</text>
+<circle cx="312" cy="103" r="2.5" fill="var(--chart-5)"/>
+<circle cx="488" cy="182" r="2.5" fill="var(--chart-5)"/>
+<circle cx="340" cy="199" r="2.5" fill="var(--chart-5)"/>
+<circle cx="506" cy="82" r="2.5" fill="var(--chart-5)"/>
+<circle cx="178" cy="170" r="2.5" fill="var(--chart-5)"/>
+<circle cx="677" cy="121" r="2.5" fill="var(--chart-5)"/>
+<circle cx="373" cy="258" r="2.5" fill="var(--chart-5)"/>
+<circle cx="342" cy="178" r="2.5" fill="var(--chart-5)"/>
+<circle cx="309" cy="72" r="2.5" fill="var(--chart-5)"/>
+<circle cx="678" cy="194" r="2.5" fill="var(--chart-5)"/>
+<circle cx="462" cy="49" r="2.5" fill="var(--chart-5)"/>
+<circle cx="457" cy="217" r="2.5" fill="var(--chart-5)"/>
+<line x1="410" y1="150" x2="440" y2="140" stroke="var(--chart-5)" stroke-width="1"/>
+<line x1="410" y1="150" x2="345" y2="162" stroke="var(--chart-5)" stroke-width="1"/>
+<line x1="410" y1="150" x2="314" y2="127" stroke="var(--chart-5)" stroke-width="1"/>
+<line x1="410" y1="150" x2="555" y2="166" stroke="var(--chart-5)" stroke-width="1"/>
+<line x1="410" y1="150" x2="377" y2="74" stroke="var(--chart-5)" stroke-width="1"/>
+<line x1="410" y1="150" x2="616" y2="116" stroke="var(--chart-5)" stroke-width="1"/>
+<line x1="410" y1="150" x2="161" y2="128" stroke="var(--chart-5)" stroke-width="1"/>
+<line x1="410" y1="150" x2="495" y2="257" stroke="var(--chart-5)" stroke-width="1"/>
+<circle cx="440" cy="140" r="6" fill="var(--chart-1)"/>
+<text x="453" y="143" class="mlab" text-anchor="start">1</text>
+<circle cx="345" cy="162" r="6" fill="var(--paper-raised)" stroke="var(--chart-2)" stroke-width="1.6"/>
+<text x="332" y="166" class="mlab" text-anchor="end">2</text>
+<circle cx="314" cy="127" r="6" fill="var(--paper-raised)" stroke="var(--chart-2)" stroke-width="1.6"/>
+<text x="301" y="131" class="mlab" text-anchor="end">3</text>
+<circle cx="555" cy="166" r="6" fill="var(--paper-raised)" stroke="var(--chart-2)" stroke-width="1.6"/>
+<text x="568" y="169" class="mlab" text-anchor="start">4</text>
+<circle cx="377" cy="74" r="6" fill="var(--paper-raised)" stroke="var(--chart-2)" stroke-width="1.6"/>
+<text x="364" y="77" class="mlab" text-anchor="end">5</text>
+<circle cx="616" cy="116" r="6" fill="var(--chart-1)"/>
+<text x="629" y="120" class="mlab" text-anchor="start">6</text>
+<circle cx="161" cy="128" r="6" fill="var(--paper-raised)" stroke="var(--chart-2)" stroke-width="1.6"/>
+<text x="148" y="132" class="mlab" text-anchor="end">7</text>
+<circle cx="495" cy="257" r="6" fill="var(--chart-1)"/>
+<text x="508" y="260" class="mlab" text-anchor="start">8</text>
+<ellipse cx="410" cy="150" rx="15" ry="13" fill="none" stroke="var(--brand-signal)" stroke-width="1.4"/>
+<circle cx="410" cy="150" r="5" fill="var(--brand-signal)"/>
+<text x="410" y="184" class="mq" text-anchor="middle">AMP-8802 &#183; QUERY</text>
+</svg></div>
+<div class="maplegend">
+<span class="mkey"><i class="k-same"></i>Your sector</span>
+<span class="mkey"><i class="k-other"></i>Another sector</span>
+<span class="mkey"><i class="k-q"></i>Query grade</span>
+<span class="mnote">RINGS ARE SIMILARITY, NOT DISTANCE IN ANY ONE PROPERTY</span>
+</div>
+</div>
+<aside class="split-rail">
+<span class="micro">Nearest by similarity</span>
+<dl>
+<div class="kv"><dt><b class="rk">1</b>Sorbitan ester, food grade</dt><dd>94 %</dd></div>
+<div class="kv"><dt><b class="rk">2</b>Polyglyceryl-4 laurate</dt><dd>89 %</dd></div>
+<div class="kv"><dt><b class="rk">3</b>Alkyl polyglucoside C8-10</dt><dd>83 %</dd></div>
+<div class="kv"><dt><b class="rk">4</b>Ethoxylated fatty alcohol</dt><dd>77 %</dd></div>
+<div class="kv"><dt><b class="rk">5</b>Sucrose stearate, HLB 15</dt><dd>71 %</dd></div>
+<div class="kv"><dt><b class="rk">6</b>Lecithin, deoiled</dt><dd>66 %</dd></div>
+<div class="kv"><dt><b class="rk">7</b>Methyl glucose sesquistearate</dt><dd>61 %</dd></div>
+<div class="kv"><dt><b class="rk">8</b>Glyceryl monostearate</dt><dd>58 %</dd></div>
+</dl>
+<span class="micro">Industries in view</span>
+<div class="src"><b>Cosmetics &#183; 3</b>Emulsifiers with the same HLB band.</div>
+<div class="src"><b>Home care &#183; 1</b>Alkyl polyglucoside, cost-competitive.</div>
+<div class="src"><b>Pharma &#183; 1</b>Excipient grade, tighter purity.</div>
+</aside>
+</div>
+</div>
+</div></div>
+        </div>
+        <div class="feat-txt">
+          <span class="micro">04</span>
+          <h3>Nearest materials by behaviour, from any industry</h3>
+          <p>An agent exploring a design space needs to ask what else behaves like this grade. Catalogues are organised by supplier and sector, so nothing indexes that question. Our own encoders place every grade in a space of what it is and how it behaves, and the nearest neighbours of a query grade come back ranked by similarity wherever they are sold: a food-grade ester for a cosmetics problem, a packaging polymer for a membrane.</p>
+          <div class="out">Options a keyword search would never return.</div>
+          <div class="swipe">Swipe the panel to explore<svg class="ic" viewBox="0 0 24 24" style="width:12px;height:12px"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- ================= WHERE IT FITS ================= -->
+<section class="sec" id="fit">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="micro">Where it fits</span>
+      <h2>You own the agent and the lab. We supply the materials layer.</h2>
+    </div>
+    <div class="fit3 rv">
+      <div>
+        <span class="micro">What you build</span>
+        <h3>The agent, the workflow, the hardware</h3>
+        <p>Planning, design of experiments, lab orchestration and the user's interface. Everything the scientist sees and everything that touches the bench stays your product.</p>
+      </div>
+      <div class="us">
+        <span class="micro">What Matterialis supplies</span>
+        <h3>Real, purchasable materials as a tool</h3>
+        <p>Grade search, property lookup, substitute ranking and nearest-neighbour queries over 200,000+ supplier grades, with the evidence attached. One MCP server, which your agent calls when a task touches a real material.</p>
+      </div>
+      <div>
+        <span class="micro">What stays yours</span>
+        <h3>Your users' data and results</h3>
+        <p>Standard runs on the public index alone, and nothing of your users' is required or stored. Enterprise adds their own data in an isolated workspace that is never used to train shared models.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= TRUST ================= -->
+<section class="sec" id="trust">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="micro">Trust</span>
+      <h2>What stands behind each value your agent receives.</h2>
+    </div>
+
+    <div class="tlist rv">
+      <div class="trow">
+        <div class="trow-k">
+          <svg viewBox="0 0 24 24"><path d="M4 4h11l5 5v11H4z"/><path d="M15 4v5h5"/><path d="M8 13h8M8 17h5"/></svg>
+          <span class="micro">Research</span>
+        </div>
+        <div>
+          <h3>Accepted at AI4Mat, NeurIPS 2026.</h3>
+          <p>Our work on how to represent a material is accepted at the AI4Mat workshop at NeurIPS 2026. The paper will be published shortly, so your engineers can read how the method works before they wire it in.</p>
+        </div>
+      </div>
+      <div class="trow">
+        <div class="trow-k">
+          <svg viewBox="0 0 24 24"><path d="M12 3l9 5-9 5-9-5 9-5z"/><path d="M21 12v5c0 1-4 3-9 3s-9-2-9-3v-5"/></svg>
+          <span class="micro">Team</span>
+        </div>
+        <div>
+          <h3>IBM Research and the University of Cambridge.</h3>
+          <p>A team from IBM Research and the University of Cambridge, inside Amphico: machine learning and materials science in one room.</p>
+          <div class="orglogos">
+            <span class="orglogo l-ibm"><img src="../img/logos/ibm.png" alt="IBM"><span class="orgname">IBM Research</span></span>
+            <span class="orglogo l-camb"><img src="../img/logos/cambridge.png" alt="University of Cambridge"><span class="orgname">University of Cambridge</span></span>
+          </div>
+        </div>
+      </div>
+      <div class="trow">
+        <div class="trow-k">
+          <svg viewBox="0 0 24 24"><path d="M9 3h6v5l3 6v7H6v-7l3-6z"/><path d="M6 16h12"/></svg>
+          <span class="micro">Origin</span>
+        </div>
+        <div>
+          <h3>Built for our own product first.</h3>
+          <p>Amphico makes PFAS-free waterproof membranes. Matterialis exists because we had a reformulation problem the available tools could not help with. We still use it for that.</p>
+        </div>
+      </div>
+      <div class="trow">
+        <div class="trow-k">
+          <svg viewBox="0 0 24 24"><path d="M12 3l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V7z"/></svg>
+          <span class="micro">Your data</span>
+        </div>
+        <div>
+          <h3>Your users upload nothing.</h3>
+          <p>Standard runs on the public index alone, and none of your users' data is stored. Enterprise adds their own data, in an isolated workspace never used to train shared models.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- ================= FAQ ================= -->
+<section class="sec" id="faq">
+  <div class="wrap">
+    <div class="sec-head rv"><span class="micro">FAQ</span><h2>The questions platform teams ask.</h2></div>
+    <div class="faq">
+      <details open>
+        <summary>Which clients can call it?</summary>
+        <div class="a"><p>Claude, and any other client that speaks the Model Context Protocol. The screens on this page show Claude Cowork calling it; an agent you built yourself calls it the same way, provided it speaks MCP. An MCP server is the only interface we offer today.</p></div>
+      </details>
+      <details>
+        <summary>How does access work?</summary>
+        <div class="a"><p>Each beta partner gets its own access, issued when we set you up, and we agree on the technical call how your agent holds it. The tools look things up and return results. None of them changes anything on your side.</p></div>
+      </details>
+      <details>
+        <summary>What latency and call volume should we expect?</summary>
+        <div class="a"><p>We do not publish figures during the beta. Tell us the workload, roughly how many calls a task makes and how many tasks run a day, and we will size your access to it and tell you plainly what to expect.</p></div>
+      </details>
+      <details>
+        <summary>Where do our users' queries go, and what is kept?</summary>
+        <div class="a"><p>On Standard, the server needs only the query your agent sends. Nothing of your users' is required, and none of their data is stored. On Enterprise, their own data sits in an isolated workspace that is never used to train shared models. If your data has to stay in a particular jurisdiction, raise it on the technical call and we will tell you directly whether we can meet it.</p></div>
+      </details>
+      <details>
+        <summary>What will it not do?</summary>
+        <div class="a">
+          <p>It will not run experiments or drive lab hardware; that stays in your product. It works at grade level, so it does not predict how a finished formulation performs, and it does not resolve interaction order. Filtering by region is in development and is not yet something your agent can ask for.</p>
+          <p>It also never passes a prediction off as a measurement. Every predicted value arrives marked as predicted, so your agent can decide what to send to the lab.</p>
+        </div>
+      </details>
+      <details>
+        <summary>How is it priced?</summary>
+        <div class="a"><p>There are two subscriptions, Standard and Enterprise, and they differ on one thing. Standard runs on the public index alone. Enterprise adds your users' own data, in an isolated workspace never used to train shared models. During the beta we agree terms with each partner platform directly.</p></div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CTA ================= -->
+<section class="cta" id="contact">
+  <div class="wrap">
+    <span class="micro">Next step</span>
+    <h2>Plug it into one workflow.</h2>
+    <p class="lede">Tell us which of your agent's tasks touches a real material. We set you up on the MCP server beta and you run it on your own prompts. Three ways platform teams start:</p>
+    <div class="opts">
+      <div class="opt"><span class="opt-head"><svg class="opt-ic" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg><span class="micro">01</span></span><h4>Beta access</h4><p>Email us the task. We connect your agent to the MCP server and you test it on your own prompts.</p></div>
+      <div class="opt"><span class="opt-head"><svg class="opt-ic" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg><span class="micro">02</span></span><h4>A technical call</h4><p>Thirty minutes with the team that built it: what each tool takes, what it returns, and how your agent should use it.</p></div>
+      <div class="opt"><span class="opt-head"><svg class="opt-ic" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h10"/></svg><span class="micro">03</span></span><h4>The waitlist</h4><p>Not ready to wire it in yet? Leave your work email and we will tell you when you can get in.</p></div>
+    </div>
+    <div class="hero-cta">
+      <a class="btn btn-on-chrome btn-lg" href="mailto:j.orri@amphico.uk?subject=Matterialis%20MCP%20beta">Request beta access</a>
+      <a class="btn btn-on-chrome btn-lg" href="https://calendar.app.google/LcwtFTNrrVFJnGiz9" target="_blank" rel="noopener">Book a technical call</a>
+      <a class="btn btn-ghost-chrome btn-lg" href="/waitlist/?a=platform">Join the waitlist</a>
+    </div>
+  </div>
+</section>
+
+<div class="xlink" id="xlink">
+  <div class="wrap">
+    <div class="xl">
+      <p><b>Choosing a material yourself?</b> Search 200,000+ supplier grades and rank substitutes against your own constraints, with the evidence beside each number.</p>
+      <a class="btn btn-secondary" href="../" data-audience="formulators">Matterialis for formulators<svg class="ic" viewBox="0 0 24 24" style="width:12px;height:12px"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+    <div class="xl">
+      <p><b>Selling materials?</b> Your datasheets as structured data, and an assistant that answers buyers on your own website.</p>
+      <a class="btn btn-secondary" href="../suppliers/" data-audience="suppliers">Matterialis for suppliers<svg class="ic" viewBox="0 0 24 24" style="width:12px;height:12px"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap foot">
+    <svg viewBox="0 0 577.6 118.1" role="img" aria-label="Matterialis, by Amphico"><use href="#mtl-lockup"/></svg>
+    <nav>
+      <a href="#product">How it works</a>
+      <a href="#fit">Where it fits</a>
+      <a href="#trust">Trust</a>
+      <a href="#faq">FAQ</a>
+      <a href="/about/">About</a>
+    </nav>
+  </div>
+</footer>
+
+
+<script>
+(function(){
+  var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* reveal */
+  var rv = document.querySelectorAll('.rv');
+  if('IntersectionObserver' in window && !reduce){
+    var ro = new IntersectionObserver(function(es){
+      es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); ro.unobserve(e.target); } });
+    },{threshold:.1, rootMargin:'0px 0px -6% 0px'});
+    rv.forEach(function(el){ ro.observe(el); });
+  } else { rv.forEach(function(el){ el.classList.add('in'); }); }
+
+  /* scale each 1180px mock to its column; below 1080px they scroll instead
+     (same rule as index.html, same reason: a width-fit scale on a phone is
+     unreadable) */
+  function fit(){
+    if(innerWidth <= 1080){
+      document.querySelectorAll('.scaler').forEach(function(el){ el.style.transform = ''; });
+      return;
+    }
+    document.querySelectorAll('.feat-shot, .hero-shot').forEach(function(shot){
+      var w = shot.clientWidth; if(!w) return;
+      var sc = shot.querySelector('.scaler');
+      if(sc) sc.style.transform = 'scale(' + (w / 1180) + ')';
+    });
+  }
+  fit();
+  addEventListener('resize', fit);
+  if(document.fonts && document.fonts.ready) document.fonts.ready.then(fit);
+
+  /* third-party logo slots fall back to their text name */
+  [].slice.call(document.querySelectorAll('.cmp-logo img, .orglogo img')).forEach(function(img){
+    function fail(){ var slot = img.parentNode; if(slot) slot.classList.add('nologo'); img.remove(); }
+    img.addEventListener('error', fail);
+    if(img.complete && !img.naturalWidth) fail();
+  });
+
+
+  /* library counter */
+  var c = document.querySelector('[data-count]');
+  if(c && 'IntersectionObserver' in window && !reduce){
+    var co = new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        if(!e.isIntersecting) return;
+        var end = +c.getAttribute('data-count'), t0 = null;
+        function tick(t){
+          if(!t0) t0 = t;
+          var p = Math.min((t-t0)/1000,1), k = 1-Math.pow(1-p,3);
+          c.textContent = Math.round(end*k).toLocaleString('en-GB') + (p===1 ? '+' : '');
+          if(p<1) requestAnimationFrame(tick);
+        }
+        requestAnimationFrame(tick); co.unobserve(c);
+      });
+    },{threshold:.6});
+    co.observe(c);
+  } else if(c){ c.textContent = '200,000+'; }
+
+  /* FAQ, one open at a time */
+  var dets = [].slice.call(document.querySelectorAll('.faq details'));
+  dets.forEach(function(d){
+    d.addEventListener('toggle', function(){
+      if(!d.open) return;
+      dets.forEach(function(o){ if(o !== d) o.open = false; });
+    });
+  });
+
+
+  /* mobile menu */
+  var t = document.getElementById('navtoggle'), links = document.querySelector('.nav-links');
+  if(t) t.addEventListener('click', function(){
+    var open = links.style.display === 'flex';
+    links.style.display = open ? '' : 'flex';
+    links.style.cssText += open ? '' : 'position:absolute;top:100%;left:0;right:0;background:var(--chrome);flex-direction:column;align-items:flex-start;gap:0;padding:6px 20px 12px;border-bottom:1px solid var(--chrome-line);height:auto';
+  });
+
+  /* nav section highlight */
+  var secs = ['product','fit','trust','faq'];
+  if('IntersectionObserver' in window){
+    var no = new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        if(!e.isIntersecting) return;
+        document.querySelectorAll('.nav-links a').forEach(function(a){
+          a.classList.toggle('on', a.getAttribute('href') === '#' + e.target.id);
+        });
+      });
+    },{threshold:.01, rootMargin:'-45% 0px -50% 0px'});
+    secs.forEach(function(id){ var el = document.getElementById(id); if(el) no.observe(el); });
+  }
+})();
+</script>
+
+<!-- ============================================================
+     ANALYTICS — instrumentation (see ANALYTICS.md). The same shape
+     as the homepage block, minus the use-case inspector and the
+     compare table this page does not have. Every event carries
+     page:'ai-platforms' from the register() call in <head>, so the
+     three pages chart apart.
+     ============================================================ -->
+<script>
+(function(){
+  var t = window.mtl; if(!t) return;
+  var IDLE = (window.MTL_ANALYTICS || {}).idleMs || 30000;
+
+  function list(pairs){
+    return pairs.map(function(p){ return {name:p[0], el:document.querySelector(p[1])}; })
+                .filter(function(s){ return s.el; });
+  }
+  var SECTIONS = list([
+    ['hero','#top'], ['proof','.proof'], ['product','#product'],
+    ['fit','#fit'], ['trust','#trust'], ['faq','#faq'], ['cta','#contact']
+  ]);
+  var FEATS = [].slice.call(document.querySelectorAll('#product .feat')).map(function(el, i){
+    var h = el.querySelector('.feat-txt h3');
+    return { name:'claim_' + (i + 1), el:el, title:h ? h.textContent.trim() : '' };
+  });
+
+  var read = {}, claim = {}, hit = {}, path = [];
+  var cur = null, curClaim = null, mark = Date.now(), act = Date.now(), depth = 0;
+  function awake(){ return !document.hidden && (Date.now() - act) < IDLE; }
+  function owner(items){
+    var mid = innerHeight / 2, best = null, bestD = Infinity;
+    for(var i = 0; i < items.length; i++){
+      var r = items[i].el.getBoundingClientRect();
+      if(r.top <= mid && r.bottom >= mid) return items[i];
+      var d = Math.min(Math.abs(r.top - mid), Math.abs(r.bottom - mid));
+      if(d < bestD){ bestD = d; best = items[i]; }
+    }
+    return best;
+  }
+  function sample(){
+    var now = Date.now(), dt = (now - mark) / 1000;
+    mark = now;
+    if(awake() && dt > 0 && dt < 30){
+      if(cur){
+        read[cur] = (read[cur] || 0) + dt;
+        if(read[cur] >= 10 && !hit[cur]){ hit[cur] = 1; t.track('section_read', { section:cur, engaged_seconds:Math.round(read[cur]) }); }
+      }
+      if(curClaim){
+        var n = curClaim.name;
+        claim[n] = (claim[n] || 0) + dt;
+        if(claim[n] >= 8 && !hit[n]){ hit[n] = 1; t.track('product_claim_read', { claim:n, title:curClaim.title, engaged_seconds:Math.round(claim[n]) }); }
+      }
+    }
+    var s = owner(SECTIONS);
+    cur = s ? s.name : null;
+    if(cur && path[path.length - 1] !== cur) path.push(cur);
+    curClaim = (cur === 'product' && FEATS.length) ? owner(FEATS) : null;
+    var sh = document.documentElement.scrollHeight || 1;
+    var d = Math.min(100, Math.round((pageYOffset + innerHeight) / sh * 100));
+    if(d > depth) depth = d;
+  }
+  var ticking = false;
+  addEventListener('scroll', function(){
+    act = Date.now();
+    if(ticking) return;
+    ticking = true;
+    requestAnimationFrame(function(){ sample(); ticking = false; });
+  }, {passive:true});
+  ['pointerdown','pointermove','keydown','touchstart'].forEach(function(e){
+    addEventListener(e, function(){ act = Date.now(); }, {passive:true});
+  });
+  setInterval(sample, 1000);
+  sample();
+
+  [].slice.call(document.querySelectorAll('.faq details')).forEach(function(d){
+    d.addEventListener('toggle', function(){
+      if(!d.open) return;
+      var q = d.querySelector('summary');
+      t.track('faq_opened', { question:q ? q.textContent.trim() : '' });
+    });
+  });
+
+  function place(el){
+    var s = el.closest ? el.closest('section[id], header[id], footer, nav, #xlink') : null;
+    return s ? (s.id || s.tagName.toLowerCase()) : 'unknown';
+  }
+  document.addEventListener('click', function(e){
+    var a = e.target.closest && e.target.closest('a[href]');
+    if(!a) return;
+    var href = a.getAttribute('href') || '';
+    var booking = /calendar\.app\.google|calendly\.com/i;
+    var waitlist = /^\/waitlist\/?(\?.*)?$/i;
+    if(/^mailto:/i.test(href) || booking.test(href) || waitlist.test(href)){
+      t.track('cta_click', { kind:/^mailto:/i.test(href) ? 'contact' : (waitlist.test(href) ? 'waitlist' : 'demo'), location:place(a), label:(a.textContent || '').trim().slice(0, 40) });
+    } else if(a.hasAttribute('data-audience')){
+      /* someone crossing from the AI platforms story to one of the other two */
+      t.track('audience_switch', { to:a.getAttribute('data-audience'), location:place(a) });
+    } else if(href.charAt(0) === '#' && href.length > 1){
+      t.track('nav_click', { to:href.slice(1), location:place(a) });
+    }
+  }, true);
+
+
+  var sent = false;
+  function exit(){
+    if(sent) return;
+    sent = true;
+    sample();
+    var total = 0, deepest = null, most = 0;
+    Object.keys(read).forEach(function(k){ total += read[k]; if(read[k] > most){ most = read[k]; deepest = k; } });
+    var p = {
+      last_section:cur, most_read_section:deepest, section_path:path.join(' > '),
+      sections_read:Object.keys(read).filter(function(k){ return read[k] >= 3; }).length,
+      max_depth_pct:depth, total_engaged_seconds:Math.round(total)
+    };
+    SECTIONS.forEach(function(s){ p['read_' + s.name] = Math.round(read[s.name] || 0); });
+    FEATS.forEach(function(f){ p['read_' + f.name] = Math.round(claim[f.name] || 0); });
+    t.track('page_exit', p, true);
+  }
+  addEventListener('visibilitychange', function(){ if(document.hidden) exit(); });
+  addEventListener('pagehide', exit);
+})();
+</script>
+</body>
+</html>

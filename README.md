@@ -10,6 +10,7 @@ page works opened straight from disk.
 ```
 index.html            the formulator page (the home page)
 suppliers/index.html  the supplier page: the same product, sold to the seller
+ai-platforms/index.html  the AI platforms page: the same library, as an MCP server for agents
 about/index.html      the About page: how Matterialis grew out of Amphico's R&D
 inbound/index.html    the QR landing for the stand; printed, so never moved
 design.md             the design system: tokens, type, colour rules, voice
@@ -18,20 +19,26 @@ img/                  use-case photography, credits, competitor and team logos
 CNAME                 matterialis.com
 ```
 
-## Two audiences
+## Three audiences
 
-The site speaks to two customers. **Formulators** (scientists who search for and
+The site speaks to three customers. **Formulators** (scientists who search for and
 substitute materials) land on `/`. **Suppliers and distributors** (who sell them,
-and whose buyers would use the website assistant) land on `/suppliers/`. A two-word
-switch beside the logo (Formulators | Suppliers, in the body face, the raised segment
-marking where you are) and a band above each footer cross them over. The home page
+and whose buyers would use the website assistant) land on `/suppliers/`. **AI
+platforms** (agentic labs and AI-scientist products; the buyer owns the agent's
+tools) land on `/ai-platforms/`, which sells the library as an MCP server. A
+three-word switch beside the logo (Formulators | Suppliers | AI platforms, in the
+body face, the raised segment marking where you are) and a two-door band above each
+footer cross them over. Below 520px the switch takes its own row in the sticky bar.
+The home page
 leads with the problems (`#cases`) and then how the product answers them (`#product`).
 
-`/suppliers/` is assembled from `index.html` by the build step described in its
-own header comment: the `<head>`, both stylesheets and the logo sprite are copied
-from the home page verbatim, so tokens and tracking cannot drift. Shared changes go
-in `index.html` and are rebuilt into the supplier page; supplier copy and mocks live
-in the supplier body. The product mocks on both pages are drawn in HTML/CSS, not
+`/suppliers/` and `/ai-platforms/` are assembled from `index.html` by the build step
+described in their own header comments: the `<head>`, both stylesheets and the logo
+sprite are copied from the home page verbatim, so tokens and tracking cannot drift.
+Shared changes go in `index.html` and are rebuilt into both pages; supplier copy and
+mocks live in the supplier body. `/ai-platforms/` carries verbatim copies of the four
+formulator mocks (the Claude Cowork screen as its hero); re-copy them when they
+change on `index.html`. The product mocks on both pages are drawn in HTML/CSS, not
 screenshots. The mocks on `/suppliers/` show the website assistant and the supplier
 dashboard with a fictional supplier, Northfield Specialty Polymers.
 
@@ -48,7 +55,7 @@ python3 -m http.server 8000     # then open http://localhost:8000
 Opening `index.html` from Finder also works — you only need the server for
 `img/credits.js` to load.
 
-Check it at 390px, 768px, 1440px and 1920px. The product mocks are drawn in
+Check it at 390px, 520px, 768px, 1180px, 1440px and 1920px. The product mocks are drawn in
 HTML/CSS at a fixed 1180px and scaled to their column. Below 1080px they are
 deliberately **not** scaled: they keep the authored width inside a horizontal
 scroller, because a width-fit scale at phone widths lands near 0.33 and the

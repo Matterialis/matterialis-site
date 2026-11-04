@@ -8,7 +8,7 @@ Everything the landing page records, where it goes, and how to check it works.
 | Project | **Matterialis**, id `105300` |
 | Project token | `phc_GnUG6LSAkfO92r5vN5asriOtooGLbGPx3V40gANPcBi` |
 | Ingestion host | `https://eu.i.posthog.com` — not yet proxied, see [Pending](#pending-the-first-party-proxy) |
-| Code | `index.html` and `suppliers/index.html`, two blocks marked `ANALYTICS` in each |
+| Code | `index.html`, `suppliers/index.html` and `ai-platforms/index.html`, two blocks marked `ANALYTICS` in each |
 
 The project token is **not a secret**. It is a write-only public key, it is
 already in the HTML served to every visitor, and it cannot read data back.
@@ -55,19 +55,25 @@ Custom events, on top of PostHog's own `$pageview` / `$pageleave` / autocapture:
 | `use_case_opened` | a use-case card is opened | `case` |
 | `use_case_closed` | the inspector closes, however it closed | `case`, `seconds_open` |
 | `faq_opened` | an FAQ is expanded | `question` |
-| `cta_click` | a booking or mailto link | `kind`, `location`, `label` |
+| `cta_click` | a booking, mailto or waitlist link (`/waitlist/`, with or without `?a=…`) | `kind`, `location`, `label` |
 | `nav_click` | any in-page anchor | `to`, `location` |
 | `compare_scrolled` | the compare table is scrolled sideways | — |
 | `page_exit` | the tab is hidden or the page unloads | `last_section`, `section_path`, `read_*` per section, `max_depth_pct`, `total_engaged_seconds` |
 
-| `audience_switch` | a link to the other audience's page is clicked | `to` (`suppliers` or `formulators`), `location` |
+| `audience_switch` | a link to another audience's page is clicked (nav switch, `.xlink` band, home feature 04) | `to` (`formulators`, `suppliers` or `ai-platforms`), `location` (`nav`, `xlink`, `top`, `product`) |
 
-On **every** event: `page` (`home` or `suppliers`), `visit_number`,
+On **every** event: `page` (`home`, `suppliers` or `ai-platforms`), `visit_number`,
 `is_returning`, `days_since_first_visit`, and a campaign token when the visit came
-from a `?c=` link. Filter on `page` to chart the two audiences apart; `/suppliers/`
+from a `?c=` link. Filter on `page` to chart the three audiences apart; `/suppliers/`
 has no use-case inspector, so it never sends `use_case_*` or `more_cases_clicked`,
 and its `section_read` names are `hero`, `proof`, `product`, `compare`, `trust`,
-`faq`, `cta`.
+`faq`, `cta`. `/ai-platforms/` has no use-case inspector and no compare table, so it
+never sends `use_case_*`, `more_cases_clicked` or `compare_scrolled`; its
+`section_read` names are `hero`, `proof`, `product`, `fit`, `trust`, `faq`, `cta`.
+
+The waitlist and `/inbound` send `audience` on `inbound_submitted` and
+`inbound_failed` as `formulator`, `supplier` or `platform` (prefilled from
+`?a=supplier` / `?a=platform`).
 
 Two things to know about the numbers:
 
