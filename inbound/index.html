@@ -303,6 +303,21 @@ input[type=email]:user-invalid ~ .hint{display:block}
     var r = f && f.querySelector('input[name=audience][value="' + (who === 'supplier' || who === 'platform' ? who : 'formulator') + '"]');
     if(r) r.checked = true;
   }catch(e0){}
+  /* Send them on to the page for what they said they are: suppliers to
+     /suppliers/, platforms to /ai-platforms/, everyone else to the homepage.
+     Only the path changes, so ?c= still reaches the analytics on arrival.
+     It rewrites _next itself, so the native POST fallback goes there too;
+     with JavaScript off it stays the homepage. */
+  var home = f && f.elements._next.value;
+  function route(){
+    try{
+      var w = (f.querySelector('input[name=audience]:checked') || {}).value;
+      var u = new URL(home);
+      u.pathname = w === 'supplier' ? '/suppliers/' : w === 'platform' ? '/ai-platforms/' : '/';
+      f.elements._next.value = u.href;
+    }catch(e1){}
+  }
+  if(f){ route(); f.addEventListener('change', route); }
   if(!f || !window.fetch || !window.FormData) return;   /* native POST already covers this */
 
   f.addEventListener('submit', function(e){
