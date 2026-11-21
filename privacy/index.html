@@ -158,7 +158,7 @@ footer{background:var(--chrome);border-top:1px solid var(--chrome-line);padding:
     <div class="crumb"><a href="/">Matterialis</a><span class="sep">/</span><span>Privacy</span></div>
     <h1>Privacy notice</h1>
     <dl class="meta">
-      <div><dt class="micro">Effective</dt><dd class="mono">16 November 2026</dd></div>
+      <div><dt class="micro">Effective</dt><dd class="mono">21 November 2026</dd></div>
       <div><dt class="micro">Applies to</dt><dd>The Matterialis web app and MCP connector</dd></div>
     </dl>
   </div>
@@ -207,12 +207,12 @@ footer{background:var(--chrome);border-top:1px solid var(--chrome-line);padding:
       <h2><span class="n">04</span>Who processes it</h2>
       <ul>
         <li><strong>Google Cloud</strong> hosts the service. Data is stored in its London region (<span class="mono">europe-west2</span>): Cloud SQL stores the data and Secret Manager holds its keys. The web app's API runs in London; the AI-assistant connector runs in Belgium (<span class="mono">europe-west1</span>), so connector requests, including search text, are processed in the EU.</li>
-        <li><strong>Google Vertex AI</strong> (Gemini, in <span class="mono">europe-west2</span>) reads the text of each search to interpret what you are asking for.</li>
+        <li><strong>Google Vertex AI</strong> (Gemini, in Google's EU multi-region, <span class="mono">eu</span>) reads the text of each search, and the opening of an attached datasheet, to interpret what you are asking for.</li>
         <li><strong>TypeSafe</strong> receives the text of each search, and the opening of an attached datasheet, to pick out the terms, chemical family and property criteria it contains.</li>
         <li><strong>Vercel</strong> serves the web app, so requests you make in the web app pass through it.</li>
         <li><strong>Google</strong> signs you in.</li>
       </ul>
-      <p>Vercel and TypeSafe may process data outside the UK, under their standard terms and the safeguards those terms provide.</p>
+      <p>Gemini processes search text in the EU, which UK law treats as adequate for such transfers. Vercel and TypeSafe may process data outside the UK, under their standard terms and the safeguards those terms provide.</p>
     </section>
 
     <section>
