@@ -543,9 +543,9 @@ sup.ai{font-family:var(--font-mono);font-size:7.5px;color:var(--brand-signal);ma
 
 /* ---- mock 02: the neighbourhood map ----
    The one screen that is not a table. Distance from the centre IS similarity —
-   the rings are the scale — so a cross-sector grade sitting close in is
+   the rings are the scale — so a cross-sector reference sitting close in is
    readable at a glance, which is the whole claim of this step. Dots use the
-   neutral ramp; the ONLY accent is the query grade itself, which is the active
+   neutral ramp; the ONLY accent is the query reference itself, which is the active
    selection and therefore allowed it. */
 .mapwrap{flex:1;min-height:0;padding:4px 14px 0;display:flex;align-items:center;justify-content:center}
 .map{width:100%;height:100%;overflow:visible}
@@ -1268,9 +1268,9 @@ button.w-launch.press{transform:scale(.93)}
 <div class="crit"><div class="crit-t"><span>Claims</span><svg class="ic" viewBox="0 0 24 24"><path d="M4 7h16M9 7V4h6v3M6 7l1 13h10l1-13"/></svg></div><div class="crit-r"><span class="val">Halogen-free</span></div></div>
 </div>
 <div class="res-main">
-<div class="res-top"><span class="micro">Your grades, ranked</span><span class="note">Every row is a Northfield datasheet</span></div>
+<div class="res-top"><span class="micro">Your references, ranked</span><span class="note">Every row is a Northfield datasheet</span></div>
 <table class="grid">
-<tr><th>Rank</th><th>Grade</th><th>Evidence</th><th>Criteria met</th><th class="r">Viscosity</th><th class="r">Tg</th><th class="r">Die shear</th><th class="r">Halogen-free</th></tr>
+<tr><th>Rank</th><th>Reference</th><th>Evidence</th><th>Criteria met</th><th class="r">Viscosity</th><th class="r">Tg</th><th class="r">Die shear</th><th class="r">Halogen-free</th></tr>
 <tr><td class="rk">1</td><td><span class="matname">NF-6210 high-Tg die attach<span>TDS rev. 4 · 2026-03</span></span></td><td><span class="ev"><span class="dot dot-strong"></span>Strong</span></td><td><span class="met"><span class="seg"><i class="s"></i><i class="s"></i><i class="s"></i><i class="s"></i></span><span>4 of 4</span></span></td><td class="r n-ok">24 000</td><td class="r n-ok">135</td><td class="r n-ok">11.2</td><td class="r n-ok">Claimed</td></tr>
 <tr><td class="rk">2</td><td><span class="matname">NF-6202 B-stageable die attach<span>TDS rev. 7 · 2025-11</span></span></td><td><span class="ev"><span class="dot dot-strong"></span>Strong</span></td><td><span class="met"><span class="seg"><i class="s"></i><i class="w"></i><i class="s"></i><i class="s"></i></span><span>3 of 4</span></span></td><td class="r n-ok">28 000</td><td class="r n-no">40</td><td class="r n-ok">10.4</td><td class="r n-ok">Claimed</td></tr>
 <tr><td class="rk">3</td><td><span class="matname">NF-4180 silver epoxy<span>TDS rev. 2 · 2024-08</span></span></td><td><span class="ev"><span class="dot dot-limited"></span>Limited</span></td><td><span class="met"><span class="seg"><i class="s"></i><i class="s"></i><i></i><i></i></span><span>2 of 4</span></span></td><td class="r n-ok">18 500</td><td class="r n-ok">110<sup class="ai">AI</sup></td><td class="r n">—</td><td class="r n">—</td></tr>
@@ -1286,7 +1286,7 @@ button.w-launch.press{transform:scale(.93)}
         <div class="feat-txt">
           <span class="micro">01</span>
           <h3>Your catalogue, structured in seconds per datasheet</h3>
-          <p>Every PDF you publish goes through the pipeline: each property with its unit, test method and conditions, each classification, each claim. A datasheet takes seconds. A range of a thousand grades is structured the same day and reviewed by our materials scientists. What comes out is a database you can search by requirement and connect to anything, including your own AI.</p>
+          <p>Every PDF you publish goes through the pipeline: each property with its unit, test method and conditions, each classification, each claim. A datasheet takes seconds. A range of a thousand references is structured the same day and reviewed by our materials scientists. What comes out is a database you can search by requirement and connect to anything, including your own AI.</p>
           <div class="out">A searchable, AI-ready catalogue, from documents you already publish.</div>
           <div class="swipe">Swipe the panel to explore<svg class="ic" viewBox="0 0 24 24" style="width:12px;height:12px"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
         </div>
@@ -1376,7 +1376,7 @@ button.w-launch.press{transform:scale(.93)}
       <div class="dpanel-h"><h5>Unmet demand</h5><span>what buyers asked for that the range could not offer</span></div>
       <div class="unmet">
         <div class="unmet-i"><span class="tag tag-gap">Product gap</span><div class="q">High-Tg die attach for automotive under-hood, Tg ≥ 150 °C</div><div class="why">Glass transition ≥ 150 °C asked 29 times. Best offered: NF-6210 at 135 °C.</div></div>
-        <div class="unmet-i"><span class="tag tag-nofit">No fit</span><div class="q">Low-outgassing epoxy for a satellite payload, ASTM E595</div><div class="why">No grade in the range has an outgassing figure; buyer handed to a person.</div></div>
+        <div class="unmet-i"><span class="tag tag-nofit">No fit</span><div class="q">Low-outgassing epoxy for a satellite payload, ASTM E595</div><div class="why">No reference in the range has an outgassing figure; buyer handed to a person.</div></div>
         <div class="unmet-i"><span class="tag tag-doc">Not documented</span><div class="q">Silver epoxy with moisture absorption under 0.5 wt%</div><div class="why">NF-4180 leads but the sheet does not state moisture absorption. Twelve buyers asked this month.</div></div>
         <div class="unmet-i"><span class="tag tag-gap">Product gap</span><div class="q">Gap filler above 5 W/m·K for a power module</div><div class="why">Thermal conductivity ≥ 5 W/m·K asked. Best offered: NF-9020 at 3.2 W/m·K.</div></div>
       </div>
@@ -1536,7 +1536,7 @@ button.w-launch.press{transform:scale(.93)}
       <details open>
         <summary>Will it ever recommend a competitor's product?</summary>
         <div class="a">
-          <p>No. Every product the assistant shows, links or counts comes from your catalogue, by construction: the search it runs can only return your grades. If a buyer names a competitor's product or attaches its datasheet, the assistant looks for the products in your range that meet the same requirements and presents those on their own merits.</p>
+          <p>No. Every product the assistant shows, links or counts comes from your catalogue, by construction: the search it runs can only return your products. If a buyer names a competitor's product or attaches its datasheet, the assistant looks for the products in your range that meet the same requirements and presents those on their own merits.</p>
         </div>
       </details>
       <details>
@@ -1561,7 +1561,7 @@ button.w-launch.press{transform:scale(.93)}
       </details>
       <details>
         <summary>Can our sales team use it internally?</summary>
-        <div class="a"><p>Yes. Your sales and technical teams get the same search over your range, and can add internal test data, approvals and application notes to it. That workspace stays apart from the public assistant, so an inbound request gets a referenced answer in minutes and nothing internal reaches a buyer. An assistant that drafts those answers for your reps is the next piece of this product; ask us about timing.</p></div>
+        <div class="a"><p>Yes. Your sales and technical teams get the same search over your range, and can add internal test data, approvals and application notes to it. That workspace stays apart from the customer assistant on your website, so an inbound request gets a referenced answer in minutes and nothing internal reaches a buyer. The sales co-pilot, which drafts those answers for your reps, is in development; ask us about timing.</p></div>
       </details>
     </div>
   </div>
@@ -1575,11 +1575,11 @@ button.w-launch.press{transform:scale(.93)}
     <p class="lede">Send us a link to your technical library and we will structure a sample of your range before we talk. Two ways suppliers start:</p>
     <div class="opts opts-2">
       <div class="opt"><span class="opt-head"><svg class="opt-ic" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="13" rx="2"/><path d="M8 21h8M12 17v4"/><path d="m10 8 4 2.5-4 2.5z"/></svg><span class="micro">01</span></span><h4>A demo on your range</h4><p>The assistant running over a sample of your own datasheets, answering the questions your buyers actually ask. Thirty minutes.</p></div>
-      <div class="opt"><span class="opt-head"><svg class="opt-ic" viewBox="0 0 24 24"><path d="M3 3h18v18H3z"/><path d="M3 9h18M9 21V9"/></svg><span class="micro">02</span></span><h4>A pilot on one product line</h4><p>Live on your website in a week, on one section of your range, with the dashboard, so the value is measured before it is extended.</p></div>
+      <div class="opt"><span class="opt-head"><svg class="opt-ic" viewBox="0 0 24 24"><path d="M3 3h18v18H3z"/><path d="M3 9h18M9 21V9"/></svg><span class="micro">02</span></span><h4>A pilot on one product family</h4><p>Live on your website in a week, on one section of your range, with the dashboard, so the value is measured before it is extended.</p></div>
     </div>
     <div class="hero-cta">
       <a class="btn btn-on-chrome btn-lg" href="https://calendar.app.google/LcwtFTNrrVFJnGiz9" target="_blank" rel="noopener">Book a demo</a>
-      <a class="btn btn-ghost-chrome btn-lg" href="mailto:j.orri@amphico.uk?subject=Matterialis%20pilot%20on%20our%20product%20line">Start a pilot</a>
+      <a class="btn btn-ghost-chrome btn-lg" href="mailto:j.orri@amphico.uk?subject=Matterialis%20pilot%20on%20our%20product%20family">Start a pilot</a>
     </div>
   </div>
 </section>
@@ -1587,11 +1587,11 @@ button.w-launch.press{transform:scale(.93)}
 <div class="xlink" id="xlink">
   <div class="wrap">
     <div class="xl">
-      <p><b>Looking for materials rather than selling them?</b> The Matterialis platform searches 200,000+ grades across every supplier.</p>
+      <p><b>Looking for materials rather than selling them?</b> The Matterialis platform searches 200,000+ chemical references across every supplier.</p>
       <a class="btn btn-secondary" href="../" data-audience="formulators">Matterialis for formulators<svg class="ic" viewBox="0 0 24 24" style="width:12px;height:12px"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
     </div>
     <div class="xl">
-      <p><b>Building AI agents for the lab?</b> The same library of supplier grades, behind an MCP server your agent can call.</p>
+      <p><b>Building AI agents for the lab?</b> The same library of chemical references, behind an MCP server your agent can call.</p>
       <a class="btn btn-secondary" href="../ai-platforms/" data-audience="ai-platforms">Matterialis for AI platforms<svg class="ic" viewBox="0 0 24 24" style="width:12px;height:12px"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
     </div>
   </div>

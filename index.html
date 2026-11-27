@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Matterialis — an AI that understands industrial materials</title>
-<meta name="description" content="A foundation model for industrial materials. Predict unreported properties, navigate chemical space, find substitutes under real constraints, and reformulate — across more than 200,000 material grades.">
+<meta name="description" content="A foundation model for industrial materials. Predict unreported properties, navigate chemical space, find substitutes under real constraints, and reformulate — across more than 200,000 chemical references.">
 <link rel="icon" href="data:image/x-icon;base64,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">
 <!-- iOS home screen / Android. The favicon above is the same approved .ico
      from the logo kit, inlined so the page still works from disk. -->
@@ -534,9 +534,9 @@ sup.ai{font-family:var(--font-mono);font-size:7.5px;color:var(--brand-signal);ma
 
 /* ---- mock 02: the neighbourhood map ----
    The one screen that is not a table. Distance from the centre IS similarity —
-   the rings are the scale — so a cross-sector grade sitting close in is
+   the rings are the scale — so a cross-sector reference sitting close in is
    readable at a glance, which is the whole claim of this step. Dots use the
-   neutral ramp; the ONLY accent is the query grade itself, which is the active
+   neutral ramp; the ONLY accent is the query reference itself, which is the active
    selection and therefore allowed it. */
 .mapwrap{flex:1;min-height:0;padding:4px 14px 0;display:flex;align-items:center;justify-content:center}
 .map{width:100%;height:100%;overflow:visible}
@@ -1021,7 +1021,7 @@ footer{background:var(--chrome);border-top:1px solid var(--chrome-line);padding:
 <!-- ================= PROOF ================= -->
 <div class="proof">
   <div class="wrap"><div class="proof-grid">
-    <div class="stat"><span class="micro">Library</span><span class="v" data-count="200000">200,000</span><span class="l">material grades indexed from technical and safety datasheets.</span></div>
+    <div class="stat"><span class="micro">Library</span><span class="v" data-count="200000">200,000</span><span class="l">chemical references indexed from technical and safety datasheets.</span></div>
     <div class="stat"><span class="micro">Property space</span><span class="v">500<span class="u">+</span></span><span class="l">properties, including values suppliers never published.</span></div>
     <div class="stat"><span class="micro">Research</span><span class="v">NeurIPS</span><span class="l">the paper behind the method, accepted at NeurIPS 2026.</span></div>
     <div class="stat"><span class="micro">Team</span><span class="v" style="font-size:clamp(19px,1.8vw,25px)">IBM&#8202;·&#8202;Cambridge</span><span class="l">machine learning research and materials science in one team.</span></div>
@@ -1106,7 +1106,7 @@ footer{background:var(--chrome);border-top:1px solid var(--chrome-line);padding:
         <span class="uc-body">
           <span class="micro">Pharmaceutical formulation</span>
           <h3>The person who makes this call is retiring</h3>
-          <p>One specialist decides which grades reach the shortlist, and none of that reasoning is written down.</p>
+          <p>One specialist decides which excipients reach the shortlist, and none of that reasoning is written down.</p>
           <span class="uc-foot"><span class="uc-open">Open case<svg class="ic" viewBox="0 0 24 24" style="width:12px;height:12px"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span><span class="badge">Knowledge capture</span></span>
         </span>
       </button>
@@ -1121,12 +1121,12 @@ footer{background:var(--chrome);border-top:1px solid var(--chrome-line);padding:
   <div hidden id="case-src">
     <div data-c="defence" data-role="Defence manufacturing &#183; United Kingdom" data-title="A component has to be made in the UK, and the material comes from Europe">
       <div data-k="problem"><p>A UK defence manufacturer is bringing component production back onshore. One of the materials is a cellulose nitrate grade it has bought from the same mainland European supplier for decades. It is specified by that supplier&#8217;s own designation rather than by properties, because nobody ever needed to describe it any other way.</p><p>To source it in the UK, someone first has to work out what the grade actually is: nitrogen content, viscosity grade, damping solvent, plasticiser compatibility. Then find who in the country makes something equivalent. Supplier catalogues are organised by supplier, so there is no way to ask that question directly.</p></div>
-      <div data-k="how"><ol><li><b>01</b>Paste the incumbent datasheet. The grade comes back described by what it is rather than by whose catalogue it sits in.</li><li><b>02</b>Set the binding constraints, nitrogen content and viscosity grade, and rank the field by how closely each grade matches. Filtering by region is in development, so for now you narrow the result to UK suppliers yourself.</li><li><b>03</b>The result is equivalent grades ranked by property match, each with the supplier that published it. Where a supplier publishes nothing on a critical property, the gap is named rather than guessed.</li></ol></div>
-      <div data-k="get"><p>A shortlist of grades that hold the specification, with the supplier for each, and a clear list of what still needs testing before qualification. The same query answers supply-risk and dual-sourcing questions, not only reshoring.</p></div>
+      <div data-k="how"><ol><li><b>01</b>Paste the incumbent datasheet. The material comes back described by what it is rather than by whose catalogue it sits in.</li><li><b>02</b>Set the binding constraints, nitrogen content and viscosity grade, and rank the field by how closely each reference matches. Filtering by region is in development, so for now you narrow the result to UK suppliers yourself.</li><li><b>03</b>The result is equivalent references ranked by property match, each with the supplier that published it. Where a supplier publishes nothing on a critical property, the gap is named rather than guessed.</li></ol></div>
+      <div data-k="get"><p>A shortlist of references that hold the specification, with the supplier for each, and a clear list of what still needs testing before qualification. The same query answers supply-risk and dual-sourcing questions, not only reshoring.</p></div>
     </div>
     <div data-c="compounding" data-role="Polymer compounder · high-performance moulding" data-title="The property that decides the part is not on the datasheet">
-      <div data-k="problem"><p>You are specifying a grade for a moulded part that has to survive under-bonnet temperatures under load. Tensile and melt flow are on the datasheet. Heat deflection at 1.8 MPa is not, and neither is the shrinkage window that determines whether the part holds tolerance.</p><p>So the options are to email the supplier and wait two weeks per grade, or to buy samples and measure it yourself. That only works once the field is narrowed, which was the problem in the first place.</p></div>
-      <div data-k="how"><ol><li><b>01</b>Paste the incumbent datasheet. The grade comes back described by its properties, its chemistry and its end use, rather than by the catalogue it sits in.</li><li><b>02</b>Set the floor on the property that actually governs the part, whether or not it was published. Predicted values are filterable and marked as predicted.</li><li><b>03</b>Read the shortlist by criteria met, then by similarity. Each candidate states which numbers are measured, which are model-generated, and which still need a lab.</li></ol></div>
+      <div data-k="problem"><p>You are specifying a material for a moulded part that has to survive under-bonnet temperatures under load. Tensile and melt flow are on the datasheet. Heat deflection at 1.8 MPa is not, and neither is the shrinkage window that determines whether the part holds tolerance.</p><p>So the options are to email the supplier and wait two weeks per candidate, or to buy samples and measure it yourself. That only works once the field is narrowed, which was the problem in the first place.</p></div>
+      <div data-k="how"><ol><li><b>01</b>Paste the incumbent datasheet. The material comes back described by its properties, its chemistry and its end use, rather than by the catalogue it sits in.</li><li><b>02</b>Set the floor on the property that actually governs the part, whether or not it was published. Predicted values are filterable and marked as predicted.</li><li><b>03</b>Read the shortlist by criteria met, then by similarity. Each candidate states which numbers are measured, which are model-generated, and which still need a lab.</li></ol></div>
       <div data-k="get"><p>A ranked candidate set with the unknowns named, so the lab list is short and every entry on it is there for a reason.</p></div>
     </div>
 
@@ -1138,7 +1138,7 @@ footer{background:var(--chrome);border-top:1px solid var(--chrome-line);padding:
 
     <div data-c="membranes" data-role="Amphico · PFAS-free waterproof membranes" data-title="A fossil-based polymer has to become bio-based">
       <div data-k="problem"><p>Amphico makes PFAS-free waterproof membranes. Replacing the polyolefin compound in our own product with a bio-based alternative is constrained on three axes at once: it has to hold membrane performance, it has to be bio-based, and it has to be sourceable at volume by a company our size.</p><p>The useful candidates are not in the technical textile supply chain. They are in packaging and biomedical. Those suppliers have no reason to call us, and a membrane engineer has no reason to read their datasheets.</p></div>
-      <div data-k="how"><ol><li><b>01</b>The index is organised by what materials are and do, not by which industry's suppliers sell them, so a packaging polymer surfaces for a membrane problem when it fits.</li><li><b>02</b>Candidates are compared on how they behave, which is what lets a grade sold into packaging be read against a membrane requirement at all.</li><li><b>03</b>Cross-sector candidates carry what the transfer involves: different regulatory status in your application, different grades and purities, different supply structure.</li></ol></div>
+      <div data-k="how"><ol><li><b>01</b>The index is organised by what materials are and do, not by which industry's suppliers sell them, so a packaging polymer surfaces for a membrane problem when it fits.</li><li><b>02</b>Candidates are compared on how they behave, which is what lets a material sold into packaging be read against a membrane requirement at all.</li><li><b>03</b>Cross-sector candidates carry what the transfer involves: different regulatory status in your application, different grades and purities, different supply structure.</li></ol></div>
       <div data-k="get"><p>We built Matterialis because we needed it. This work is in progress and we will publish what we find, including what does not work.</p></div>
     </div>
 
@@ -1149,7 +1149,7 @@ footer{background:var(--chrome);border-top:1px solid var(--chrome-line);padding:
     </div>
 
     <div data-c="pharma" data-role="Pharmaceutical formulator · excipients and solid dose" data-title="The person who makes this call is retiring">
-      <div data-k="problem"><p>Excipient selection runs through one person, because only one person can actually do it. The procedure is documentable: build a matrix of target properties, filter a few hundred grades to six or eight, generate data on what nobody reported, then design the trials.</p><p>What is not documentable is which grades enter the matrix at all. That rests on inferences made without writing them down, and reconstructed after the decision, if at all. So a junior scientist learns the procedure and builds a defensible-looking matrix from the wrong candidate set.</p></div>
+      <div data-k="problem"><p>Excipient selection runs through one person, because only one person can actually do it. The procedure is documentable: build a matrix of target properties, filter a few hundred candidates to six or eight, generate data on what nobody reported, then design the trials.</p><p>What is not documentable is which candidates enter the matrix at all. That rests on inferences made without writing them down, and reconstructed after the decision, if at all. So a junior scientist learns the procedure and builds a defensible-looking matrix from the wrong candidate set.</p></div>
       <div data-k="how"><ol><li><b>01</b>The inference layer becomes explicit: a predicted property is marked as predicted, so it can be inspected and disagreed with.</li><li><b>02</b>Constraints that used to be applied silently (qualification complexity, acceptable property trade-offs, prior familiarity with a supplier) become parameters you can review and reuse.</li><li><b>03</b>Every shortlist exports as a rationale: constraints applied, candidates rejected and why, values relied on and how confident, properties still to measure.</li></ol></div>
       <div data-k="get"><p>A shortlist a junior scientist can defend in review, and a specialist who audits the reasoning rather than redoing the work. The judgement stays with your expert; it stops being the throughput limit.</p></div>
     </div>
@@ -1246,7 +1246,7 @@ footer{background:var(--chrome);border-top:1px solid var(--chrome-line);padding:
 <span class="micro">Metadata</span>
 <dl>
 <div class="kv"><dt>Supplier</dt><dd>Chang Chun</dd></div>
-<div class="kv"><dt>Grade code</dt><dd>AMP-3118</dd></div>
+<div class="kv"><dt>Product code</dt><dd>AMP-3118</dd></div>
 <div class="kv"><dt>Indexed</dt><dd>2026-06-30</dd></div>
 </dl>
 </aside>
@@ -1257,7 +1257,7 @@ footer{background:var(--chrome);border-top:1px solid var(--chrome-line);padding:
         <div class="feat-txt">
           <span class="micro">01</span>
           <h3>The property that decides your part is missing from the sheet</h3>
-          <p>Suppliers publish what sells the grade. The value that decides your formulation is often left out. Matterialis predicts it from everything the sheet does say, marks it as predicted, and lets you filter on it beside the published values.</p>
+          <p>Suppliers publish what sells the product. The value that decides your formulation is often left out. Matterialis predicts it from everything the sheet does say, marks it as predicted, and lets you filter on it beside the published values.</p>
           <div class="out">You search the properties that matter, not the ones that happen to be printed.</div>
           <div class="swipe">Swipe the panel to explore<svg class="ic" viewBox="0 0 24 24" style="width:12px;height:12px"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
         </div>
@@ -1280,7 +1280,7 @@ footer{background:var(--chrome);border-top:1px solid var(--chrome-line);padding:
 </div>
 <div class="split">
 <div class="split-main col">
-<div class="reason"><svg viewBox="0 0 24 24"><path d="M12 2l1.7 5.4L19 9l-4.2 3.5 1.4 5.5L12 15.3 7.8 18l1.4-5.5L5 9l5.3-1.6z"/></svg><p>Five of the eight nearest grades are sold into a different industry. Distance from the centre is similarity, so a hollow dot close in is a cross-sector match worth reading.</p></div>
+<div class="reason"><svg viewBox="0 0 24 24"><path d="M12 2l1.7 5.4L19 9l-4.2 3.5 1.4 5.5L12 15.3 7.8 18l1.4-5.5L5 9l5.3-1.6z"/></svg><p>Five of the eight nearest references are sold into a different industry. Distance from the centre is similarity, so a hollow dot close in is a cross-sector match worth reading.</p></div>
 <div class="mapwrap"><svg class="map" viewBox="0 0 820 300" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
 <defs><pattern id="mgrid" width="41" height="41" patternUnits="userSpaceOnUse"><path d="M41 0H0V41" fill="none" stroke="var(--rule-soft)" stroke-width="1"/></pattern></defs>
 <rect x="0" y="0" width="820" height="300" fill="url(#mgrid)"/>
@@ -1333,7 +1333,7 @@ footer{background:var(--chrome);border-top:1px solid var(--chrome-line);padding:
 <div class="maplegend">
 <span class="mkey"><i class="k-same"></i>Your sector</span>
 <span class="mkey"><i class="k-other"></i>Another sector</span>
-<span class="mkey"><i class="k-q"></i>Query grade</span>
+<span class="mkey"><i class="k-q"></i>Query reference</span>
 <span class="mnote">RINGS ARE SIMILARITY, NOT DISTANCE IN ANY ONE PROPERTY</span>
 </div>
 </div>
@@ -1361,7 +1361,7 @@ footer{background:var(--chrome);border-top:1px solid var(--chrome-line);padding:
         <div class="feat-txt">
           <span class="micro">02</span>
           <h3>The right material comes from an industry you have never bought from</h3>
-          <p>A keyword or a supplier catalogue only shows you what you already know. Matterialis moves through materials by how they behave, so neighbouring grades surface wherever they come from: a food-grade ester for a cosmetics problem, a packaging polymer for a membrane.</p>
+          <p>A keyword or a supplier catalogue only shows you what you already know. Matterialis moves through materials by how they behave, so neighbouring references surface wherever they come from: a food-grade ester for a cosmetics problem, a packaging polymer for a membrane.</p>
           <div class="out">You find the options your catalogue was never going to show you.</div>
           <div class="swipe">Swipe the panel to explore<svg class="ic" viewBox="0 0 24 24" style="width:12px;height:12px"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
         </div>
@@ -1438,7 +1438,7 @@ footer{background:var(--chrome);border-top:1px solid var(--chrome-line);padding:
 <div class="cw-res">
 <div class="cw-res-h"><span class="micro">3 candidates returned</span><span class="note">each with its evidence</span></div>
 <table class="grid">
-<tr><th>Grade</th><th>Evidence</th><th>Criteria</th><th class="r">Tensile</th><th class="r">T max</th><th class="r">Match</th></tr>
+<tr><th>Reference</th><th>Evidence</th><th>Criteria</th><th class="r">Tensile</th><th class="r">T max</th><th class="r">Match</th></tr>
 <tr><td><span class="matname">Polyamide 6, 30% GF<span>AMP-4412</span></span></td><td><span class="ev"><span class="dot dot-strong"></span>Strong</span></td><td><span class="met"><span class="seg"><i class="s"></i><i class="s"></i><i class="s"></i></span><span>3 of 3</span></span></td><td class="r n-ok">165</td><td class="r n-ok">150</td><td class="r n">94 %</td></tr>
 <tr><td><span class="matname">PBT, 20% GF<span>AMP-3118</span></span></td><td><span class="ev"><span class="dot dot-strong"></span>Strong</span></td><td><span class="met"><span class="seg"><i class="s"></i><i class="s"></i><i class="s"></i></span><span>3 of 3</span></span></td><td class="r n-ok">110</td><td class="r n-ok">140</td><td class="r n">88 %</td></tr>
 <tr><td><span class="matname">PC / ABS, FR<span>AMP-2207</span></span></td><td><span class="ev"><span class="dot dot-limited"></span>Limited</span></td><td><span class="met"><span class="seg"><i class="l"></i><i class="l"></i><i></i></span><span>2 of 3</span></span></td><td class="r n-ok">62</td><td class="r n-ok">125<sup class="ai">AI</sup></td><td class="r n">86 %</td></tr>
@@ -1455,7 +1455,7 @@ footer{background:var(--chrome);border-top:1px solid var(--chrome-line);padding:
         <div class="feat-txt">
           <span class="micro">04</span>
           <h3>Your AI assistant does not know industrial chemistry</h3>
-          <p>Industrial chemistry is not in any general model's training set, so an assistant asked about materials guesses. Matterialis exposes the same intelligence over an MCP server, so Claude and any other MCP client can look up grades, properties and substitutes directly, with the evidence attached and every prediction still marked.</p>
+          <p>Industrial chemistry is not in any general model's training set, so an assistant asked about materials guesses. Matterialis exposes the same intelligence over an MCP server, so Claude and any other MCP client can look up chemical references, properties and substitutes directly, with the evidence attached and every prediction still marked.</p>
           <div class="out">Your agents stop guessing about materials and start looking them up.</div>
           <a class="xl-inline" href="ai-platforms/" data-audience="ai-platforms">Building an agent of your own? Matterialis for AI platforms</a>
           <div class="swipe">Swipe the panel to explore<svg class="ic" viewBox="0 0 24 24" style="width:12px;height:12px"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
@@ -1617,8 +1617,8 @@ footer{background:var(--chrome);border-top:1px solid var(--chrome-line);padding:
       <details open>
         <summary>I already use ChatGPT to find materials. How is this better?</summary>
         <div class="a">
-          <p>For one project, with datasheets you have already downloaded, a general model reads and compares them well. Three things it cannot do: search grades you never downloaded, return a property value that appears in none of the source documents, or give you the same answer twice.</p>
-          <p>Matterialis is not a chat wrapper over a search index. It is a model trained on more than 200,000 material grades, with 500+ properties underneath every query. <strong>Predicted values arrive marked as predicted</strong>, and a general model has nothing to predict from.</p>
+          <p>For one project, with datasheets you have already downloaded, a general model reads and compares them well. Three things it cannot do: search datasheets you never downloaded, return a property value that appears in none of the source documents, or give you the same answer twice.</p>
+          <p>Matterialis is not a chat wrapper over a search index. It is a model trained on more than 200,000 chemical references, with 500+ properties underneath every query. <strong>Predicted values arrive marked as predicted</strong>, and a general model has nothing to predict from.</p>
         </div>
       </details>
       <details>
@@ -1628,7 +1628,7 @@ footer{background:var(--chrome);border-top:1px solid var(--chrome-line);padding:
       <details>
         <summary>What will it not do?</summary>
         <div class="a">
-          <p>It will not run your experiments; it decides which are worth running. It will not tell you how a finished formulation performs, because it works at grade level. It will not replace design of experiments or the lab, only shorten the list going into both. And it will not hide uncertainty — predictions we are unsure of are marked as values to measure.</p>
+          <p>It will not run your experiments; it decides which are worth running. It will not tell you how a finished formulation performs, because it works at the level of individual references. It will not replace design of experiments or the lab, only shorten the list going into both. And it will not hide uncertainty — predictions we are unsure of are marked as values to measure.</p>
           <p>Interaction-order prediction is the harder problem and it is next. It is not today's claim.</p>
         </div>
       </details>
@@ -1657,7 +1657,7 @@ footer{background:var(--chrome);border-top:1px solid var(--chrome-line);padding:
     <div class="opts">
       <div class="opt"><span class="opt-head"><svg class="opt-ic" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="13" rx="2"/><path d="M8 21h8M12 17v4"/><path d="m10 8 4 2.5-4 2.5z"/></svg><span class="micro">01</span></span><h4>A live demo</h4><p>Walked through on your own material class, not a canned example.</p></div>
       <div class="opt"><span class="opt-head"><svg class="opt-ic" viewBox="0 0 24 24"><path d="M4 4h11l5 5v11H4z"/><path d="M15 4v5h5"/><path d="M8 14h3M8 17h6"/><path d="m8 11 1.5 1.5L13 9"/></svg><span class="micro">02</span></span><h4>A substitute report</h4><p>Ranked replacements for a specific constraint, with trade-offs stated. Bring one you have already solved and compare.</p></div>
-      <div class="opt"><span class="opt-head"><svg class="opt-ic" viewBox="0 0 24 24"><path d="M3 20V10M9 20V4M15 20v-7M21 20v-4"/><path d="M2 20h20"/></svg><span class="micro">03</span></span><h4>A property gap analysis</h4><p>What we can fill in for the grades you are already evaluating.</p></div>
+      <div class="opt"><span class="opt-head"><svg class="opt-ic" viewBox="0 0 24 24"><path d="M3 20V10M9 20V4M15 20v-7M21 20v-4"/><path d="M2 20h20"/></svg><span class="micro">03</span></span><h4>A property gap analysis</h4><p>What we can fill in for the references you are already evaluating.</p></div>
     </div>
     <div class="hero-cta">
       <a class="btn btn-on-chrome btn-lg" href="/waitlist/">Join the waitlist</a>
@@ -1674,7 +1674,7 @@ footer{background:var(--chrome);border-top:1px solid var(--chrome-line);padding:
       <a class="btn btn-secondary" href="suppliers/" data-audience="suppliers">Matterialis for suppliers<svg class="ic" viewBox="0 0 24 24" style="width:12px;height:12px"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
     </div>
     <div class="xl">
-      <p><b>Building an agent that works with real materials?</b> Grade search, property lookup and substitute ranking, as tools your agent calls over an MCP server.</p>
+      <p><b>Building an agent that works with real materials?</b> Material search, property lookup and substitute ranking, as tools your agent calls over an MCP server.</p>
       <a class="btn btn-secondary" href="ai-platforms/" data-audience="ai-platforms">Matterialis for AI platforms<svg class="ic" viewBox="0 0 24 24" style="width:12px;height:12px"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
     </div>
   </div>
